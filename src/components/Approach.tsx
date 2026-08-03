@@ -47,7 +47,7 @@ export function Approach() {
             <p className="mb-5 text-[15px] leading-[1.78] text-muted text-pretty sm:text-base">
               {t(c.approach.body)}
             </p>
-            <p className="border-l-2 border-accent bg-[rgba(184,115,51,.06)] px-5 py-4 text-[15px] leading-[1.7] text-[#c3c8d2]">
+            <p className="surface-accent mb-0 px-5 py-4 text-[15px] leading-[1.7] text-muted">
               {t(c.approach.quote)}
             </p>
           </div>

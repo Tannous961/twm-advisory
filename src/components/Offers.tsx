@@ -14,7 +14,7 @@ export function Offers() {
         id="offres"
         className="mx-auto max-w-7xl px-4 pt-16 sm:px-6 sm:pt-20 lg:px-10 lg:pt-28"
       >
-        <SectionLabel index="04" label={t(c.offers.section)} />
+        <SectionLabel index="03" label={t(c.offers.section)} />
         <h2 className="mb-10 font-display text-[clamp(1.75rem,6vw,2.875rem)] leading-[1.18] font-normal sm:mb-12">
           {t(c.offers.title)}
         </h2>
@@ -22,7 +22,7 @@ export function Offers() {
           {c.offers.items.map((item, i) => (
             <div
               key={i}
-              className="group relative flex flex-col gap-3.5 overflow-hidden bg-panel p-7 transition duration-300 hover:-translate-y-1 hover:bg-[#0c1220] sm:p-8"
+              className="group relative flex flex-col gap-3.5 overflow-hidden bg-panel p-7 transition duration-300 hover:-translate-y-1 hover:bg-panel-2 sm:p-8"
             >
               <span className="absolute top-[-14px] right-2 font-display text-[82px] leading-none text-white/[0.035]">
                 {String(i + 1).padStart(2, "0")}

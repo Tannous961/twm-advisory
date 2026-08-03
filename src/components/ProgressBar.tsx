@@ -24,22 +24,23 @@ export function ProgressBar() {
       className="pointer-events-none fixed inset-x-0 top-0 z-[60]"
       aria-hidden
     >
-      <div className="h-px w-full bg-white/[0.06]" />
-      <div className="relative h-[3px] w-full overflow-visible bg-[rgba(184,115,51,0.08)]">
+      <div className="h-px w-full" style={{ background: "var(--line)" }} />
+      <div
+        className="relative h-[3px] w-full overflow-visible"
+        style={{ background: "rgb(var(--accent-rgb) / 0.08)" }}
+      >
         <div
-          className="relative h-full origin-left bg-linear-to-r from-[#8a5524] via-accent to-accent-soft transition-[width] duration-150 ease-out"
+          className="relative h-full origin-left transition-[width] duration-150 ease-out"
           style={{
             width: `${progress}%`,
-            boxShadow:
-              "0 0 16px rgba(184,115,51,0.55), 0 0 4px rgba(227,172,108,0.4)",
+            background:
+              "linear-gradient(90deg, rgb(var(--accent-rgb) / 0.55), var(--accent-soft))",
+            boxShadow: "0 0 16px rgb(var(--accent-rgb) / 0.55)",
           }}
         >
           <span
             className="absolute top-1/2 right-0 size-2 -translate-y-1/2 translate-x-1/2 rotate-45 bg-accent-soft"
-            style={{
-              boxShadow: "0 0 10px rgba(227,172,108,0.9)",
-              opacity: progress > 1 ? 1 : 0,
-            }}
+            style={{ opacity: progress > 1 ? 1 : 0 }}
           />
         </div>
       </div>

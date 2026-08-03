@@ -15,7 +15,7 @@ export function Fit() {
         aria-labelledby="fit-title"
         className="mx-auto max-w-7xl px-4 pt-16 sm:px-6 sm:pt-20 lg:px-10 lg:pt-28"
       >
-        <SectionLabel index="05" label={t(c.fit.section)} />
+        <SectionLabel index="04" label={t(c.fit.section)} />
         <h2
           id="fit-title"
           className="mb-10 font-display text-[clamp(1.75rem,6vw,2.875rem)] leading-[1.18] font-normal sm:mb-12"
@@ -34,14 +34,14 @@ export function Fit() {
               {c.fit.yes.map((item, i) => (
                 <li
                   key={i}
-                  className="border-t border-white/8 py-4 text-[15px] leading-[1.65] text-[#dcd8d1]"
+                  className="border-t border-[color:var(--line)] py-4 text-[15px] leading-[1.65] text-fg"
                 >
                   {t(item)}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="bg-[#080c15] p-6 sm:p-9">
+          <div className="bg-panel-2 p-6 sm:p-9">
             <div className="mb-6 flex items-center gap-2.5">
               <span className="size-1.5 rotate-45 bg-muted-3" />
               <span className="font-mono text-[11px] tracking-[0.16em] text-muted-2 uppercase">
@@ -52,7 +52,7 @@ export function Fit() {
               {c.fit.no.map((item, i) => (
                 <li
                   key={i}
-                  className="border-t border-white/7 py-4 text-[15px] leading-[1.65] text-muted"
+                  className="border-t border-[color:var(--line)] py-4 text-[15px] leading-[1.65] text-muted"
                 >
                   {t(item)}
                 </li>

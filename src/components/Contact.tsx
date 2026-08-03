@@ -14,10 +14,25 @@ export function Contact() {
         aria-labelledby="contact-title"
         className="mx-auto mt-16 max-w-7xl px-4 sm:mt-20 sm:px-6 lg:mt-28 lg:px-10"
       >
-        <div className="relative overflow-hidden border-y border-[rgba(184,115,51,.25)] px-4 py-16 text-center sm:px-8 sm:py-24 lg:py-28">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_125%,rgba(184,115,51,.22)_0%,rgba(7,10,17,0)_66%)]" />
+        <div
+          className="relative overflow-hidden border-y px-4 py-16 text-center sm:px-8 sm:py-24 lg:min-h-[70dvh] lg:py-28"
+          style={{ borderColor: "rgb(var(--accent-rgb) / 0.25)" }}
+        >
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse at 50% 125%, rgb(var(--accent-rgb) / 0.22) 0%, transparent 66%)",
+            }}
+          />
           <div className="absolute inset-x-0 top-0 h-px overflow-hidden">
-            <div className="animate-sweep h-full w-full bg-linear-to-r from-transparent via-[rgba(227,172,108,.9)] to-transparent" />
+            <div
+              className="animate-sweep h-full w-full"
+              style={{
+                background:
+                  "linear-gradient(90deg, transparent, var(--accent-soft), transparent)",
+              }}
+            />
           </div>
           <div className="relative">
             <h2

@@ -7,8 +7,8 @@ export const content = {
       en: "TWM Advisory — Agent deployment · Fractional AI leadership",
     },
     description: {
-      fr: "TWM Advisory s'embarque dans vos équipes et déploie des agents en production pour récupérer du temps facturable. Confidentialité respectée. Direction IA à temps partagé pour dirigeants.",
-      en: "TWM Advisory embeds with your teams and deploys agents in production to recover billable time. Confidentiality respected. Fractional AI leadership for executives.",
+      fr: "TWM Advisory s'embarque dans vos équipes et déploie des agents en production pour rendre du temps facturable à vos experts. Confidentialité client respectée. Direction IA à temps partagé.",
+      en: "TWM Advisory embeds with your teams and deploys agents in production to return billable time to your experts. Client confidentiality protected. Fractional AI leadership.",
     },
   },
   nav: {
@@ -20,24 +20,26 @@ export const content = {
     cta: { fr: "Prendre rendez-vous", en: "Book a call" },
     menu: { fr: "Menu", en: "Menu" },
     close: { fr: "Fermer", en: "Close" },
-    useCases: { fr: "Cas d'usage", en: "Use cases" },
   },
   hero: {
     eyebrow: {
       fr: "Pour dirigeants et associés · Cabinets & organisations",
       en: "For executives and partners · Firms & organizations",
     },
-    titleBefore: { fr: "Moins de travail invisible.", en: "Less invisible work." },
+    titleBefore: {
+      fr: "Vos experts facturent le jugement.",
+      en: "Your experts bill for judgment.",
+    },
     titleEm: {
-      fr: "Plus de temps sur ce qui se facture.",
-      en: "More time on what you bill.",
+      fr: "Pas la rédaction, la recherche et l'admin.",
+      en: "Not drafting, research and admin.",
     },
     lead: {
-      fr: "Je m'installe dans vos équipes et je mets en place des agents qui reprennent la rédaction, la recherche, le reporting et l'admin. Vos experts gardent le jugement et la relation client. On avance dans un cadre clair sur les données.",
-      en: "I embed with your teams and set up agents that take on drafting, research, reporting and admin. Your experts keep judgment and the client relationship. We work within a clear data framework.",
+      fr: "Votre firme tourne sur l'expertise et la relation — ni l'une ni l'autre ne se délègue à un modèle. Je m'installe dans vos équipes et je mets des agents sur les offres, la recherche, les drafts et le suivi qui mangent le temps facturable. Vos gens passent plus de journée sur ce que le client paie vraiment.",
+      en: "Your firm runs on expertise and relationships — neither is for sale to a model. I embed with your teams and put agents on the proposals, research, drafts and follow-up that drain billable time. Your people spend more of the day on what clients actually pay for.",
     },
     ctaPrimary: { fr: "Planifier un échange", en: "Book a conversation" },
-    ctaSecondary: { fr: "Voir les cas d'usage", en: "See use cases" },
+    ctaSecondary: { fr: "Voir les offres", en: "See services" },
     note: {
       fr: "Premier échange gratuit. Sans engagement.",
       en: "First conversation free. No commitment.",
@@ -79,25 +81,25 @@ export const content = {
   problem: {
     section: { fr: "Le constat", en: "The situation" },
     title: {
-      fr: "Vos experts facturent le conseil.",
-      en: "Your experts bill for advice.",
+      fr: "Une part importante du travail professionnel",
+      en: "A large share of professional work",
     },
     titleMuted: {
-      fr: "Ils passent encore trop d'heures sur le reste.",
-      en: "They still spend too many hours on everything else.",
+      fr: "ne se facture jamais.",
+      en: "never reaches the bill.",
     },
     items: [
       {
-        fr: "Beaucoup de temps senior part en non-facturable : rédactions, recherche, reporting, suivi client, admin.",
-        en: "A lot of senior time goes to non-billable work: writing, research, reporting, client follow-up, admin.",
+        fr: "Rédaction, recherche, notes de statut, capture de temps, admin : autant d'heures qui tirent vos profils seniors hors du travail client — et qui ne se retrouvent pas toujours en facture.",
+        en: "Drafting, research, status notes, time capture, admin: hours that pull seniors off client work — and often never make it onto the invoice.",
       },
       {
-        fr: "Les outils grand public mettent en jeu la confidentialité client, et peu d'équipes savent ce que ça rapporte vraiment.",
-        en: "Consumer tools put client confidentiality at risk, and few teams know what it actually returns.",
+        fr: "Les outils grand public exposent la confidentialité client. Peu de firmes mesurent réellement le retour. L'avantage, ce n'est pas d'avoir testé ChatGPT : c'est de déployer dans un cadre que le risque peut signer.",
+        en: "Consumer tools expose client confidentiality. Few firms actually track return. The edge isn't having tried ChatGPT — it's deploying in a frame risk can sign off on.",
       },
       {
-        fr: "Personne en interne pour trancher, encadrer et déployer. Le sujet reste une présentation au comité.",
-        en: "No one internal to decide, frame and deploy. The topic stays a board presentation.",
+        fr: "Personne en interne pour trancher, encadrer et mettre en production. Le sujet reste une présentation au comité, pendant que le temps facturable continue de fuir.",
+        en: "No one internal to decide, govern and ship to production. The topic stays a board deck, while billable time keeps leaking.",
       },
     ],
   },
@@ -111,91 +113,36 @@ export const content = {
       en: "I deliver something that runs.",
     },
     body: {
-      fr: "Je m'embarque dans vos équipes, je repère où le temps facturable fuit, et je déploie des agents jusqu'en production. Le cadre data est défini avec vous, pour que risque et conformité puissent signer. Ni PowerPoint à classer, ni outil lâché aux équipes sans règles.",
-      en: "I embed with your teams, I find where billable time leaks, and I deploy agents into production. The data frame is set with you, so risk and compliance can sign off. Not a deck to file, not a tool dropped on teams with no rules.",
+      fr: "Je m'embarque dans vos équipes, je trouve où le temps facturable fuit, et je déploie des agents jusqu'en production. Les bons modèles, dans une posture où le matériel client reste dans un environnement contrôlé — que votre équipe risque peut valider. Ni PowerPoint à classer, ni outil lâché sans règles.",
+      en: "I embed with your teams, find where billable time leaks, and deploy agents into production. The right models, on a posture where client material stays in a controlled environment — one your risk team can sign off on. Not a deck to file, not a tool dropped with no rules.",
     },
     quote: {
-      fr: "Le jugement reste humain. On mesure les heures rendues au facturable.",
-      en: "Judgment stays human. We measure the hours returned to billable work.",
+      fr: "L'IA rédige, recherche, capture et surveille. Le conseil, l'arbitrage et la relation restent humains — c'est la prime que votre firme vend.",
+      en: "AI drafts, researches, captures and monitors. Advice, judgment and the relationship stay human — that's the premium your firm sells.",
     },
     steps: [
       {
         label: { fr: "Étape 01", en: "Step 01" },
-        title: { fr: "Repérer la fuite", en: "Find the leak" },
+        title: { fr: "Repérer la fuite de temps", en: "Find the billable-time drain" },
         body: {
-          fr: "Où vos profils les plus chers perdent du temps — souvent offres, recherche ou reporting — et quel premier cas peut marcher vite.",
-          en: "Where your most expensive people lose time — often proposals, research or reporting — and which first case can work quickly.",
+          fr: "La rédaction, la recherche et l'admin qui sortent vos gens les plus chers du travail client — et où un premier gain sûr peut vivre.",
+          en: "The drafting, research and admin that pull your most expensive people off client work — and where a safe first win lives.",
         },
       },
       {
         label: { fr: "Étape 02", en: "Step 02" },
-        title: { fr: "Déployer", en: "Deploy" },
+        title: { fr: "Installer, encadré", en: "Install it, governed" },
         body: {
-          fr: "Un premier agent en production, avec vos équipes, dans un cadre où les données clients restent contrôlées.",
-          en: "A first agent in production, with your teams, in a frame where client data stays controlled.",
+          fr: "Un premier agent en production, avec vos équipes, dans un cadre où les données confidentielles restent contrôlées et traçables.",
+          en: "A first agent in production, with your teams, in a frame where confidential data stays controlled and traceable.",
         },
       },
       {
         label: { fr: "Étape 03", en: "Step 03" },
-        title: { fr: "Ancrer", en: "Make it stick" },
+        title: { fr: "Former et ancrer", en: "Train and embed" },
         body: {
-          fr: "Adoption, transfert de compétences, mesure des heures récupérées, puis extension.",
-          en: "Adoption, skills transfer, measure hours recovered, then expand.",
-        },
-      },
-    ],
-  },
-  useCases: {
-    section: { fr: "Cas d'usage", en: "Use cases" },
-    title: {
-      fr: "Où ça s'applique dans une firme.",
-      en: "Where this applies in a firm.",
-    },
-    lead: {
-      fr: "On commence là où vos profils les plus chers perdent le plus de temps. Souvent : offres ou recherche.",
-      en: "We start where your most expensive people lose the most time. Often: proposals or research.",
-    },
-    items: [
-      {
-        title: { fr: "Offres et pitches", en: "Proposals and pitches" },
-        body: {
-          fr: "Un premier jet solide à partir de vos réponses gagnantes. Les associés peaufinent la stratégie, pas la mise en page.",
-          en: "A solid first draft from your past winning responses. Partners refine strategy, not formatting.",
-        },
-      },
-      {
-        title: { fr: "Recherche et notes", en: "Research and notes" },
-        body: {
-          fr: "Une première passe structurée qu'un expert corrige. La décision reste chez lui.",
-          en: "A structured first pass for an expert to correct. The decision stays with them.",
-        },
-      },
-      {
-        title: { fr: "Suivi client", en: "Client follow-up" },
-        body: {
-          fr: "Points de statut et relances prêts à envoyer, à partir des réunions et du dossier.",
-          en: "Status notes and follow-ups ready to send, from meetings and the file.",
-        },
-      },
-      {
-        title: { fr: "Base de connaissances", en: "Knowledge base" },
-        body: {
-          fr: "Retrouver rapidement le bon travail passé dans vos propres archives.",
-          en: "Quickly find the right prior work in your own archives.",
-        },
-      },
-      {
-        title: { fr: "Revue de documents", en: "Document review" },
-        body: {
-          fr: "Repérer risques, clauses manquantes et écarts aux standards. Le reviewer tranche.",
-          en: "Flag risks, missing clauses and deviations from standards. The reviewer decides.",
-        },
-      },
-      {
-        title: { fr: "Reporting", en: "Reporting" },
-        body: {
-          fr: "Synthèses et alertes sur la santé des dossiers, avant que le retard ne coûte cher.",
-          en: "Summaries and alerts on matter health, before delays get expensive.",
+          fr: "Chaque rôle apprend où l'IA entre dans son vrai travail. On mesure les heures rendues au facturable, puis on étend.",
+          en: "Each role learns where AI fits their real work. We measure hours returned to billable use, then expand.",
         },
       },
     ],
@@ -213,8 +160,8 @@ export const content = {
           en: "Diagnostic",
         },
         body: {
-          fr: "Cartographie du temps non-facturable, priorisation, et identification d'un premier cas concret.",
-          en: "Map non-billable time, prioritize, and identify a concrete first case.",
+          fr: "Cartographie du temps non-facturable, priorisation des fuites, et identification d'un premier cas sûr — là où un gain rapide peut vivre sans mettre le risque en jeu.",
+          en: "Map non-billable time, prioritize leaks, and identify a safe first case — where a quick win can live without putting risk on the line.",
         },
         meta: {
           fr: "Livrable : feuille de route chiffrée",
@@ -227,8 +174,8 @@ export const content = {
           en: "Agent deployment",
         },
         body: {
-          fr: "Un ou plusieurs agents en production — offres, recherche, reporting, ops — avec cadre data et adoption.",
-          en: "One or more agents in production — proposals, research, reporting, ops — with data frame and adoption.",
+          fr: "Un ou plusieurs agents en production — offres, recherche, reporting, ops — avec cadre data, adoption métier, et mesure des heures rendues au facturable.",
+          en: "One or more agents in production — proposals, research, reporting, ops — with data frame, role adoption, and measured hours returned to billable use.",
         },
         meta: {
           fr: "Livrable : agents en production",
@@ -241,8 +188,8 @@ export const content = {
           en: "Fractional AI leadership",
         },
         body: {
-          fr: "Quelqu'un à la barre sans recruter un poste à plein temps : cadre, feuille de route, arbitrages, exécution.",
-          en: "Someone at the helm without a full-time hire: frame, roadmap, decisions, execution.",
+          fr: "Quelqu'un à la barre sans recruter un poste à plein temps : cadre, feuille de route, arbitrages, exécution jusqu'à la production.",
+          en: "Someone at the helm without a full-time hire: frame, roadmap, decisions, execution through production.",
         },
         meta: {
           fr: "Format : à temps partagé ou interim",
@@ -261,8 +208,8 @@ export const content = {
       en: "Need someone at the helm, without the full-time seat?",
     },
     body: {
-      fr: "Quand le comité veut du concret en production, je prends la direction en interim ou à temps partagé. Direction digitale, DSI, COO, ou direction IA. J'ai dirigé 120 personnes et un centre de profit : je sais opérer, pas seulement conseiller.",
-      en: "When the board wants something live in production, I take the lead interim or part-time. Digital leadership, CIO, COO, or AI leadership. I've led 120 people and a profit center: I know how to operate, not just advise.",
+      fr: "Quand le comité veut du concret en production — pas une autre étude — je prends la direction en interim ou à temps partagé. Direction digitale, DSI, COO, ou direction IA. J'ai dirigé 120 personnes et un centre de profit : je sais opérer, pas seulement conseiller.",
+      en: "When the board wants something live in production — not another study — I take the lead interim or part-time. Digital leadership, CIO, COO, or AI leadership. I've led 120 people and a profit center: I know how to operate, not just advise.",
     },
     items: [
       {
@@ -274,8 +221,8 @@ export const content = {
         en: "A data and usage frame to set before risk shows up.",
       },
       {
-        fr: "Un projet critique qui a besoin d'un opérateur, pas d'un cabinet.",
-        en: "A critical project that needs an operator, not a consulting firm.",
+        fr: "Un projet critique qui a besoin d'un opérateur, pas d'un cabinet de slides.",
+        en: "A critical project that needs an operator, not a slide factory.",
       },
     ],
   },
@@ -289,30 +236,30 @@ export const content = {
     noTitle: { fr: "Non, si", en: "No, if" },
     yes: [
       {
-        fr: "Vous dirigez un cabinet, une firme de conseil, une expertise comptable ou une organisation où le jugement se facture.",
-        en: "You lead a law firm, consulting firm, accounting practice or organization where judgment is what you bill.",
+        fr: "Vous dirigez un cabinet, une firme de conseil, une expertise comptable, une ingénierie ou une organisation où le jugement se facture.",
+        en: "You lead a consulting, accounting, engineering, law firm — or any organization where judgment is what you bill.",
       },
       {
-        fr: "Vos profils facturables passent trop d'heures en rédaction et admin.",
-        en: "Your billable people spend too many hours writing and on admin.",
+        fr: "Vos profils facturables passent encore trop d'heures en rédaction, recherche et admin.",
+        en: "Your billable people still spend hours on drafting, research and admin.",
       },
       {
-        fr: "Vous voulez avancer sans exposer la confiance client.",
-        en: "You want to move forward without putting client trust at risk.",
+        fr: "Vous voulez protéger la confiance client tout en allant plus vite.",
+        en: "You want to protect client trust while moving faster.",
       },
     ],
     no: [
       {
-        fr: "Vous cherchez un outil qui décide à la place de vos experts.",
-        en: "You're looking for a tool that decides instead of your experts.",
+        fr: "Vous voulez que l'IA prenne l'arbitrage professionnel ou donne un conseil non relu.",
+        en: "You want AI making the professional judgment call or giving unreviewed advice.",
       },
       {
-        fr: "Vous êtes prêt à coller des données clients dans n'importe quel outil grand public.",
-        en: "You're fine pasting client data into any consumer tool.",
+        fr: "Vous seriez prêt à faire passer du matériel client privilégié dans des outils non encadrés.",
+        en: "You'd put privileged client material through ungoverned tools.",
       },
       {
-        fr: "Vous ne voulez rien changer dans la façon de produire le travail.",
-        en: "You don't want to change how work gets produced.",
+        fr: "Vous n'êtes pas prêt à changer la façon dont le travail est produit.",
+        en: "You're not willing to change how the work gets produced.",
       },
     ],
   },
@@ -327,8 +274,8 @@ export const content = {
       en: "I bring a network when needed.",
     },
     body: {
-      fr: "Quand le besoin dépasse ce que je peux porter seul, j'active des partenaires tech, intégration et métier, et je pilote le tout. Vous gagnez de la capacité d'exécution.",
-      en: "When the need goes beyond what I can carry alone, I bring in tech, integration and domain partners, and I run the whole thing. You get execution capacity.",
+      fr: "Quand le besoin dépasse ce que je peux porter seul, j'active des partenaires tech, intégration et métier, et je pilote le tout. Vous gagnez de la capacité d'exécution — pas une liste de sous-traitants à coordonner.",
+      en: "When the need goes beyond what I can carry alone, I bring in tech, integration and domain partners, and I run the whole thing. You get execution capacity — not a vendor list to coordinate.",
     },
   },
   watch: {
@@ -338,8 +285,8 @@ export const content = {
       en: "The market moves fast. I filter it for you.",
     },
     body: {
-      fr: "Je suis les modèles, les agents et les outils. Je teste avant de recommander. Vous gardez l'essentiel sans y passer vos nuits.",
-      en: "I track models, agents and tools. I test before I recommend. You get what matters without the late nights.",
+      fr: "Je suis les modèles, les agents et les outils. Je teste avant de recommander. Vous gardez le signal utile — sans y passer vos nuits, ni coller du client dans le dernier gadget à la mode.",
+      en: "I track models, agents and tools. I test before I recommend. You get useful signal — without the late nights, or pasting clients into the latest gadget.",
     },
   },
   infrastructure: {
@@ -353,8 +300,8 @@ export const content = {
       en: "Me: relationships and decisions.",
     },
     body: {
-      fr: "TWM Advisory fonctionne comme une organisation complète. Chaque agent a un rôle précis. Résultat : mon temps reste sur les échanges dirigeants, la confiance et les arbitrages.",
-      en: "TWM Advisory runs like a full organization. Each agent has a clear role. So my time stays on executive conversations, trust and decisions.",
+      fr: "TWM Advisory fonctionne comme une organisation complète. Chaque agent a un rôle précis. Résultat : mon temps reste sur les échanges dirigeants, la confiance et les arbitrages — exactement ce que je vous aide à protéger chez vous.",
+      en: "TWM Advisory runs like a full organization. Each agent has a clear role. So my time stays on executive conversations, trust and decisions — exactly what I help you protect in your firm.",
     },
     humanLabel: { fr: "Humain", en: "Human" },
     humanRole: {
@@ -500,8 +447,8 @@ export const content = {
       en: "An operator, not a tech vendor.",
     },
     p1: {
-      fr: "17 ans à construire des mécaniques business et à diriger des organisations. Je parle chiffres, risque et exécution parce que je les ai portés.",
-      en: "17 years building business engines and leading organizations. I speak numbers, risk and execution because I've carried them.",
+      fr: "17 ans à construire des mécaniques business et à diriger des organisations. Je parle chiffres, risque et exécution parce que je les ai portés — pas parce qu'ils figurent sur une slide.",
+      en: "17 years building business engines and leading organizations. I speak numbers, risk and execution because I've carried them — not because they sit on a slide.",
     },
     p2: {
       fr: "Trilingue — français, anglais, arabe. Je relie vision, ops et terrain.",
@@ -534,12 +481,22 @@ export const content = {
     items: [
       {
         q: {
+          fr: "Par où commencer dans une firme ?",
+          en: "What's the best first use in a firm?",
+        },
+        a: {
+          fr: "Offres ou recherche. Les deux consomment des heures seniors sur de la rédaction à faible jugement : le retour est immédiat, et l'expert garde la propriété du livrable.",
+          en: "Proposals or research. Both consume senior hours on low-judgment drafting: return is immediate, and the expert keeps ownership of the output.",
+        },
+      },
+      {
+        q: {
           fr: "Est-ce que ça remplace nos experts ?",
           en: "Does this replace our experts?",
         },
         a: {
-          fr: "Non. Ça reprend le travail autour du jugement : rédactions, synthèses, recherche, relances. Le conseil et la relation client restent humains. C'est ce que vous facturez.",
-          en: "No. It takes the work around judgment: writing, summaries, research, follow-ups. Advice and the client relationship stay human. That's what you bill.",
+          fr: "Non. Ça retire le travail de bureau autour du jugement — rédaction, synthèses, recherche, relances. Le conseil, l'arbitrage et la relation restent humains. Une firme qui s'en sert bien facture son expertise, pas sa frappe.",
+          en: "No. It removes the desk work around expert judgment — drafting, summarizing, research, follow-ups. Advice, the call and the relationship stay human. Firms that use it well bill their expertise, not their typing.",
         },
       },
       {
@@ -555,21 +512,11 @@ export const content = {
       {
         q: {
           fr: "Nos données clients sont-elles protégées ?",
-          en: "Is client data protected?",
+          en: "Is it safe with client-confidential information?",
         },
         a: {
-          fr: "Oui. NDA, règles claires, pas d'entraînement de modèles publics sur votre patrimoine. On évite surtout le collage dans des outils grand public.",
-          en: "Yes. NDA, clear rules, no training public models on your assets. Above all, we avoid pasting into consumer tools.",
-        },
-      },
-      {
-        q: {
-          fr: "Par où commencer, et en combien de temps ?",
-          en: "Where do we start, and how long?",
-        },
-        a: {
-          fr: "Souvent offres ou recherche : beaucoup de temps senior, peu de jugement dans la rédaction. Un premier agent utile en quelques semaines après le diagnostic, selon le cas.",
-          en: "Often proposals or research: lots of senior time, little judgment in the writing. A first useful agent within a few weeks after the diagnostic, case by case.",
+          fr: "Uniquement dans un environnement encadré : accès contrôlés, pas d'entraînement de modèles publics sur vos entrées. Le vrai risque, c'est le collage dans des outils grand public — un déploiement géré et une politique claire le retirent.",
+          en: "Only inside a governed environment: controlled access, no training public models on your inputs. The real risk is staff pasting into consumer tools — a managed rollout and clear policy remove that.",
         },
       },
       {
@@ -596,16 +543,16 @@ export const content = {
   },
   contact: {
     title: {
-      fr: "Parlons de ce qui vous fait perdre du temps.",
-      en: "Let's talk about what's wasting your time.",
+      fr: "Le moyen le plus rapide de savoir si on est faits pour travailler ensemble,",
+      en: "The fastest way to know whether we're the right fit,",
     },
     titleEm: {
-      fr: "",
-      en: "",
+      fr: "c'est un échange.",
+      en: "is a conversation.",
     },
     lead: {
-      fr: "30 minutes. Gratuit. On regarde les fuites de temps, le cadre data et un premier cas concret.",
-      en: "30 minutes. Free. We look at time leaks, the data frame and a concrete first case.",
+      fr: "30 minutes. Gratuit. On regarde les fuites de temps, le cadre data, et un premier cas concret — souvent offres ou recherche.",
+      en: "30 minutes. Free. We look at time leaks, the data frame, and a concrete first case — often proposals or research.",
     },
     cta: { fr: "Planifier un échange", en: "Book a conversation" },
     note: {

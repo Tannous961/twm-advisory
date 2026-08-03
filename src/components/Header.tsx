@@ -5,7 +5,6 @@ import { useI18n, useT } from "@/lib/i18n";
 
 const links = [
   { href: "#approche", key: "approach" as const },
-  { href: "#cas-usage", key: "useCases" as const },
   { href: "#offres", key: "offers" as const },
   { href: "#fit", key: "who" as const },
   { href: "#a-propos", key: "about" as const },
@@ -24,10 +23,16 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/6 bg-[rgba(7,10,17,.88)] backdrop-blur-2xl">
+    <header
+      className="sticky top-0 z-50 border-b backdrop-blur-2xl"
+      style={{
+        borderColor: "var(--line)",
+        background: "color-mix(in srgb, var(--bg) 88%, transparent)",
+      }}
+    >
       <nav
         aria-label="Navigation principale"
-        className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3.5 sm:px-6 lg:px-10"
+        className="content-wrap flex items-center justify-between gap-3 py-3.5"
       >
         <a href="#top" className="flex items-center gap-2.5 whitespace-nowrap !text-fg">
           <span className="flex size-[26px] items-center justify-center border border-accent font-mono text-[11px] !text-accent">
@@ -38,12 +43,12 @@ export function Header() {
           </span>
         </a>
 
-        <div className="hidden items-center gap-7 font-mono text-[11px] tracking-[0.14em] text-[#8a93a6] uppercase lg:flex">
+        <div className="hidden items-center gap-7 font-mono text-[11px] tracking-[0.14em] text-muted-2 uppercase lg:flex">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-[#8a93a6] transition-colors hover:text-fg"
+              className="text-muted-2 transition-colors hover:text-fg"
             >
               {t(c.nav[link.key])}
             </a>
@@ -51,7 +56,7 @@ export function Header() {
         </div>
 
         <div className="flex items-center gap-2 sm:gap-3">
-          <div className="flex items-center border border-white/15 font-mono text-[11px] tracking-[0.1em]">
+          <div className="flex items-center border border-[color:var(--line)] font-mono text-[11px] tracking-[0.1em]">
             {(["fr", "en"] as const).map((code) => {
               const on = lang === code;
               return (
@@ -62,7 +67,7 @@ export function Header() {
                   className="cursor-pointer px-2.5 py-1.5 uppercase transition-colors sm:px-3"
                   style={{
                     background: on ? "var(--accent)" : "transparent",
-                    color: on ? "#070a11" : "#8a93a6",
+                    color: on ? "var(--ink)" : "var(--muted-2)",
                   }}
                 >
                   {code}

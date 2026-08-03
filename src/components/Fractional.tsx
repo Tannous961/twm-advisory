@@ -9,9 +9,21 @@ export function Fractional() {
 
   return (
     <Reveal>
-      <section className="mx-auto max-w-7xl px-4 pt-16 sm:px-6 sm:pt-20 lg:px-10 lg:pt-28">
-        <div className="relative grid overflow-hidden border border-[rgba(184,115,51,.2)] bg-[linear-gradient(135deg,rgba(184,115,51,.10)_0%,rgba(255,255,255,.015)_58%)] p-6 sm:p-10 lg:grid-cols-2 lg:gap-12 lg:p-12">
-          <div className="pointer-events-none absolute -top-20 -left-14 size-80 rounded-full bg-[radial-gradient(circle,rgba(184,115,51,.14)_0%,rgba(7,10,17,0)_70%)]" />
+      <section className="content-wrap section-pad pt-16! sm:pt-20! lg:pt-28!">
+        <div
+          className="relative grid overflow-hidden border p-6 sm:p-10 lg:grid-cols-2 lg:gap-12 lg:p-12"
+          style={{
+            borderColor: "rgb(var(--accent-rgb) / 0.2)",
+            background:
+              "linear-gradient(135deg, rgb(var(--accent-rgb) / 0.1) 0%, rgb(255 255 255 / 0.015) 58%)",
+          }}
+        >
+          <div
+            className="pointer-events-none absolute -top-20 -left-14 size-80 rounded-full"
+            style={{
+              background: "radial-gradient(circle, var(--glow) 0%, transparent 70%)",
+            }}
+          />
           <div className="relative">
             <div className="mb-5 flex items-start gap-2.5">
               <span className="mt-1.5 size-1.5 shrink-0 rotate-45 bg-accent" />
@@ -30,9 +42,9 @@ export function Fractional() {
             {c.fractional.items.map((item, i) => (
               <div
                 key={i}
-                className={`flex gap-3.5 py-5 text-[15px] leading-relaxed text-[#dcd8d1] ${
+                className={`flex gap-3.5 py-5 text-[15px] leading-relaxed text-fg ${
                   i < c.fractional.items.length - 1
-                    ? "border-b border-white/9"
+                    ? "border-b border-[color:var(--line)]"
                     : ""
                 }`}
               >

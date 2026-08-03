@@ -14,32 +14,32 @@ import { Partners } from "@/components/Partners";
 import { Problem } from "@/components/Problem";
 import { ProgressBar } from "@/components/ProgressBar";
 import { Stats } from "@/components/Stats";
-import { UseCases } from "@/components/UseCases";
 import { Watch } from "@/components/Watch";
 import { buildJsonLd } from "@/lib/seo";
 
 export default function HomePage() {
   return (
-    <div className="relative overflow-x-hidden">
+    <div className="page-shell relative overflow-x-hidden">
       <JsonLd data={buildJsonLd()} />
       <ProgressBar />
       <div
-        className="pointer-events-none absolute inset-0 z-0 mx-auto hidden max-w-7xl grid-cols-4 px-10 lg:grid"
+        className="pointer-events-none absolute inset-0 z-0 hidden lg:block"
         aria-hidden
       >
-        <div className="border-l border-white/[0.035]" />
-        <div className="border-l border-white/[0.035]" />
-        <div className="border-l border-white/[0.035]" />
-        <div className="border-x border-white/[0.035]" />
+        <div className="content-wrap grid h-full grid-cols-4">
+          <div className="border-l border-[color:var(--line)] opacity-40" />
+          <div className="border-l border-[color:var(--line)] opacity-40" />
+          <div className="border-l border-[color:var(--line)] opacity-40" />
+          <div className="border-x border-[color:var(--line)] opacity-40" />
+        </div>
       </div>
       <div className="relative z-1">
         <Header />
-        <main id="contenu">
+        <main className="w-full">
           <Hero />
           <Stats />
           <Problem />
           <Approach />
-          <UseCases />
           <Offers />
           <Fractional />
           <Fit />

@@ -15,7 +15,7 @@ export function FAQ() {
         aria-labelledby="faq-title"
         className="mx-auto max-w-3xl px-4 pt-16 sm:px-6 sm:pt-20 lg:px-10 lg:pt-28"
       >
-        <SectionLabel index="10" label="FAQ" />
+        <SectionLabel index="09" label="FAQ" />
         <h2
           id="faq-title"
           className="mb-9 font-display text-[clamp(1.75rem,6vw,2.875rem)] leading-[1.18] font-normal sm:mb-11"

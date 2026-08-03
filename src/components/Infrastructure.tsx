@@ -15,7 +15,7 @@ export function Infrastructure() {
         aria-labelledby="infra-title"
         className="mx-auto max-w-7xl px-4 pt-16 sm:px-6 sm:pt-20 lg:px-10 lg:pt-28"
       >
-        <SectionLabel index="06" label={t(c.infrastructure.section)} />
+        <SectionLabel index="05" label={t(c.infrastructure.section)} />
         <div className="grid items-start gap-6 lg:grid-cols-2 lg:gap-14">
           <h2
             id="infra-title"
@@ -33,7 +33,14 @@ export function Infrastructure() {
         {/* Org chart */}
         <div className="mt-10 flex flex-col items-stretch gap-3 sm:mt-12 sm:gap-4">
           {/* Human */}
-          <div className="mx-auto w-full max-w-md border border-accent/40 bg-[linear-gradient(150deg,rgba(184,115,51,.14)_0%,rgba(8,12,21,1)_70%)] px-5 py-4 text-center sm:px-6 sm:py-5">
+          <div
+            className="mx-auto w-full max-w-md border px-5 py-4 text-center sm:px-6 sm:py-5"
+            style={{
+              borderColor: "rgb(var(--accent-rgb) / 0.4)",
+              background:
+                "linear-gradient(150deg, rgb(var(--accent-rgb) / 0.14) 0%, var(--panel) 70%)",
+            }}
+          >
             <div className="font-mono text-[10px] tracking-[0.18em] text-accent uppercase">
               {t(c.infrastructure.humanLabel)}
             </div>
@@ -96,7 +103,7 @@ export function Infrastructure() {
           </div>
         </div>
 
-        <p className="mt-6 border-l-2 border-accent bg-[rgba(184,115,51,.06)] px-5 py-4 text-[15px] leading-[1.7] text-[#c3c8d2]">
+        <p className="surface-accent mt-6 px-5 py-4 text-[15px] leading-[1.7] text-muted">
           {t(c.infrastructure.closing)}
         </p>
       </section>

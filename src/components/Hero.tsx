@@ -11,9 +11,16 @@ export function Hero() {
     <section
       id="top"
       aria-labelledby="hero-title"
-      className="relative mx-auto max-w-7xl px-4 pt-10 pb-12 sm:px-6 sm:pt-14 sm:pb-16 lg:px-10 lg:pt-18 lg:pb-20"
+      className="relative flex min-h-[100dvh] w-full items-center"
     >
-      <div className="pointer-events-none absolute -top-24 -right-16 size-[420px] rounded-full bg-[radial-gradient(circle,rgba(184,115,51,.14)_0%,rgba(7,10,17,0)_68%)] sm:size-[560px] lg:size-[660px]" />
+      <div className="content-wrap relative w-full py-10 sm:py-14 lg:py-16">
+      <div
+        className="pointer-events-none absolute -top-24 -right-16 size-[420px] rounded-full sm:size-[560px] lg:size-[660px]"
+        style={{
+          background:
+            "radial-gradient(circle, var(--glow) 0%, transparent 68%)",
+        }}
+      />
 
       <div className="relative grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
         <div>
@@ -55,7 +62,7 @@ export function Hero() {
               {t(c.hero.ctaPrimary)}
             </a>
             <a
-              href="#cas-usage"
+              href="#offres"
               className="btn-secondary px-6 py-3.5 text-center text-[15px] sm:px-7 sm:py-4"
             >
               {t(c.hero.ctaSecondary)}
@@ -74,13 +81,38 @@ export function Hero() {
           className="animate-rise relative mx-auto flex min-h-[340px] w-full max-w-md items-center justify-center sm:min-h-[420px] lg:max-w-none lg:min-h-[490px]"
           style={{ animationDelay: "0.25s" }}
         >
-          <div className="animate-halo absolute aspect-square w-[92%] max-w-[470px] rounded-full bg-[radial-gradient(circle,rgba(184,115,51,.33)_0%,rgba(184,115,51,.07)_52%,rgba(7,10,17,0)_72%)] blur-xl" />
-          <div className="animate-spin-rev-slow absolute aspect-square w-[90%] max-w-[440px] rounded-full border border-dashed border-[rgba(184,115,51,.18)]" />
-          <div className="animate-spin-rev absolute aspect-square w-[84%] max-w-[408px] rounded-full border border-[rgba(184,115,51,.2)]">
-            <span className="absolute top-[-3px] left-1/2 size-1.5 -translate-x-1/2 rounded-full bg-[rgba(184,115,51,.9)] shadow-[0_0_10px_rgba(184,115,51,.9)]" />
+          <div
+            className="animate-halo absolute aspect-square w-[92%] max-w-[470px] rounded-full blur-xl"
+            style={{
+              background:
+                "radial-gradient(circle, rgb(var(--accent-rgb) / 0.33) 0%, rgb(var(--accent-rgb) / 0.07) 52%, transparent 72%)",
+            }}
+          />
+          <div
+            className="animate-spin-rev-slow absolute aspect-square w-[90%] max-w-[440px] rounded-full border border-dashed"
+            style={{ borderColor: "rgb(var(--accent-rgb) / 0.18)" }}
+          />
+          <div
+            className="animate-spin-rev absolute aspect-square w-[84%] max-w-[408px] rounded-full border"
+            style={{ borderColor: "rgb(var(--accent-rgb) / 0.2)" }}
+          >
+            <span
+              className="absolute top-[-3px] left-1/2 size-1.5 -translate-x-1/2 rounded-full"
+              style={{
+                background: "rgb(var(--accent-rgb) / 0.9)",
+                boxShadow: "0 0 10px rgb(var(--accent-rgb) / 0.9)",
+              }}
+            />
           </div>
-          <div className="animate-spin-slow absolute aspect-square w-[78%] max-w-[376px] rounded-full border border-[rgba(184,115,51,.5)] shadow-[0_0_70px_rgba(184,115,51,.2),inset_0_0_70px_rgba(184,115,51,.08)]">
-            <span className="absolute right-9 bottom-2 size-1.5 rounded-full bg-accent-soft shadow-[0_0_14px_rgba(227,172,108,.95)]" />
+          <div
+            className="animate-spin-slow absolute aspect-square w-[78%] max-w-[376px] rounded-full border"
+            style={{
+              borderColor: "rgb(var(--accent-rgb) / 0.5)",
+              boxShadow:
+                "0 0 70px rgb(var(--accent-rgb) / 0.2), inset 0 0 70px rgb(var(--accent-rgb) / 0.08)",
+            }}
+          >
+            <span className="absolute right-9 bottom-2 size-1.5 rounded-full bg-accent-soft" />
           </div>
 
           <div className="relative aspect-square w-[68%] max-w-[324px] overflow-hidden rounded-full border border-white/10">
@@ -118,6 +150,7 @@ export function Hero() {
             <p className="mt-2 text-xs text-muted-2">{t(c.hero.terrainSub)}</p>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

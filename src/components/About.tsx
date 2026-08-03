@@ -34,7 +34,7 @@ export function About() {
           </div>
 
           <div>
-            <SectionLabel index="07" label={t(c.about.section)} />
+            <SectionLabel index="06" label={t(c.about.section)} />
             <h2 className="mb-6 font-display text-[clamp(1.75rem,6vw,2.875rem)] leading-[1.18] font-normal">
               {t(c.about.title)}
             </h2>

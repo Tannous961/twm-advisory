@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono, Playfair_Display } from "next/font/google";
+import Script from "next/script";
 import { Providers } from "@/components/Providers";
 import { buildMetadata } from "@/lib/seo";
+import { THEME_INIT_SCRIPT } from "@/lib/theme-init";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -49,13 +51,12 @@ export default function RootLayout({
       lang="fr"
       className={`${playfair.variable} ${inter.variable} ${jetbrains.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-bg font-sans text-fg">
-        <a
-          href="#contenu"
-          className="absolute top-3 left-3 z-[100] -translate-y-[120%] bg-accent px-4 py-2 text-sm font-semibold text-ink transition focus:translate-y-0 focus:outline-none"
-        >
-          Aller au contenu
-        </a>
+      <body className="min-h-dvh bg-bg font-sans text-fg">
+        <Script
+          id="twm-theme-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }}
+        />
         <Providers>{children}</Providers>
       </body>
     </html>
