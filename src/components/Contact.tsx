@@ -50,7 +50,7 @@ export function Contact() {
             <p className="mb-8 text-[16px] text-muted sm:mb-9 sm:text-[17px]">
               {t(c.contact.lead)}
             </p>
-            <a href="#" className="btn-primary px-8 py-4 text-base">
+            <a href="mailto:hello@twmadvisory.com" className="btn-primary rounded-full px-8 py-4 text-base">
               {t(c.contact.cta)}
             </a>
             <p className="mt-5 font-mono text-[11px] tracking-[0.08em] text-[#4c5468]">

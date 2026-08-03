@@ -12,14 +12,144 @@ export const content = {
     },
   },
   nav: {
+    home: { fr: "Accueil", en: "Home" },
     approach: { fr: "Approche", en: "Approach" },
     offers: { fr: "Offres", en: "Services" },
+    architecture: { fr: "Architecture", en: "Architecture" },
     partners: { fr: "Partenaires", en: "Partners" },
     who: { fr: "Pour qui", en: "Who it's for" },
     about: { fr: "À propos", en: "About" },
+    faq: { fr: "FAQ", en: "FAQ" },
+    contact: { fr: "Contact", en: "Contact" },
     cta: { fr: "Prendre rendez-vous", en: "Book a call" },
     menu: { fr: "Menu", en: "Menu" },
     close: { fr: "Fermer", en: "Close" },
+  },
+  audience: {
+    title: { fr: "TWM pour", en: "TWM for" },
+    items: [
+      {
+        title: { fr: "Cabinets & avocats", en: "Law firms" },
+        body: {
+          fr: "Offres, recherche et suivi client sans exposer le secret professionnel.",
+          en: "Proposals, research and client follow-up without exposing privilege.",
+        },
+      },
+      {
+        title: { fr: "Conseil & audit", en: "Consulting & audit" },
+        body: {
+          fr: "Rendre du temps facturable aux seniors — drafts, notes, reporting.",
+          en: "Return billable time to seniors — drafts, notes, reporting.",
+        },
+      },
+      {
+        title: { fr: "Expertise comptable", en: "Accounting firms" },
+        body: {
+          fr: "Synthèses, dossiers et relances cadrés, experts qui tranchent.",
+          en: "Summaries, files and follow-ups framed — experts still decide.",
+        },
+      },
+      {
+        title: { fr: "Directions générales", en: "Executive teams" },
+        body: {
+          fr: "Direction IA à temps partagé quand le comité veut du concret.",
+          en: "Fractional AI leadership when the board wants something live.",
+        },
+      },
+      {
+        title: { fr: "Organisations opérationnelles", en: "Operating organizations" },
+        body: {
+          fr: "Agents en production sur le travail invisible autour du métier.",
+          en: "Agents in production on the invisible work around the craft.",
+        },
+      },
+    ],
+  },
+  pages: {
+    approach: {
+      title: { fr: "Approche", en: "Approach" },
+      lead: {
+        fr: "Je m'embarque, je trouve la fuite de temps, je déploie — jusqu'à la production.",
+        en: "I embed, find the time leak, deploy — through production.",
+      },
+    },
+    offers: {
+      title: { fr: "Offres", en: "Services" },
+      lead: {
+        fr: "Trois façons de travailler ensemble, du diagnostic à la direction à temps partagé.",
+        en: "Three ways to work together, from diagnostic to fractional leadership.",
+      },
+    },
+    architecture: {
+      title: { fr: "Architecture", en: "Architecture" },
+      lead: {
+        fr: "15 agents organisés comme une entreprise. Moi : la relation et les décisions.",
+        en: "15 agents organized like a firm. Me: relationships and decisions.",
+      },
+    },
+    about: {
+      title: { fr: "À propos", en: "About" },
+      lead: {
+        fr: "Un opérateur terrain — pas un vendeur de techno.",
+        en: "A field operator — not a tech vendor.",
+      },
+    },
+    faq: {
+      title: { fr: "FAQ", en: "FAQ" },
+      lead: {
+        fr: "Les questions que posent les dirigeants avant de démarrer.",
+        en: "The questions executives ask before starting.",
+      },
+    },
+    contact: {
+      title: { fr: "Contact", en: "Contact" },
+      lead: {
+        fr: "30 minutes. Gratuit. On regarde un premier cas concret.",
+        en: "30 minutes. Free. We look at a concrete first case.",
+      },
+    },
+  },
+  home: {
+    featuresEyebrow: { fr: "Ce que je déploie", en: "What I deploy" },
+    featuresTitle: {
+      fr: "Du diagnostic à la production,",
+      en: "From diagnostic to production,",
+    },
+    featuresTitleEm: {
+      fr: "sans laisser un PowerPoint derrière.",
+      en: "without leaving a deck behind.",
+    },
+    archTeaser: {
+      fr: "Voir l'architecture 15 agents",
+      en: "See the 15-agent architecture",
+    },
+    faqTeaser: { fr: "Voir toutes les questions", en: "See all questions" },
+    ctaBandTitle: {
+      fr: "Là où la clarté devient du progrès.",
+      en: "Where clarity becomes progress.",
+    },
+    ctaBandBody: {
+      fr: "Le moyen le plus rapide de savoir si on est faits pour travailler ensemble, c'est un échange.",
+      en: "The fastest way to know whether we're the right fit is a conversation.",
+    },
+    marquee: {
+      fr: [
+        "Agents en production",
+        "Temps facturable",
+        "Cadre data",
+        "Direction IA",
+        "Forward deployed",
+        "Confidentialité client",
+      ],
+      en: [
+        "Agents in production",
+        "Billable time",
+        "Data framework",
+        "AI leadership",
+        "Forward deployed",
+        "Client confidentiality",
+      ],
+    },
   },
   hero: {
     eyebrow: {

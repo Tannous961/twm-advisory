@@ -156,16 +156,19 @@ a:hover {
   color: var(--ink) !important;
   font-weight: 600;
   border: 1px solid var(--accent);
+  border-radius: 999px;
   transition:
     background var(--dur-fast) ease,
     border-color var(--dur-fast) ease,
-    color var(--dur-fast) ease;
+    color var(--dur-fast) ease,
+    transform var(--dur-fast) ease;
 }
 
 .btn-primary:hover {
   background: var(--accent-soft);
   border-color: var(--accent-soft);
   color: var(--ink) !important;
+  transform: translateY(-1px);
 }
 
 .btn-secondary {
@@ -174,16 +177,39 @@ a:hover {
   color: var(--fg) !important;
   font-weight: 500;
   border: 1px solid rgb(var(--accent-rgb) / 0.35);
+  border-radius: 999px;
   transition:
     border-color var(--dur-fast) ease,
     color var(--dur-fast) ease,
-    background var(--dur-fast) ease;
+    background var(--dur-fast) ease,
+    transform var(--dur-fast) ease;
 }
 
 .btn-secondary:hover {
   border-color: var(--accent-soft);
   color: var(--accent-soft) !important;
   background: rgb(var(--accent-rgb) / 0.08);
+  transform: translateY(-1px);
+}
+
+.glass-card {
+  background: color-mix(in srgb, var(--panel) 88%, transparent);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+}
+
+.marquee-track {
+  animation: twm-marquee 32s linear infinite;
+}
+
+.audience-rail {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.audience-rail::-webkit-scrollbar {
+  display: none;
 }
 
 .surface-panel {
@@ -264,6 +290,15 @@ a:hover {
   to {
     opacity: 1;
     transform: none;
+  }
+}
+
+@keyframes twm-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
 

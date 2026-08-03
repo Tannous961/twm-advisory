@@ -1,19 +1,24 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useI18n, useT } from "@/lib/i18n";
 
 const links = [
-  { href: "#approche", key: "approach" as const },
-  { href: "#offres", key: "offers" as const },
-  { href: "#fit", key: "who" as const },
-  { href: "#a-propos", key: "about" as const },
+  { href: "/approche", key: "approach" as const },
+  { href: "/offres", key: "offers" as const },
+  { href: "/architecture", key: "architecture" as const },
+  { href: "/a-propos", key: "about" as const },
+  { href: "/faq", key: "faq" as const },
 ];
 
 export function Header() {
   const { lang, setLang, c } = useI18n();
   const t = useT();
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -22,41 +27,62 @@ export function Header() {
     };
   }, [open]);
 
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <header
-      className="sticky top-0 z-50 border-b backdrop-blur-2xl"
+      className={`sticky top-0 z-50 transition-[background,border-color,backdrop-filter] duration-300 ${
+        scrolled || open ? "border-b backdrop-blur-2xl" : "border-b border-transparent"
+      }`}
       style={{
-        borderColor: "var(--line)",
-        background: "color-mix(in srgb, var(--bg) 88%, transparent)",
+        borderColor: scrolled || open ? "var(--line)" : "transparent",
+        background:
+          scrolled || open
+            ? "color-mix(in srgb, var(--bg) 82%, transparent)"
+            : "transparent",
       }}
     >
       <nav
         aria-label="Navigation principale"
         className="content-wrap flex items-center justify-between gap-3 py-3.5"
       >
-        <a href="#top" className="flex items-center gap-2.5 whitespace-nowrap !text-fg">
-          <span className="flex size-[26px] items-center justify-center border border-accent font-mono text-[11px] !text-accent">
+        <Link href="/" className="flex items-center gap-2.5 whitespace-nowrap !text-fg">
+          <span className="flex size-8 items-center justify-center rounded-xl border border-accent/50 bg-accent/10 font-mono text-[12px] font-semibold !text-accent">
             T
           </span>
           <span className="font-display text-lg text-fg sm:text-xl">
             TWM <span className="text-accent">Advisory</span>
           </span>
-        </a>
+        </Link>
 
-        <div className="hidden items-center gap-7 font-mono text-[11px] tracking-[0.14em] text-muted-2 uppercase lg:flex">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-muted-2 transition-colors hover:text-fg"
-            >
-              {t(c.nav[link.key])}
-            </a>
-          ))}
+        <div className="hidden items-center gap-1 font-mono text-[11px] tracking-[0.12em] text-muted-2 uppercase lg:flex">
+          {links.map((link) => {
+            const on = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`rounded-full px-3.5 py-2 transition-colors ${
+                  on ? "bg-white/6 text-fg" : "text-muted-2 hover:text-fg"
+                }`}
+              >
+                {t(c.nav[link.key])}
+              </Link>
+            );
+          })}
         </div>
 
         <div className="flex items-center gap-2 sm:gap-3">
-          <div className="flex items-center border border-[color:var(--line)] font-mono text-[11px] tracking-[0.1em]">
+          <div className="flex items-center overflow-hidden rounded-full border border-[color:var(--line)] font-mono text-[11px] tracking-[0.1em]">
             {(["fr", "en"] as const).map((code) => {
               const on = lang === code;
               return (
@@ -76,16 +102,16 @@ export function Header() {
             })}
           </div>
 
-          <a
-            href="#contact"
-            className="btn-primary hidden px-4 py-2.5 text-[13px] sm:inline-block"
+          <Link
+            href="/contact"
+            className="btn-primary hidden rounded-full px-5 py-2.5 text-[13px] sm:inline-block"
           >
             {t(c.nav.cta)}
-          </a>
+          </Link>
 
           <button
             type="button"
-            className="flex size-10 items-center justify-center border border-white/15 text-fg lg:hidden"
+            className="flex size-10 items-center justify-center rounded-xl border border-white/15 text-fg lg:hidden"
             aria-label={open ? t(c.nav.close) : t(c.nav.menu)}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
@@ -107,32 +133,23 @@ export function Header() {
       </nav>
 
       {open && (
-        <div className="border-t border-white/8 bg-bg px-4 py-6 lg:hidden">
+        <div className="border-t border-white/8 bg-bg/95 px-4 py-6 backdrop-blur-xl lg:hidden">
           <div className="flex flex-col gap-1">
             {links.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
-                onClick={() => setOpen(false)}
-                className="border-b border-white/6 py-3.5 font-mono text-[12px] tracking-[0.16em] text-muted-2 uppercase"
+                className="rounded-xl border-b border-white/6 py-3.5 font-mono text-[12px] tracking-[0.16em] text-muted-2 uppercase"
               >
                 {t(c.nav[link.key])}
-              </a>
+              </Link>
             ))}
-            <a
-              href="#infrastructure"
-              onClick={() => setOpen(false)}
-              className="border-b border-white/6 py-3.5 font-mono text-[12px] tracking-[0.16em] text-muted-2 uppercase"
-            >
-              {t(c.infrastructure.section)}
-            </a>
-            <a
-              href="#contact"
-              onClick={() => setOpen(false)}
-              className="btn-primary mt-4 px-5 py-3.5 text-center text-[15px]"
+            <Link
+              href="/contact"
+              className="btn-primary mt-4 rounded-full px-5 py-3.5 text-center text-[15px]"
             >
               {t(c.nav.cta)}
-            </a>
+            </Link>
           </div>
         </div>
       )}
