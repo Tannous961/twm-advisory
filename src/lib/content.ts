@@ -15,7 +15,7 @@ export const content = {
     home: { fr: "Accueil", en: "Home" },
     approach: { fr: "Approche", en: "Approach" },
     offers: { fr: "Offres", en: "Services" },
-    architecture: { fr: "Architecture", en: "Architecture" },
+    architecture: { fr: "L'entreprise agentique", en: "The agentic company" },
     partners: { fr: "Partenaires", en: "Partners" },
     who: { fr: "Pour qui", en: "Who it's for" },
     about: { fr: "À propos", en: "About" },
@@ -81,7 +81,7 @@ export const content = {
       },
     },
     architecture: {
-      title: { fr: "Architecture", en: "Architecture" },
+      title: { fr: "L'entreprise agentique", en: "The agentic company" },
       lead: {
         fr: "15 agents organisés comme une entreprise. Moi : la relation et les décisions.",
         en: "15 agents organized like a firm. Me: relationships and decisions.",
@@ -120,8 +120,8 @@ export const content = {
       en: "without leaving a deck behind.",
     },
     archTeaser: {
-      fr: "Voir l'architecture 15 agents",
-      en: "See the 15-agent architecture",
+      fr: "Voir l'entreprise agentique",
+      en: "See the agentic company",
     },
     faqTeaser: { fr: "Voir toutes les questions", en: "See all questions" },
     ctaBandTitle: {
@@ -423,7 +423,7 @@ export const content = {
     },
   },
   infrastructure: {
-    section: { fr: "Architecture TWM", en: "TWM architecture" },
+    section: { fr: "L'entreprise agentique", en: "The agentic company" },
     title: {
       fr: "15 agents. Une entreprise qui tourne.",
       en: "15 agents. A firm that runs.",
