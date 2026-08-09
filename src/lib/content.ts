@@ -3,12 +3,12 @@ export type Lang = "fr" | "en";
 export const content = {
   meta: {
     title: {
-      fr: "TWM Advisory — Déploiement d'agents · Direction IA à temps partagé",
-      en: "TWM Advisory — Agent deployment · Fractional AI leadership",
+      fr: "TWM Advisory — Conseil, produits & agents IA en production",
+      en: "TWM Advisory — Advisory, products & AI agents in production",
     },
     description: {
-      fr: "TWM Advisory s'embarque dans vos équipes et déploie des agents en production pour rendre du temps facturable à vos experts. Confidentialité client respectée. Direction IA à temps partagé.",
-      en: "TWM Advisory embeds with your teams and deploys agents in production to return billable time to your experts. Client confidentiality protected. Fractional AI leadership.",
+      fr: "TWM Advisory conseille, construit et déploie l'IA agentique dans votre opérationnel — de la stratégie au produit en production. Cadre data et confidentialité. Direction IA à temps partagé.",
+      en: "TWM Advisory advises, builds and deploys agentic AI into your operations — from strategy to product in production. Data framework and confidentiality. Fractional AI leadership.",
     },
   },
   nav: {
@@ -28,6 +28,13 @@ export const content = {
   audience: {
     title: { fr: "TWM pour", en: "TWM for" },
     items: [
+      {
+        title: { fr: "Directions générales", en: "Executive teams" },
+        body: {
+          fr: "Direction IA à temps partagé quand le comité veut du concret.",
+          en: "Fractional AI leadership when the board wants something live.",
+        },
+      },
       {
         title: { fr: "Cabinets & avocats", en: "Law firms" },
         body: {
@@ -50,13 +57,6 @@ export const content = {
         },
       },
       {
-        title: { fr: "Directions générales", en: "Executive teams" },
-        body: {
-          fr: "Direction IA à temps partagé quand le comité veut du concret.",
-          en: "Fractional AI leadership when the board wants something live.",
-        },
-      },
-      {
         title: { fr: "Organisations opérationnelles", en: "Operating organizations" },
         body: {
           fr: "Agents en production sur le travail invisible autour du métier.",
@@ -76,8 +76,8 @@ export const content = {
     offers: {
       title: { fr: "Offres", en: "Services" },
       lead: {
-        fr: "Trois façons de travailler ensemble, du diagnostic à la direction à temps partagé.",
-        en: "Three ways to work together, from diagnostic to fractional leadership.",
+        fr: "Trois façons de travailler ensemble : orienter, construire, déployer.",
+        en: "Three ways to work together: orient, build, deploy.",
       },
     },
     architecture: {
@@ -135,38 +135,38 @@ export const content = {
     marquee: {
       fr: [
         "Agents en production",
-        "Temps facturable",
+        "Impact mesuré",
         "Cadre data",
         "Direction IA",
-        "Forward deployed",
+        "Produits sur mesure",
         "Confidentialité client",
       ],
       en: [
         "Agents in production",
-        "Billable time",
+        "Measured impact",
         "Data framework",
         "AI leadership",
-        "Forward deployed",
+        "Custom products",
         "Client confidentiality",
       ],
     },
   },
   hero: {
     eyebrow: {
-      fr: "Pour dirigeants et associés · Cabinets & organisations",
-      en: "For executives and partners · Firms & organizations",
+      fr: "Pour directions générales, associés et dirigeants",
+      en: "For executive teams, partners and leaders",
     },
     titleBefore: {
-      fr: "Vos experts facturent le jugement.",
-      en: "Your experts bill for judgment.",
+      fr: "Vos enjeux de direction,",
+      en: "Your leadership stakes,",
     },
     titleEm: {
-      fr: "Pas la rédaction, la recherche et l'admin.",
-      en: "Not drafting, research and admin.",
+      fr: "réglés par des solutions qui tournent.",
+      en: "settled by solutions that run.",
     },
     lead: {
-      fr: "Votre firme tourne sur l'expertise et la relation — ni l'une ni l'autre ne se délègue à un modèle. Je m'installe dans vos équipes et je mets des agents sur les offres, la recherche, les drafts et le suivi qui mangent le temps facturable. Vos gens passent plus de journée sur ce que le client paie vraiment.",
-      en: "Your firm runs on expertise and relationships — neither is for sale to a model. I embed with your teams and put agents on the proposals, research, drafts and follow-up that drain billable time. Your people spend more of the day on what clients actually pay for.",
+      fr: "Je pars du problème qui vous coûte vraiment — une marge qui se tend, un délai qui vous fait perdre des positions, une ligne qui ne décolle pas. Je le règle avec une solution qui tourne dans votre opérationnel, pas une recommandation. L'IA agentique, c'est le levier que j'active pour bouger l'indicateur.",
+      en: "I start from the problem that actually costs you — a margin under pressure, a delay that costs you ground, a line that won't take off. I solve it with a solution that runs in your operations, not a recommendation. Agentic AI is the lever I pull to move the metric.",
     },
     ctaPrimary: { fr: "Planifier un échange", en: "Book a conversation" },
     ctaSecondary: { fr: "Voir les offres", en: "See services" },
@@ -211,25 +211,25 @@ export const content = {
   problem: {
     section: { fr: "Le constat", en: "The situation" },
     title: {
-      fr: "Une part importante du travail professionnel",
-      en: "A large share of professional work",
+      fr: "Vos enjeux les plus lourds attendent",
+      en: "Your heaviest stakes are waiting",
     },
     titleMuted: {
-      fr: "ne se facture jamais.",
-      en: "never reaches the bill.",
+      fr: "une ressource qui n'existe pas en interne.",
+      en: "for a resource that doesn't exist in-house.",
     },
     items: [
       {
-        fr: "Rédaction, recherche, notes de statut, capture de temps, admin : autant d'heures qui tirent vos profils seniors hors du travail client — et qui ne se retrouvent pas toujours en facture.",
-        en: "Drafting, research, status notes, time capture, admin: hours that pull seniors off client work — and often never make it onto the invoice.",
+        fr: "Le travail à faible jugement — rédaction, recherche, reporting, suivi — tire vos meilleurs profils hors de ce qui crée vraiment de la valeur.",
+        en: "Low-judgment work — drafting, research, reporting, follow-up — pulls your best people off what actually creates value.",
       },
       {
-        fr: "Les outils grand public exposent la confidentialité client. Peu de firmes mesurent réellement le retour. L'avantage, ce n'est pas d'avoir testé ChatGPT : c'est de déployer dans un cadre que le risque peut signer.",
-        en: "Consumer tools expose client confidentiality. Few firms actually track return. The edge isn't having tried ChatGPT — it's deploying in a frame risk can sign off on.",
+        fr: "Les outils grand public exposent vos données. Peu de directions mesurent réellement le retour. L'avantage, ce n'est pas d'avoir testé ChatGPT : c'est de déployer dans un cadre que le risque peut signer.",
+        en: "Consumer tools expose your data. Few leadership teams actually track return. The edge isn't having tried ChatGPT — it's deploying in a frame risk can sign off on.",
       },
       {
-        fr: "Personne en interne pour trancher, encadrer et mettre en production. Le sujet reste une présentation au comité, pendant que le temps facturable continue de fuir.",
-        en: "No one internal to decide, govern and ship to production. The topic stays a board deck, while billable time keeps leaking.",
+        fr: "Personne en interne pour trancher, cadrer et mettre en production. Le sujet reste une slide au comité — pendant que l'enjeu, lui, ne bouge pas.",
+        en: "No one internal to decide, frame and ship to production. The topic stays a board slide — while the stake itself doesn't move.",
       },
     ],
   },
@@ -253,10 +253,13 @@ export const content = {
     steps: [
       {
         label: { fr: "Étape 01", en: "Step 01" },
-        title: { fr: "Repérer la fuite de temps", en: "Find the billable-time drain" },
+        title: {
+          fr: "Repérer l'enjeu qui coûte le plus",
+          en: "Find the stake that costs the most",
+        },
         body: {
-          fr: "La rédaction, la recherche et l'admin qui sortent vos gens les plus chers du travail client — et où un premier gain sûr peut vivre.",
-          en: "The drafting, research and admin that pull your most expensive people off client work — and where a safe first win lives.",
+          fr: "L'endroit où vous perdez de la marge, du temps ou des positions — et où une première solution sûre peut vivre.",
+          en: "Where you lose margin, time or ground — and where a safe first solution can live.",
         },
       },
       {
@@ -271,8 +274,8 @@ export const content = {
         label: { fr: "Étape 03", en: "Step 03" },
         title: { fr: "Former et ancrer", en: "Train and embed" },
         body: {
-          fr: "Chaque rôle apprend où l'IA entre dans son vrai travail. On mesure les heures rendues au facturable, puis on étend.",
-          en: "Each role learns where AI fits their real work. We measure hours returned to billable use, then expand.",
+          fr: "Chaque rôle apprend où l'IA entre dans son vrai travail. On mesure l'impact sur l'indicateur qui compte, puis on étend.",
+          en: "Each role learns where AI fits their real work. We measure impact on the metric that matters, then expand.",
         },
       },
     ],
@@ -286,44 +289,44 @@ export const content = {
     items: [
       {
         title: {
-          fr: "Diagnostic",
-          en: "Diagnostic",
+          fr: "Orienter",
+          en: "Orient",
         },
         body: {
-          fr: "Cartographie du temps non-facturable, priorisation des fuites, et identification d'un premier cas sûr — là où un gain rapide peut vivre sans mettre le risque en jeu.",
-          en: "Map non-billable time, prioritize leaks, and identify a safe first case — where a quick win can live without putting risk on the line.",
+          fr: "Stratégie & go-to-market IA. Où l'IA crée de la valeur dans votre organisation, et comment structurer l'écosystème autour. Cadre, priorisation, arbitrages — jusqu'à la décision d'investir juste.",
+          en: "AI strategy & go-to-market. Where AI creates value in your organization, and how to structure the ecosystem around it. Frame, prioritization, decisions — through to investing in the right place.",
         },
         meta: {
-          fr: "Livrable : feuille de route chiffrée",
-          en: "Deliverable: a costed roadmap",
+          fr: "Livrable : feuille de route chiffrée · Format : mission ou direction IA à temps partagé",
+          en: "Deliverable: a costed roadmap · Format: mission or fractional AI leadership",
         },
       },
       {
         title: {
-          fr: "Déploiement d'agents",
-          en: "Agent deployment",
+          fr: "Construire",
+          en: "Build",
         },
         body: {
-          fr: "Un ou plusieurs agents en production — offres, recherche, reporting, ops — avec cadre data, adoption métier, et mesure des heures rendues au facturable.",
-          en: "One or more agents in production — proposals, research, reporting, ops — with data frame, role adoption, and measured hours returned to billable use.",
+          fr: "Produits agentiques sur mesure. Une interface, une application, un produit avec de l'IA agentique dedans — conçu, développé, mis sur le marché.",
+          en: "Custom agentic products. An interface, an application, a product with agentic AI inside — designed, built, and brought to market.",
+        },
+        meta: {
+          fr: "Livrable : produit en production",
+          en: "Deliverable: product in production",
+        },
+      },
+      {
+        title: {
+          fr: "Déployer",
+          en: "Deploy",
+        },
+        body: {
+          fr: "Agents en production. Un ou plusieurs agents branchés sur vos process — automatisation, reporting, prospection — avec cadre data et mesure d'impact.",
+          en: "Agents in production. One or more agents wired into your processes — automation, reporting, prospecting — with a data frame and measured impact.",
         },
         meta: {
           fr: "Livrable : agents en production",
           en: "Deliverable: agents in production",
-        },
-      },
-      {
-        title: {
-          fr: "Direction IA à temps partagé",
-          en: "Fractional AI leadership",
-        },
-        body: {
-          fr: "Quelqu'un à la barre sans recruter un poste à plein temps : cadre, feuille de route, arbitrages, exécution jusqu'à la production.",
-          en: "Someone at the helm without a full-time hire: frame, roadmap, decisions, execution through production.",
-        },
-        meta: {
-          fr: "Format : à temps partagé ou interim",
-          en: "Format: fractional or interim",
         },
       },
     ],
@@ -611,12 +614,12 @@ export const content = {
     items: [
       {
         q: {
-          fr: "Par où commencer dans une firme ?",
-          en: "What's the best first use in a firm?",
+          fr: "Par où commencer ?",
+          en: "Where do we start?",
         },
         a: {
-          fr: "Offres ou recherche. Les deux consomment des heures seniors sur de la rédaction à faible jugement : le retour est immédiat, et l'expert garde la propriété du livrable.",
-          en: "Proposals or research. Both consume senior hours on low-judgment drafting: return is immediate, and the expert keeps ownership of the output.",
+          fr: "Par l'enjeu qui coûte le plus et le cas le plus sûr. On livre un premier résultat mesurable vite, vous gardez la propriété de la décision.",
+          en: "With the stake that costs the most and the safest first case. We ship a measurable first result fast — you keep ownership of the decision.",
         },
       },
       {

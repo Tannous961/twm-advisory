@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "TWM Advisory — Moins de travail invisible, plus de temps facturable";
+export const alt = "TWM Advisory — Conseil, produits & agents IA en production";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -80,7 +80,7 @@ export default function OpenGraphImage() {
               fontFamily: "monospace",
             }}
           >
-            DIRIGEANTS · CABINETS · ORGANISATIONS
+            DIRECTIONS · ASSOCIÉS · DIRIGEANTS
           </div>
           <div
             style={{
@@ -93,9 +93,9 @@ export default function OpenGraphImage() {
               maxWidth: 920,
             }}
           >
-            <span>Moins de travail invisible.</span>
+            <span>Vos enjeux de direction,</span>
             <span style={{ color: "#E3AC6C", fontStyle: "italic" }}>
-              Plus de temps sur ce qui se facture.
+              réglés par des solutions qui tournent.
             </span>
           </div>
           <div
@@ -107,7 +107,7 @@ export default function OpenGraphImage() {
               lineHeight: 1.4,
             }}
           >
-            Agents en production. Jugement humain. Cadre data clair.
+            Orienter. Construire. Déployer. Cadre data clair.
           </div>
         </div>
 
