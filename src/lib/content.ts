@@ -243,12 +243,12 @@ export const content = {
       en: "I deliver something that runs.",
     },
     body: {
-      fr: "Je m'embarque dans vos équipes, je trouve où le temps facturable fuit, et je déploie des agents jusqu'en production. Les bons modèles, dans une posture où le matériel client reste dans un environnement contrôlé — que votre équipe risque peut valider. Ni PowerPoint à classer, ni outil lâché sans règles.",
-      en: "I embed with your teams, find where billable time leaks, and deploy agents into production. The right models, on a posture where client material stays in a controlled environment — one your risk team can sign off on. Not a deck to file, not a tool dropped with no rules.",
+      fr: "Je m'embarque dans vos équipes, je trouve où l'enjeu vous coûte le plus — marge, temps, positions — et je déploie des agents jusqu'en production. Les bons modèles, dans une posture où le matériel client reste dans un environnement contrôlé, que votre équipe risque et conformité peut valider. Ni PowerPoint à classer, ni outil lâché sans règles.",
+      en: "I embed with your teams, find where the stake costs you most — margin, time, positions — and deploy agents into production. The right models, on a posture where client material stays in a controlled environment, one your risk and compliance team can sign off on. Not a deck to file, not a tool dropped with no rules.",
     },
     quote: {
-      fr: "L'IA rédige, recherche, capture et surveille. Le conseil, l'arbitrage et la relation restent humains — c'est la prime que votre firme vend.",
-      en: "AI drafts, researches, captures and monitors. Advice, judgment and the relationship stay human — that's the premium your firm sells.",
+      fr: "L'IA rédige, recherche, capture et surveille. Le conseil, l'arbitrage et la relation restent humains — c'est ce pour quoi on vous paie vraiment.",
+      en: "AI drafts, researches, captures and monitors. Advice, judgment and the relationship stay human — that's what you're really paid for.",
     },
     steps: [
       {
@@ -369,12 +369,12 @@ export const content = {
     noTitle: { fr: "Non, si", en: "No, if" },
     yes: [
       {
-        fr: "Vous dirigez un cabinet, une firme de conseil, une expertise comptable, une ingénierie ou une organisation où le jugement se facture.",
-        en: "You lead a consulting, accounting, engineering, law firm — or any organization where judgment is what you bill.",
+        fr: "Vous dirigez une organisation — cabinet, conseil, expertise comptable, PME, direction — où les décisions pèsent plus que le volume.",
+        en: "You lead an organization — firm, consulting, accounting, SME, leadership team — where decisions weigh more than volume.",
       },
       {
-        fr: "Vos profils facturables passent encore trop d'heures en rédaction, recherche et admin.",
-        en: "Your billable people still spend hours on drafting, research and admin.",
+        fr: "Vos meilleurs profils passent trop de temps loin de ce qui crée vraiment de la valeur.",
+        en: "Your best people still spend too much time away from what actually creates value.",
       },
       {
         fr: "Vous voulez protéger la confiance client tout en allant plus vite.",
@@ -628,8 +628,8 @@ export const content = {
           en: "Does this replace our experts?",
         },
         a: {
-          fr: "Non. Ça retire le travail de bureau autour du jugement — rédaction, synthèses, recherche, relances. Le conseil, l'arbitrage et la relation restent humains. Une firme qui s'en sert bien facture son expertise, pas sa frappe.",
-          en: "No. It removes the desk work around expert judgment — drafting, summarizing, research, follow-ups. Advice, the call and the relationship stay human. Firms that use it well bill their expertise, not their typing.",
+          fr: "Non. Ça retire le travail de bureau autour du jugement — rédaction, synthèses, recherche, relances. Le conseil, l'arbitrage et la relation restent humains. Une organisation qui s'en sert bien vend son jugement, pas son temps de bureau.",
+          en: "No. It removes the desk work around expert judgment — drafting, summarizing, research, follow-ups. Advice, the call and the relationship stay human. Organizations that use it well sell their judgment, not their desk time.",
         },
       },
       {
@@ -638,8 +638,8 @@ export const content = {
           en: "Do you deliver a report or actually deploy?",
         },
         a: {
-          fr: "Je déploie. Je m'embarque dans vos équipes jusqu'à la mise en production, avec un cadre data et une mesure des heures récupérées.",
-          en: "I deploy. I embed with your teams through go-live, with a data frame and a measure of hours recovered.",
+          fr: "Je déploie. Je m'embarque dans vos équipes jusqu'à la mise en production, avec un cadre data et une mesure de l'impact.",
+          en: "I deploy. I embed with your teams through go-live, with a data frame and a measure of impact.",
         },
       },
       {
