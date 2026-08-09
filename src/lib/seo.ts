@@ -20,15 +20,17 @@ const descriptionEn = content.meta.description.en;
 
 export const keywords = [
   "TWM Advisory",
+  "conseil IA",
+  "produits agentiques",
   "déploiement d'agents",
-  "temps facturable",
   "direction IA à temps partagé",
+  "stratégie IA",
   "opérateur embarqué",
   "cabinet avocat",
   "expert-comptable",
-  "family office",
+  "directions générales",
   "confidentialité données",
-  "ROI",
+  "impact mesuré",
 ];
 
 export function buildMetadata(): Metadata {
@@ -47,7 +49,7 @@ export function buildMetadata(): Metadata {
     creator: siteConfig.name,
     publisher: siteConfig.name,
     category: "Business",
-    classification: "Conseil IA & déploiement d'agents",
+    classification: "Conseil IA, produits agentiques & déploiement d'agents",
     referrer: "origin-when-cross-origin",
     formatDetection: {
       email: false,
@@ -75,7 +77,7 @@ export function buildMetadata(): Metadata {
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: "TWM Advisory — Déploiement d'IA agentique",
+          alt: "TWM Advisory — Conseil, produits & agents IA en production",
           type: "image/png",
         },
       ],
@@ -127,7 +129,7 @@ export function buildJsonLd() {
     name: siteConfig.name,
     url: siteConfig.url,
     description: content.meta.description.fr,
-    slogan: "Moins de travail invisible. Plus de temps sur ce qui se facture.",
+    slogan: "Conseil, produits & agents IA en production.",
     image: `${siteConfig.url}/opengraph-image`,
     logo: {
       "@type": "ImageObject",
@@ -139,16 +141,17 @@ export function buildJsonLd() {
       name: code,
     })),
     knowsAbout: [
+      "Stratégie IA",
+      "Produits agentiques",
       "Déploiement d'agents",
-      "Temps facturable",
       "Direction IA à temps partagé",
       "Confidentialité des données",
       "Opérateur embarqué",
     ],
     serviceType: [
-      "Diagnostic",
-      "Déploiement d'agents",
-      "Direction IA à temps partagé",
+      "Orienter",
+      "Construire",
+      "Déployer",
     ],
     ...(siteConfig.email
       ? { email: siteConfig.email, contactPoint: {

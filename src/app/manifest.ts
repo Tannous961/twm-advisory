@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "TWM Advisory",
     short_name: "TWM",
     description:
-      "Déploiement d'agents en production et direction IA à temps partagé.",
+      "Conseil, produits & agents IA en production — de la stratégie au déploiement.",
     start_url: "/",
     display: "standalone",
     background_color: "#070A11",
