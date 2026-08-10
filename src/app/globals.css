@@ -355,3 +355,207 @@ a:hover {
   opacity: 1;
   transform: none;
 }
+
+/* —— Splash intro (logo convergence) —— */
+html[data-twm-splash="pending"] {
+  overflow: hidden;
+}
+
+/* Site stays hidden until splash finishes */
+.page-shell {
+  transition:
+    opacity 0.75s var(--ease-out),
+    visibility 0.75s;
+}
+
+html[data-twm-splash="pending"] .page-shell {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Cover before React hydrates the splash component */
+html[data-twm-splash="pending"] body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 190;
+  background: var(--bg);
+}
+
+/* Hold hero entrances until the site is revealed */
+html[data-twm-splash="pending"] .animate-rise {
+  animation: none;
+  opacity: 0;
+}
+
+html[data-twm-splash="done"] .animate-rise {
+  animation: twm-rise 0.8s var(--ease-out) both;
+}
+
+.splash-root {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  cursor: pointer;
+  transition:
+    opacity 0.65s var(--ease-out),
+    visibility 0.65s;
+}
+
+.splash-root.is-exiting {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.splash-glow {
+  position: absolute;
+  width: min(70vw, 28rem);
+  height: min(70vw, 28rem);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgb(var(--accent-rgb) / 0.28) 0%,
+    rgb(var(--accent-rgb) / 0.06) 45%,
+    transparent 70%
+  );
+  opacity: 0;
+  animation: splash-glow-in 1.6s 0.2s var(--ease-out) both;
+}
+
+.splash-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.splash-mark {
+  position: relative;
+  width: clamp(6.5rem, 22vw, 9.5rem);
+  height: clamp(6.5rem, 22vw, 9.5rem);
+}
+
+.splash-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.splash-arc {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: splash-draw 1.4s var(--ease-out) both;
+}
+
+.splash-solid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+  opacity: 0;
+  transform: scale(0.96);
+  animation: splash-solid-in 0.65s 1.25s var(--ease-out) both;
+}
+
+.splash-wordmark {
+  margin: 0;
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(1.15rem, 3.5vw, 1.5rem);
+  letter-spacing: -0.02em;
+  color: var(--fg);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: splash-word-in 0.7s 0.95s var(--ease-out) both;
+}
+
+.splash-wordmark span {
+  color: var(--accent);
+}
+
+.splash-skip {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 0;
+  right: 0;
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted-3);
+  opacity: 0;
+  animation: splash-fade-in 0.5s 1.4s var(--ease-out) both;
+}
+
+.splash-root.is-exiting .splash-mark {
+  animation: splash-exit-mark 0.65s var(--ease-out) both;
+}
+
+@keyframes splash-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes splash-glow-in {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes splash-solid-in {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes splash-word-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes splash-fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes splash-exit-mark {
+  to {
+    transform: scale(0.72);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .splash-root {
+    display: none;
+  }
+
+  html[data-twm-splash="pending"] .page-shell {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  html[data-twm-splash="pending"] body::before {
+    display: none;
+  }
+}

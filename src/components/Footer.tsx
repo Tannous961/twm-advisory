@@ -30,8 +30,20 @@ export function Footer() {
       />
       <div className="content-wrap relative grid gap-10 py-14 sm:py-16 lg:grid-cols-[1.4fr_1fr_1fr] lg:gap-12">
         <div>
-          <Link href="/" className="font-display text-2xl text-fg">
-            TWM <span className="text-accent">Advisory</span>
+          <Link href="/" className="flex items-center gap-2.5 whitespace-nowrap !text-fg">
+            <span className="relative flex size-8 shrink-0 overflow-hidden rounded-xl border border-accent/50 bg-black">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo.png?v=2"
+                alt="TWM Advisory"
+                width={32}
+                height={32}
+                className="size-full object-cover"
+              />
+            </span>
+            <span className="font-display text-2xl text-fg">
+              TWM <span className="text-accent">Advisory</span>
+            </span>
           </Link>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
             {t(c.meta.description)}

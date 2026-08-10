@@ -1,0 +1,2 @@
+/** Inline bootstrap — marks splash pending before first paint to avoid FOUC */
+export const SPLASH_INIT_SCRIPT = `(function(){try{var k='twm-splash-seen';if(sessionStorage.getItem(k)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.dataset.twmSplash='done';}else{document.documentElement.dataset.twmSplash='pending';}}catch(e){document.documentElement.dataset.twmSplash='done';}})();`;

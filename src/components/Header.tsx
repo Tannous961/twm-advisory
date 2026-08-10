@@ -56,8 +56,15 @@ export function Header() {
         className="content-wrap flex items-center justify-between gap-3 py-3.5"
       >
         <Link href="/" className="flex items-center gap-2.5 whitespace-nowrap !text-fg">
-          <span className="flex size-8 items-center justify-center rounded-xl border border-accent/50 bg-accent/10 font-mono text-[12px] font-semibold !text-accent">
-            T
+          <span className="relative flex size-8 shrink-0 overflow-hidden rounded-xl border border-accent/50 bg-black">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/logo.png?v=2"
+              alt="TWM Advisory"
+              width={50}
+              height={50}
+              className="size-full object-cover"
+            />
           </span>
           <span className="font-display text-lg text-fg sm:text-xl">
             TWM <span className="text-accent">Advisory</span>

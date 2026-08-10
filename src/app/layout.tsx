@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono, Playfair_Display } from "next/font/google";
-import Script from "next/script";
 import { Providers } from "@/components/Providers";
 import { buildMetadata } from "@/lib/seo";
+import { SPLASH_INIT_SCRIPT } from "@/lib/splash-init";
 import { THEME_INIT_SCRIPT } from "@/lib/theme-init";
 import "./globals.css";
 
@@ -52,12 +52,15 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${playfair.variable} ${inter.variable} ${jetbrains.variable} h-full antialiased`}
     >
-      <body className="min-h-dvh bg-bg font-sans text-fg">
-        <Script
-          id="twm-theme-init"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }}
+      <head>
+        <script
+          id="twm-boot"
+          dangerouslySetInnerHTML={{
+            __html: `${THEME_INIT_SCRIPT}${SPLASH_INIT_SCRIPT}`,
+          }}
         />
+      </head>
+      <body className="min-h-dvh bg-bg font-sans text-fg">
         <Providers>{children}</Providers>
       </body>
     </html>
