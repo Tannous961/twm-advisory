@@ -16,7 +16,7 @@ export const content = {
     approach: { fr: "Approche", en: "Approach" },
     offers: { fr: "Offres", en: "Services" },
     architecture: { fr: "L'entreprise agentique", en: "The agentic company" },
-    partners: { fr: "Écosystème", en: "Ecosystem" },
+    partners: { fr: "Partenaires", en: "Partners" },
     who: { fr: "Pour qui", en: "Who it's for" },
     about: { fr: "À propos", en: "About" },
     faq: { fr: "FAQ", en: "FAQ" },
@@ -121,6 +121,13 @@ export const content = {
       lead: {
         fr: "Un insight. Un verdict. Pas de newsletter creuse.",
         en: "One insight. One verdict. No empty newsletter.",
+      },
+    },
+    partnerships: {
+      title: { fr: "Partenaires", en: "Partners" },
+      lead: {
+        fr: "Socle BD & partenariats — règles claires, un interlocuteur côté client.",
+        en: "BD & partnership foundation — clear rules, one counterpart for the client.",
       },
     },
   },
@@ -445,6 +452,10 @@ export const content = {
         fr: "L'IA agentique touche à ta donnée, ta conformité, ton infrastructure. Je m'entoure d'un réseau qui couvre ce que je ne fais pas moi-même — pour que tu aies un seul interlocuteur, pas dix prestataires à coordonner.",
         en: "Agentic AI touches your data, compliance, and infrastructure. I work with a network that covers what I don't do myself — so you have one counterpart, not ten vendors to coordinate.",
       },
+      cta: {
+        fr: "Devenir partenaire",
+        en: "Become a partner",
+      },
     },
   },
   fit: {
@@ -497,6 +508,129 @@ export const content = {
     body: {
       fr: "L'IA agentique touche à ta donnée, ta conformité, ton infrastructure. Je m'entoure d'un réseau qui couvre ce que je ne fais pas moi-même — pour que tu aies un seul interlocuteur, pas dix prestataires à coordonner.",
       en: "Agentic AI touches your data, compliance, and infrastructure. I work with a network that covers what I don't do myself — so you have one counterpart, not ten vendors to coordinate.",
+    },
+    cta: {
+      fr: "Voir le socle partenaires",
+      en: "See the partner foundation",
+    },
+  },
+  partnerships: {
+    whyTitle: {
+      fr: "Pourquoi un socle partenaires.",
+      en: "Why a partner foundation.",
+    },
+    whyBody: {
+      fr: "Business development et co-delivery ne se bricolent pas au feeling. On pose les règles une fois — pour que le client garde un seul interlocuteur, et que chaque partenaire sache exactement ce qu'il apporte.",
+      en: "Business development and co-delivery aren't improvised. We set the rules once — so the client keeps one counterpart, and each partner knows exactly what they bring.",
+    },
+    typesTitle: {
+      fr: "Quatre façons de s'allier.",
+      en: "Four ways to partner.",
+    },
+    types: [
+      {
+        title: {
+          fr: "Apporteurs d'affaires",
+          en: "Deal introducers",
+        },
+        body: {
+          fr: "Tu qualifies un besoin réel. Je prends la relation et la delivery. Cadre commercial clair, sur accord écrit — avant la première intro.",
+          en: "You qualify a real need. I own the relationship and delivery. Clear commercial frame, in writing — before the first intro.",
+        },
+      },
+      {
+        title: {
+          fr: "Intégrateurs & tech",
+          en: "Integrators & tech",
+        },
+        body: {
+          fr: "Infra, data, sécurité, outillage. Tu portes la couche technique ; je porte le cas métier et le cadre d'usage.",
+          en: "Infra, data, security, tooling. You own the technical layer; I own the business case and usage frame.",
+        },
+      },
+      {
+        title: {
+          fr: "Cabinets & réseaux métier",
+          en: "Firms & domain networks",
+        },
+        body: {
+          fr: "Expertise sectorielle (droit, audit, conseil, industrie). On combine ton crédit métier avec mon déploiement agentique.",
+          en: "Domain expertise (law, audit, consulting, industry). We combine your professional credibility with my agentic deployment.",
+        },
+      },
+      {
+        title: {
+          fr: "Co-delivery",
+          en: "Co-delivery",
+        },
+        body: {
+          fr: "Mission partagée quand le scope dépasse ce qu'un seul opérateur peut porter. Pilotage unique côté client — pas un comité de prestataires.",
+          en: "Shared mission when the scope exceeds what one operator can carry. One lead for the client — not a vendor committee.",
+        },
+      },
+    ],
+    rulesTitle: {
+      fr: "Les règles du jeu.",
+      en: "The rules of the game.",
+    },
+    rules: [
+      {
+        fr: "Un interlocuteur côté client. Toujours. Même si plusieurs partenaires sont activés.",
+        en: "One counterpart for the client. Always. Even when several partners are activated.",
+      },
+      {
+        fr: "Cadre data et confidentialité avant toute collab — surtout sur du matériel client privilégié.",
+        en: "Data and confidentiality frame before any collab — especially on privileged client material.",
+      },
+      {
+        fr: "Qui facture, qui porte la relation, qui livre : tranché par écrit avant le premier euro.",
+        en: "Who bills, who owns the relationship, who delivers: decided in writing before the first euro.",
+      },
+      {
+        fr: "Pas de logo inventé, pas de liste vanity. On active un partenaire quand le besoin le exige.",
+        en: "No invented logos, no vanity list. We activate a partner when the need requires it.",
+      },
+    ],
+    formTitle: {
+      fr: "Proposer un partenariat.",
+      en: "Propose a partnership.",
+    },
+    formBody: {
+      fr: "Dis-moi qui tu es, ce que tu apportes, et un premier angle de collaboration. Réponse sous 48 h ouvrées.",
+      en: "Tell me who you are, what you bring, and a first collaboration angle. Reply within 2 business days.",
+    },
+    fields: {
+      name: { fr: "Prénom", en: "First name" },
+      email: { fr: "Email", en: "Email" },
+      company: { fr: "Société / réseau", en: "Company / network" },
+      type: { fr: "Type de partenariat", en: "Partnership type" },
+      message: { fr: "Angle de collab", en: "Collaboration angle" },
+    },
+    typeOptions: {
+      introducer: { fr: "Apporteur d'affaires", en: "Deal introducer" },
+      tech: { fr: "Intégrateur / tech", en: "Integrator / tech" },
+      domain: { fr: "Cabinet / réseau métier", en: "Firm / domain network" },
+      codelivery: { fr: "Co-delivery", en: "Co-delivery" },
+      other: { fr: "Autre", en: "Other" },
+    },
+    consent: {
+      fr: "J'accepte que ces informations soient utilisées pour évaluer un partenariat — pas pour un démarchage client non sollicité.",
+      en: "I agree these details are used to evaluate a partnership — not for unsolicited client outreach.",
+    },
+    submit: { fr: "Envoyer la proposition", en: "Send the proposal" },
+    submitting: { fr: "Envoi…", en: "Sending…" },
+    doneTitle: { fr: "Proposition reçue.", en: "Proposal received." },
+    doneBody: {
+      fr: "Je reviens sous 48 h ouvrées avec une suite claire — ou un non franc.",
+      en: "I'll come back within 2 business days with a clear next step — or a clear no.",
+    },
+    error: {
+      fr: "Envoi interrompu. Réessaie ou écris-nous.",
+      en: "Send interrupted. Try again or email us.",
+    },
+    messagePlaceholder: {
+      fr: "Ex. Réseau de 40 cabinets — intros qualifiées sur fuites de temps offres / reporting…",
+      en: "E.g. Network of 40 firms — qualified intros on proposal / reporting time leaks…",
     },
   },
   watch: {

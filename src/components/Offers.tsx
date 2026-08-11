@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
 import { useI18n, useT } from "@/lib/i18n";
@@ -110,9 +111,17 @@ export function Offers() {
                 {t(c.offers.ecosystem.titleEm)}
               </em>
             </h2>
-            <p className="text-[15px] leading-[1.78] text-muted text-pretty sm:text-base">
-              {t(c.offers.ecosystem.body)}
-            </p>
+            <div>
+              <p className="text-[15px] leading-[1.78] text-muted text-pretty sm:text-base">
+                {t(c.offers.ecosystem.body)}
+              </p>
+              <Link
+                href="/partenaires"
+                className="mt-6 inline-flex font-mono text-[11px] tracking-[0.14em] text-accent uppercase"
+              >
+                {t(c.offers.ecosystem.cta)} →
+              </Link>
+            </div>
           </div>
         </section>
       </Reveal>
