@@ -10,7 +10,19 @@ export const siteConfig = {
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "",
   linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || "",
   founderName: process.env.NEXT_PUBLIC_FOUNDER_NAME || "Fondateur TWM Advisory",
-  areaServed: ["FR", "BE", "CH", "LU", "MA"],
+  areaServed: [
+    "FR", // France
+    "BE", // Belgique
+    "CH", // Suisse
+    "LU", // Luxembourg
+    "MA", // Maroc
+    "US", // USA
+    "LB", // Liban
+    "AE", // Émirats (Dubaï)
+    "SA", // Arabie saoudite
+    "NG", // Nigeria
+    "BH", // Bahreïn
+  ],
 } as const;
 
 const title = content.meta.title.fr;
@@ -149,9 +161,11 @@ export function buildJsonLd() {
       "Opérateur embarqué",
     ],
     serviceType: [
-      "Orienter",
-      "Construire",
-      "Déployer",
+      "Audit IA de ton organisation",
+      "Déploiement d'agents",
+      "Audit & certification de tes systèmes IA",
+      "Accompagnement stratégique",
+      "Formation & sensibilisation",
     ],
     ...(siteConfig.email
       ? { email: siteConfig.email, contactPoint: {
@@ -207,7 +221,7 @@ export function buildJsonLd() {
     "@type": "Service",
     "@id": `${siteConfig.url}/#service-${i + 1}`,
     name: offer.title.fr,
-    description: `${offer.body.fr} ${offer.meta.fr}`,
+    description: `${offer.body.fr} ${offer.deliverable.fr}`,
     provider: { "@id": `${siteConfig.url}/#organization` },
     areaServed: siteConfig.areaServed,
   }));

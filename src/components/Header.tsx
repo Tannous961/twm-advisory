@@ -8,6 +8,7 @@ import { useI18n, useT } from "@/lib/i18n";
 const links = [
   { href: "/approche", key: "approach" as const },
   { href: "/offres", key: "offers" as const },
+  { href: "/signal", key: "signal" as const },
   { href: "/architecture", key: "architecture" as const },
   { href: "/a-propos", key: "about" as const },
   { href: "/faq", key: "faq" as const },
@@ -110,7 +111,7 @@ export function Header() {
           </div>
 
           <Link
-            href="/contact"
+            href="/demarrer"
             className="btn-primary hidden rounded-full px-5 py-2.5 text-[13px] sm:inline-block"
           >
             {t(c.nav.cta)}
@@ -152,7 +153,7 @@ export function Header() {
               </Link>
             ))}
             <Link
-              href="/contact"
+              href="/demarrer"
               className="btn-primary mt-4 rounded-full px-5 py-3.5 text-center text-[15px]"
             >
               {t(c.nav.cta)}

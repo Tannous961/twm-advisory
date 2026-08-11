@@ -6,13 +6,14 @@ import { useI18n, useT } from "@/lib/i18n";
 const product = [
   { href: "/approche", key: "approach" as const },
   { href: "/offres", key: "offers" as const },
+  { href: "/signal", key: "signal" as const },
   { href: "/architecture", key: "architecture" as const },
 ];
 
 const company = [
   { href: "/a-propos", key: "about" as const },
   { href: "/faq", key: "faq" as const },
-  { href: "/contact", key: "contact" as const },
+  { href: "/demarrer", key: "contact" as const },
 ];
 
 export function Footer() {

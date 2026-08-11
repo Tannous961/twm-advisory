@@ -1,23 +1,26 @@
 import type { MetadataRoute } from "next";
+import { getAllSignalSlugs, getSignalPost } from "@/lib/signal";
 import { siteConfig } from "@/lib/seo";
 
 const routes = [
   "",
   "/approche",
   "/offres",
+  "/signal",
   "/architecture",
   "/a-propos",
   "/faq",
+  "/demarrer",
   "/contact",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  return routes.map((route, i) => ({
+  const base = routes.map((route, i) => ({
     url: `${siteConfig.url}${route}`,
     lastModified,
-    changeFrequency: i === 0 ? "weekly" : "monthly",
+    changeFrequency: (i === 0 ? "weekly" : "monthly") as "weekly" | "monthly",
     priority: i === 0 ? 1 : 0.7,
     alternates: {
       languages: {
@@ -26,4 +29,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
   }));
+
+  const posts = getAllSignalSlugs().map((slug) => {
+    const post = getSignalPost(slug)!;
+    return {
+      url: `${siteConfig.url}/signal/${slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+      alternates: {
+        languages: {
+          fr: `${siteConfig.url}/signal/${slug}`,
+          en: `${siteConfig.url}/signal/${slug}?lang=en`,
+        },
+      },
+    };
+  });
+
+  return [...base, ...posts];
 }

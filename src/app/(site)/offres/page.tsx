@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { CtaBand } from "@/components/CtaBand";
-import { Fractional } from "@/components/Fractional";
 import { Offers } from "@/components/Offers";
 import { PageHero } from "@/components/PageHero";
 import { content } from "@/lib/content";
@@ -15,7 +14,6 @@ export default function OffresPage() {
     <>
       <PageHero page="offers" />
       <Offers />
-      <Fractional />
       <CtaBand />
     </>
   );

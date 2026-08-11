@@ -2,7 +2,6 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { ProgressBar } from "@/components/ProgressBar";
-import { SplashIntro } from "@/components/SplashIntro";
 import { buildJsonLd } from "@/lib/seo";
 
 export default function SiteLayout({
@@ -12,7 +11,6 @@ export default function SiteLayout({
 }>) {
   return (
     <div className="page-shell relative overflow-x-hidden">
-      <SplashIntro />
       <JsonLd data={buildJsonLd()} />
       <ProgressBar />
       <div

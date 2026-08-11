@@ -1,21 +1,20 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { LogoMark } from "./LogoMark";
+import { useI18n, useT } from "@/lib/i18n";
 
 const SPLASH_KEY = "twm-splash-seen";
-const EXIT_AT_MS = 2400;
-const DONE_AT_MS = 3100;
-
-function isSplashPending() {
-  return (
-    typeof document !== "undefined" &&
-    document.documentElement.dataset.twmSplash === "pending"
-  );
-}
+const FORCE_KEY = "twm-splash-force";
+const EXIT_AT_MS = 4200;
+const DONE_AT_MS = 5000;
 
 export function SplashIntro() {
-  const [active, setActive] = useState(isSplashPending);
+  const { c } = useI18n();
+  const t = useT();
+
+  // false on SSR + first client paint — avoids hydration mismatch.
+  // CSS covers the page while data-twm-splash="pending".
+  const [active, setActive] = useState(false);
   const [exiting, setExiting] = useState(false);
   const finished = useRef(false);
   const timers = useRef<number[]>([]);
@@ -31,6 +30,8 @@ export function SplashIntro() {
     clearTimers();
     try {
       sessionStorage.setItem(SPLASH_KEY, "1");
+      sessionStorage.removeItem(FORCE_KEY);
+      document.cookie = `${SPLASH_KEY}=1; path=/; SameSite=Lax`;
     } catch {
       /* ignore */
     }
@@ -45,7 +46,28 @@ export function SplashIntro() {
   }, []);
 
   useEffect(() => {
-    if (!isSplashPending()) return;
+    const params = new URLSearchParams(window.location.search);
+    let force = false;
+
+    try {
+      if (params.has("splash")) {
+        sessionStorage.setItem(FORCE_KEY, "1");
+        sessionStorage.removeItem(SPLASH_KEY);
+        document.cookie = `${SPLASH_KEY}=; path=/; Max-Age=0; SameSite=Lax`;
+        document.documentElement.dataset.twmSplash = "pending";
+        const url = new URL(window.location.href);
+        url.searchParams.delete("splash");
+        window.history.replaceState({}, "", url.pathname + url.search + url.hash);
+      }
+      force = sessionStorage.getItem(FORCE_KEY) === "1";
+    } catch {
+      force = params.has("splash");
+    }
+
+    const pending =
+      force || document.documentElement.dataset.twmSplash === "pending";
+
+    if (!pending) return;
 
     setActive(true);
     timers.current.push(window.setTimeout(beginExit, EXIT_AT_MS));
@@ -56,7 +78,7 @@ export function SplashIntro() {
 
   useEffect(() => {
     if (!exiting || finished.current) return;
-    const id = window.setTimeout(finish, 650);
+    const id = window.setTimeout(finish, 700);
     return () => window.clearTimeout(id);
   }, [exiting, finish]);
 
@@ -83,24 +105,29 @@ export function SplashIntro() {
       onClick={beginExit}
     >
       <div className="splash-glow" aria-hidden />
+
       <div className="splash-stage">
-        <div className="splash-mark text-accent">
-          <LogoMark animate className="splash-svg" />
+        <div className="splash-mark">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/logo.png?v=2"
+            src="/logo.png?v=4"
             alt=""
-            width={160}
-            height={160}
-            className="splash-solid"
+            width={220}
+            height={220}
+            className="splash-logo"
             draggable={false}
           />
         </div>
+
         <p className="splash-wordmark">
-          TWM <span>Advisory</span>
+          <span className="splash-twm">TWM</span>{" "}
+          <span className="splash-adv">Advisory</span>
         </p>
+        <p className="splash-line">{t(c.splash.line)}</p>
+        <p className="splash-pillars">{t(c.splash.pillars)}</p>
       </div>
-      <p className="splash-skip">Skip</p>
+
+      <p className="splash-skip">{t(c.splash.skip)}</p>
     </div>
   );
 }

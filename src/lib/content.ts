@@ -16,12 +16,13 @@ export const content = {
     approach: { fr: "Approche", en: "Approach" },
     offers: { fr: "Offres", en: "Services" },
     architecture: { fr: "L'entreprise agentique", en: "The agentic company" },
-    partners: { fr: "Partenaires", en: "Partners" },
+    partners: { fr: "Écosystème", en: "Ecosystem" },
     who: { fr: "Pour qui", en: "Who it's for" },
     about: { fr: "À propos", en: "About" },
     faq: { fr: "FAQ", en: "FAQ" },
+    signal: { fr: "Signal", en: "Signal" },
     contact: { fr: "Contact", en: "Contact" },
-    cta: { fr: "Prendre rendez-vous", en: "Book a call" },
+    cta: { fr: "Lancer le briefing", en: "Start the briefing" },
     menu: { fr: "Menu", en: "Menu" },
     close: { fr: "Fermer", en: "Close" },
   },
@@ -76,8 +77,8 @@ export const content = {
     offers: {
       title: { fr: "Offres", en: "Services" },
       lead: {
-        fr: "Trois façons de travailler ensemble : orienter, construire, déployer.",
-        en: "Three ways to work together: orient, build, deploy.",
+        fr: "Toujours le même parcours : audit, déploiement, mesure, extension. On commence petit, on prouve, on élargit.",
+        en: "Always the same path: audit, deploy, measure, extend. Start small, prove it, then expand.",
       },
     },
     architecture: {
@@ -106,6 +107,20 @@ export const content = {
       lead: {
         fr: "30 minutes. Gratuit. On regarde un premier cas concret.",
         en: "30 minutes. Free. We look at a concrete first case.",
+      },
+    },
+    intake: {
+      title: { fr: "Démarrer", en: "Start" },
+      lead: {
+        fr: "Un briefing opérateur avant le premier call — score, chemin, signal.",
+        en: "An operator briefing before the first call — score, path, signal.",
+      },
+    },
+    signal: {
+      title: { fr: "Signal", en: "Signal" },
+      lead: {
+        fr: "Un insight. Un verdict. Pas de newsletter creuse.",
+        en: "One insight. One verdict. No empty newsletter.",
       },
     },
   },
@@ -168,7 +183,7 @@ export const content = {
       fr: "Je pars du problème qui vous coûte vraiment — une marge qui se tend, un délai qui vous fait perdre des positions, une ligne qui ne décolle pas. Je le règle avec une solution qui tourne dans votre opérationnel, pas une recommandation. L'IA agentique, c'est le levier que j'active pour bouger l'indicateur.",
       en: "I start from the problem that actually costs you — a margin under pressure, a delay that costs you ground, a line that won't take off. I solve it with a solution that runs in your operations, not a recommendation. Agentic AI is the lever I pull to move the metric.",
     },
-    ctaPrimary: { fr: "Planifier un échange", en: "Book a conversation" },
+    ctaPrimary: { fr: "Lancer le briefing", en: "Start the briefing" },
     ctaSecondary: { fr: "Voir les offres", en: "See services" },
     note: {
       fr: "Premier échange gratuit. Sans engagement.",
@@ -203,9 +218,9 @@ export const content = {
       label: { fr: "personnes dirigées", en: "people led" },
     },
     {
-      value: "3",
+      value: "11",
       suffix: { fr: "", en: "" },
-      label: { fr: "langues de travail", en: "working languages" },
+      label: { fr: "marchés couverts", en: "markets covered" },
     },
   ],
   problem: {
@@ -283,81 +298,154 @@ export const content = {
   offers: {
     section: { fr: "Offres", en: "Services" },
     title: {
-      fr: "Trois façons de travailler ensemble.",
-      en: "Three ways to work together.",
+      fr: "Cinq façons d'avancer — dans le bon ordre.",
+      en: "Five ways forward — in the right order.",
+    },
+    thread: {
+      section: { fr: "Le fil rouge", en: "The throughline" },
+      body: {
+        fr: "Toujours le même parcours : audit → déploiement → mesure → extension. On commence petit, on prouve, on élargit. Rien ne se vend sans preuve.",
+        en: "Always the same path: audit → deploy → measure → extend. Start small, prove it, then expand. Nothing ships without proof.",
+      },
+    },
+    labels: {
+      deliverable: { fr: "Livrable", en: "Deliverable" },
+      audience: { fr: "Pour qui", en: "For whom" },
+      formats: { fr: "Formats", en: "Formats" },
     },
     items: [
       {
         title: {
-          fr: "Orienter",
-          en: "Orient",
+          fr: "Audit IA de ton organisation",
+          en: "AI audit of your organization",
         },
         body: {
-          fr: "Stratégie & go-to-market IA. Où l'IA crée de la valeur dans votre organisation, et comment structurer l'écosystème autour. Cadre, priorisation, arbitrages — jusqu'à la décision d'investir juste.",
-          en: "AI strategy & go-to-market. Where AI creates value in your organization, and how to structure the ecosystem around it. Frame, prioritization, decisions — through to investing in the right place.",
+          fr: "Où l'IA te fait vraiment gagner du temps — et où elle ne sert à rien. On cartographie tes tâches, on les priorise par impact et effort.",
+          en: "Where AI actually saves you time — and where it doesn't. We map your work, then prioritize by impact and effort.",
         },
-        meta: {
-          fr: "Livrable : feuille de route chiffrée · Format : mission ou direction IA à temps partagé",
-          en: "Deliverable: a costed roadmap · Format: mission or fractional AI leadership",
+        deliverable: {
+          fr: "Une feuille de route chiffrée.",
+          en: "A costed roadmap.",
+        },
+        audience: {
+          fr: "Tous. C'est la porte d'entrée idéale.",
+          en: "Everyone. The ideal entry point.",
         },
       },
       {
         title: {
-          fr: "Construire",
-          en: "Build",
+          fr: "Déploiement d'agents",
+          en: "Agent deployment",
         },
         body: {
-          fr: "Produits agentiques sur mesure. Une interface, une application, un produit avec de l'IA agentique dedans — conçu, développé, mis sur le marché.",
-          en: "Custom agentic products. An interface, an application, a product with agentic AI inside — designed, built, and brought to market.",
+          fr: "Un agent, c'est un collaborateur logiciel qui exécute une tâche de bout en bout. Automatisation, reporting, prospection : on met en production ce qui te fait perdre du temps.",
+          en: "An agent is a software coworker that runs a task end to end. Automation, reporting, prospecting: we put into production what is costing you time.",
         },
-        meta: {
-          fr: "Livrable : produit en production",
-          en: "Deliverable: product in production",
+        deliverable: {
+          fr: "Des agents en production + le transfert de compétences.",
+          en: "Agents in production + skills transfer.",
+        },
+        audience: {
+          fr: "Ceux qui ont déjà identifié un cas d'usage.",
+          en: "Those who already have a use case identified.",
         },
       },
       {
         title: {
-          fr: "Déployer",
-          en: "Deploy",
+          fr: "Audit & certification de tes systèmes IA",
+          en: "Audit & certification of your AI systems",
         },
         body: {
-          fr: "Agents en production. Un ou plusieurs agents branchés sur vos process — automatisation, reporting, prospection — avec cadre data et mesure d'impact.",
-          en: "Agents in production. One or more agents wired into your processes — automation, reporting, prospecting — with a data frame and measured impact.",
+          fr: "Tu as déployé des agents. Lesquels tournent encore vraiment ? Les modèles changent de version, les usages dérivent, une équipe arrête d'utiliser un outil sans prévenir personne. Le prestataire dit que ça marche. La DSI dit que ça tourne. Ce n'est pas la même chose. Je teste, je mesure, je tranche.",
+          en: "You've deployed agents. Which ones still actually run? Models change versions, usage drifts, a team stops using a tool and tells no one. The vendor says it works. IT says it's up. Not the same thing. I test, measure, and call it.",
         },
-        meta: {
-          fr: "Livrable : agents en production",
-          en: "Deliverable: agents in production",
+        deliverable: {
+          fr: "Un verdict clair, système par système. Ce qui tient, ce qui dérive, ce qu'il faut couper.",
+          en: "A clear verdict, system by system. What holds, what drifts, what to cut.",
         },
+        audience: {
+          fr: "Ceux qui ont déjà des systèmes IA en production et personne pour dire s'ils marchent.",
+          en: "Those with AI systems already in production and no one to say if they work.",
+        },
+      },
+      {
+        title: {
+          fr: "Accompagnement stratégique",
+          en: "Strategic advisory",
+        },
+        body: {
+          fr: "Une vision, pas juste un outil. Feuille de route IA, priorisation, mesure du ROI, conduite du changement. Direction IA à temps partagé quand le comité veut du concret sans le poste full-time.",
+          en: "A vision, not just a tool. AI roadmap, prioritization, ROI measurement, change leadership. Fractional AI leadership when the board wants something live without a full-time seat.",
+        },
+        deliverable: {
+          fr: "Un plan + un suivi.",
+          en: "A plan + ongoing follow-through.",
+        },
+        audience: {
+          fr: "Les dirigeants qui veulent une direction, pas un gadget.",
+          en: "Leaders who want direction, not a gadget.",
+        },
+      },
+      {
+        title: {
+          fr: "Formation & sensibilisation",
+          en: "Training & awareness",
+        },
+        body: {
+          fr: "Le vrai risque, ce n'est pas que tes équipes ne sachent pas se servir de l'IA. C'est qu'elles s'en servent sans savoir dire si le résultat est bon. On démystifie sans infantiliser. Tes équipes repartent avec la capacité de juger, pas seulement d'exécuter.",
+          en: "The real risk isn't that your teams can't use AI. It's that they use it without knowing if the output is good. We demystify without talking down. Your teams leave able to judge — not only to execute.",
+        },
+        deliverable: {
+          fr: "Une session sur mesure.",
+          en: "A tailored session.",
+        },
+        audience: {
+          fr: "Cabinets, ordres, réseaux, comités de direction, événements.",
+          en: "Firms, professional bodies, networks, executive committees, events.",
+        },
+        formats: [
+          {
+            title: { fr: "Conférence", en: "Keynote" },
+            body: {
+              fr: "Démystifier l'IA agentique en une heure. Pour un comité de direction, un ordre professionnel, un réseau, un événement.",
+              en: "Demystify agentic AI in one hour. For an executive committee, professional body, network, or event.",
+            },
+          },
+          {
+            title: { fr: "Atelier", en: "Workshop" },
+            body: {
+              fr: "Les mains dans le cambouis. Tes équipes repartent avec un cas d'usage identifié sur leurs propres tâches.",
+              en: "Hands in the work. Your teams leave with a use case identified on their own tasks.",
+            },
+          },
+          {
+            title: {
+              fr: "Acculturation dirigeants",
+              en: "Executive acculturation",
+            },
+            body: {
+              fr: "Une session dédiée pour trancher : par où commencer, quoi déléguer à un agent, quoi garder humain.",
+              en: "A dedicated session to decide: where to start, what to hand to an agent, what to keep human.",
+            },
+          },
+        ],
       },
     ],
-  },
-  fractional: {
-    eyebrow: {
-      fr: "Direction IA à temps partagé & management de transition",
-      en: "Fractional AI leadership & interim management",
-    },
-    title: {
-      fr: "Besoin de quelqu'un à la barre, sans le poste full-time ?",
-      en: "Need someone at the helm, without the full-time seat?",
-    },
-    body: {
-      fr: "Quand le comité veut du concret en production — pas une autre étude — je prends la direction en interim ou à temps partagé. Direction digitale, DSI, COO, ou direction IA. J'ai dirigé 120 personnes et un centre de profit : je sais opérer, pas seulement conseiller.",
-      en: "When the board wants something live in production — not another study — I take the lead interim or part-time. Digital leadership, CIO, COO, or AI leadership. I've led 120 people and a profit center: I know how to operate, not just advise.",
-    },
-    items: [
-      {
-        fr: "Une transformation à piloter sans DSI en interne.",
-        en: "A transformation to lead with no CIO in-house.",
+    ecosystem: {
+      section: { fr: "Écosystème", en: "Ecosystem" },
+      title: {
+        fr: "Je déploie seul.",
+        en: "I deploy alone.",
       },
-      {
-        fr: "Un cadre data et usage à poser avant que le risque n'arrive.",
-        en: "A data and usage frame to set before risk shows up.",
+      titleEm: {
+        fr: "Je ne raisonne pas seul.",
+        en: "I don't reason alone.",
       },
-      {
-        fr: "Un projet critique qui a besoin d'un opérateur, pas d'un cabinet de slides.",
-        en: "A critical project that needs an operator, not a slide factory.",
+      body: {
+        fr: "L'IA agentique touche à ta donnée, ta conformité, ton infrastructure. Je m'entoure d'un réseau qui couvre ce que je ne fais pas moi-même — pour que tu aies un seul interlocuteur, pas dix prestataires à coordonner.",
+        en: "Agentic AI touches your data, compliance, and infrastructure. I work with a network that covers what I don't do myself — so you have one counterpart, not ten vendors to coordinate.",
       },
-    ],
+    },
   },
   fit: {
     section: { fr: "Pour qui", en: "Who it's for" },
@@ -397,18 +485,18 @@ export const content = {
     ],
   },
   partners: {
-    section: { fr: "Partenaires", en: "Partners" },
+    section: { fr: "Écosystème", en: "Ecosystem" },
     title: {
-      fr: "Je n'arrive pas seul.",
-      en: "I don't come alone.",
+      fr: "Je déploie seul.",
+      en: "I deploy alone.",
     },
     titleEm: {
-      fr: "J'active un réseau quand il le faut.",
-      en: "I bring a network when needed.",
+      fr: "Je ne raisonne pas seul.",
+      en: "I don't reason alone.",
     },
     body: {
-      fr: "Quand le besoin dépasse ce que je peux porter seul, j'active des partenaires tech, intégration et métier, et je pilote le tout. Vous gagnez de la capacité d'exécution — pas une liste de sous-traitants à coordonner.",
-      en: "When the need goes beyond what I can carry alone, I bring in tech, integration and domain partners, and I run the whole thing. You get execution capacity — not a vendor list to coordinate.",
+      fr: "L'IA agentique touche à ta donnée, ta conformité, ton infrastructure. Je m'entoure d'un réseau qui couvre ce que je ne fais pas moi-même — pour que tu aies un seul interlocuteur, pas dix prestataires à coordonner.",
+      en: "Agentic AI touches your data, compliance, and infrastructure. I work with a network that covers what I don't do myself — so you have one counterpart, not ten vendors to coordinate.",
     },
   },
   watch: {
@@ -597,8 +685,8 @@ export const content = {
         label: { fr: "personnes dirigées", en: "people led" },
       },
       {
-        value: "3",
-        label: { fr: "langues de travail", en: "working languages" },
+        value: "11",
+        label: { fr: "marchés couverts", en: "markets covered" },
       },
       {
         value: "15",
@@ -687,10 +775,271 @@ export const content = {
       fr: "30 minutes. Gratuit. On regarde les fuites de temps, le cadre data, et un premier cas concret — souvent offres ou recherche.",
       en: "30 minutes. Free. We look at time leaks, the data frame, and a concrete first case — often proposals or research.",
     },
-    cta: { fr: "Planifier un échange", en: "Book a conversation" },
+    cta: { fr: "Lancer le briefing", en: "Start the briefing" },
+    secondary: { fr: "Écrire un email", en: "Send an email" },
     note: {
       fr: "Réponse sous 48 h ouvrées.",
       en: "Reply within 2 business days.",
+    },
+  },
+  signal: {
+    section: { fr: "Signal", en: "Signal" },
+    insightLabel: { fr: "Insight", en: "Insight" },
+    verdictLabel: { fr: "Verdict", en: "Verdict" },
+    readCta: { fr: "Lire le signal", en: "Read the signal" },
+    back: { fr: "Tous les signaux", en: "All signals" },
+    minutes: { fr: "min", en: "min" },
+    briefingCta: {
+      fr: "Préparer mon call sur ce sujet",
+      en: "Prep my call on this topic",
+    },
+    briefingNote: {
+      fr: "Le briefing s'ouvre avec l'intention déjà allumée.",
+      en: "The briefing opens with the intent already lit.",
+    },
+  },
+  intake: {
+    brand: { fr: "TWM Advisory", en: "TWM Advisory" },
+    mission: {
+      fr: "On prépare ton premier call comme un briefing opérateur.",
+      en: "We prep your first call like an operator briefing.",
+    },
+    missionBody: {
+      fr: "Quelques micro-défis. Un score. Un chemin. Un signal. Ensuite on te propose un créneau.",
+      en: "A few micro-challenges. A score. A path. A signal. Then we propose a slot.",
+    },
+    start: { fr: "Entrer en mission", en: "Enter the mission" },
+    next: { fr: "Continuer", en: "Continue" },
+    back: { fr: "Retour", en: "Back" },
+    skipVideo: { fr: "Passer à l'écrit", en: "Switch to text" },
+    useVideo: { fr: "Filmer mon signal", en: "Record my signal" },
+    record: { fr: "Enregistrer", en: "Record" },
+    stop: { fr: "Stop", en: "Stop" },
+    retake: { fr: "Reprendre", en: "Retake" },
+    submit: { fr: "Envoyer mon briefing", en: "Send my briefing" },
+    submitting: { fr: "Transmission…", en: "Sending…" },
+    stepOf: { fr: "Étape", en: "Step" },
+    scoreLabel: { fr: "Maturité IA", en: "AI maturity" },
+    entryLabel: { fr: "Porte d'entrée", en: "Entry point" },
+    pathLabel: { fr: "Ton chemin", en: "Your path" },
+    feedbackLabel: { fr: "Signal live", en: "Live signal" },
+    intentTitle: {
+      fr: "Tu en es où ?",
+      en: "Where are you at?",
+    },
+    intentBody: {
+      fr: "Un seul choix. Ça allume le bon nœud sur le parcours.",
+      en: "One choice. It lights the right node on the path.",
+    },
+    intents: {
+      discover: {
+        title: { fr: "Je découvre", en: "I'm exploring" },
+        body: {
+          fr: "Je veux savoir où l'IA crée vraiment de la valeur.",
+          en: "I want to know where AI actually creates value.",
+        },
+      },
+      use_case: {
+        title: { fr: "J'ai un cas précis", en: "I have a clear case" },
+        body: {
+          fr: "Une fuite de temps identifiée — je veux la mettre en production.",
+          en: "A time leak identified — I want it in production.",
+        },
+      },
+      has_agents: {
+        title: { fr: "J'ai déjà des agents", en: "I already have agents" },
+        body: {
+          fr: "Ça tourne… ou ça dérive. J'ai besoin d'un verdict.",
+          en: "It's running… or drifting. I need a verdict.",
+        },
+      },
+      strategy: {
+        title: { fr: "Je veux une direction", en: "I want direction" },
+        body: {
+          fr: "Feuille de route, ROI, conduite du changement — pas un gadget.",
+          en: "Roadmap, ROI, change leadership — not a gadget.",
+        },
+      },
+      training: {
+        title: { fr: "Je veux former", en: "I want training" },
+        body: {
+          fr: "Équipes ou dirigeants : juger l'IA, pas seulement l'exécuter.",
+          en: "Teams or leaders: judge AI, not only execute it.",
+        },
+      },
+    },
+    probesTitle: {
+      fr: "Trois micro-défis.",
+      en: "Three micro-challenges.",
+    },
+    probesBody: {
+      fr: "Chaque réponse ajuste ton score et ton chemin.",
+      en: "Each answer adjusts your score and your path.",
+    },
+    probes: {
+      orgSize: {
+        title: { fr: "Taille de l'orga", en: "Org size" },
+        options: {
+          solo: { fr: "Solo / duo", en: "Solo / duo" },
+          small: { fr: "3–20", en: "3–20" },
+          mid: { fr: "20–200", en: "20–200" },
+          large: { fr: "200+", en: "200+" },
+        },
+      },
+      urgency: {
+        title: { fr: "Urgence", en: "Urgency" },
+        options: {
+          explore: { fr: "Je cartographie", en: "Mapping it out" },
+          quarter: { fr: "Ce trimestre", en: "This quarter" },
+          now: { fr: "C'est chaud", en: "It's urgent" },
+        },
+      },
+      dataConstraint: {
+        title: { fr: "Données", en: "Data" },
+        options: {
+          open: { fr: "Peu sensibles", en: "Low sensitivity" },
+          sensitive: { fr: "Confidentielles", en: "Confidential" },
+          strict: { fr: "Cadre strict / régulé", en: "Strict / regulated" },
+        },
+      },
+    },
+    mapTitle: {
+      fr: "Ton parcours s'allume.",
+      en: "Your path lights up.",
+    },
+    mapBody: {
+      fr: "Voici la porte d'entrée la plus juste — on affinera au call.",
+      en: "Here's the most fitting entry point — we'll refine on the call.",
+    },
+    offers: {
+      audit: {
+        fr: "Audit IA",
+        en: "AI audit",
+      },
+      deploy: {
+        fr: "Déploiement",
+        en: "Deploy",
+      },
+      certify: {
+        fr: "Certification",
+        en: "Certification",
+      },
+      advisory: {
+        fr: "Stratégie",
+        en: "Strategy",
+      },
+      training: {
+        fr: "Formation",
+        en: "Training",
+      },
+    },
+    feedback: {
+      "intent.discover": {
+        fr: "On commence par cartographier — pas par déployer.",
+        en: "We start by mapping — not deploying.",
+      },
+      "intent.use_case": {
+        fr: "Cas clair : on vise la production.",
+        en: "Clear case: we aim for production.",
+      },
+      "intent.has_agents": {
+        fr: "Tu as déjà du terrain. On mesure avant d'étendre.",
+        en: "You already have ground. We measure before expanding.",
+      },
+      "intent.strategy": {
+        fr: "Direction avant outils. Le comité voudra du concret.",
+        en: "Direction before tools. The board will want something live.",
+      },
+      "intent.training": {
+        fr: "Former à juger — le vrai levier d'adoption.",
+        en: "Train to judge — the real adoption lever.",
+      },
+      "size.solo": {
+        fr: "Petite structure : impact rapide, scope serré.",
+        en: "Small shop: fast impact, tight scope.",
+      },
+      "size.small": {
+        fr: "Taille idéale pour un premier agent utile.",
+        en: "Ideal size for a first useful agent.",
+      },
+      "size.mid": {
+        fr: "Assez de process pour un fil rouge mesurable.",
+        en: "Enough process for a measurable throughline.",
+      },
+      "size.large": {
+        fr: "Gouvernance et cadre data seront au centre.",
+        en: "Governance and data frame will be central.",
+      },
+      "urgency.explore": {
+        fr: "Tempo découverte — on priorise la clarté.",
+        en: "Discovery pace — we prioritize clarity.",
+      },
+      "urgency.quarter": {
+        fr: "Fenêtre trimestre : feuille de route actionnable.",
+        en: "Quarter window: actionable roadmap.",
+      },
+      "urgency.now": {
+        fr: "Urgence haute — on tranche vite sur le premier cas.",
+        en: "High urgency — we decide fast on the first case.",
+      },
+      "data.open": {
+        fr: "Moins de friction data : on peut prototyper plus vite.",
+        en: "Less data friction: we can prototype faster.",
+      },
+      "data.sensitive": {
+        fr: "Confidentialité : le cadre arrive avant l'outil.",
+        en: "Confidentiality: the frame comes before the tool.",
+      },
+      "data.strict": {
+        fr: "Cadre strict : audit et règles avant tout déploiement.",
+        en: "Strict frame: audit and rules before any deployment.",
+      },
+    },
+    signalTitle: {
+      fr: "Capture ton signal.",
+      en: "Capture your signal.",
+    },
+    signalBody: {
+      fr: "60–90 secondes : quelle fuite de temps ou quel système IA te pose problème ? Ou écris-le.",
+      en: "60–90 seconds: which time leak or AI system is the problem? Or write it.",
+    },
+    signalPlaceholder: {
+      fr: "Ex. Nos associés passent 6 h/semaine sur les offres. On a testé un outil, personne ne l'utilise vraiment…",
+      en: "E.g. Partners spend 6h/week on proposals. We tried a tool; no one really uses it…",
+    },
+    consent: {
+      fr: "J'accepte que ce signal (vidéo ou texte) soit stocké de façon privée pour préparer mon call, puis effacé sous 30 jours.",
+      en: "I agree this signal (video or text) is stored privately to prep my call, then deleted within 30 days.",
+    },
+    identityTitle: {
+      fr: "Qui reçoit le créneau ?",
+      en: "Who gets the slot?",
+    },
+    identityBody: {
+      fr: "On te revient sous 48 h ouvrées avec une proposition de créneau.",
+      en: "We'll come back within 2 business days with a proposed slot.",
+    },
+    fields: {
+      name: { fr: "Prénom", en: "First name" },
+      email: { fr: "Email", en: "Email" },
+      company: { fr: "Société (optionnel)", en: "Company (optional)" },
+    },
+    doneTitle: {
+      fr: "Briefing reçu.",
+      en: "Briefing received.",
+    },
+    doneBody: {
+      fr: "Créneau proposé sous 48 h ouvrées. Tu arrives au call avec un fil déjà tendu.",
+      en: "Slot proposed within 2 business days. You arrive on the call with a thread already pulled.",
+    },
+    doneHome: { fr: "Retour à l'accueil", en: "Back home" },
+    error: {
+      fr: "Transmission interrompue. Réessaie — ou écris-nous.",
+      en: "Transmission interrupted. Try again — or email us.",
+    },
+    camDenied: {
+      fr: "Caméra indisponible. Passe à l'écrit.",
+      en: "Camera unavailable. Switch to text.",
     },
   },
   footer: {
@@ -699,6 +1048,17 @@ export const content = {
       fr: "France · présentiel et remote",
       en: "France · on-site and remote",
     },
+  },
+  splash: {
+    line: {
+      fr: "De la stratégie à la production",
+      en: "From strategy to production",
+    },
+    pillars: {
+      fr: "Audit · Déploiement · Mesure",
+      en: "Audit · Deploy · Measure",
+    },
+    skip: { fr: "Passer", en: "Skip" },
   },
 } as const;
 

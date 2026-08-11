@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Reveal } from "./Reveal";
 import { useI18n, useT } from "@/lib/i18n";
 
@@ -50,9 +51,20 @@ export function Contact() {
             <p className="mb-8 text-[16px] text-muted sm:mb-9 sm:text-[17px]">
               {t(c.contact.lead)}
             </p>
-            <a href="mailto:hello@twmadvisory.com" className="btn-primary rounded-full px-8 py-4 text-base">
-              {t(c.contact.cta)}
-            </a>
+            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <Link
+                href="/demarrer"
+                className="btn-primary rounded-full px-8 py-4 text-base"
+              >
+                {t(c.contact.cta)}
+              </Link>
+              <a
+                href="mailto:hello@twmadvisory.com"
+                className="btn-secondary rounded-full px-8 py-4 text-base"
+              >
+                {t(c.contact.secondary)}
+              </a>
+            </div>
             <p className="mt-5 font-mono text-[11px] tracking-[0.08em] text-[#4c5468]">
               {t(c.contact.note)}
             </p>

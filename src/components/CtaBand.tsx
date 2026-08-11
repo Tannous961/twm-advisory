@@ -27,7 +27,7 @@ export function CtaBand() {
               {t(c.home.ctaBandBody)}
             </p>
             <Link
-              href="/contact"
+              href="/demarrer"
               className="btn-primary mt-8 inline-block rounded-full px-7 py-3.5 text-[15px]"
             >
               {t(c.hero.ctaPrimary)}

@@ -11,7 +11,7 @@ export function Partners() {
   return (
     <Reveal>
       <section
-        id="partenaires"
+        id="ecosysteme"
         className="mx-auto max-w-7xl px-4 pt-16 sm:px-6 sm:pt-20 lg:px-10 lg:pt-28"
       >
         <SectionLabel index="07" label={t(c.partners.section)} />

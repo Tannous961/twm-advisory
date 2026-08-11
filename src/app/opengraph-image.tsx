@@ -107,7 +107,7 @@ export default function OpenGraphImage() {
               lineHeight: 1.4,
             }}
           >
-            Orienter. Construire. Déployer. Cadre data clair.
+            Audit. Déploiement. Mesure. Cadre data clair.
           </div>
         </div>
 

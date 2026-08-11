@@ -1,10 +1,20 @@
+import type { CSSProperties, ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
+import { cookies, headers } from "next/headers";
 import { Inter, JetBrains_Mono, Playfair_Display } from "next/font/google";
 import { Providers } from "@/components/Providers";
+import { SplashIntro } from "@/components/SplashIntro";
+import {
+  DEFAULT_THEME,
+  THEME_STORAGE_KEY,
+  getTheme,
+  themes,
+  type ThemeId,
+} from "@/lib/design-system";
 import { buildMetadata } from "@/lib/seo";
-import { SPLASH_INIT_SCRIPT } from "@/lib/splash-init";
-import { THEME_INIT_SCRIPT } from "@/lib/theme-init";
 import "./globals.css";
+
+const SPLASH_COOKIE = "twm-splash-seen";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -41,27 +51,38 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
-export default function RootLayout({
+function resolveThemeId(raw: string | undefined): ThemeId {
+  if (raw && themes.some((t) => t.id === raw)) return raw as ThemeId;
+  return DEFAULT_THEME;
+}
+
+export default async function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
+  const jar = await cookies();
+  const hdrs = await headers();
+  const themeId = resolveThemeId(jar.get(THEME_STORAGE_KEY)?.value);
+  const theme = getTheme(themeId);
+  const forceSplash = hdrs.get("x-twm-force-splash") === "1";
+  const splashDone = !forceSplash && jar.has(SPLASH_COOKIE);
+
   return (
     <html
       lang="fr"
       suppressHydrationWarning
+      data-theme={themeId}
+      data-twm-splash={splashDone ? "done" : "pending"}
       className={`${playfair.variable} ${inter.variable} ${jetbrains.variable} h-full antialiased`}
+      style={theme.vars as CSSProperties}
     >
-      <head>
-        <script
-          id="twm-boot"
-          dangerouslySetInnerHTML={{
-            __html: `${THEME_INIT_SCRIPT}${SPLASH_INIT_SCRIPT}`,
-          }}
-        />
-      </head>
       <body className="min-h-dvh bg-bg font-sans text-fg">
-        <Providers>{children}</Providers>
+        <Providers>
+          {/* Outside .page-shell so opacity:0 during pending doesn't hide the intro */}
+          <SplashIntro />
+          {children}
+        </Providers>
       </body>
     </html>
   );

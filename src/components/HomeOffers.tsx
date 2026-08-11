@@ -22,24 +22,21 @@ export function HomeOffers() {
             {t(c.nav.offers)} →
           </Link>
         </div>
-        <div className="grid gap-4 lg:grid-cols-3">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {c.offers.items.map((item, i) => (
             <Link
               key={i}
               href="/offres"
-              className="glass-card group flex flex-col rounded-3xl p-7 transition duration-300 hover:-translate-y-1 hover:border-accent/30"
+              className="glass-card group flex flex-col rounded-3xl p-6 transition duration-300 hover:-translate-y-1 hover:border-accent/30 sm:p-7"
             >
-              <span className="mb-4 font-mono text-[11px] text-muted-3">
+              <span className="mb-3 font-mono text-[11px] text-muted-3">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mb-3 font-display text-2xl group-hover:text-accent">
+              <h3 className="mb-3 font-display text-xl leading-snug group-hover:text-accent sm:text-2xl">
                 {t(item.title)}
               </h3>
-              <p className="mb-5 flex-1 text-[15px] leading-relaxed text-muted">
-                {t(item.body)}
-              </p>
-              <p className="border-t border-white/8 pt-4 font-mono text-[11px] tracking-[0.06em] text-muted-3">
-                {t(item.meta)}
+              <p className="mt-auto border-t border-white/8 pt-4 font-mono text-[11px] tracking-[0.06em] text-muted-3">
+                {t(item.deliverable)}
               </p>
             </Link>
           ))}

@@ -49,6 +49,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     }
     setThemeId(initial);
     applyThemeVars(initial);
+    try {
+      document.cookie = `${THEME_STORAGE_KEY}=${initial}; path=/; max-age=31536000; SameSite=Lax`;
+    } catch {
+      /* ignore */
+    }
   }, []);
 
   const setTheme = useCallback((id: ThemeId) => {
@@ -56,6 +61,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     applyThemeVars(id);
     try {
       localStorage.setItem(THEME_STORAGE_KEY, id);
+      document.cookie = `${THEME_STORAGE_KEY}=${id}; path=/; max-age=31536000; SameSite=Lax`;
     } catch {
       /* ignore */
     }

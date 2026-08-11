@@ -56,7 +56,7 @@ export function Hero() {
               style={{ animationDelay: "0.3s" }}
             >
               <Link
-                href="/contact"
+                href="/demarrer"
                 className="btn-primary rounded-full px-7 py-3.5 text-center text-[15px] sm:py-4"
               >
                 {t(c.hero.ctaPrimary)}
