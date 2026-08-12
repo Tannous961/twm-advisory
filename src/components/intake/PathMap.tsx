@@ -19,7 +19,7 @@ export function PathMap({
   const lit = new Set(litPath);
 
   return (
-    <div className="intake-path" aria-label={pathLabel}>
+    <div className="intake-path" role="region" aria-label={pathLabel}>
       <p className="mb-4 font-mono text-[10px] tracking-[0.16em] text-muted-3 uppercase">
         {pathLabel}
       </p>

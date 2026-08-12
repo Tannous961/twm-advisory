@@ -98,6 +98,69 @@ body {
   border: 0;
 }
 
+.skip-link {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  transform: translateY(-160%);
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--ink) !important;
+  padding: 0.7rem 1.1rem;
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid var(--fg);
+  outline-offset: 3px;
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-soft);
+  outline-offset: 3px;
+}
+
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 3px;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--accent-soft);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -356,6 +419,14 @@ a:hover {
   transform: none;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* —— Splash intro (logo convergence) —— */
 html[data-twm-splash="pending"] {
   overflow: hidden;
@@ -505,6 +576,9 @@ html[data-twm-splash="done"] .animate-rise {
   right: 0;
   z-index: 2;
   margin: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
   text-align: center;
   font-family: var(--font-jetbrains), ui-monospace, monospace;
   font-size: 10px;
@@ -513,6 +587,11 @@ html[data-twm-splash="done"] .animate-rise {
   color: var(--muted-3);
   opacity: 0;
   animation: splash-fade-in 0.5s 2.4s var(--ease-out) both;
+}
+
+.splash-skip:hover,
+.splash-skip:focus-visible {
+  color: var(--fg);
 }
 
 .splash-root.is-exiting .splash-stage {
@@ -596,4 +675,12 @@ html[data-twm-splash="done"] .animate-rise {
     transparent 70%
   );
   z-index: -1;
+}
+
+.signal-cover-grid {
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+  background-size: 2rem 2rem;
+  mask-image: linear-gradient(to right, black, transparent 88%);
 }

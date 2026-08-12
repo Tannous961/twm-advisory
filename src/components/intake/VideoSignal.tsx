@@ -146,6 +146,7 @@ export function VideoSignal({ onBlob, labels }: Props) {
             className="size-full object-cover"
             controls
             playsInline
+            aria-label={labels.retake}
           />
         ) : (
           <video
@@ -153,18 +154,25 @@ export function VideoSignal({ onBlob, labels }: Props) {
             className="size-full scale-x-[-1] object-cover"
             muted
             playsInline
+            aria-label={labels.record}
           />
         )}
         {recording ? (
-          <span className="absolute top-3 left-3 inline-flex items-center gap-2 rounded-full bg-black/55 px-3 py-1 font-mono text-[11px] text-fg">
-            <span className="size-2 animate-pulse rounded-full bg-red-500" />
+          <span
+            className="absolute top-3 left-3 inline-flex items-center gap-2 rounded-full bg-black/55 px-3 py-1 font-mono text-[11px] text-fg"
+            role="status"
+            aria-live="polite"
+          >
+            <span className="size-2 animate-pulse rounded-full bg-red-500" aria-hidden />
             {seconds}s / 90s
           </span>
         ) : null}
       </div>
       <div className="flex flex-wrap items-center gap-3 p-4">
         {error ? (
-          <p className="text-sm text-muted">{error}</p>
+          <p role="alert" className="text-sm text-muted">
+            {error}
+          </p>
         ) : previewUrl ? (
           <button type="button" className="btn-secondary rounded-full px-5 py-2.5 text-sm" onClick={retake}>
             {labels.retake}
@@ -179,6 +187,7 @@ export function VideoSignal({ onBlob, labels }: Props) {
             className="btn-primary rounded-full px-5 py-2.5 text-sm"
             onClick={start}
             disabled={!ready}
+            aria-disabled={!ready}
           >
             {labels.record}
           </button>

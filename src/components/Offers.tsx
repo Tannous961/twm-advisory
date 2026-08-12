@@ -27,7 +27,7 @@ export function Offers() {
             {t(c.offers.title)}
           </h2>
 
-          <ol className="flex flex-col gap-6 sm:gap-8">
+          <ol className="relative flex flex-col gap-6 before:absolute before:top-8 before:bottom-8 before:left-[1.45rem] before:w-px before:bg-gradient-to-b before:from-accent/60 before:via-accent/20 before:to-transparent sm:gap-8 sm:before:left-[2rem]">
             {c.offers.items.map((item, i) => {
               const formats =
                 "formats" in item && item.formats ? item.formats : null;
@@ -35,14 +35,23 @@ export function Offers() {
               return (
                 <li
                   key={i}
-                  className="glass-card relative overflow-hidden rounded-3xl p-7 sm:p-9"
+                  className="glass-card group relative overflow-hidden rounded-3xl p-7 pl-16 transition duration-300 hover:border-accent/25 sm:p-9 sm:pl-24"
                 >
-                  <div className="flex flex-col gap-5 lg:grid lg:grid-cols-[auto_1fr] lg:items-start lg:gap-10">
-                    <span className="font-mono text-[13px] tracking-[0.14em] text-accent">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
+                  <span className="absolute top-7 left-[1.45rem] z-2 flex size-8 -translate-x-1/2 items-center justify-center rounded-full border border-accent/40 bg-panel font-mono text-[10px] tracking-[0.08em] text-accent shadow-[0_0_0_6px_var(--bg)] transition group-hover:border-accent group-hover:bg-accent group-hover:text-ink sm:top-9 sm:left-[2rem] sm:size-10">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute -top-10 -right-3 font-display text-[9rem] leading-none text-white/[0.025] transition group-hover:text-accent/[0.045] sm:text-[12rem]"
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
 
-                    <div className="min-w-0">
+                  <div className="relative min-w-0">
+                    <p className="mb-3 font-mono text-[10px] tracking-[0.16em] text-muted-3 uppercase">
+                      {t(c.offers.thread.section)} ·{" "}
+                      {String(i + 1).padStart(2, "0")}
+                    </p>
                       <h3 className="mb-3 font-display text-[clamp(1.35rem,3vw,1.85rem)] leading-snug font-normal">
                         {t(item.title)}
                       </h3>
@@ -88,7 +97,6 @@ export function Offers() {
                           </ul>
                         </div>
                       ) : null}
-                    </div>
                   </div>
                 </li>
               );

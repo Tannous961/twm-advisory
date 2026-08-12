@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { useI18n, useT } from "@/lib/i18n";
 
 const SPLASH_KEY = "twm-splash-seen";
@@ -11,6 +11,8 @@ const DONE_AT_MS = 5000;
 export function SplashIntro() {
   const { c } = useI18n();
   const t = useT();
+  const titleId = useId();
+  const skipRef = useRef<HTMLButtonElement>(null);
 
   // false on SSR + first client paint — avoids hydration mismatch.
   // CSS covers the page while data-twm-splash="pending".
@@ -85,6 +87,10 @@ export function SplashIntro() {
   useEffect(() => {
     if (!active) return;
 
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    skipRef.current?.focus();
+
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape" || e.key === "Enter" || e.key === " ") {
         e.preventDefault();
@@ -93,7 +99,10 @@ export function SplashIntro() {
     };
 
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      window.removeEventListener("keydown", onKey);
+    };
   }, [active, beginExit]);
 
   if (!active) return null;
@@ -101,13 +110,16 @@ export function SplashIntro() {
   return (
     <div
       className={`splash-root ${exiting ? "is-exiting" : ""}`}
-      role="presentation"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby={titleId}
+      aria-describedby={`${titleId}-desc`}
       onClick={beginExit}
     >
       <div className="splash-glow" aria-hidden />
 
-      <div className="splash-stage">
-        <div className="splash-mark">
+      <div className="splash-stage" onClick={(e) => e.stopPropagation()}>
+        <div className="splash-mark" aria-hidden>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/logo.png?v=4"
@@ -119,15 +131,27 @@ export function SplashIntro() {
           />
         </div>
 
-        <p className="splash-wordmark">
+        <p id={titleId} className="splash-wordmark">
           <span className="splash-twm">TWM</span>{" "}
           <span className="splash-adv">Advisory</span>
         </p>
-        <p className="splash-line">{t(c.splash.line)}</p>
+        <p id={`${titleId}-desc`} className="splash-line">
+          {t(c.splash.line)}
+        </p>
         <p className="splash-pillars">{t(c.splash.pillars)}</p>
       </div>
 
-      <p className="splash-skip">{t(c.splash.skip)}</p>
+      <button
+        ref={skipRef}
+        type="button"
+        className="splash-skip"
+        onClick={(e) => {
+          e.stopPropagation();
+          beginExit();
+        }}
+      >
+        {t(c.splash.skip)}
+      </button>
     </div>
   );
 }

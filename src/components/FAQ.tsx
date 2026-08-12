@@ -29,7 +29,10 @@ export function FAQ() {
                 <span className="transition-colors group-open:text-accent-soft">
                   {t(item.q)}
                 </span>
-                <span className="relative size-3.5 shrink-0 text-accent transition-transform duration-250 group-open:rotate-45">
+                <span
+                  className="relative size-3.5 shrink-0 text-accent transition-transform duration-250 group-open:rotate-45"
+                  aria-hidden
+                >
                   <span className="absolute top-1.5 left-0 h-[1.5px] w-3.5 bg-current" />
                   <span className="absolute top-0 left-1.5 h-3.5 w-[1.5px] bg-current" />
                 </span>

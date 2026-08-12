@@ -29,21 +29,27 @@ export function Footer() {
           background:
             "radial-gradient(ellipse at 50% 0%, var(--glow), transparent 70%)",
         }}
+        aria-hidden
       />
       <div className="content-wrap relative grid gap-10 py-14 sm:py-16 lg:grid-cols-[1.4fr_1fr_1fr] lg:gap-12">
         <div>
-          <Link href="/" className="flex items-center gap-2.5 whitespace-nowrap !text-fg">
+          <Link
+            href="/"
+            className="flex items-center gap-2.5 whitespace-nowrap !text-fg"
+            aria-label={t(c.nav.homeAria)}
+          >
             <span className="relative flex size-8 shrink-0 overflow-hidden rounded-xl border border-accent/50 bg-black">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/logo.png?v=2"
-                alt="TWM Advisory"
+                alt=""
                 width={32}
                 height={32}
                 className="size-full object-cover"
+                aria-hidden
               />
             </span>
-            <span className="font-display text-2xl text-fg">
+            <span className="font-display text-2xl text-fg" aria-hidden>
               TWM <span className="text-accent">Advisory</span>
             </span>
           </Link>
@@ -55,10 +61,10 @@ export function Footer() {
           </p>
         </div>
 
-        <div>
-          <h4 className="mb-4 font-mono text-[11px] tracking-[0.16em] text-muted-3 uppercase">
+        <nav aria-label={t(c.nav.footerNav)}>
+          <p className="mb-4 font-mono text-[11px] tracking-[0.16em] text-muted-3 uppercase">
             {t(c.nav.offers)}
-          </h4>
+          </p>
           <ul className="flex flex-col gap-2.5 text-sm text-muted-2">
             {product.map((item) => (
               <li key={item.href}>
@@ -68,12 +74,12 @@ export function Footer() {
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
 
-        <div>
-          <h4 className="mb-4 font-mono text-[11px] tracking-[0.16em] text-muted-3 uppercase">
+        <nav aria-label={t(c.nav.about)}>
+          <p className="mb-4 font-mono text-[11px] tracking-[0.16em] text-muted-3 uppercase">
             {t(c.nav.about)}
-          </h4>
+          </p>
           <ul className="flex flex-col gap-2.5 text-sm text-muted-2">
             {company.map((item) => (
               <li key={item.href}>
@@ -83,7 +89,7 @@ export function Footer() {
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
       </div>
 
       <div className="content-wrap flex flex-wrap items-center justify-between gap-3 border-t border-[color:var(--line)] py-6 font-mono text-[11px] tracking-[0.08em] text-muted-3">

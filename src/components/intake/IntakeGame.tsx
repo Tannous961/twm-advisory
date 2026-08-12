@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useId, useMemo, useState } from "react";
 import {
   computeMaturity,
   type DataConstraint,
@@ -11,6 +11,7 @@ import {
   type Urgency,
 } from "@/lib/intake";
 import { useI18n, useT } from "@/lib/i18n";
+import { OperatorPortrait } from "../OperatorPortrait";
 import { PathMap } from "./PathMap";
 import { ScoreMeter } from "./ScoreMeter";
 import { VideoSignal } from "./VideoSignal";
@@ -183,14 +184,17 @@ export function IntakeGame() {
   }
 
   return (
-    <section className="intake-game content-wrap section-pad">
+    <section
+      className="intake-game content-wrap section-pad"
+      aria-label={t(i.brand)}
+    >
       <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
         <div>
           <p className="mb-2 font-mono text-[11px] tracking-[0.16em] text-accent uppercase">
             {t(i.brand)}
           </p>
           {step !== "boot" && step !== "done" ? (
-            <p className="font-mono text-[11px] text-muted-3">
+            <p className="font-mono text-[11px] text-muted-3" aria-live="polite">
               {t(i.stepOf)} {stepNumber} / 5
             </p>
           ) : null}
@@ -202,26 +206,28 @@ export function IntakeGame() {
         ) : null}
       </div>
 
+      {step === "boot" ? (
+        <div className="animate-intake-in grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+          <div className="intake-panel min-w-0">
+            <h1 className="mb-4 font-display text-[clamp(2rem,7vw,3.75rem)] leading-[1.08]">
+              {t(i.mission)}
+            </h1>
+            <p className="mb-8 max-w-2xl text-[16px] leading-relaxed text-muted sm:text-[17px]">
+              {t(i.missionBody)}
+            </p>
+            <button
+              type="button"
+              className="btn-primary rounded-full px-8 py-4 text-base"
+              onClick={() => setStep("intent")}
+            >
+              {t(i.start)}
+            </button>
+          </div>
+          <OperatorPortrait />
+        </div>
+      ) : (
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,20rem)] lg:items-start">
         <div className="min-w-0">
-          {step === "boot" ? (
-            <div className="intake-panel animate-intake-in">
-              <h1 className="mb-4 font-display text-[clamp(2rem,7vw,3.75rem)] leading-[1.08]">
-                {t(i.mission)}
-              </h1>
-              <p className="mb-8 max-w-2xl text-[16px] leading-relaxed text-muted sm:text-[17px]">
-                {t(i.missionBody)}
-              </p>
-              <button
-                type="button"
-                className="btn-primary rounded-full px-8 py-4 text-base"
-                onClick={() => setStep("intent")}
-              >
-                {t(i.start)}
-              </button>
-            </div>
-          ) : null}
-
           {step === "intent" ? (
             <div className="animate-intake-in">
               <h2 className="mb-2 font-display text-[clamp(1.75rem,5vw,2.75rem)]">
@@ -370,9 +376,14 @@ export function IntakeGame() {
               </h2>
               <p className="mb-6 text-muted">{t(i.signalBody)}</p>
 
-              <div className="mb-4 flex flex-wrap gap-2">
+              <div
+                className="mb-4 flex flex-wrap gap-2"
+                role="group"
+                aria-label={t(i.signalTitle)}
+              >
                 <button
                   type="button"
+                  aria-pressed={signalMode === "video"}
                   className={`rounded-full px-4 py-2 font-mono text-[11px] tracking-[0.12em] uppercase ${
                     signalMode === "video"
                       ? "bg-accent text-ink"
@@ -384,6 +395,7 @@ export function IntakeGame() {
                 </button>
                 <button
                   type="button"
+                  aria-pressed={signalMode === "text"}
                   className={`rounded-full px-4 py-2 font-mono text-[11px] tracking-[0.12em] uppercase ${
                     signalMode === "text"
                       ? "bg-accent text-ink"
@@ -406,13 +418,16 @@ export function IntakeGame() {
                   }}
                 />
               ) : (
-                <textarea
-                  value={signalText}
-                  onChange={(e) => setSignalText(e.target.value)}
-                  placeholder={t(i.signalPlaceholder)}
-                  rows={6}
-                  className="w-full resize-y rounded-3xl border border-white/10 bg-panel px-5 py-4 text-[15px] text-fg outline-none focus:border-accent/40"
-                />
+                <label className="block">
+                  <span className="sr-only">{t(i.signalTitle)}</span>
+                  <textarea
+                    value={signalText}
+                    onChange={(e) => setSignalText(e.target.value)}
+                    placeholder={t(i.signalPlaceholder)}
+                    rows={6}
+                    className="w-full resize-y rounded-3xl border border-white/10 bg-panel px-5 py-4 text-[15px] text-fg focus:border-accent/40"
+                  />
+                </label>
               )}
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -474,7 +489,9 @@ export function IntakeGame() {
                 <span>{t(i.consent)}</span>
               </label>
               {error ? (
-                <p className="mb-4 text-sm text-accent-soft">{error}</p>
+                <p role="alert" className="mb-4 text-sm text-accent-soft">
+                  {error}
+                </p>
               ) : null}
               <div className="flex flex-wrap gap-3">
                 <button
@@ -549,6 +566,7 @@ export function IntakeGame() {
           </div>
         </aside>
       </div>
+      )}
     </section>
   );
 }
@@ -564,14 +582,24 @@ function ProbeCards({
   selected: string | null;
   onSelect: (key: string) => void;
 }) {
+  const headingId = useId();
+
   return (
     <div>
-      <h3 className="mb-4 font-display text-2xl">{title}</h3>
-      <div className="grid gap-3 sm:grid-cols-2">
+      <h3 id={headingId} className="mb-4 font-display text-2xl">
+        {title}
+      </h3>
+      <div
+        className="grid gap-3 sm:grid-cols-2"
+        role="radiogroup"
+        aria-labelledby={headingId}
+      >
         {options.map((opt) => (
           <button
             key={opt.key}
             type="button"
+            role="radio"
+            aria-checked={selected === opt.key}
             onClick={() => onSelect(opt.key)}
             className={`rounded-2xl border px-5 py-4 text-left text-[15px] transition hover:border-accent/40 ${
               selected === opt.key
@@ -600,18 +628,25 @@ function Field({
   type?: string;
   autoComplete?: string;
 }) {
+  const id = useId();
+
   return (
-    <label className="block">
-      <span className="mb-2 block font-mono text-[10px] tracking-[0.14em] text-muted-3 uppercase">
+    <div className="block">
+      <label
+        htmlFor={id}
+        className="mb-2 block font-mono text-[10px] tracking-[0.14em] text-muted-3 uppercase"
+      >
         {label}
-      </span>
+      </label>
       <input
+        id={id}
         type={type}
         value={value}
         autoComplete={autoComplete}
+        required={type === "email" || autoComplete === "given-name"}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-2xl border border-white/10 bg-panel px-4 py-3 text-[15px] text-fg outline-none focus:border-accent/40"
+        className="w-full rounded-2xl border border-white/10 bg-panel px-4 py-3 text-[15px] text-fg focus:border-accent/40"
       />
-    </label>
+    </div>
   );
 }

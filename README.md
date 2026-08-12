@@ -2,10 +2,13 @@
 
 Site Next.js / React (mobile-first) pour TWM Advisory.
 
+**Documentation complète :** [`PROJECT.md`](PROJECT.md)
+
 ## Démarrer
 
 ```bash
-cd web
+npm install
+cp .env.example .env
 npm run dev
 ```
 
@@ -17,15 +20,26 @@ Ouvre [http://localhost:3000](http://localhost:3000).
 - React 19
 - Tailwind CSS 4
 - TypeScript
+- Supabase (leads + vidéos)
+- OpenRouter / OpenAI (briefs)
+- Resend (emails)
 - i18n FR / EN côté client
+
+## Routes clés
+
+| Route | Rôle |
+|-------|------|
+| `/demarrer` | Briefing client (jeu + score + signal) |
+| `/offres` | Parcours 5 offres |
+| `/signal` | Contenu éditorial |
+| `/partenaires` | Socle BD / partenariats |
 
 ## SEO
 
-Configurer l'URL canonique dans `.env.local` :
+Configurer l’URL canonique dans `.env` :
 
 ```bash
-cp .env.example .env.local
-# NEXT_PUBLIC_SITE_URL=https://votredomaine.com
+NEXT_PUBLIC_SITE_URL=https://twmadvisory.com
 ```
 
-Inclus : metadata Open Graph / Twitter, JSON-LD (Organization, FAQ, Services), `robots.txt`, `sitemap.xml`, manifest, images OG dynamiques.
+Inclus : metadata Open Graph / Twitter, JSON-LD, `robots.txt`, `sitemap.xml`, manifest, images OG dynamiques.

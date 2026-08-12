@@ -1,13 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import type { SignalPost } from "@/lib/signal";
+import { signalPosts, type SignalPost } from "@/lib/signal";
 import { useI18n, useT } from "@/lib/i18n";
 import { Reveal } from "./Reveal";
+import { SignalCover } from "./SignalCover";
 
 export function SignalArticle({ post }: { post: SignalPost }) {
   const { c, lang } = useI18n();
   const t = useT();
+  const postIndex = Math.max(
+    0,
+    signalPosts.findIndex((item) => item.slug === post.slug),
+  );
 
   return (
     <article className="content-wrap section-pad pt-10 sm:pt-14">
@@ -22,6 +27,10 @@ export function SignalArticle({ post }: { post: SignalPost }) {
         <p className="mb-4 font-mono text-[11px] tracking-[0.14em] text-muted-3 uppercase">
           {post.date} · {post.readingMinutes} {t(c.signal.minutes)}
         </p>
+
+        <div className="mb-8">
+          <SignalCover intent={post.intent} index={postIndex} />
+        </div>
 
         <h1 className="mb-8 max-w-3xl font-display text-[clamp(2rem,6vw,3.4rem)] leading-[1.08]">
           {post.title[lang]}

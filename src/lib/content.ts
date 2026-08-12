@@ -25,6 +25,11 @@ export const content = {
     cta: { fr: "Lancer le briefing", en: "Start the briefing" },
     menu: { fr: "Menu", en: "Menu" },
     close: { fr: "Fermer", en: "Close" },
+    skipToContent: { fr: "Aller au contenu", en: "Skip to content" },
+    langSwitcher: { fr: "Choisir la langue", en: "Choose language" },
+    mainNav: { fr: "Navigation principale", en: "Main navigation" },
+    footerNav: { fr: "Pied de page", en: "Footer" },
+    homeAria: { fr: "TWM Advisory — Accueil", en: "TWM Advisory — Home" },
   },
   audience: {
     title: { fr: "TWM pour", en: "TWM for" },
@@ -147,12 +152,20 @@ export const content = {
     },
     faqTeaser: { fr: "Voir toutes les questions", en: "See all questions" },
     ctaBandTitle: {
-      fr: "Là où la clarté devient du progrès.",
-      en: "Where clarity becomes progress.",
+      fr: "Un enjeu qui coûte.",
+      en: "A stake that costs.",
+    },
+    ctaBandTitleEm: {
+      fr: "Une solution qui tourne.",
+      en: "A solution that runs.",
     },
     ctaBandBody: {
-      fr: "Le moyen le plus rapide de savoir si on est faits pour travailler ensemble, c'est un échange.",
-      en: "The fastest way to know whether we're the right fit is a conversation.",
+      fr: "Lancez le briefing. On regarde où ça fuit — marge, temps, positions — et un premier cas concret. Gratuit. Sans engagement.",
+      en: "Start the briefing. We look at where it leaks — margin, time, ground — and one concrete first case. Free. No commitment.",
+    },
+    ctaBandNote: {
+      fr: "Réponse sous 48 h ouvrées.",
+      en: "Reply within 2 business days.",
     },
     marquee: {
       fr: [
@@ -1193,6 +1206,10 @@ export const content = {
       en: "Audit · Deploy · Measure",
     },
     skip: { fr: "Passer", en: "Skip" },
+    ariaLabel: {
+      fr: "Introduction TWM Advisory",
+      en: "TWM Advisory introduction",
+    },
   },
 } as const;
 

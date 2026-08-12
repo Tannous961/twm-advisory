@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
 import { useI18n, useT } from "@/lib/i18n";
@@ -155,16 +155,18 @@ export function Partnerships() {
                   onChange={setCompany}
                   autoComplete="organization"
                 />
-                <label className="block">
+                <label className="block" htmlFor="partner-type">
                   <span className="mb-2 block font-mono text-[10px] tracking-[0.14em] text-muted-3 uppercase">
                     {t(p.fields.type)}
                   </span>
                   <select
+                    id="partner-type"
                     value={partnerType}
                     onChange={(e) =>
                       setPartnerType(e.target.value as PartnerType | "")
                     }
-                    className="w-full rounded-2xl border border-white/10 bg-panel px-4 py-3 text-[15px] text-fg outline-none focus:border-accent/40"
+                    required
+                    className="w-full rounded-2xl border border-white/10 bg-panel px-4 py-3 text-[15px] text-fg focus:border-accent/40"
                   >
                     <option value="">—</option>
                     {TYPE_KEYS.map((key) => (
@@ -174,16 +176,19 @@ export function Partnerships() {
                     ))}
                   </select>
                 </label>
-                <label className="block">
+                <label className="block" htmlFor="partner-message">
                   <span className="mb-2 block font-mono text-[10px] tracking-[0.14em] text-muted-3 uppercase">
                     {t(p.fields.message)}
                   </span>
                   <textarea
+                    id="partner-message"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     rows={5}
+                    required
+                    minLength={20}
                     placeholder={t(p.messagePlaceholder)}
-                    className="w-full resize-y rounded-2xl border border-white/10 bg-panel px-4 py-3 text-[15px] text-fg outline-none focus:border-accent/40"
+                    className="w-full resize-y rounded-2xl border border-white/10 bg-panel px-4 py-3 text-[15px] text-fg focus:border-accent/40"
                   />
                 </label>
               </div>
@@ -197,7 +202,9 @@ export function Partnerships() {
                 <span>{t(p.consent)}</span>
               </label>
               {error ? (
-                <p className="mb-4 text-sm text-accent-soft">{error}</p>
+                <p role="alert" className="mb-4 text-sm text-accent-soft">
+                  {error}
+                </p>
               ) : null}
               <button
                 type="button"
@@ -235,18 +242,25 @@ function Field({
   type?: string;
   autoComplete?: string;
 }) {
+  const id = useId();
+
   return (
-    <label className="block">
-      <span className="mb-2 block font-mono text-[10px] tracking-[0.14em] text-muted-3 uppercase">
+    <div className="block">
+      <label
+        htmlFor={id}
+        className="mb-2 block font-mono text-[10px] tracking-[0.14em] text-muted-3 uppercase"
+      >
         {label}
-      </span>
+      </label>
       <input
+        id={id}
         type={type}
         value={value}
         autoComplete={autoComplete}
+        required={type === "email" || autoComplete === "given-name"}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-2xl border border-white/10 bg-panel px-4 py-3 text-[15px] text-fg outline-none focus:border-accent/40"
+        className="w-full rounded-2xl border border-white/10 bg-panel px-4 py-3 text-[15px] text-fg focus:border-accent/40"
       />
-    </label>
+    </div>
   );
 }
