@@ -1,17 +1,15 @@
-import type { Metadata } from "next";
 import { CtaBand } from "@/components/CtaBand";
 import { Infrastructure } from "@/components/Infrastructure";
+import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
-import { content } from "@/lib/content";
+import { buildPageJsonLd, buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: content.pages.architecture.title.fr,
-  description: content.pages.architecture.lead.fr,
-};
+export const metadata = buildPageMetadata("architecture");
 
 export default function ArchitecturePage() {
   return (
     <>
+      <JsonLd data={buildPageJsonLd("architecture")} />
       <PageHero page="architecture" />
       <Infrastructure />
       <CtaBand />

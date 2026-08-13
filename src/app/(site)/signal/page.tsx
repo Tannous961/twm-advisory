@@ -1,16 +1,14 @@
-import type { Metadata } from "next";
+import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { SignalIndex } from "@/components/SignalIndex";
-import { content } from "@/lib/content";
+import { buildPageJsonLd, buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: content.pages.signal.title.fr,
-  description: content.pages.signal.lead.fr,
-};
+export const metadata = buildPageMetadata("signal");
 
 export default function SignalPage() {
   return (
     <>
+      <JsonLd data={buildPageJsonLd("signal")} />
       <PageHero page="signal" />
       <SignalIndex />
     </>

@@ -1,17 +1,15 @@
-import type { Metadata } from "next";
 import { CtaBand } from "@/components/CtaBand";
+import { JsonLd } from "@/components/JsonLd";
 import { Offers } from "@/components/Offers";
 import { PageHero } from "@/components/PageHero";
-import { content } from "@/lib/content";
+import { buildPageJsonLd, buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: content.pages.offers.title.fr,
-  description: content.pages.offers.lead.fr,
-};
+export const metadata = buildPageMetadata("offres");
 
 export default function OffresPage() {
   return (
     <>
+      <JsonLd data={buildPageJsonLd("offres")} />
       <PageHero page="offers" />
       <Offers />
       <CtaBand />

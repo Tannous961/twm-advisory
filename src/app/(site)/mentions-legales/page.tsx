@@ -1,17 +1,14 @@
-import type { Metadata } from "next";
+import { JsonLd } from "@/components/JsonLd";
 import { LegalDoc } from "@/components/LegalDoc";
 import { PageHero } from "@/components/PageHero";
-import { content } from "@/lib/content";
+import { buildPageJsonLd, buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: content.pages.legal.title.fr,
-  description: content.pages.legal.lead.fr,
-  robots: { index: true, follow: true },
-};
+export const metadata = buildPageMetadata("mentions-legales");
 
 export default function MentionsLegalesPage() {
   return (
     <>
+      <JsonLd data={buildPageJsonLd("mentions-legales")} />
       <PageHero page="legal" />
       <LegalDoc doc="legal" />
     </>

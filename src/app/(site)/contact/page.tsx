@@ -1,16 +1,14 @@
-import type { Metadata } from "next";
 import { Contact } from "@/components/Contact";
+import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
-import { content } from "@/lib/content";
+import { buildPageJsonLd, buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: content.pages.contact.title.fr,
-  description: content.pages.contact.lead.fr,
-};
+export const metadata = buildPageMetadata("contact");
 
 export default function ContactPage() {
   return (
     <>
+      <JsonLd data={buildPageJsonLd("contact")} />
       <PageHero page="contact" />
       <Contact />
     </>

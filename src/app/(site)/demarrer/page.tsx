@@ -1,17 +1,17 @@
-import type { Metadata } from "next";
 import { Suspense } from "react";
 import { IntakeGame } from "@/components/intake/IntakeGame";
-import { content } from "@/lib/content";
+import { JsonLd } from "@/components/JsonLd";
+import { buildPageJsonLd, buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: content.pages.intake.title.fr,
-  description: content.pages.intake.lead.fr,
-};
+export const metadata = buildPageMetadata("demarrer");
 
 export default function DemarrerPage() {
   return (
-    <Suspense fallback={<div className="content-wrap section-pad" />}>
-      <IntakeGame />
-    </Suspense>
+    <>
+      <JsonLd data={buildPageJsonLd("demarrer")} />
+      <Suspense fallback={<div className="content-wrap section-pad" />}>
+        <IntakeGame />
+      </Suspense>
+    </>
   );
 }

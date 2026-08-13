@@ -1,17 +1,14 @@
-import type { Metadata } from "next";
+import { JsonLd } from "@/components/JsonLd";
 import { LegalDoc } from "@/components/LegalDoc";
 import { PageHero } from "@/components/PageHero";
-import { content } from "@/lib/content";
+import { buildPageJsonLd, buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: content.pages.privacy.title.fr,
-  description: content.pages.privacy.lead.fr,
-  robots: { index: true, follow: true },
-};
+export const metadata = buildPageMetadata("confidentialite");
 
 export default function ConfidentialitePage() {
   return (
     <>
+      <JsonLd data={buildPageJsonLd("confidentialite")} />
       <PageHero page="privacy" />
       <LegalDoc doc="privacy" />
     </>

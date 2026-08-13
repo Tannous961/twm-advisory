@@ -107,6 +107,12 @@ export function Footer() {
           >
             {t(c.footer.privacy)}
           </Link>
+          <a
+            href="/llms.txt"
+            className="transition-colors hover:text-fg"
+          >
+            llms.txt
+          </a>
         </nav>
       </div>
     </footer>
