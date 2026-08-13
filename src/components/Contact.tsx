@@ -59,7 +59,7 @@ export function Contact() {
                 {t(c.contact.cta)}
               </Link>
               <a
-                href="mailto:hello@twm.expert"
+                href="mailto:tannous@twm.expert"
                 className="btn-secondary rounded-full px-8 py-4 text-base"
               >
                 {t(c.contact.secondary)}

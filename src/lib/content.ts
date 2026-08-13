@@ -1243,15 +1243,15 @@ export const content = {
       {
         title: { fr: "Éditeur", en: "Publisher" },
         body: {
-          fr: "Le site www.twm.expert est édité par TWM Advisory. Contact : hello@twm.expert. Les informations d'identification de l'éditeur (raison sociale, forme juridique, siège, SIREN) seront complétées dès finalisation des formalités d'immatriculation.",
-          en: "The website www.twm.expert is published by TWM Advisory. Contact: hello@twm.expert. Publisher identification details (legal name, form, registered office, company ID) will be completed once incorporation formalities are finalized.",
+          fr: "Le site www.twm.expert est édité par TWM Advisory. Contact : tannous@twm.expert. Les informations d'identification de l'éditeur (raison sociale, forme juridique, siège, SIREN) seront complétées dès finalisation des formalités d'immatriculation.",
+          en: "The website www.twm.expert is published by TWM Advisory. Contact: tannous@twm.expert. Publisher identification details (legal name, form, registered office, company ID) will be completed once incorporation formalities are finalized.",
         },
       },
       {
         title: { fr: "Directeur de la publication", en: "Publication director" },
         body: {
-          fr: "Le fondateur de TWM Advisory — joignable à hello@twm.expert.",
-          en: "The founder of TWM Advisory — reachable at hello@twm.expert.",
+          fr: "Le fondateur de TWM Advisory — joignable à tannous@twm.expert.",
+          en: "The founder of TWM Advisory — reachable at tannous@twm.expert.",
         },
       },
       {
@@ -1286,8 +1286,8 @@ export const content = {
       {
         title: { fr: "Responsable du traitement", en: "Data controller" },
         body: {
-          fr: "TWM Advisory traite les données collectées via www.twm.expert. Contact : hello@twm.expert.",
-          en: "TWM Advisory processes data collected via www.twm.expert. Contact: hello@twm.expert.",
+          fr: "TWM Advisory traite les données collectées via www.twm.expert. Contact : tannous@twm.expert.",
+          en: "TWM Advisory processes data collected via www.twm.expert. Contact: tannous@twm.expert.",
         },
       },
       {
@@ -1324,8 +1324,8 @@ export const content = {
       {
         title: { fr: "Vos droits", en: "Your rights" },
         body: {
-          fr: "Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité. Pour exercer vos droits : hello@twm.expert. Vous pouvez aussi saisir la CNIL (cnil.fr).",
-          en: "You have rights of access, rectification, erasure, restriction, objection and portability. To exercise them: hello@twm.expert. You may also contact the CNIL (cnil.fr) or your local authority.",
+          fr: "Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité. Pour exercer vos droits : tannous@twm.expert. Vous pouvez aussi saisir la CNIL (cnil.fr).",
+          en: "You have rights of access, rectification, erasure, restriction, objection and portability. To exercise them: tannous@twm.expert. You may also contact the CNIL (cnil.fr) or your local authority.",
         },
       },
       {
