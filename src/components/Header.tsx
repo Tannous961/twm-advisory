@@ -168,12 +168,14 @@ export function Header() {
             })}
           </div>
 
-          <Link
-            href="/demarrer"
-            className="btn-primary hidden rounded-full px-5 py-2.5 text-[13px] lg:inline-block"
-          >
-            {t(c.nav.cta)}
-          </Link>
+          <div className="hidden lg:block">
+            <Link
+              href="/demarrer"
+              className="btn-primary rounded-full px-5 py-2.5 text-[13px]"
+            >
+              {t(c.nav.cta)}
+            </Link>
+          </div>
 
           <button
             ref={menuButtonRef}
