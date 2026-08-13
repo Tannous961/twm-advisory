@@ -57,8 +57,8 @@ Voir `.env.example` (ne jamais committer `.env`).
 | `OPENROUTER_STT_MODEL` | défaut `openai/whisper-1` |
 | `OPENAI_API_KEY` | Fallback si pas OpenRouter |
 | `RESEND_API_KEY` | Emails internes |
-| `INTAKE_NOTIFY_EMAIL` | Destinataire briefs / partenaires |
-| `INTAKE_FROM_EMAIL` | Expéditeur Resend |
+| `INTAKE_NOTIFY_EMAIL` | Destinataire briefs / partenaires (`tannous@twm.expert`) |
+| `INTAKE_FROM_EMAIL` | Expéditeur Resend (`TWM Advisory <notifications@twm.expert>`) |
 
 ---
 

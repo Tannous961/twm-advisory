@@ -18,7 +18,7 @@ export async function sendPartnerEmail(input: {
   const resend = new Resend(apiKey);
   const from =
     process.env.INTAKE_FROM_EMAIL ||
-    "TWM Advisory <onboarding@resend.dev>";
+    "TWM Advisory <notifications@twm.expert>";
 
   const html = `
     <h2>Proposition partenariat — ${escapeHtml(input.name)}</h2>
