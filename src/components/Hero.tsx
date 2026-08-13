@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { track } from "@/lib/analytics";
 import { useT, useI18n } from "@/lib/i18n";
 
 export function Hero() {
@@ -75,6 +76,7 @@ export function Hero() {
             <Link
               href="/demarrer"
               className="btn-primary rounded-full px-7 py-3.5 text-center text-[15px] sm:py-4"
+              onClick={() => track("cta_click", { location: "hero" })}
             >
               {t(c.hero.ctaPrimary)}
             </Link>

@@ -1226,6 +1226,16 @@ export const content = {
       en: "Camera unavailable. Switch to text.",
     },
   },
+  cookieConsent: {
+    title: { fr: "Cookies & mesure", en: "Cookies & measurement" },
+    body: {
+      fr: "Nous utilisons Google Tag Manager / Google Analytics uniquement si vous acceptez — pour comprendre le parcours (pages, briefing, formulaires). Pas de pub. Vous pouvez refuser.",
+      en: "We use Google Tag Manager / Google Analytics only if you accept — to understand the journey (pages, briefing, forms). No ads. You can decline.",
+    },
+    accept: { fr: "Accepter", en: "Accept" },
+    decline: { fr: "Refuser", en: "Decline" },
+    privacy: { fr: "Politique de confidentialité", en: "Privacy policy" },
+  },
   footer: {
     legal: { fr: "Mentions légales", en: "Legal" },
     privacy: { fr: "Confidentialité", en: "Privacy" },
@@ -1293,8 +1303,8 @@ export const content = {
       {
         title: { fr: "Données collectées", en: "Data we collect" },
         body: {
-          fr: "Via le briefing (/demarrer) : prénom, email, société (optionnelle), réponses au parcours, score, signal texte ou vidéo, consentement. Via /partenaires : identité, email, société, type de partenariat, message, consentement. Cookies techniques : langue, thème (dev), splash déjà vu.",
-          en: "Via the briefing (/demarrer): first name, email, company (optional), journey answers, score, text or video signal, consent. Via /partenaires: identity, email, company, partnership type, message, consent. Technical cookies: language, theme (dev), splash already seen.",
+          fr: "Via le briefing (/demarrer) : prénom, email, société (optionnelle), réponses au parcours, score, signal texte ou vidéo, consentement. Via /partenaires : identité, email, société, type de partenariat, message, consentement. Cookies techniques : langue, thème (dev), splash déjà vu. Cookies de mesure (si acceptés) : Google Tag Manager et Google Analytics 4 (identifiant technique, pages vues, événements de parcours — sans contenu des formulaires comme email ou nom).",
+          en: "Via the briefing (/demarrer): first name, email, company (optional), journey answers, score, text or video signal, consent. Via /partenaires: identity, email, company, partnership type, message, consent. Technical cookies: language, theme (dev), splash already seen. Measurement cookies (if accepted): Google Tag Manager and Google Analytics 4 (technical ID, page views, journey events — no form contents such as email or name).",
         },
       },
       {
@@ -1303,29 +1313,29 @@ export const content = {
           en: "Purposes and legal basis",
         },
         body: {
-          fr: "Préparer un échange commercial ou un partenariat, répondre à votre demande, et améliorer le parcours. Base : consentement (formulaires) et intérêt légitime (fonctionnement technique du site).",
-          en: "Prepare a commercial conversation or partnership, answer your request, and improve the journey. Basis: consent (forms) and legitimate interest (technical site operation).",
+          fr: "Préparer un échange commercial ou un partenariat, répondre à votre demande, et améliorer le parcours. Base : consentement (formulaires et cookies analytics via GTM/GA4) et intérêt légitime (fonctionnement technique du site). Les cookies de mesure ne sont déposés qu'après acceptation via la bannière.",
+          en: "Prepare a commercial conversation or partnership, answer your request, and improve the journey. Basis: consent (forms and analytics cookies via GTM/GA4) and legitimate interest (technical site operation). Measurement cookies are set only after you accept via the banner.",
         },
       },
       {
         title: { fr: "Durée de conservation", en: "Retention" },
         body: {
-          fr: "Signal vidéo / texte du briefing : conservation privée puis effacement sous 30 jours. Leads briefing et partenaires : conservation le temps nécessaire au suivi commercial, puis archivage ou suppression. Cookies techniques : session ou durée limitée.",
-          en: "Briefing video / text signal: private storage then deletion within 30 days. Briefing and partner leads: retained as needed for commercial follow-up, then archived or deleted. Technical cookies: session or limited duration.",
+          fr: "Signal vidéo / texte du briefing : conservation privée puis effacement sous 30 jours. Leads briefing et partenaires : conservation le temps nécessaire au suivi commercial, puis archivage ou suppression. Cookies techniques : session ou durée limitée. Consentement analytics : 12 mois. Données GA4 : selon la rétention configurée dans Google Analytics.",
+          en: "Briefing video / text signal: private storage then deletion within 30 days. Briefing and partner leads: retained as needed for commercial follow-up, then archived or deleted. Technical cookies: session or limited duration. Analytics consent: 12 months. GA4 data: per retention set in Google Analytics.",
         },
       },
       {
         title: { fr: "Sous-traitants", en: "Processors" },
         body: {
-          fr: "Hébergement : Vercel. Base de données et stockage vidéo : Supabase. Emails transactionnels internes : Resend. Transcription / brief IA : OpenRouter ou OpenAI. Ces prestataires traitent les données pour notre compte, dans le cadre de leurs contrats.",
-          en: "Hosting: Vercel. Database and video storage: Supabase. Internal transactional email: Resend. Transcription / AI brief: OpenRouter or OpenAI. These providers process data on our behalf under their agreements.",
+          fr: "Hébergement : Vercel. Base de données et stockage vidéo : Supabase. Emails transactionnels internes : Resend. Transcription / brief IA : OpenRouter ou OpenAI. Mesure d'audience (si consentement) : Google Ireland Ltd / Google LLC (Google Tag Manager, Google Analytics 4). Ces prestataires traitent les données pour notre compte, dans le cadre de leurs contrats.",
+          en: "Hosting: Vercel. Database and video storage: Supabase. Internal transactional email: Resend. Transcription / AI brief: OpenRouter or OpenAI. Audience measurement (if consent): Google Ireland Ltd / Google LLC (Google Tag Manager, Google Analytics 4). These providers process data on our behalf under their agreements.",
         },
       },
       {
         title: { fr: "Vos droits", en: "Your rights" },
         body: {
-          fr: "Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité. Pour exercer vos droits : tannous@twm.expert. Vous pouvez aussi saisir la CNIL (cnil.fr).",
-          en: "You have rights of access, rectification, erasure, restriction, objection and portability. To exercise them: tannous@twm.expert. You may also contact the CNIL (cnil.fr) or your local authority.",
+          fr: "Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité. Pour exercer vos droits : tannous@twm.expert. Vous pouvez retirer le consentement cookies analytics en effaçant les cookies du site ou en nous contactant. Vous pouvez aussi saisir la CNIL (cnil.fr).",
+          en: "You have rights of access, rectification, erasure, restriction, objection and portability. To exercise them: tannous@twm.expert. You may withdraw analytics cookie consent by clearing site cookies or contacting us. You may also contact the CNIL (cnil.fr) or your local authority.",
         },
       },
       {

@@ -2,6 +2,7 @@ import type { CSSProperties, ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import { cookies, headers } from "next/headers";
 import { Inter, JetBrains_Mono, Playfair_Display } from "next/font/google";
+import { GoogleTagManagerNoscript } from "@/components/analytics/GoogleTagManager";
 import { Providers } from "@/components/Providers";
 import { SplashIntro } from "@/components/SplashIntro";
 import {
@@ -78,6 +79,7 @@ export default async function RootLayout({
       style={theme.vars as CSSProperties}
     >
       <body className="min-h-dvh bg-bg font-sans text-fg">
+        <GoogleTagManagerNoscript />
         <Providers>
           {/* Outside .page-shell so opacity:0 during pending doesn't hide the intro */}
           <SplashIntro />

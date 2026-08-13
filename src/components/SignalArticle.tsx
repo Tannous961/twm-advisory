@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect } from "react";
 import { signalPosts, type SignalPost } from "@/lib/signal";
+import { track } from "@/lib/analytics";
 import { useI18n, useT } from "@/lib/i18n";
 import { Reveal } from "./Reveal";
 import { SignalCover } from "./SignalCover";
@@ -13,6 +15,10 @@ export function SignalArticle({ post }: { post: SignalPost }) {
     0,
     signalPosts.findIndex((item) => item.slug === post.slug),
   );
+
+  useEffect(() => {
+    track("signal_article_view", { slug: post.slug, lang });
+  }, [post.slug, lang]);
 
   return (
     <article className="content-wrap section-pad pt-10 sm:pt-14">
@@ -81,6 +87,12 @@ export function SignalArticle({ post }: { post: SignalPost }) {
             <Link
               href={`/demarrer?intent=${post.intent}`}
               className="btn-primary inline-flex rounded-full px-7 py-3.5 text-[15px]"
+              onClick={() =>
+                track("cta_click", {
+                  location: "signal_article",
+                  intent: post.intent,
+                })
+              }
             >
               {t(c.signal.briefingCta)}
             </Link>

@@ -1,8 +1,10 @@
 "use client";
 
+import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
+import { CookieConsent } from "@/components/analytics/CookieConsent";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { I18nProvider } from "@/lib/i18n";
 import { ThemeProvider } from "@/lib/theme";
-import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import type { ReactNode } from "react";
 
 export function Providers({ children }: { children: ReactNode }) {
@@ -11,7 +13,9 @@ export function Providers({ children }: { children: ReactNode }) {
   return (
     <ThemeProvider>
       <I18nProvider>
+        <AnalyticsProvider />
         {children}
+        <CookieConsent />
         {showThemeSwitcher ? <ThemeSwitcher /> : null}
       </I18nProvider>
     </ThemeProvider>

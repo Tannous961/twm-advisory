@@ -4,6 +4,7 @@ import { useId, useState } from "react";
 import Link from "next/link";
 import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
+import { track } from "@/lib/analytics";
 import { useI18n, useT } from "@/lib/i18n";
 
 const TYPE_KEYS = [
@@ -53,6 +54,7 @@ export function Partnerships() {
         }),
       });
       if (!res.ok) throw new Error("fail");
+      track("partner_form_submitted", { lang });
       setDone(true);
     } catch {
       setError(t(p.error));

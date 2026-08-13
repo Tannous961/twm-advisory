@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useId, useMemo, useState } from "react";
+import { track } from "@/lib/analytics";
 import {
   computeMaturity,
   type DataConstraint,
@@ -70,7 +71,17 @@ export function IntakeGame() {
     setIntent(raw);
     setStep("probes");
     setPrefilledFromSignal(true);
-  }, [searchParams, prefilledFromSignal]);
+    track("intake_started", { lang, intent: raw });
+  }, [searchParams, prefilledFromSignal, lang]);
+
+  useEffect(() => {
+    if (step === "boot") return;
+    track("intake_step_viewed", {
+      step,
+      lang,
+      ...(intent ? { intent } : {}),
+    });
+  }, [step, lang, intent]);
 
   const maturity = useMemo(() => {
     if (!intent) {
@@ -123,6 +134,7 @@ export function IntakeGame() {
     if (!consent || !name.trim() || !email.trim()) return;
     if (!signalText.trim() && !videoBlob) {
       setError(t(i.error));
+      track("intake_error", { reason: "missing_signal", lang });
       return;
     }
 
@@ -175,9 +187,17 @@ export function IntakeGame() {
       };
       setDoneScore(json.score);
       setDoneOffer(json.entryOffer);
+      track("intake_submitted", {
+        lang,
+        intent,
+        score: json.score,
+        offer: json.entryOffer,
+        mode: signalMode,
+      });
       setStep("done");
     } catch {
       setError(t(i.error));
+      track("intake_error", { reason: "submit_failed", lang });
     } finally {
       setSubmitting(false);
     }
@@ -218,7 +238,10 @@ export function IntakeGame() {
             <button
               type="button"
               className="btn-primary rounded-full px-8 py-4 text-base"
-              onClick={() => setStep("intent")}
+              onClick={() => {
+                track("intake_started", { lang });
+                setStep("intent");
+              }}
             >
               {t(i.start)}
             </button>
@@ -389,7 +412,10 @@ export function IntakeGame() {
                       ? "bg-accent text-ink"
                       : "border border-white/15 text-muted"
                   }`}
-                  onClick={() => setSignalMode("video")}
+                  onClick={() => {
+                    setSignalMode("video");
+                    track("intake_signal_mode", { mode: "video", lang });
+                  }}
                 >
                   {t(i.useVideo)}
                 </button>
@@ -401,7 +427,10 @@ export function IntakeGame() {
                       ? "bg-accent text-ink"
                       : "border border-white/15 text-muted"
                   }`}
-                  onClick={() => setSignalMode("text")}
+                  onClick={() => {
+                    setSignalMode("text");
+                    track("intake_signal_mode", { mode: "text", lang });
+                  }}
                 >
                   {t(i.skipVideo)}
                 </button>

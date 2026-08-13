@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
+import { track } from "@/lib/analytics";
 import { useI18n, useT } from "@/lib/i18n";
 
 const primaryLinks = [
@@ -153,7 +154,10 @@ export function Header() {
                 <button
                   key={code}
                   type="button"
-                  onClick={() => setLang(code)}
+                  onClick={() => {
+                    if (code !== lang) track("lang_switched", { lang: code });
+                    setLang(code);
+                  }}
                   aria-pressed={on}
                   aria-label={code === "fr" ? "Français" : "English"}
                   className="cursor-pointer px-2.5 py-1.5 uppercase transition-colors sm:px-3"
@@ -172,6 +176,7 @@ export function Header() {
             <Link
               href="/demarrer"
               className="btn-primary rounded-full px-5 py-2.5 text-[13px]"
+              onClick={() => track("cta_click", { location: "header_desktop" })}
             >
               {t(c.nav.cta)}
             </Link>
@@ -227,6 +232,7 @@ export function Header() {
             <Link
               href="/demarrer"
               className="btn-primary mt-4 rounded-full px-5 py-3.5 text-center text-[15px]"
+              onClick={() => track("cta_click", { location: "header_mobile" })}
             >
               {t(c.nav.cta)}
             </Link>

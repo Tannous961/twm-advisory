@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Reveal } from "./Reveal";
+import { track } from "@/lib/analytics";
 import { useI18n, useT } from "@/lib/i18n";
 
 export function Contact() {
@@ -55,12 +56,14 @@ export function Contact() {
               <Link
                 href="/demarrer"
                 className="btn-primary rounded-full px-8 py-4 text-base"
+                onClick={() => track("cta_click", { location: "contact" })}
               >
                 {t(c.contact.cta)}
               </Link>
               <a
                 href="mailto:tannous@twm.expert"
                 className="btn-secondary rounded-full px-8 py-4 text-base"
+                onClick={() => track("cta_click", { location: "contact_email" })}
               >
                 {t(c.contact.secondary)}
               </a>

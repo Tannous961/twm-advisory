@@ -1,0 +1,27 @@
+export {};
+
+type GtagConsentArg = {
+  ad_storage?: "granted" | "denied";
+  ad_user_data?: "granted" | "denied";
+  ad_personalization?: "granted" | "denied";
+  analytics_storage?: "granted" | "denied";
+  functionality_storage?: "granted" | "denied";
+  personalization_storage?: "granted" | "denied";
+  security_storage?: "granted" | "denied";
+  wait_for_update?: number;
+};
+
+type GtagConfigParams = Record<string, unknown> & {
+  send_page_view?: boolean;
+  anonymize_ip?: boolean;
+  debug_mode?: boolean;
+};
+
+declare global {
+  interface Window {
+    dataLayer: unknown[];
+    gtag: (...args: unknown[]) => void;
+  }
+}
+
+export type { GtagConsentArg, GtagConfigParams };

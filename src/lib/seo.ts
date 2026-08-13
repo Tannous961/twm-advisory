@@ -233,9 +233,9 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
     title: "Politique de confidentialité",
     titleEn: "Privacy policy",
     description:
-      "Politique de confidentialité TWM Advisory : données collectées via briefing et partenariats, conservation, droits RGPD, sous-traitants (Vercel, Supabase, Resend).",
+      "Politique de confidentialité TWM Advisory : données briefing et partenariats, cookies GTM/GA4 (sur consentement), droits RGPD, sous-traitants (Vercel, Supabase, Resend, Google).",
     descriptionEn:
-      "TWM Advisory privacy policy: data from briefing and partnerships, retention, GDPR rights, processors (Vercel, Supabase, Resend).",
+      "TWM Advisory privacy policy: briefing and partnership data, GTM/GA4 cookies (with consent), GDPR rights, processors (Vercel, Supabase, Resend, Google).",
     changeFrequency: "yearly",
     priority: 0.3,
   },

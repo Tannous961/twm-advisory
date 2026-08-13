@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { track } from "@/lib/analytics";
 import { useI18n, useT } from "@/lib/i18n";
 import { Reveal } from "./Reveal";
 
@@ -52,6 +53,7 @@ export function CtaBand() {
             <Link
               href="/demarrer"
               className="btn-primary mt-8 inline-block rounded-full px-7 py-3.5 text-[15px] sm:py-4"
+              onClick={() => track("cta_click", { location: "cta_band" })}
             >
               {t(c.hero.ctaPrimary)}
             </Link>
