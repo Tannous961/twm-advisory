@@ -1243,15 +1243,15 @@ export const content = {
       {
         title: { fr: "Éditeur", en: "Publisher" },
         body: {
-          fr: "Le site www.twm.expert est édité par TWM Advisory. Contact : tannous@twm.expert. Les informations d'identification de l'éditeur (raison sociale, forme juridique, siège, SIREN) seront complétées dès finalisation des formalités d'immatriculation.",
-          en: "The website www.twm.expert is published by TWM Advisory. Contact: tannous@twm.expert. Publisher identification details (legal name, form, registered office, company ID) will be completed once incorporation formalities are finalized.",
+          fr: "Le site www.twm.expert est édité par TWM ADVISORY, SAS (société par actions simplifiée) au capital de 100 €. SIREN : 106 067 549 — SIRET : 106 067 549 00019 — TVA intracommunautaire : FR76 106 067 549 — RCS Lille Métropole — Code NAF/APE : 70.22Z (conseil pour les affaires et autres conseils de gestion). Contact : tannous@twm.expert.",
+          en: "The website www.twm.expert is published by TWM ADVISORY, a French SAS (simplified joint-stock company) with share capital of €100. SIREN: 106 067 549 — SIRET: 106 067 549 00019 — EU VAT: FR76 106 067 549 — RCS Lille Métropole — NAF/APE: 70.22Z (business and other management consultancy). Contact: tannous@twm.expert.",
         },
       },
       {
         title: { fr: "Directeur de la publication", en: "Publication director" },
         body: {
-          fr: "Le fondateur de TWM Advisory — joignable à tannous@twm.expert.",
-          en: "The founder of TWM Advisory — reachable at tannous@twm.expert.",
+          fr: "Tannous Mekari, Président de TWM ADVISORY — tannous@twm.expert.",
+          en: "Tannous Mekari, President of TWM ADVISORY — tannous@twm.expert.",
         },
       },
       {
@@ -1286,8 +1286,8 @@ export const content = {
       {
         title: { fr: "Responsable du traitement", en: "Data controller" },
         body: {
-          fr: "TWM Advisory traite les données collectées via www.twm.expert. Contact : tannous@twm.expert.",
-          en: "TWM Advisory processes data collected via www.twm.expert. Contact: tannous@twm.expert.",
+          fr: "TWM ADVISORY (SAS, SIREN 106 067 549) traite les données collectées via www.twm.expert. Contact : tannous@twm.expert.",
+          en: "TWM ADVISORY (SAS, SIREN 106 067 549) processes data collected via www.twm.expert. Contact: tannous@twm.expert.",
         },
       },
       {

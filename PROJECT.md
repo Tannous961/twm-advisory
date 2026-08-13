@@ -240,7 +240,7 @@ flowchart LR
 
 - **Calendrier** : créneau toujours manuel (email 48h)
 - **OpenRouter / Resend / Supabase** : clés à renseigner en prod sur Vercel
-- **Mentions légales** : compléter SIREN / siège dès immatriculation
+- **Mentions légales** : SIREN / RCS intégrés (adresse volontairement omise)
 - **Admin** : lecture leads via Supabase Studio (pas de dashboard custom)
 - **Anti-spam** : pas encore de rate limiting sur les APIs
 

@@ -11,7 +11,7 @@ export const siteConfig = {
   twitterHandle: process.env.NEXT_PUBLIC_TWITTER_HANDLE || "",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "",
   linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || "",
-  founderName: process.env.NEXT_PUBLIC_FOUNDER_NAME || "Fondateur TWM Advisory",
+  founderName: process.env.NEXT_PUBLIC_FOUNDER_NAME || "Tannous Mekari",
   areaServed: [
     "FR", // France
     "BE", // Belgique
