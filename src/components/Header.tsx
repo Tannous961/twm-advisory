@@ -170,7 +170,7 @@ export function Header() {
 
           <Link
             href="/demarrer"
-            className="btn-primary hidden rounded-full px-5 py-2.5 text-[13px] sm:inline-block"
+            className="btn-primary hidden rounded-full px-5 py-2.5 text-[13px] lg:inline-block"
           >
             {t(c.nav.cta)}
           </Link>
