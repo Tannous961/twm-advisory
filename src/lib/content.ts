@@ -1243,8 +1243,8 @@ export const content = {
       {
         title: { fr: "Éditeur", en: "Publisher" },
         body: {
-          fr: "Le site www.twm.expert est édité par TWM ADVISORY, SAS (société par actions simplifiée) au capital de 100 €. SIREN : 106 067 549 — SIRET : 106 067 549 00019 — TVA intracommunautaire : FR76 106 067 549 — RCS Lille Métropole — Code NAF/APE : 70.22Z (conseil pour les affaires et autres conseils de gestion). Contact : tannous@twm.expert.",
-          en: "The website www.twm.expert is published by TWM ADVISORY, a French SAS (simplified joint-stock company) with share capital of €100. SIREN: 106 067 549 — SIRET: 106 067 549 00019 — EU VAT: FR76 106 067 549 — RCS Lille Métropole — NAF/APE: 70.22Z (business and other management consultancy). Contact: tannous@twm.expert.",
+          fr: "Le site www.twm.expert est édité par TWM ADVISORY, SAS (société par actions simplifiée). SIREN : 106 067 549 — SIRET : 106 067 549 00019 — TVA intracommunautaire : FR76 106 067 549 — RCS Lille Métropole — Code NAF/APE : 70.22Z (conseil pour les affaires et autres conseils de gestion). Contact : tannous@twm.expert.",
+          en: "The website www.twm.expert is published by TWM ADVISORY, a French SAS (simplified joint-stock company). SIREN: 106 067 549 — SIRET: 106 067 549 00019 — EU VAT: FR76 106 067 549 — RCS Lille Métropole — NAF/APE: 70.22Z (business and other management consultancy). Contact: tannous@twm.expert.",
         },
       },
       {
