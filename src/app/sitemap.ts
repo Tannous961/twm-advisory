@@ -13,6 +13,8 @@ const routes = [
   "/faq",
   "/demarrer",
   "/contact",
+  "/mentions-legales",
+  "/confidentialite",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -39,7 +39,7 @@ Ouvre [http://localhost:3000](http://localhost:3000).
 Configurer l’URL canonique dans `.env` :
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://twmadvisory.com
+NEXT_PUBLIC_SITE_URL=https://www.twm.expert
 ```
 
 Inclus : metadata Open Graph / Twitter, JSON-LD, `robots.txt`, `sitemap.xml`, manifest, images OG dynamiques.

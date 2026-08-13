@@ -94,7 +94,20 @@ export function Footer() {
 
       <div className="content-wrap flex flex-wrap items-center justify-between gap-3 border-t border-[color:var(--line)] py-6 font-mono text-[11px] tracking-[0.08em] text-muted-3">
         <span>© 2026 TWM Advisory</span>
-        <span>{t(c.footer.legal)}</span>
+        <nav className="flex flex-wrap gap-4" aria-label={t(c.footer.legal)}>
+          <Link
+            href="/mentions-legales"
+            className="transition-colors hover:text-fg"
+          >
+            {t(c.footer.legal)}
+          </Link>
+          <Link
+            href="/confidentialite"
+            className="transition-colors hover:text-fg"
+          >
+            {t(c.footer.privacy)}
+          </Link>
+        </nav>
       </div>
     </footer>
   );

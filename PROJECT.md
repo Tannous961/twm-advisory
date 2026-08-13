@@ -238,23 +238,24 @@ flowchart LR
 
 ## 12. Gaps connus / prochaines pistes
 
-- **Images** : peu d’ancrage photo (hero généré + portrait WhatsApp) — besoin hero full-bleed + covers Signal + portrait pro
 - **Calendrier** : créneau toujours manuel (email 48h)
-- **OpenRouter** : clé à renseigner dans `.env` pour briefs IA live
-- **Blog « hyper intelligent »** : V1 Signal en place ; pas encore de génération/distribution auto
+- **OpenRouter / Resend / Supabase** : clés à renseigner en prod sur Vercel
+- **Mentions légales** : compléter SIREN / siège dès immatriculation
 - **Admin** : lecture leads via Supabase Studio (pas de dashboard custom)
+- **Anti-spam** : pas encore de rate limiting sur les APIs
 
 ---
 
 ## 13. Checklist mise en prod
 
-1. Remplir `.env` (Supabase origin correcte, Resend, OpenRouter)
-2. Appliquer les 2 migrations SQL
-3. Tester `/demarrer` bout-en-bout (texte puis vidéo)
-4. Tester `/partenaires` formulaire
-5. Vérifier email reçu sur `INTAKE_NOTIFY_EMAIL`
-6. `npm run build` puis deploy (Vercel ou équivalent) + env vars plateforme
+1. Domaine live : `https://www.twm.expert`
+2. Env Vercel : `NEXT_PUBLIC_SITE_URL=https://www.twm.expert` + Supabase + Resend + OpenRouter
+3. Appliquer les 2 migrations SQL
+4. Tester `/demarrer` bout-en-bout (texte puis vidéo)
+5. Tester `/partenaires` formulaire
+6. Vérifier email reçu sur `INTAKE_NOTIFY_EMAIL`
+7. Vérifier `/mentions-legales` et `/confidentialite`
 
 ---
 
-*Doc alignée sur l’état du repo (août 2026).*
+*Doc alignée sur l’état du repo (août 2026). Domaine : twm.expert.*

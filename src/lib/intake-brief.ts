@@ -11,7 +11,7 @@ function getLlmClient(): { client: OpenAI; via: "openrouter" | "openai" } | null
         baseURL: "https://openrouter.ai/api/v1",
         defaultHeaders: {
           "HTTP-Referer":
-            process.env.NEXT_PUBLIC_SITE_URL || "https://twmadvisory.com",
+            process.env.NEXT_PUBLIC_SITE_URL || "https://www.twm.expert",
           "X-Title": "TWM Advisory",
         },
       }),
@@ -41,7 +41,7 @@ async function transcribeWithOpenRouter(
       Authorization: `Bearer ${apiKey}`,
       "Content-Type": "application/json",
       "HTTP-Referer":
-        process.env.NEXT_PUBLIC_SITE_URL || "https://twmadvisory.com",
+        process.env.NEXT_PUBLIC_SITE_URL || "https://www.twm.expert",
       "X-Title": "TWM Advisory",
     },
     body: JSON.stringify({

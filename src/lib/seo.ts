@@ -3,7 +3,9 @@ import { content } from "./content";
 
 export const siteConfig = {
   name: "TWM Advisory",
-  url: process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://twmadvisory.com",
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
+    "https://www.twm.expert",
   locale: "fr_FR",
   alternateLocale: "en_US",
   twitterHandle: process.env.NEXT_PUBLIC_TWITTER_HANDLE || "",

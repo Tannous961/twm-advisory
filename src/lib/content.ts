@@ -135,6 +135,20 @@ export const content = {
         en: "BD & partnership foundation — clear rules, one counterpart for the client.",
       },
     },
+    legal: {
+      title: { fr: "Mentions légales", en: "Legal notice" },
+      lead: {
+        fr: "Éditeur, hébergement et contacts.",
+        en: "Publisher, hosting and contacts.",
+      },
+    },
+    privacy: {
+      title: { fr: "Confidentialité", en: "Privacy" },
+      lead: {
+        fr: "Comment nous collectons et traitons vos données.",
+        en: "How we collect and process your data.",
+      },
+    },
   },
   home: {
     featuresEyebrow: { fr: "Ce que je déploie", en: "What I deploy" },
@@ -630,6 +644,10 @@ export const content = {
       fr: "J'accepte que ces informations soient utilisées pour évaluer un partenariat — pas pour un démarchage client non sollicité.",
       en: "I agree these details are used to evaluate a partnership — not for unsolicited client outreach.",
     },
+    consentPrivacy: {
+      fr: "Politique de confidentialité",
+      en: "Privacy policy",
+    },
     submit: { fr: "Envoyer la proposition", en: "Send the proposal" },
     submitting: { fr: "Envoi…", en: "Sending…" },
     doneTitle: { fr: "Proposition reçue.", en: "Proposal received." },
@@ -668,8 +686,8 @@ export const content = {
       en: "Me: relationships and decisions.",
     },
     body: {
-      fr: "TWM Advisory fonctionne comme une organisation complète. Chaque agent a un rôle précis. Résultat : mon temps reste sur les échanges dirigeants, la confiance et les arbitrages — exactement ce que je vous aide à protéger chez vous.",
-      en: "TWM Advisory runs like a full organization. Each agent has a clear role. So my time stays on executive conversations, trust and decisions — exactly what I help you protect in your firm.",
+      fr: "TWM Advisory fonctionne comme une organisation complète. Chaque agent a un nom, un rôle précis. Résultat : mon temps reste sur les échanges dirigeants, la confiance et les arbitrages — exactement ce que je vous aide à protéger chez vous.",
+      en: "TWM Advisory runs like a full organization. Each agent has a name and a clear role. So my time stays on executive conversations, trust and decisions — exactly what I help you protect in your firm.",
     },
     humanLabel: { fr: "Humain", en: "Human" },
     humanRole: {
@@ -677,10 +695,19 @@ export const content = {
       en: "C-level relationships, deals, decisions",
     },
     ceo: {
-      role: { fr: "Agent DG", en: "CEO agent" },
+      name: "Aria",
+      role: { fr: "DG", en: "CEO" },
       mission: {
         fr: "Orchestre les priorités, aligne les équipes agents, synthétise pour la direction.",
         en: "Orchestrates priorities, aligns agent teams, synthesizes for leadership.",
+      },
+    },
+    ceoAssistant: {
+      name: "Nexi",
+      role: { fr: "Assistant DG", en: "CEO assistant" },
+      mission: {
+        fr: "Bras droit d'Aria — agenda direction, briefings, suivi des priorités et relais avec les équipes.",
+        en: "Aria's right hand — executive agenda, briefings, priority tracking and relay with the teams.",
       },
     },
     departments: [
@@ -688,21 +715,24 @@ export const content = {
         name: { fr: "Finance & juridique", en: "Finance & legal" },
         agents: [
           {
-            role: { fr: "Agent financier", en: "Finance agent" },
+            name: "Mira",
+            role: { fr: "Finance", en: "Finance" },
             mission: {
               fr: "Trésorerie, forecast, pilotage des marges.",
               en: "Cash, forecast, margin oversight.",
             },
           },
           {
-            role: { fr: "Agent comptable", en: "Accounting agent" },
+            name: "Noa",
+            role: { fr: "Comptabilité", en: "Accounting" },
             mission: {
               fr: "Facturation, écritures, suivi des encaissements.",
               en: "Invoicing, books, payment follow-up.",
             },
           },
           {
-            role: { fr: "Agent juridique", en: "Legal agent" },
+            name: "Vera",
+            role: { fr: "Juridique", en: "Legal" },
             mission: {
               fr: "Contrats types, NDA, relecture des clauses à risque.",
               en: "Contract templates, NDAs, risk clause review.",
@@ -714,21 +744,24 @@ export const content = {
         name: { fr: "Delivery", en: "Delivery" },
         agents: [
           {
-            role: { fr: "Agent ops client", en: "Client ops agent" },
+            name: "Kai",
+            role: { fr: "Ops client", en: "Client ops" },
             mission: {
               fr: "Jalons missions, reporting client, suivi d'exécution.",
               en: "Mission milestones, client reporting, execution tracking.",
             },
           },
           {
-            role: { fr: "Agent développeur", en: "Developer agent" },
+            name: "Lin",
+            role: { fr: "Développement", en: "Developer" },
             mission: {
               fr: "Build des agents et automatisations pour TWM et les clients.",
               en: "Builds agents and automations for TWM and clients.",
             },
           },
           {
-            role: { fr: "Agent customer success", en: "Customer success agent" },
+            name: "Elia",
+            role: { fr: "Customer success", en: "Customer success" },
             mission: {
               fr: "Satisfaction, renouvellement, signaux d'upsell.",
               en: "Satisfaction, renewal, upsell signals.",
@@ -740,42 +773,48 @@ export const content = {
         name: { fr: "Growth", en: "Growth" },
         agents: [
           {
-            role: { fr: "Agent commercial", en: "Sales agent" },
+            name: "Nils",
+            role: { fr: "Commercial", en: "Sales" },
             mission: {
               fr: "Pipeline advisory, relances, préparation d'échanges.",
               en: "Advisory pipeline, follow-ups, call prep.",
             },
           },
           {
-            role: { fr: "Agent BD SaaS", en: "SaaS BD agent" },
+            name: "Tess",
+            role: { fr: "BD SaaS", en: "SaaS BD" },
             mission: {
               fr: "Partenariats produits et deals tech.",
               en: "Product partnerships and tech deals.",
             },
           },
           {
-            role: { fr: "Agent contenu", en: "Content agent" },
+            name: "Iris",
+            role: { fr: "Contenu", en: "Content" },
             mission: {
               fr: "Articles, scripts, messages de fond.",
               en: "Articles, scripts, core messaging.",
             },
           },
           {
-            role: { fr: "Agent SEO", en: "SEO agent" },
+            name: "Orin",
+            role: { fr: "SEO", en: "SEO" },
             mission: {
               fr: "Visibilité organique, structure, pages clés.",
               en: "Organic visibility, structure, key pages.",
             },
           },
           {
-            role: { fr: "Agent réseaux sociaux", en: "Social agent" },
+            name: "Sia",
+            role: { fr: "Réseaux sociaux", en: "Social" },
             mission: {
               fr: "Présence LinkedIn et diffusion régulière.",
               en: "LinkedIn presence and steady distribution.",
             },
           },
           {
-            role: { fr: "Agent veille tech", en: "Tech watch agent" },
+            name: "Vale",
+            role: { fr: "Veille tech", en: "Tech watch" },
             mission: {
               fr: "Modèles, outils, signal utile vs bruit.",
               en: "Models, tools, useful signal vs noise.",
@@ -787,14 +826,8 @@ export const content = {
         name: { fr: "Ops", en: "Ops" },
         agents: [
           {
-            role: { fr: "Agent assistant", en: "Assistant agent" },
-            mission: {
-              fr: "Agenda, mail, préparation des dossiers du quotidien.",
-              en: "Calendar, mail, daily briefing packs.",
-            },
-          },
-          {
-            role: { fr: "Agent CRM / data", en: "CRM / data agent" },
+            name: "Pax",
+            role: { fr: "CRM / data", en: "CRM / data" },
             mission: {
               fr: "Hygiène pipeline, scoring, sync des outils.",
               en: "Pipeline hygiene, scoring, tool sync.",
@@ -1158,6 +1191,10 @@ export const content = {
       fr: "J'accepte que ce signal (vidéo ou texte) soit stocké de façon privée pour préparer mon call, puis effacé sous 30 jours.",
       en: "I agree this signal (video or text) is stored privately to prep my call, then deleted within 30 days.",
     },
+    consentPrivacy: {
+      fr: "Politique de confidentialité",
+      en: "Privacy policy",
+    },
     identityTitle: {
       fr: "Qui reçoit le créneau ?",
       en: "Who gets the slot?",
@@ -1191,10 +1228,114 @@ export const content = {
   },
   footer: {
     legal: { fr: "Mentions légales", en: "Legal" },
+    privacy: { fr: "Confidentialité", en: "Privacy" },
     city: {
       fr: "France · présentiel et remote",
       en: "France · on-site and remote",
     },
+  },
+  legal: {
+    updated: {
+      fr: "Dernière mise à jour : août 2026",
+      en: "Last updated: August 2026",
+    },
+    sections: [
+      {
+        title: { fr: "Éditeur", en: "Publisher" },
+        body: {
+          fr: "Le site www.twm.expert est édité par TWM Advisory. Contact : hello@twm.expert. Les informations d'identification de l'éditeur (raison sociale, forme juridique, siège, SIREN) seront complétées dès finalisation des formalités d'immatriculation.",
+          en: "The website www.twm.expert is published by TWM Advisory. Contact: hello@twm.expert. Publisher identification details (legal name, form, registered office, company ID) will be completed once incorporation formalities are finalized.",
+        },
+      },
+      {
+        title: { fr: "Directeur de la publication", en: "Publication director" },
+        body: {
+          fr: "Le fondateur de TWM Advisory — joignable à hello@twm.expert.",
+          en: "The founder of TWM Advisory — reachable at hello@twm.expert.",
+        },
+      },
+      {
+        title: { fr: "Hébergement", en: "Hosting" },
+        body: {
+          fr: "Le site est hébergé par Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis — vercel.com.",
+          en: "The site is hosted by Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA — vercel.com.",
+        },
+      },
+      {
+        title: { fr: "Propriété intellectuelle", en: "Intellectual property" },
+        body: {
+          fr: "L'ensemble des contenus (textes, marques, logos, visuels, architecture éditoriale) présents sur ce site est protégé. Toute reproduction non autorisée est interdite.",
+          en: "All content on this site (text, trademarks, logos, visuals, editorial structure) is protected. Unauthorized reproduction is prohibited.",
+        },
+      },
+      {
+        title: { fr: "Responsabilité", en: "Liability" },
+        body: {
+          fr: "Les informations publiées le sont à titre indicatif. TWM Advisory s'efforce de les tenir à jour, sans garantie d'exhaustivité. L'usage des formulaires engage votre responsabilité quant à l'exactitude des données fournies.",
+          en: "Information is provided for guidance. TWM Advisory aims to keep it current without claiming completeness. Use of forms is your responsibility regarding accuracy of the data you submit.",
+        },
+      },
+    ],
+  },
+  privacy: {
+    updated: {
+      fr: "Dernière mise à jour : août 2026",
+      en: "Last updated: August 2026",
+    },
+    sections: [
+      {
+        title: { fr: "Responsable du traitement", en: "Data controller" },
+        body: {
+          fr: "TWM Advisory traite les données collectées via www.twm.expert. Contact : hello@twm.expert.",
+          en: "TWM Advisory processes data collected via www.twm.expert. Contact: hello@twm.expert.",
+        },
+      },
+      {
+        title: { fr: "Données collectées", en: "Data we collect" },
+        body: {
+          fr: "Via le briefing (/demarrer) : prénom, email, société (optionnelle), réponses au parcours, score, signal texte ou vidéo, consentement. Via /partenaires : identité, email, société, type de partenariat, message, consentement. Cookies techniques : langue, thème (dev), splash déjà vu.",
+          en: "Via the briefing (/demarrer): first name, email, company (optional), journey answers, score, text or video signal, consent. Via /partenaires: identity, email, company, partnership type, message, consent. Technical cookies: language, theme (dev), splash already seen.",
+        },
+      },
+      {
+        title: {
+          fr: "Finalités et base légale",
+          en: "Purposes and legal basis",
+        },
+        body: {
+          fr: "Préparer un échange commercial ou un partenariat, répondre à votre demande, et améliorer le parcours. Base : consentement (formulaires) et intérêt légitime (fonctionnement technique du site).",
+          en: "Prepare a commercial conversation or partnership, answer your request, and improve the journey. Basis: consent (forms) and legitimate interest (technical site operation).",
+        },
+      },
+      {
+        title: { fr: "Durée de conservation", en: "Retention" },
+        body: {
+          fr: "Signal vidéo / texte du briefing : conservation privée puis effacement sous 30 jours. Leads briefing et partenaires : conservation le temps nécessaire au suivi commercial, puis archivage ou suppression. Cookies techniques : session ou durée limitée.",
+          en: "Briefing video / text signal: private storage then deletion within 30 days. Briefing and partner leads: retained as needed for commercial follow-up, then archived or deleted. Technical cookies: session or limited duration.",
+        },
+      },
+      {
+        title: { fr: "Sous-traitants", en: "Processors" },
+        body: {
+          fr: "Hébergement : Vercel. Base de données et stockage vidéo : Supabase. Emails transactionnels internes : Resend. Transcription / brief IA : OpenRouter ou OpenAI. Ces prestataires traitent les données pour notre compte, dans le cadre de leurs contrats.",
+          en: "Hosting: Vercel. Database and video storage: Supabase. Internal transactional email: Resend. Transcription / AI brief: OpenRouter or OpenAI. These providers process data on our behalf under their agreements.",
+        },
+      },
+      {
+        title: { fr: "Vos droits", en: "Your rights" },
+        body: {
+          fr: "Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité. Pour exercer vos droits : hello@twm.expert. Vous pouvez aussi saisir la CNIL (cnil.fr).",
+          en: "You have rights of access, rectification, erasure, restriction, objection and portability. To exercise them: hello@twm.expert. You may also contact the CNIL (cnil.fr) or your local authority.",
+        },
+      },
+      {
+        title: { fr: "Sécurité", en: "Security" },
+        body: {
+          fr: "Les uploads vidéo transitent par le serveur et sont stockés dans un bucket privé. Les accès base de données côté app passent par une clé service role serveur — jamais exposée au navigateur.",
+          en: "Video uploads go through the server and are stored in a private bucket. App database access uses a server-only service role key — never exposed to the browser.",
+        },
+      },
+    ],
   },
   splash: {
     line: {

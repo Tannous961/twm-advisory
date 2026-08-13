@@ -1,6 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
+import Link from "next/link";
 import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
 import { useI18n, useT } from "@/lib/i18n";
@@ -199,7 +200,16 @@ export function Partnerships() {
                   onChange={(e) => setConsent(e.target.checked)}
                   className="mt-1 size-4 accent-[var(--accent)]"
                 />
-                <span>{t(p.consent)}</span>
+                <span>
+                  {t(p.consent)}{" "}
+                  <Link
+                    href="/confidentialite"
+                    className="text-accent underline-offset-2 hover:underline"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {t(p.consentPrivacy)}
+                  </Link>
+                </span>
               </label>
               {error ? (
                 <p role="alert" className="mb-4 text-sm text-accent-soft">

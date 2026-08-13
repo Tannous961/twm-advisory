@@ -486,7 +486,16 @@ export function IntakeGame() {
                   onChange={(e) => setConsent(e.target.checked)}
                   className="mt-1 size-4 accent-[var(--accent)]"
                 />
-                <span>{t(i.consent)}</span>
+                <span>
+                  {t(i.consent)}{" "}
+                  <Link
+                    href="/confidentialite"
+                    className="text-accent underline-offset-2 hover:underline"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {t(i.consentPrivacy)}
+                  </Link>
+                </span>
               </label>
               {error ? (
                 <p role="alert" className="mb-4 text-sm text-accent-soft">
