@@ -159,7 +159,7 @@ export function VideoSignal({ onBlob, labels }: Props) {
         )}
         {recording ? (
           <span
-            className="absolute top-3 left-3 inline-flex items-center gap-2 rounded-full bg-black/55 px-3 py-1 font-mono text-[11px] text-fg"
+            className="type-label absolute top-3 left-3 inline-flex items-center gap-2 rounded-full bg-black/55 px-3 py-1.5 text-fg"
             role="status"
             aria-live="polite"
           >

@@ -39,7 +39,7 @@ export function Contact() {
           <div className="relative">
             <h2
               id="contact-title"
-              className="mb-4 font-display text-[clamp(1.75rem,7vw,3.6rem)] leading-[1.12] font-normal sm:mb-4.5"
+              className="type-h2 mb-4 sm:mb-5"
             >
               {t(c.contact.title)}
               {c.contact.titleEm.fr || c.contact.titleEm.en ? (
@@ -49,26 +49,26 @@ export function Contact() {
                 </>
               ) : null}
             </h2>
-            <p className="mb-8 text-[16px] text-muted sm:mb-9 sm:text-[17px]">
+            <p className="type-lead mb-8 text-muted sm:mb-9">
               {t(c.contact.lead)}
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link
                 href="/demarrer"
-                className="btn-primary rounded-full px-8 py-4 text-base"
+                className="btn-primary rounded-full px-8 py-4"
                 onClick={() => track("cta_click", { location: "contact" })}
               >
                 {t(c.contact.cta)}
               </Link>
               <a
                 href="mailto:tannous@twm.expert"
-                className="btn-secondary rounded-full px-8 py-4 text-base"
+                className="btn-secondary rounded-full px-8 py-4"
                 onClick={() => track("cta_click", { location: "contact_email" })}
               >
                 {t(c.contact.secondary)}
               </a>
             </div>
-            <p className="mt-5 font-mono text-[11px] tracking-[0.08em] text-[#4c5468]">
+            <p className="type-label mt-5 tracking-[0.08em] text-[#4c5468]">
               {t(c.contact.note)}
             </p>
           </div>

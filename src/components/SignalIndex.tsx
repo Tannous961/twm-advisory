@@ -30,7 +30,7 @@ export function SignalIndex() {
                 <SignalCover intent={post.intent} index={i} compact={i !== 0} />
 
                 <div className="flex min-w-0 flex-col px-3 pb-3 sm:px-4 sm:pb-4">
-                  <div className="mb-4 flex flex-wrap items-center gap-3 font-mono text-[11px] tracking-[0.12em] text-muted-3 uppercase">
+                  <div className="mb-4 flex flex-wrap items-center gap-3 type-label tracking-[0.12em] text-muted-3">
                     <span className="text-accent">
                       {String(i + 1).padStart(2, "0")}
                     </span>
@@ -39,13 +39,13 @@ export function SignalIndex() {
                       {post.readingMinutes} {t(c.signal.minutes)}
                     </span>
                   </div>
-                  <h2 className="font-display text-[clamp(1.35rem,3vw,1.85rem)] leading-snug group-hover:text-accent">
+                  <h2 className="type-h3 leading-snug group-hover:text-accent">
                     {post.title[lang]}
                   </h2>
-                  <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-muted">
+                  <p className="mt-3 max-w-3xl type-body text-muted">
                     {post.insight[lang]}
                   </p>
-                  <p className="mt-6 border-t border-white/8 pt-4 font-mono text-[11px] tracking-[0.1em] text-accent uppercase">
+                  <p className="mt-6 border-t border-white/8 pt-4 type-label tracking-[0.1em] text-accent">
                     {t(c.signal.readCta)} →
                   </p>
                 </div>

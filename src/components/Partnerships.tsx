@@ -68,10 +68,10 @@ export function Partnerships() {
       <Reveal>
         <section className="content-wrap section-pad">
           <SectionLabel index="01" label={t(c.nav.partners)} />
-          <h2 className="mb-4 max-w-3xl font-display text-[clamp(1.75rem,5vw,2.75rem)] leading-[1.15]">
+          <h2 className="mb-4 max-w-3xl type-h2">
             {t(p.whyTitle)}
           </h2>
-          <p className="max-w-2xl text-[15px] leading-[1.75] text-muted sm:text-base">
+          <p className="max-w-2xl type-body text-muted">
             {t(p.whyBody)}
           </p>
         </section>
@@ -80,17 +80,17 @@ export function Partnerships() {
       <Reveal>
         <section className="content-wrap section-pad pt-0">
           <SectionLabel index="02" label={t(p.typesTitle)} />
-          <h2 className="mb-8 font-display text-[clamp(1.75rem,5vw,2.75rem)] leading-[1.15]">
+          <h2 className="mb-8 type-h2">
             {t(p.typesTitle)}
           </h2>
           <div className="grid gap-4 sm:grid-cols-2">
             {p.types.map((item, i) => (
               <div key={i} className="glass-card rounded-3xl p-7">
-                <span className="mb-3 block font-mono text-[11px] text-muted-3">
+                <span className="mb-3 block type-label text-muted-3">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mb-3 font-display text-xl">{t(item.title)}</h3>
-                <p className="text-[14px] leading-relaxed text-muted">
+                <h3 className="type-h3 mb-3">{t(item.title)}</h3>
+                <p className="type-body-sm text-muted">
                   {t(item.body)}
                 </p>
               </div>
@@ -102,7 +102,7 @@ export function Partnerships() {
       <Reveal>
         <section className="content-wrap section-pad pt-0">
           <SectionLabel index="03" label={t(p.rulesTitle)} />
-          <h2 className="mb-8 font-display text-[clamp(1.75rem,5vw,2.75rem)] leading-[1.15]">
+          <h2 className="mb-8 type-h2">
             {t(p.rulesTitle)}
           </h2>
           <ol className="flex flex-col gap-3">
@@ -111,10 +111,10 @@ export function Partnerships() {
                 key={i}
                 className="flex gap-4 rounded-2xl border border-white/8 bg-panel px-5 py-4"
               >
-                <span className="font-mono text-[12px] text-accent">
+                <span className="type-label text-accent">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <p className="text-[15px] leading-relaxed text-muted">
+                <p className="type-body text-muted">
                   {t(rule)}
                 </p>
               </li>
@@ -126,14 +126,14 @@ export function Partnerships() {
       <Reveal>
         <section id="proposer" className="content-wrap section-pad pt-0">
           <SectionLabel index="04" label={t(p.formTitle)} />
-          <h2 className="mb-3 font-display text-[clamp(1.75rem,5vw,2.75rem)] leading-[1.15]">
+          <h2 className="mb-3 type-h2">
             {t(p.formTitle)}
           </h2>
-          <p className="mb-8 max-w-2xl text-[15px] text-muted">{t(p.formBody)}</p>
+          <p className="mb-8 max-w-2xl type-body text-muted">{t(p.formBody)}</p>
 
           {done ? (
             <div className="glass-card max-w-xl rounded-3xl p-8">
-              <h3 className="mb-3 font-display text-2xl">{t(p.doneTitle)}</h3>
+              <h3 className="type-h3 mb-3">{t(p.doneTitle)}</h3>
               <p className="text-muted">{t(p.doneBody)}</p>
             </div>
           ) : (
@@ -159,7 +159,7 @@ export function Partnerships() {
                   autoComplete="organization"
                 />
                 <label className="block" htmlFor="partner-type">
-                  <span className="mb-2 block font-mono text-[10px] tracking-[0.14em] text-muted-3 uppercase">
+                  <span className="mb-2 block type-caption text-muted-3">
                     {t(p.fields.type)}
                   </span>
                   <select
@@ -169,7 +169,7 @@ export function Partnerships() {
                       setPartnerType(e.target.value as PartnerType | "")
                     }
                     required
-                    className="w-full rounded-2xl border border-white/10 bg-panel px-4 py-3 text-[15px] text-fg focus:border-accent/40"
+                    className="w-full rounded-2xl border border-white/10 bg-panel px-4 py-3 type-body text-fg focus:border-accent/40"
                   >
                     <option value="">—</option>
                     {TYPE_KEYS.map((key) => (
@@ -180,7 +180,7 @@ export function Partnerships() {
                   </select>
                 </label>
                 <label className="block" htmlFor="partner-message">
-                  <span className="mb-2 block font-mono text-[10px] tracking-[0.14em] text-muted-3 uppercase">
+                  <span className="mb-2 block type-caption text-muted-3">
                     {t(p.fields.message)}
                   </span>
                   <textarea
@@ -191,11 +191,11 @@ export function Partnerships() {
                     required
                     minLength={20}
                     placeholder={t(p.messagePlaceholder)}
-                    className="w-full resize-y rounded-2xl border border-white/10 bg-panel px-4 py-3 text-[15px] text-fg focus:border-accent/40"
+                    className="w-full resize-y rounded-2xl border border-white/10 bg-panel px-4 py-3 type-body text-fg focus:border-accent/40"
                   />
                 </label>
               </div>
-              <label className="mb-6 flex cursor-pointer items-start gap-3 text-[13px] leading-relaxed text-muted">
+              <label className="mb-6 flex cursor-pointer items-start gap-3 type-body-sm text-muted">
                 <input
                   type="checkbox"
                   checked={consent}
@@ -260,7 +260,7 @@ function Field({
     <div className="block">
       <label
         htmlFor={id}
-        className="mb-2 block font-mono text-[10px] tracking-[0.14em] text-muted-3 uppercase"
+        className="mb-2 block type-caption text-muted-3"
       >
         {label}
       </label>
@@ -271,7 +271,7 @@ function Field({
         autoComplete={autoComplete}
         required={type === "email" || autoComplete === "given-name"}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-2xl border border-white/10 bg-panel px-4 py-3 text-[15px] text-fg focus:border-accent/40"
+        className="w-full rounded-2xl border border-white/10 bg-panel px-4 py-3 type-body text-fg focus:border-accent/40"
       />
     </div>
   );

@@ -17,18 +17,18 @@ export function Partners() {
       >
         <SectionLabel index="07" label={t(c.partners.section)} />
         <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-14">
-          <h2 className="font-display text-[clamp(1.75rem,6vw,2.875rem)] leading-[1.18] font-normal">
+          <h2 className="type-h2">
             {t(c.partners.title)}
             <br />
             <em className="text-accent italic">{t(c.partners.titleEm)}</em>
           </h2>
           <div>
-            <p className="text-[15px] leading-[1.78] text-muted text-pretty sm:text-base">
+            <p className="type-body text-pretty text-muted">
               {t(c.partners.body)}
             </p>
             <Link
               href="/partenaires"
-              className="mt-6 inline-flex font-mono text-[11px] tracking-[0.14em] text-accent uppercase"
+              className="mt-6 inline-flex type-label tracking-[0.14em] text-accent"
             >
               {t(c.partners.cta)} →
             </Link>

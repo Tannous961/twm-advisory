@@ -20,13 +20,13 @@ export function Infrastructure() {
         <div className="grid items-start gap-6 lg:grid-cols-2 lg:gap-14">
           <h2
             id="infra-title"
-            className="font-display text-[clamp(1.75rem,6vw,2.875rem)] leading-[1.18] font-normal"
+            className="type-h2"
           >
             {t(c.infrastructure.title)}
             <br />
             <em className="text-accent italic">{t(c.infrastructure.titleEm)}</em>
           </h2>
-          <p className="text-[15px] leading-[1.78] text-muted text-pretty sm:text-base">
+          <p className="type-body text-pretty text-muted">
             {t(c.infrastructure.body)}
           </p>
         </div>
@@ -43,19 +43,19 @@ export function Infrastructure() {
             }}
           >
             <span
-              className="inline-flex size-12 shrink-0 items-center justify-center rounded-full border border-accent/50 bg-accent/20 font-mono text-[10px] tracking-[0.12em] text-accent uppercase sm:size-14"
+              className="inline-flex size-12 shrink-0 items-center justify-center rounded-full border border-accent/50 bg-accent/20 type-caption text-accent sm:size-14"
               aria-hidden
             >
               TWM
             </span>
             <div className="min-w-0 text-left">
-              <div className="font-mono text-[10px] tracking-[0.18em] text-accent uppercase">
+              <div className="type-caption tracking-[0.18em] text-accent">
                 {t(c.infrastructure.humanLabel)}
               </div>
               <div className="mt-1 font-display text-xl text-fg sm:text-2xl">
                 TWM · Direction
               </div>
-              <p className="mt-1 text-[13px] text-muted sm:text-sm">
+              <p className="mt-1 type-body-sm text-muted">
                 {t(c.infrastructure.humanRole)}
               </p>
             </div>
@@ -73,13 +73,13 @@ export function Infrastructure() {
                 featured
               />
               <div className="min-w-0 text-left">
-                <div className="font-mono text-[10px] tracking-[0.16em] text-muted-3 uppercase">
+                <div className="type-caption text-muted-3">
                   01 · {t(c.infrastructure.ceo.role)}
                 </div>
-                <div className="mt-1 font-display text-lg text-fg sm:text-xl">
+                <div className="mt-1 type-h3 text-fg">
                   {c.infrastructure.ceo.name}
                 </div>
-                <p className="mt-1 text-[13px] leading-snug text-muted">
+                <p className="type-body-sm mt-1 leading-snug text-muted">
                   {t(c.infrastructure.ceo.mission)}
                 </p>
               </div>
@@ -93,13 +93,13 @@ export function Infrastructure() {
                 featured
               />
               <div className="min-w-0 text-left">
-                <div className="font-mono text-[10px] tracking-[0.16em] text-accent uppercase">
+                <div className="type-caption text-accent">
                   02 · {t(c.infrastructure.ceoAssistant.role)}
                 </div>
-                <div className="mt-1 font-display text-lg text-fg sm:text-xl">
+                <div className="mt-1 type-h3 text-fg">
                   {c.infrastructure.ceoAssistant.name}
                 </div>
-                <p className="mt-1 text-[13px] leading-snug text-muted">
+                <p className="type-body-sm mt-1 leading-snug text-muted">
                   {t(c.infrastructure.ceoAssistant.mission)}
                 </p>
               </div>
@@ -116,7 +116,7 @@ export function Infrastructure() {
                 className="flex flex-col border border-white/8 bg-panel"
               >
                 <div className="border-b border-white/8 px-4 py-3">
-                  <span className="font-mono text-[10px] tracking-[0.16em] text-accent uppercase">
+                  <span className="type-caption text-accent">
                     {t(dept.name)}
                   </span>
                 </div>
@@ -132,14 +132,14 @@ export function Infrastructure() {
                           <AgentAvatar name={agent.name} size="sm" tone={tone} />
                           <div className="min-w-0">
                             <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
-                              <span className="font-display text-[15px] text-fg sm:text-base">
+                              <span className="type-body text-fg">
                                 {agent.name}
                               </span>
-                              <span className="font-mono text-[10px] tracking-[0.12em] text-muted-3 uppercase">
+                              <span className="type-caption text-muted-3">
                                 {t(agent.role)}
                               </span>
                             </div>
-                            <p className="mt-1 text-[12px] leading-snug text-muted-2 sm:text-[13px]">
+                            <p className="type-caption mt-1 leading-snug text-muted-2 sm:type-body-sm">
                               {t(agent.mission)}
                             </p>
                           </div>
@@ -153,7 +153,7 @@ export function Infrastructure() {
           </div>
         </div>
 
-        <p className="surface-accent mt-6 px-5 py-4 text-[15px] leading-[1.7] text-muted">
+        <p className="surface-accent mt-6 px-5 py-4 type-body text-muted">
           {t(c.infrastructure.closing)}
         </p>
       </section>

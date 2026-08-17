@@ -33,7 +33,7 @@ export function ScoreMeter({
   return (
     <div className="intake-score" aria-live="polite">
       <div className="mb-2 flex items-baseline justify-between gap-3">
-        <span className="font-mono text-[10px] tracking-[0.16em] text-muted-3 uppercase">
+        <span className="type-caption text-muted-3">
           {label}
         </span>
         <span className="font-display text-3xl leading-none text-accent tabular-nums">

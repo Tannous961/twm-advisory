@@ -201,11 +201,11 @@ export function IntakeGame() {
     >
       <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p className="mb-2 font-mono text-[11px] tracking-[0.16em] text-accent uppercase">
+          <p className="mb-2 type-label tracking-[0.16em] text-accent">
             {t(i.brand)}
           </p>
           {step !== "boot" && step !== "done" ? (
-            <p className="font-mono text-[11px] text-muted-3" aria-live="polite">
+            <p className="type-label text-muted-3" aria-live="polite">
               {t(i.stepOf)} {stepNumber} / 5
             </p>
           ) : null}
@@ -215,10 +215,10 @@ export function IntakeGame() {
       {step === "boot" ? (
         <div className="animate-intake-in grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <div className="intake-panel min-w-0">
-            <h1 className="mb-4 font-display text-[clamp(2rem,7vw,3.75rem)] leading-[1.08]">
+            <h1 className="mb-4 type-h1">
               {t(i.mission)}
             </h1>
-            <p className="mb-8 max-w-2xl text-[16px] leading-relaxed text-muted sm:text-[17px]">
+            <p className="mb-8 max-w-2xl type-lead text-muted">
               {t(i.missionBody)}
             </p>
             <button
@@ -239,7 +239,7 @@ export function IntakeGame() {
         <div className="min-w-0">
           {step === "intent" ? (
             <div className="animate-intake-in">
-              <h2 className="mb-2 font-display text-[clamp(1.75rem,5vw,2.75rem)]">
+              <h2 className="mb-2 type-h2">
                 {t(i.intentTitle)}
               </h2>
               <p className="mb-8 text-muted">{t(i.intentBody)}</p>
@@ -257,10 +257,10 @@ export function IntakeGame() {
                       intent === id ? "border-accent/40" : ""
                     }`}
                   >
-                    <h3 className="mb-2 font-display text-xl">
+                    <h3 className="type-h3 mb-2">
                       {t(i.intents[id].title)}
                     </h3>
-                    <p className="text-[14px] leading-relaxed text-muted">
+                    <p className="type-body-sm text-muted">
                       {t(i.intents[id].body)}
                     </p>
                   </button>
@@ -271,7 +271,7 @@ export function IntakeGame() {
 
           {step === "probes" && intent ? (
             <div className="animate-intake-in">
-              <h2 className="mb-2 font-display text-[clamp(1.75rem,5vw,2.75rem)]">
+              <h2 className="mb-2 type-h2">
                 {t(i.probesTitle)}
               </h2>
               <p className="mb-8 text-muted">{t(i.probesBody)}</p>
@@ -329,7 +329,7 @@ export function IntakeGame() {
 
               <button
                 type="button"
-                className="mt-8 font-mono text-[11px] tracking-[0.12em] text-muted-3 uppercase"
+                className="mt-8 type-label tracking-[0.12em] text-muted-3"
                 onClick={() => {
                   if (probeIndex === 0) setStep("intent");
                   else setProbeIndex((n) => n - 1);
@@ -342,7 +342,7 @@ export function IntakeGame() {
 
           {step === "map" && intent ? (
             <div className="animate-intake-in">
-              <h2 className="mb-2 font-display text-[clamp(1.75rem,5vw,2.75rem)]">
+              <h2 className="mb-2 type-h2">
                 {t(i.mapTitle)}
               </h2>
               <p className="mb-6 text-muted">{t(i.mapBody)}</p>
@@ -354,7 +354,7 @@ export function IntakeGame() {
                   pathLabel={t(i.pathLabel)}
                 />
                 {maturity.entryOffer ? (
-                  <p className="mt-6 border-t border-white/8 pt-5 font-mono text-[12px] tracking-[0.08em] text-accent uppercase">
+                  <p className="mt-6 border-t border-white/8 pt-5 type-label tracking-[0.08em] text-accent">
                     {t(i.entryLabel)} · {offerLabels[maturity.entryOffer]}
                   </p>
                 ) : null}
@@ -380,7 +380,7 @@ export function IntakeGame() {
 
           {step === "signal" ? (
             <div className="animate-intake-in">
-              <h2 className="mb-2 font-display text-[clamp(1.75rem,5vw,2.75rem)]">
+              <h2 className="mb-2 type-h2">
                 {t(i.signalTitle)}
               </h2>
               <p className="mb-6 text-muted">{t(i.signalBody)}</p>
@@ -393,7 +393,7 @@ export function IntakeGame() {
                 <button
                   type="button"
                   aria-pressed={signalMode === "video"}
-                  className={`rounded-full px-4 py-2 font-mono text-[11px] tracking-[0.12em] uppercase ${
+                  className={`type-label rounded-full px-4 py-2.5 tracking-[0.12em] ${
                     signalMode === "video"
                       ? "bg-accent text-ink"
                       : "border border-white/15 text-muted"
@@ -408,7 +408,7 @@ export function IntakeGame() {
                 <button
                   type="button"
                   aria-pressed={signalMode === "text"}
-                  className={`rounded-full px-4 py-2 font-mono text-[11px] tracking-[0.12em] uppercase ${
+                  className={`type-label rounded-full px-4 py-2.5 tracking-[0.12em] ${
                     signalMode === "text"
                       ? "bg-accent text-ink"
                       : "border border-white/15 text-muted"
@@ -440,7 +440,7 @@ export function IntakeGame() {
                     onChange={(e) => setSignalText(e.target.value)}
                     placeholder={t(i.signalPlaceholder)}
                     rows={6}
-                    className="w-full resize-y rounded-3xl border border-white/10 bg-panel px-5 py-4 text-[15px] text-fg focus:border-accent/40"
+                    className="w-full resize-y rounded-3xl border border-white/10 bg-panel px-5 py-4 type-body text-fg focus:border-accent/40"
                   />
                 </label>
               )}
@@ -469,7 +469,7 @@ export function IntakeGame() {
 
           {step === "identity" ? (
             <div className="animate-intake-in">
-              <h2 className="mb-2 font-display text-[clamp(1.75rem,5vw,2.75rem)]">
+              <h2 className="mb-2 type-h2">
                 {t(i.identityTitle)}
               </h2>
               <p className="mb-8 text-muted">{t(i.identityBody)}</p>
@@ -494,7 +494,7 @@ export function IntakeGame() {
                   autoComplete="organization"
                 />
               </div>
-              <label className="mb-8 flex cursor-pointer items-start gap-3 text-[13px] leading-relaxed text-muted">
+              <label className="mb-8 flex cursor-pointer items-start gap-3 type-body-sm text-muted">
                 <input
                   type="checkbox"
                   checked={consent}
@@ -545,14 +545,14 @@ export function IntakeGame() {
 
           {step === "done" ? (
             <div className="animate-intake-in">
-              <h2 className="mb-3 font-display text-[clamp(2rem,6vw,3.25rem)]">
+              <h2 className="mb-3 type-h1">
                 {t(i.doneTitle)}
               </h2>
-              <p className="mb-8 max-w-xl text-[16px] text-muted">
+              <p className="mb-8 max-w-xl type-lead text-muted">
                 {t(i.doneBody)}
               </p>
               <div className="glass-card mb-8 max-w-md rounded-3xl p-6">
-                <p className="font-mono text-[12px] tracking-[0.1em] text-accent uppercase">
+                <p className="type-label tracking-[0.1em] text-accent">
                   {t(i.entryLabel)} ·{" "}
                   {offerLabels[doneOffer as keyof typeof offerLabels] ??
                     doneOffer}
@@ -578,10 +578,10 @@ export function IntakeGame() {
             />
             {feedbackText ? (
               <div className="mt-5 border-t border-white/8 pt-5">
-                <p className="mb-2 font-mono text-[10px] tracking-[0.14em] text-muted-3 uppercase">
+                <p className="mb-2 type-caption text-muted-3">
                   {t(i.feedbackLabel)}
                 </p>
-                <p className="text-[14px] leading-relaxed text-muted">
+                <p className="type-body-sm text-muted">
                   {feedbackText}
                 </p>
               </div>
@@ -609,7 +609,7 @@ function ProbeCards({
 
   return (
     <div>
-      <h3 id={headingId} className="mb-4 font-display text-2xl">
+      <h3 id={headingId} className="type-h3 mb-4">
         {title}
       </h3>
       <div
@@ -624,7 +624,7 @@ function ProbeCards({
             role="radio"
             aria-checked={selected === opt.key}
             onClick={() => onSelect(opt.key)}
-            className={`rounded-2xl border px-5 py-4 text-left text-[15px] transition hover:border-accent/40 ${
+            className={`type-body rounded-2xl border px-5 py-4 text-left transition hover:border-accent/40 ${
               selected === opt.key
                 ? "border-accent/50 bg-accent/10 text-fg"
                 : "border-white/10 bg-panel text-muted"
@@ -657,7 +657,7 @@ function Field({
     <div className="block">
       <label
         htmlFor={id}
-        className="mb-2 block font-mono text-[10px] tracking-[0.14em] text-muted-3 uppercase"
+        className="mb-2 block type-caption text-muted-3"
       >
         {label}
       </label>
@@ -668,7 +668,7 @@ function Field({
         autoComplete={autoComplete}
         required={type === "email" || autoComplete === "given-name"}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-2xl border border-white/10 bg-panel px-4 py-3 text-[15px] text-fg focus:border-accent/40"
+        className="w-full rounded-2xl border border-white/10 bg-panel px-4 py-3 type-body text-fg focus:border-accent/40"
       />
     </div>
   );

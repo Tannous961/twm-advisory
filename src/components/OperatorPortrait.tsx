@@ -48,10 +48,10 @@ export function OperatorPortrait() {
       </div>
 
       <div className="animate-drift glass-card absolute top-2 right-0 hidden w-52 rounded-2xl p-4 md:block lg:right-[-8px]">
-        <div className="mb-3 font-mono text-[9px] tracking-[0.2em] text-muted-3 uppercase">
+        <div className="mb-3 type-caption tracking-[0.2em] text-muted-3">
           {t(c.home.featuresEyebrow)}
         </div>
-        <div className="flex items-center gap-2 text-[13px] text-fg">
+        <div className="flex items-center gap-2 type-body-sm text-fg">
           <span className="size-1.5 rounded-full bg-accent" />
           {t(c.hero.floatTitle)}
         </div>
@@ -61,11 +61,11 @@ export function OperatorPortrait() {
       </div>
 
       <div className="animate-drift-delay glass-card absolute bottom-2 left-0 hidden w-48 rounded-2xl p-4 md:block lg:left-[-16px]">
-        <div className="mb-2.5 font-mono text-[9px] tracking-[0.2em] text-muted-3 uppercase">
+        <div className="mb-2.5 type-caption tracking-[0.2em] text-muted-3">
           {t(c.hero.terrain)}
         </div>
-        <div className="font-display text-[32px] leading-none text-accent">
-          17 <span className="text-[17px] text-fg">{t(c.hero.years)}</span>
+        <div className="type-stat text-accent">
+          17 <span className="type-stat-unit text-fg">{t(c.hero.years)}</span>
         </div>
         <p className="mt-2 text-xs text-muted-2">{t(c.hero.terrainSub)}</p>
       </div>

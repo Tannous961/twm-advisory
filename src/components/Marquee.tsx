@@ -8,7 +8,7 @@ export function Marquee({ items }: { items: string[] }) {
         {loop.map((item, i) => (
           <span
             key={`${item}-${i}`}
-            className="flex items-center gap-10 font-mono text-[11px] tracking-[0.22em] text-muted-2 uppercase"
+            className="type-label flex items-center gap-10 tracking-[0.22em] text-muted-2"
           >
             {item}
             <span className="text-accent">✦</span>

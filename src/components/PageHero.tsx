@@ -20,20 +20,20 @@ export function PageHero({ page }: { page: PageKey }) {
             "radial-gradient(circle, var(--glow) 0%, transparent 70%)",
         }}
       />
-      <div className="content-wrap relative py-14 sm:py-18 lg:py-22">
+      <div className="content-wrap relative py-16 sm:py-20 lg:py-24">
         <Link
           href="/"
-          className="mb-6 inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.14em] text-muted-3 uppercase transition-colors hover:text-accent"
+          className="type-label mb-6 inline-flex items-center gap-2 tracking-[0.14em] text-muted-3 transition-colors hover:text-accent"
         >
           ← TWM Advisory
         </Link>
-        <p className="mb-3 font-mono text-[11px] tracking-[0.18em] text-accent uppercase">
+        <p className="type-label mb-4 tracking-[0.18em] text-accent">
           TWM Advisory
         </p>
-        <h1 className="max-w-3xl font-display text-[clamp(2rem,6vw,3.75rem)] leading-[1.08] tracking-[-0.02em]">
+        <h1 className="type-h1 max-w-3xl">
           {t(data.title)}
         </h1>
-        <p className="mt-5 max-w-2xl text-[16px] leading-relaxed text-muted sm:text-[17px]">
+        <p className="type-lead mt-6 max-w-2xl text-muted">
           {t(data.lead)}
         </p>
       </div>

@@ -7,10 +7,10 @@ export function SectionLabel({
 }) {
   return (
     <div className="mb-8 flex items-center gap-3.5 md:mb-10">
-      <span className="font-mono text-[11px] tracking-[0.2em] text-accent">
+      <span className="type-label tracking-[0.2em] text-accent">
         § {index}
       </span>
-      <span className="font-mono text-[11px] tracking-[0.2em] text-muted-2 uppercase">
+      <span className="type-label tracking-[0.2em] text-muted-2">
         {label}
       </span>
       <span className="h-px flex-1 bg-white/10" />

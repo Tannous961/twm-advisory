@@ -12,30 +12,30 @@ export function HomeFaq() {
   return (
     <Reveal>
       <section className="content-wrap section-pad">
-        <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-          <h2 className="font-display text-[clamp(1.75rem,5vw,2.75rem)] leading-tight">
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+          <h2 className="type-h2">
             {t(c.faq.title)}
           </h2>
           <Link
             href="/faq"
-            className="font-mono text-[11px] tracking-[0.14em] text-accent uppercase"
+            className="type-label tracking-[0.14em] text-accent"
           >
             {t(c.home.faqTeaser)} →
           </Link>
         </div>
-        <div className="grid gap-3">
+        <div className="grid gap-4">
           {preview.map((item, i) => (
             <details
               key={i}
-              className="glass-card group rounded-2xl px-5 py-4 open:bg-panel-2"
+              className="glass-card group rounded-2xl px-6 py-5 open:bg-panel-2"
             >
-              <summary className="cursor-pointer list-none font-display text-lg marker:content-none [&::-webkit-details-marker]:hidden">
+              <summary className="type-h3 cursor-pointer list-none marker:content-none [&::-webkit-details-marker]:hidden">
                 <span className="flex items-center justify-between gap-4">
                   {t(item.q)}
                   <span className="text-accent transition group-open:rotate-45">+</span>
                 </span>
               </summary>
-              <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-muted">
+              <p className="type-body mt-4 max-w-3xl text-muted">
                 {t(item.a)}
               </p>
             </details>

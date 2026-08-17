@@ -20,7 +20,7 @@ export function PathMap({
 
   return (
     <div className="intake-path" role="region" aria-label={pathLabel}>
-      <p className="mb-4 font-mono text-[10px] tracking-[0.16em] text-muted-3 uppercase">
+      <p className="mb-4 type-caption text-muted-3">
         {pathLabel}
       </p>
       <ol className="relative flex flex-col gap-0 sm:flex-row sm:items-stretch sm:justify-between sm:gap-2">
@@ -43,7 +43,7 @@ export function PathMap({
                 />
               ) : null}
               <span
-                className={`relative z-1 mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full border font-mono text-[10px] transition duration-500 ${
+                className={`type-caption relative z-1 mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full border transition duration-500 ${
                   isEntry
                     ? "border-accent bg-accent text-ink shadow-[0_0_24px_rgb(var(--accent-rgb)/0.45)]"
                     : active
@@ -54,7 +54,7 @@ export function PathMap({
                 {String(i + 1).padStart(2, "0")}
               </span>
               <span
-                className={`pt-0.5 text-[13px] leading-snug sm:pt-2 ${
+                className={`pt-0.5 type-body-sm leading-snug sm:pt-2 ${
                   isEntry
                     ? "font-medium text-fg"
                     : active

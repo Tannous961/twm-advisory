@@ -36,18 +36,18 @@ export function SignalCover({
       <div className="absolute inset-0 signal-cover-grid" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_30%,rgb(var(--accent-rgb)/0.25),transparent_35%)]" />
 
-      <div className="absolute top-5 left-5 font-mono text-[10px] tracking-[0.18em] text-muted-3 uppercase sm:top-7 sm:left-7">
+      <div className="absolute top-5 left-5 type-caption text-muted-3 sm:top-7 sm:left-7">
         TWM / SIGNAL
       </div>
-      <div className="absolute top-5 right-5 font-mono text-[10px] tracking-[0.18em] text-accent sm:top-7 sm:right-7">
+      <div className="type-caption absolute top-5 right-5 tracking-[0.18em] text-accent sm:top-7 sm:right-7">
         {config.axis}
       </div>
 
       <div className="absolute top-1/2 left-[8%] -translate-y-1/2">
-        <p className="font-display text-[clamp(2rem,7vw,5.5rem)] leading-none tracking-[-0.05em] text-fg/90">
+        <p className="type-display leading-none tracking-[-0.05em] text-fg/90">
           {config.code}
         </p>
-        <p className="mt-2 font-mono text-[10px] tracking-[0.2em] text-muted-3 uppercase">
+        <p className="type-caption mt-2 tracking-[0.2em] text-muted-3">
           signal {String(index + 1).padStart(2, "0")}
         </p>
       </div>

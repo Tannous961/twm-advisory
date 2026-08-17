@@ -13,10 +13,10 @@ export function HomeProblem() {
       <section className="content-wrap section-pad">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-start lg:gap-16">
           <div>
-            <p className="mb-3 font-mono text-[11px] tracking-[0.18em] text-accent uppercase">
+            <p className="mb-3 type-label tracking-[0.18em] text-accent">
               {t(c.problem.section)}
             </p>
-            <h2 className="font-display text-[clamp(1.75rem,5vw,2.875rem)] leading-[1.15]">
+            <h2 className="type-h2">
               {t(c.problem.title)}{" "}
               <span className="text-muted-2">{t(c.problem.titleMuted)}</span>
             </h2>
@@ -25,7 +25,7 @@ export function HomeProblem() {
             {c.problem.items.map((item, i) => (
               <li
                 key={i}
-                className="glass-card rounded-2xl p-5 text-[15px] leading-relaxed text-muted"
+                className="glass-card rounded-2xl p-5 type-body text-muted"
               >
                 {t(item)}
               </li>
@@ -34,7 +34,7 @@ export function HomeProblem() {
         </div>
         <Link
           href="/approche"
-          className="mt-8 inline-flex font-mono text-[11px] tracking-[0.14em] text-accent uppercase"
+          className="mt-8 inline-flex type-label tracking-[0.14em] text-accent"
         >
           {t(c.nav.approach)} →
         </Link>

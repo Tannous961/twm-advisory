@@ -34,7 +34,7 @@ export function CookieConsent() {
         <div className="max-w-2xl">
           <p
             id="cookie-consent-title"
-            className="mb-1.5 font-mono text-[11px] tracking-[0.14em] text-muted-3 uppercase"
+            className="mb-1.5 type-label tracking-[0.14em] text-muted-3"
           >
             {t(cookie.title)}
           </p>
