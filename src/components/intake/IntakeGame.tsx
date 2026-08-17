@@ -13,6 +13,7 @@ import {
 } from "@/lib/intake";
 import { useI18n, useT } from "@/lib/i18n";
 import { OperatorPortrait } from "../OperatorPortrait";
+import { Turnstile } from "../Turnstile";
 import { PathMap } from "./PathMap";
 import { VideoSignal } from "./VideoSignal";
 
@@ -63,6 +64,9 @@ export function IntakeGame() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [doneOffer, setDoneOffer] = useState<string>("audit");
+  const [confirmationSent, setConfirmationSent] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [turnstileResetKey, setTurnstileResetKey] = useState(0);
 
   useEffect(() => {
     if (!initialIntent) return;
@@ -139,6 +143,13 @@ export function IntakeGame() {
     const entryOffer = maturity.entryOffer;
 
     try {
+      const sessionRes = await fetch("/api/intake/session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ turnstileToken }),
+      });
+      if (!sessionRes.ok) throw new Error("session failed");
+      const session = (await sessionRes.json()) as { token: string };
       let videoPath: string | null = null;
 
       if (videoBlob) {
@@ -150,6 +161,7 @@ export function IntakeGame() {
         );
         const uploadRes = await fetch("/api/intake/upload", {
           method: "POST",
+          headers: { Authorization: `Bearer ${session.token}` },
           body: form,
         });
         if (!uploadRes.ok) throw new Error("upload failed");
@@ -159,7 +171,10 @@ export function IntakeGame() {
 
       const res = await fetch("/api/intake", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          Authorization: `Bearer ${session.token}`,
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({
           lang,
           intent,
@@ -176,8 +191,12 @@ export function IntakeGame() {
       });
 
       if (!res.ok) throw new Error("submit failed");
-      const json = (await res.json()) as { entryOffer: string };
+      const json = (await res.json()) as {
+        entryOffer: string;
+        confirmationSent: boolean;
+      };
       setDoneOffer(json.entryOffer);
+      setConfirmationSent(json.confirmationSent);
       track("intake_submitted", {
         lang,
         intent,
@@ -191,6 +210,7 @@ export function IntakeGame() {
       track("intake_error", { reason: "submit_failed", lang });
     } finally {
       setSubmitting(false);
+      setTurnstileResetKey((value) => value + 1);
     }
   }
 
@@ -512,6 +532,11 @@ export function IntakeGame() {
                   </Link>
                 </span>
               </label>
+              <Turnstile
+                action="intake"
+                onToken={setTurnstileToken}
+                resetKey={turnstileResetKey}
+              />
               {error ? (
                 <p role="alert" className="mb-4 text-sm text-accent-soft">
                   {error}
@@ -550,6 +575,11 @@ export function IntakeGame() {
               </h2>
               <p className="mb-8 max-w-xl type-lead text-muted">
                 {t(i.doneBody)}
+              </p>
+              <p className="mb-6 max-w-xl type-body text-muted">
+                {confirmationSent
+                  ? t(i.doneConfirmationSent)
+                  : t(i.doneConfirmationPending)}
               </p>
               <div className="glass-card mb-8 max-w-md rounded-3xl p-6">
                 <p className="type-label tracking-[0.1em] text-accent">

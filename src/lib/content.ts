@@ -655,6 +655,14 @@ export const content = {
       fr: "Votre proposition a bien été reçue. Une réponse vous sera adressée sous deux jours ouvrés.",
       en: "Your proposal has been received. You will receive a response within two business days.",
     },
+    doneConfirmationSent: {
+      fr: "Un email de confirmation vient de vous être envoyé.",
+      en: "A confirmation email has just been sent to you.",
+    },
+    doneConfirmationPending: {
+      fr: "Votre demande est enregistrée, mais l'email de confirmation n'a pas pu être envoyé. Il n'est pas nécessaire de recommencer.",
+      en: "Your request is recorded, but the confirmation email could not be sent. You do not need to submit it again.",
+    },
     error: {
       fr: "Envoi impossible. Réessayez ou écrivez-nous.",
       en: "Unable to send. Please try again or email us.",
@@ -1215,6 +1223,14 @@ export const content = {
     doneBody: {
       fr: "Une proposition de créneau vous sera adressée sous deux jours ouvrés. Les informations transmises serviront à préparer l'échange.",
       en: "You will receive a proposed time within two business days. The information provided will be used to prepare the conversation.",
+    },
+    doneConfirmationSent: {
+      fr: "Un email de confirmation vient de vous être envoyé.",
+      en: "A confirmation email has just been sent to you.",
+    },
+    doneConfirmationPending: {
+      fr: "Votre demande est enregistrée, mais l'email de confirmation n'a pas pu être envoyé. Il n'est pas nécessaire de recommencer.",
+      en: "Your request is recorded, but the confirmation email could not be sent. You do not need to submit it again.",
     },
     doneHome: { fr: "Retour à l'accueil", en: "Back home" },
     error: {
