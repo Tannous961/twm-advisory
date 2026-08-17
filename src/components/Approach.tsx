@@ -36,7 +36,7 @@ export function Approach() {
         id="approche"
         className="mx-auto max-w-7xl px-4 pt-16 sm:px-6 sm:pt-20 lg:px-10 lg:pt-28"
       >
-        <SectionLabel index="02" label="Forward deployed" />
+        <SectionLabel index="02" label={t(c.home.featuresEyebrow)} />
         <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-14">
           <h2 className="font-display text-[clamp(1.75rem,6vw,2.875rem)] leading-[1.18] font-normal tracking-[-0.012em]">
             {t(c.approach.title)}

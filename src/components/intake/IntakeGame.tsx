@@ -14,7 +14,6 @@ import {
 import { useI18n, useT } from "@/lib/i18n";
 import { OperatorPortrait } from "../OperatorPortrait";
 import { PathMap } from "./PathMap";
-import { ScoreMeter } from "./ScoreMeter";
 import { VideoSignal } from "./VideoSignal";
 
 type Step =
@@ -61,7 +60,6 @@ export function IntakeGame() {
   const [company, setCompany] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [doneScore, setDoneScore] = useState(0);
   const [doneOffer, setDoneOffer] = useState<string>("audit");
   const [prefilledFromSignal, setPrefilledFromSignal] = useState(false);
 
@@ -181,16 +179,12 @@ export function IntakeGame() {
       });
 
       if (!res.ok) throw new Error("submit failed");
-      const json = (await res.json()) as {
-        score: number;
-        entryOffer: string;
-      };
-      setDoneScore(json.score);
+      const json = (await res.json()) as { entryOffer: string };
       setDoneOffer(json.entryOffer);
       track("intake_submitted", {
         lang,
         intent,
-        score: json.score,
+        score: maturity.score,
         offer: json.entryOffer,
         mode: signalMode,
       });
@@ -219,11 +213,6 @@ export function IntakeGame() {
             </p>
           ) : null}
         </div>
-        {intent ? (
-          <div className="w-full max-w-xs sm:w-56">
-            <ScoreMeter score={maturity.score} label={t(i.scoreLabel)} />
-          </div>
-        ) : null}
       </div>
 
       {step === "boot" ? (
@@ -566,8 +555,7 @@ export function IntakeGame() {
                 {t(i.doneBody)}
               </p>
               <div className="glass-card mb-8 max-w-md rounded-3xl p-6">
-                <ScoreMeter score={doneScore} label={t(i.scoreLabel)} />
-                <p className="mt-5 font-mono text-[12px] tracking-[0.1em] text-accent uppercase">
+                <p className="font-mono text-[12px] tracking-[0.1em] text-accent uppercase">
                   {t(i.entryLabel)} ·{" "}
                   {offerLabels[doneOffer as keyof typeof offerLabels] ??
                     doneOffer}
