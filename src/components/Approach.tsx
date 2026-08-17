@@ -38,16 +38,16 @@ export function Approach() {
       >
         <SectionLabel index="02" label={t(c.home.featuresEyebrow)} />
         <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-14">
-          <h2 className="font-display text-[clamp(1.75rem,6vw,2.875rem)] leading-[1.18] font-normal tracking-[-0.012em]">
+          <h2 className="type-h2 tracking-[-0.012em]">
             {t(c.approach.title)}
             <br />
             <em className="text-accent italic">{t(c.approach.titleEm)}</em>
           </h2>
           <div>
-            <p className="mb-5 text-[15px] leading-[1.78] text-muted text-pretty sm:text-base">
+            <p className="mb-5 type-body text-pretty text-muted">
               {t(c.approach.body)}
             </p>
-            <p className="surface-accent mb-0 px-5 py-4 text-[15px] leading-[1.7] text-muted">
+            <p className="surface-accent mb-0 px-5 py-4 type-body text-muted">
               {t(c.approach.quote)}
             </p>
           </div>
@@ -72,13 +72,13 @@ export function Approach() {
                     i === 0 ? "md:left-0" : "md:-left-[5px]"
                   }`}
                 />
-                <div className="mb-3.5 font-mono text-[10px] tracking-[0.2em] text-muted-3 uppercase">
+                <div className="type-caption mb-3.5 tracking-[0.2em] text-muted-3">
                   {t(step.label)}
                 </div>
-                <h3 className="mb-3 font-display text-[22px] font-normal sm:text-[26px]">
+                <h3 className="type-h3 mb-3">
                   {t(step.title)}
                 </h3>
-                <p className="text-[15px] leading-[1.7] text-muted">{t(step.body)}</p>
+                <p className="type-body text-muted">{t(step.body)}</p>
               </div>
             ))}
           </div>

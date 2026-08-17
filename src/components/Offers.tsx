@@ -14,7 +14,7 @@ export function Offers() {
       <Reveal>
         <section className="content-wrap section-pad pb-8 sm:pb-10">
           <SectionLabel index="00" label={t(c.offers.thread.section)} />
-          <p className="max-w-3xl font-display text-[clamp(1.35rem,4vw,2rem)] leading-[1.35] text-balance">
+          <p className="max-w-3xl type-h3 leading-[1.35] text-balance">
             {t(c.offers.thread.body)}
           </p>
         </section>
@@ -23,7 +23,7 @@ export function Offers() {
       <Reveal>
         <section className="content-wrap section-pad pt-0">
           <SectionLabel index="01" label={t(c.offers.section)} />
-          <h2 className="mb-10 font-display text-[clamp(1.75rem,6vw,2.875rem)] leading-[1.18] font-normal sm:mb-14">
+          <h2 className="mb-10 type-h2 sm:mb-14">
             {t(c.offers.title)}
           </h2>
 
@@ -37,7 +37,7 @@ export function Offers() {
                   key={i}
                   className="glass-card group relative overflow-hidden rounded-3xl p-7 pl-16 transition duration-300 hover:border-accent/25 sm:p-9 sm:pl-24"
                 >
-                  <span className="absolute top-7 left-[1.45rem] z-2 flex size-8 -translate-x-1/2 items-center justify-center rounded-full border border-accent/40 bg-panel font-mono text-[10px] tracking-[0.08em] text-accent shadow-[0_0_0_6px_var(--bg)] transition group-hover:border-accent group-hover:bg-accent group-hover:text-ink sm:top-9 sm:left-[2rem] sm:size-10">
+                  <span className="type-caption absolute top-7 left-[1.45rem] z-2 flex size-8 -translate-x-1/2 items-center justify-center rounded-full border border-accent/40 bg-panel text-accent shadow-[0_0_0_6px_var(--bg)] transition group-hover:border-accent group-hover:bg-accent group-hover:text-ink sm:top-9 sm:left-[2rem] sm:size-10">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <span
@@ -48,31 +48,31 @@ export function Offers() {
                   </span>
 
                   <div className="relative min-w-0">
-                    <p className="mb-3 font-mono text-[10px] tracking-[0.16em] text-muted-3 uppercase">
+                    <p className="mb-3 type-caption text-muted-3">
                       {t(c.offers.thread.section)} ·{" "}
                       {String(i + 1).padStart(2, "0")}
                     </p>
-                      <h3 className="mb-3 font-display text-[clamp(1.35rem,3vw,1.85rem)] leading-snug font-normal">
+                      <h3 className="mb-3 type-h3 leading-snug">
                         {t(item.title)}
                       </h3>
-                      <p className="mb-6 max-w-3xl text-[15px] leading-[1.72] text-muted sm:text-base">
+                      <p className="mb-6 max-w-3xl type-body text-muted">
                         {t(item.body)}
                       </p>
 
                       <dl className="grid gap-4 border-t border-white/8 pt-5 sm:grid-cols-2">
                         <div>
-                          <dt className="mb-1.5 font-mono text-[10px] tracking-[0.14em] text-muted-3 uppercase">
+                          <dt className="mb-1.5 type-caption text-muted-3">
                             {t(c.offers.labels.deliverable)}
                           </dt>
-                          <dd className="text-[14px] leading-relaxed text-fg">
+                          <dd className="type-body-sm text-fg">
                             {t(item.deliverable)}
                           </dd>
                         </div>
                         <div>
-                          <dt className="mb-1.5 font-mono text-[10px] tracking-[0.14em] text-muted-3 uppercase">
+                          <dt className="mb-1.5 type-caption text-muted-3">
                             {t(c.offers.labels.audience)}
                           </dt>
-                          <dd className="text-[14px] leading-relaxed text-fg">
+                          <dd className="type-body-sm text-fg">
                             {t(item.audience)}
                           </dd>
                         </div>
@@ -80,7 +80,7 @@ export function Offers() {
 
                       {formats ? (
                         <div className="mt-7 border-t border-white/8 pt-6">
-                          <p className="mb-4 font-mono text-[10px] tracking-[0.14em] text-muted-3 uppercase">
+                          <p className="mb-4 type-caption text-muted-3">
                             {t(c.offers.labels.formats)}
                           </p>
                           <ul className="grid gap-4 sm:grid-cols-3">
@@ -89,7 +89,7 @@ export function Offers() {
                                 <p className="mb-1.5 font-display text-lg leading-snug">
                                   {t(format.title)}
                                 </p>
-                                <p className="text-[13px] leading-relaxed text-muted">
+                                <p className="type-body-sm text-muted">
                                   {t(format.body)}
                                 </p>
                               </li>
@@ -112,7 +112,7 @@ export function Offers() {
         >
           <SectionLabel index="02" label={t(c.offers.ecosystem.section)} />
           <div className="grid items-start gap-8 lg:grid-cols-2 lg:gap-14">
-            <h2 className="font-display text-[clamp(1.75rem,6vw,2.875rem)] leading-[1.18] font-normal">
+            <h2 className="type-h2">
               {t(c.offers.ecosystem.title)}
               <br />
               <em className="text-accent italic">
@@ -120,12 +120,12 @@ export function Offers() {
               </em>
             </h2>
             <div>
-              <p className="text-[15px] leading-[1.78] text-muted text-pretty sm:text-base">
+              <p className="type-body text-pretty text-muted">
                 {t(c.offers.ecosystem.body)}
               </p>
               <Link
                 href="/partenaires"
-                className="mt-6 inline-flex font-mono text-[11px] tracking-[0.14em] text-accent uppercase"
+                className="mt-6 inline-flex type-label tracking-[0.14em] text-accent"
               >
                 {t(c.offers.ecosystem.cta)} →
               </Link>

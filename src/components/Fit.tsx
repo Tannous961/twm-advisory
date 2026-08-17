@@ -18,7 +18,7 @@ export function Fit() {
         <SectionLabel index="04" label={t(c.fit.section)} />
         <h2
           id="fit-title"
-          className="mb-10 font-display text-[clamp(1.75rem,6vw,2.875rem)] leading-[1.18] font-normal sm:mb-12"
+          className="mb-10 type-h2 sm:mb-12"
         >
           {t(c.fit.title)}
         </h2>
@@ -26,7 +26,7 @@ export function Fit() {
           <div className="bg-panel p-6 sm:p-9">
             <div className="mb-6 flex items-center gap-2.5">
               <span className="size-1.5 rotate-45 bg-accent" />
-              <span className="font-mono text-[11px] tracking-[0.16em] text-accent uppercase">
+              <span className="type-label tracking-[0.16em] text-accent">
                 {t(c.fit.yesTitle)}
               </span>
             </div>
@@ -34,7 +34,7 @@ export function Fit() {
               {c.fit.yes.map((item, i) => (
                 <li
                   key={i}
-                  className="border-t border-[color:var(--line)] py-4 text-[15px] leading-[1.65] text-fg"
+                  className="type-body border-t border-[color:var(--line)] py-4 text-fg"
                 >
                   {t(item)}
                 </li>
@@ -44,7 +44,7 @@ export function Fit() {
           <div className="bg-panel-2 p-6 sm:p-9">
             <div className="mb-6 flex items-center gap-2.5">
               <span className="size-1.5 rotate-45 bg-muted-3" />
-              <span className="font-mono text-[11px] tracking-[0.16em] text-muted-2 uppercase">
+              <span className="type-label tracking-[0.16em] text-muted-2">
                 {t(c.fit.noTitle)}
               </span>
             </div>
@@ -52,7 +52,7 @@ export function Fit() {
               {c.fit.no.map((item, i) => (
                 <li
                   key={i}
-                  className="border-t border-[color:var(--line)] py-4 text-[15px] leading-[1.65] text-muted"
+                  className="type-body border-t border-[color:var(--line)] py-4 text-muted"
                 >
                   {t(item)}
                 </li>

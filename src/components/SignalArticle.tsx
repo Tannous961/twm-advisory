@@ -25,12 +25,12 @@ export function SignalArticle({ post }: { post: SignalPost }) {
       <Reveal>
         <Link
           href="/signal"
-          className="mb-8 inline-flex font-mono text-[11px] tracking-[0.14em] text-muted-3 uppercase transition-colors hover:text-accent"
+          className="mb-8 inline-flex type-label tracking-[0.14em] text-muted-3 transition-colors hover:text-accent"
         >
           ← {t(c.signal.back)}
         </Link>
 
-        <p className="mb-4 font-mono text-[11px] tracking-[0.14em] text-muted-3 uppercase">
+        <p className="mb-4 type-label tracking-[0.14em] text-muted-3">
           {post.date} · {post.readingMinutes} {t(c.signal.minutes)}
         </p>
 
@@ -38,24 +38,24 @@ export function SignalArticle({ post }: { post: SignalPost }) {
           <SignalCover intent={post.intent} index={postIndex} />
         </div>
 
-        <h1 className="mb-8 max-w-3xl font-display text-[clamp(2rem,6vw,3.4rem)] leading-[1.08]">
+        <h1 className="mb-8 max-w-3xl type-h1">
           {post.title[lang]}
         </h1>
 
         <div className="mb-10 grid gap-4 lg:grid-cols-2">
           <div className="glass-card rounded-3xl p-6 sm:p-7">
-            <p className="mb-3 font-mono text-[10px] tracking-[0.16em] text-muted-3 uppercase">
+            <p className="mb-3 type-caption text-muted-3">
               {t(c.signal.insightLabel)}
             </p>
-            <p className="font-display text-xl leading-snug text-fg sm:text-2xl">
+            <p className="type-h3 text-fg">
               {post.insight[lang]}
             </p>
           </div>
           <div className="glass-card rounded-3xl border-accent/25 p-6 sm:p-7">
-            <p className="mb-3 font-mono text-[10px] tracking-[0.16em] text-accent uppercase">
+            <p className="mb-3 type-caption text-accent">
               {t(c.signal.verdictLabel)}
             </p>
-            <p className="font-display text-xl leading-snug text-accent-soft sm:text-2xl">
+            <p className="type-h3 text-accent-soft">
               {post.verdict[lang]}
             </p>
           </div>
@@ -65,7 +65,7 @@ export function SignalArticle({ post }: { post: SignalPost }) {
           {post.body[lang].map((paragraph, i) => (
             <p
               key={i}
-              className="text-[16px] leading-[1.75] text-muted sm:text-[17px]"
+              className="type-lead text-muted"
             >
               {paragraph}
             </p>
@@ -81,12 +81,12 @@ export function SignalArticle({ post }: { post: SignalPost }) {
             }}
           />
           <div className="relative">
-            <p className="mb-5 text-[15px] text-muted">
+            <p className="mb-5 type-body text-muted">
               {t(c.signal.briefingNote)}
             </p>
             <Link
               href={`/demarrer?intent=${post.intent}`}
-              className="btn-primary inline-flex rounded-full px-7 py-3.5 text-[15px]"
+              className="btn-primary inline-flex rounded-full px-8 py-4"
               onClick={() =>
                 track("cta_click", {
                   location: "signal_article",

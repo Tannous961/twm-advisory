@@ -11,7 +11,7 @@ export function AudienceCarousel() {
     <Reveal>
       <section className="section-pad">
         <div className="content-wrap">
-          <h2 className="mb-8 font-display text-[clamp(1.75rem,5vw,2.75rem)] leading-tight">
+          <h2 className="mb-8 type-h2">
             {t(c.audience.title)}
           </h2>
         </div>
@@ -24,7 +24,7 @@ export function AudienceCarousel() {
               <div className="mb-4 flex size-10 items-center justify-center rounded-2xl bg-accent/15 font-mono text-sm text-accent">
                 {String(i + 1).padStart(2, "0")}
               </div>
-              <h3 className="mb-2 font-display text-xl">{t(item.title)}</h3>
+              <h3 className="type-h3 mb-2">{t(item.title)}</h3>
               <p className="text-sm leading-relaxed text-muted">{t(item.body)}</p>
             </article>
           ))}

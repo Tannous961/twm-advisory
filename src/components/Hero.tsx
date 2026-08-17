@@ -40,21 +40,21 @@ export function Hero() {
         }}
       />
 
-      <div className="content-wrap relative w-full py-16 sm:py-20 lg:py-24">
+      <div className="content-wrap relative w-full py-16 sm:py-20 lg:py-28">
         <div className="max-w-xl lg:max-w-2xl">
           <div
-            className="animate-rise mb-6 inline-flex items-center gap-2 rounded-full border border-white/12 bg-black/25 px-3.5 py-1.5 backdrop-blur-md"
+            className="animate-rise mb-7 inline-flex items-center gap-2 rounded-full border border-white/12 bg-black/25 px-4 py-2 backdrop-blur-md"
             style={{ animationDelay: "0s" }}
           >
             <span className="size-1.5 rounded-full bg-accent" />
-            <span className="font-mono text-[10px] tracking-[0.14em] text-accent uppercase sm:text-[11px]">
+            <span className="type-label text-accent">
               {t(c.hero.eyebrow)}
             </span>
           </div>
 
           <h1
             id="hero-title"
-            className="animate-rise mb-6 font-display text-[clamp(2.4rem,8vw,4.75rem)] leading-[1.02] font-normal tracking-[-0.03em] text-fg"
+            className="animate-rise type-display mb-7 text-fg"
             style={{ animationDelay: "0.1s" }}
           >
             {t(c.hero.titleBefore)}
@@ -63,33 +63,33 @@ export function Hero() {
           </h1>
 
           <p
-            className="animate-rise mb-8 max-w-xl text-[15px] leading-relaxed text-white/75 text-pretty sm:text-[17px] sm:leading-[1.72]"
+            className="animate-rise type-lead mb-10 max-w-xl text-pretty text-white/80"
             style={{ animationDelay: "0.2s" }}
           >
             {t(c.hero.lead)}
           </p>
 
           <div
-            className="animate-rise flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-3.5"
+            className="animate-rise flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4"
             style={{ animationDelay: "0.3s" }}
           >
             <Link
               href="/demarrer"
-              className="btn-primary rounded-full px-7 py-3.5 text-center text-[15px] sm:py-4"
+              className="btn-primary rounded-full px-8 py-4 text-center sm:py-4.5"
               onClick={() => track("cta_click", { location: "hero" })}
             >
               {t(c.hero.ctaPrimary)}
             </Link>
             <Link
               href="/offres"
-              className="btn-secondary rounded-full border-white/20 bg-black/20 px-7 py-3.5 text-center text-[15px] text-fg backdrop-blur-md sm:py-4"
+              className="btn-secondary rounded-full border-white/20 bg-black/20 px-8 py-4 text-center text-fg backdrop-blur-md sm:py-4.5"
             >
               {t(c.hero.ctaSecondary)}
             </Link>
           </div>
 
           <p
-            className="animate-rise mt-5 font-mono text-[11px] tracking-[0.1em] text-white/45"
+            className="animate-rise type-label mt-6 tracking-[0.1em] text-white/50"
             style={{ animationDelay: "0.4s" }}
           >
             {t(c.hero.note)}

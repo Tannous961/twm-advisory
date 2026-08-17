@@ -24,14 +24,14 @@ export function HomeArchitecture() {
             aria-hidden
             style={{ background: "var(--glow)" }}
           />
-          <p className="mb-3 font-mono text-[11px] tracking-[0.18em] text-accent uppercase">
+          <p className="mb-3 type-label tracking-[0.18em] text-accent">
             {t(c.infrastructure.section)}
           </p>
-          <h2 className="max-w-2xl font-display text-[clamp(1.75rem,5vw,2.75rem)] leading-tight">
+          <h2 className="max-w-2xl type-h2">
             {t(c.infrastructure.title)}{" "}
             <em className="text-accent italic">{t(c.infrastructure.titleEm)}</em>
           </h2>
-          <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-muted sm:text-base">
+          <p className="mt-4 max-w-2xl type-body text-muted sm:text-base">
             {t(c.infrastructure.body)}
           </p>
 

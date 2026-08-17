@@ -119,12 +119,12 @@ export function Header() {
               aria-hidden
             />
           </span>
-          <span className="font-display text-lg text-fg sm:text-xl" aria-hidden>
+          <span className="font-display text-xl text-fg sm:text-2xl" aria-hidden>
             TWM <span className="text-accent">Advisory</span>
           </span>
         </Link>
 
-        <div className="hidden items-center gap-1 font-mono text-[11px] tracking-[0.12em] text-muted-2 uppercase lg:flex">
+        <div className="hidden items-center gap-1 type-label tracking-[0.12em] text-muted-2 lg:flex">
           {primaryLinks.map((link) => {
             const on = pathname === link.href;
             return (
@@ -146,7 +146,7 @@ export function Header() {
           <div
             role="group"
             aria-label={t(c.nav.langSwitcher)}
-            className="flex items-center overflow-hidden rounded-full border border-[color:var(--line)] font-mono text-[11px] tracking-[0.1em]"
+            className="flex items-center overflow-hidden rounded-full border border-[color:var(--line)] type-label tracking-[0.1em]"
           >
             {(["fr", "en"] as const).map((code) => {
               const on = lang === code;
@@ -175,7 +175,7 @@ export function Header() {
           <div className="hidden lg:block">
             <Link
               href="/demarrer"
-              className="btn-primary rounded-full px-5 py-2.5 text-[13px]"
+              className="btn-primary rounded-full px-6 py-3"
               onClick={() => track("cta_click", { location: "header_desktop" })}
             >
               {t(c.nav.cta)}
@@ -223,7 +223,7 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   aria-current={on ? "page" : undefined}
-                  className="rounded-xl border-b border-white/6 py-3.5 font-mono text-[12px] tracking-[0.16em] text-muted-2 uppercase"
+                  className="rounded-xl border-b border-white/6 py-4 type-label tracking-[0.16em] text-muted-2"
                 >
                   {t(c.nav[link.key])}
                 </Link>
@@ -231,7 +231,7 @@ export function Header() {
             })}
             <Link
               href="/demarrer"
-              className="btn-primary mt-4 rounded-full px-5 py-3.5 text-center text-[15px]"
+              className="btn-primary mt-4 rounded-full px-6 py-4 text-center"
               onClick={() => track("cta_click", { location: "header_mobile" })}
             >
               {t(c.nav.cta)}

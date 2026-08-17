@@ -49,23 +49,23 @@ export function Footer() {
                 aria-hidden
               />
             </span>
-            <span className="font-display text-2xl text-fg" aria-hidden>
+            <span className="font-display text-2xl text-fg sm:text-3xl" aria-hidden>
               TWM <span className="text-accent">Advisory</span>
             </span>
           </Link>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
+          <p className="type-body mt-5 max-w-sm text-muted">
             {t(c.meta.description)}
           </p>
-          <p className="mt-6 font-mono text-[11px] tracking-[0.08em] text-muted-3">
+          <p className="type-label mt-6 tracking-[0.08em] text-muted-3">
             {t(c.footer.city)}
           </p>
         </div>
 
         <nav aria-label={t(c.nav.footerNav)}>
-          <p className="mb-4 font-mono text-[11px] tracking-[0.16em] text-muted-3 uppercase">
+          <p className="type-label mb-4 tracking-[0.16em] text-muted-3">
             {t(c.nav.offers)}
           </p>
-          <ul className="flex flex-col gap-2.5 text-sm text-muted-2">
+          <ul className="flex flex-col gap-3 type-body-sm text-muted-2">
             {product.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="transition-colors hover:text-fg">
@@ -77,10 +77,10 @@ export function Footer() {
         </nav>
 
         <nav aria-label={t(c.nav.about)}>
-          <p className="mb-4 font-mono text-[11px] tracking-[0.16em] text-muted-3 uppercase">
+          <p className="type-label mb-4 tracking-[0.16em] text-muted-3">
             {t(c.nav.about)}
           </p>
-          <ul className="flex flex-col gap-2.5 text-sm text-muted-2">
+          <ul className="flex flex-col gap-3 type-body-sm text-muted-2">
             {company.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="transition-colors hover:text-fg">
@@ -92,7 +92,7 @@ export function Footer() {
         </nav>
       </div>
 
-      <div className="content-wrap flex flex-wrap items-center justify-between gap-3 border-t border-[color:var(--line)] py-6 font-mono text-[11px] tracking-[0.08em] text-muted-3">
+      <div className="content-wrap flex flex-wrap items-center justify-between gap-3 border-t border-[color:var(--line)] py-6 type-label tracking-[0.08em] text-muted-3">
         <span>© 2026 TWM Advisory</span>
         <nav className="flex flex-wrap gap-4" aria-label={t(c.footer.legal)}>
           <Link

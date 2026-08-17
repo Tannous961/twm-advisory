@@ -18,26 +18,26 @@ export function FAQ() {
         <SectionLabel index="09" label="FAQ" />
         <h2
           id="faq-title"
-          className="mb-9 font-display text-[clamp(1.75rem,6vw,2.875rem)] leading-[1.18] font-normal sm:mb-11"
+          className="type-h2 mb-10 sm:mb-12"
         >
           {t(c.faq.title)}
         </h2>
         <div className="flex flex-col border-t border-white/9">
           {c.faq.items.map((item, i) => (
             <details key={i} className="group border-b border-white/9">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-6 text-[16px] text-fg sm:text-lg [&::-webkit-details-marker]:hidden">
+              <summary className="type-lead flex cursor-pointer list-none items-center justify-between gap-4 py-7 text-fg [&::-webkit-details-marker]:hidden">
                 <span className="transition-colors group-open:text-accent-soft">
                   {t(item.q)}
                 </span>
                 <span
-                  className="relative size-3.5 shrink-0 text-accent transition-transform duration-250 group-open:rotate-45"
+                  className="relative size-4 shrink-0 text-accent transition-transform duration-250 group-open:rotate-45"
                   aria-hidden
                 >
-                  <span className="absolute top-1.5 left-0 h-[1.5px] w-3.5 bg-current" />
-                  <span className="absolute top-0 left-1.5 h-3.5 w-[1.5px] bg-current" />
+                  <span className="absolute top-1.5 left-0 h-[1.5px] w-4 bg-current" />
+                  <span className="absolute top-0 left-1.5 h-4 w-[1.5px] bg-current" />
                 </span>
               </summary>
-              <p className="max-w-xl pb-7 text-[15px] leading-[1.72] text-muted sm:text-base">
+              <p className="type-body max-w-xl pb-8 text-muted">
                 {t(item.a)}
               </p>
             </details>

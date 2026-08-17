@@ -14,22 +14,22 @@ export function Stats() {
           {c.stats.map((stat, i) => (
             <div
               key={i}
-              className={`px-4 py-8 sm:px-6 sm:py-10 ${
+              className={`px-5 py-10 sm:px-7 sm:py-12 ${
                 i % 2 === 0 ? "border-r border-white/6" : ""
               } ${i < 2 ? "border-b border-white/6 lg:border-b-0" : ""} ${
                 i < 3 ? "lg:border-r lg:border-white/6" : ""
               }`}
             >
-              <div className="font-display text-3xl leading-none text-accent sm:text-[46px]">
+              <div className="type-stat text-accent">
                 {stat.value}
                 {stat.suffix.fr || stat.suffix.en ? (
-                  <span className="text-lg text-fg sm:text-[22px]">
+                  <span className="type-stat-unit text-fg">
                     {" "}
                     {t(stat.suffix)}
                   </span>
                 ) : null}
               </div>
-              <p className="mt-3 font-mono text-[10px] tracking-[0.1em] text-muted-2 sm:mt-3.5 sm:text-[11px]">
+              <p className="type-label mt-4 tracking-[0.1em] text-muted-2">
                 {t(stat.label)}
               </p>
             </div>

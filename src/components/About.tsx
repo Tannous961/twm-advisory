@@ -45,17 +45,17 @@ export function About() {
             <SectionLabel index="06" label={t(c.about.section)} />
             <h2
               id="about-title"
-              className="mb-6 font-display text-[clamp(1.75rem,6vw,2.875rem)] leading-[1.18] font-normal"
+              className="mb-6 type-h2"
             >
               {t(c.about.title)}
             </h2>
-            <p className="mb-4 text-[15px] leading-[1.78] text-muted text-pretty sm:text-base">
+            <p className="mb-4 type-body text-pretty text-muted">
               {t(c.about.p1)}
             </p>
-            <p className="mb-4 text-[15px] leading-[1.78] text-muted text-pretty sm:text-base">
+            <p className="mb-4 type-body text-pretty text-muted">
               {t(c.about.p2)}
             </p>
-            <p className="mb-7 text-[15px] leading-[1.78] text-muted text-pretty sm:text-base">
+            <p className="mb-7 type-body text-pretty text-muted">
               {t(c.about.p3)}
             </p>
             <div className="flex flex-wrap gap-px border border-white/7 bg-white/7">
@@ -64,8 +64,8 @@ export function About() {
                   key={i}
                   className="min-w-[120px] flex-1 bg-panel px-5 py-4.5"
                 >
-                  <div className="font-display text-2xl text-accent">{m.value}</div>
-                  <div className="mt-1.5 font-mono text-[10px] tracking-[0.12em] text-muted-3">
+                  <div className="type-stat text-accent">{m.value}</div>
+                  <div className="type-caption mt-1.5 tracking-[0.12em] text-muted-3">
                     {t(m.label)}
                   </div>
                 </div>

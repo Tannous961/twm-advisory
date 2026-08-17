@@ -36,17 +36,17 @@ export function ThemeSwitcher() {
         >
           <div className="mb-3 flex items-baseline justify-between gap-3">
             <div>
-              <div className="font-mono text-[10px] tracking-[0.16em] text-accent uppercase">
+              <div className="type-caption text-accent">
                 Design system
               </div>
               <div className="mt-1 font-display text-lg text-fg">
                 {lang === "fr" ? "Couleurs" : "Colors"}
               </div>
             </div>
-            <span className="font-mono text-[10px] text-muted-3">{theme.label[lang]}</span>
+            <span className="type-caption text-muted-3">{theme.label[lang]}</span>
           </div>
 
-          <p className="mb-4 text-[12px] leading-snug text-muted-2">
+          <p className="type-caption mb-4 leading-snug text-muted-2">
             {theme.description[lang]}
           </p>
 
@@ -69,7 +69,7 @@ export function ThemeSwitcher() {
                     className="block h-7 w-full"
                     style={{ background: item.swatch }}
                   />
-                  <span className="font-mono text-[10px] tracking-[0.08em] text-fg uppercase">
+                  <span className="type-caption tracking-[0.08em] text-fg">
                     {item.label[lang]}
                   </span>
                 </button>
@@ -77,7 +77,7 @@ export function ThemeSwitcher() {
             })}
           </div>
 
-          <p className="mt-4 font-mono text-[10px] leading-relaxed tracking-[0.04em] text-muted-3">
+          <p className="type-caption mt-4 leading-relaxed tracking-[0.04em] text-muted-3">
             {lang === "fr"
               ? "Choix sauvegardé localement — pour tester la meilleure direction visuelle."
               : "Choice saved locally — to test the best visual direction."}
@@ -106,7 +106,7 @@ export function ThemeSwitcher() {
             />
           ))}
         </span>
-        <span className="font-mono text-[11px] tracking-[0.12em] text-fg uppercase">
+        <span className="type-label tracking-[0.12em] text-fg">
           {lang === "fr" ? "Couleurs" : "Colors"}
         </span>
       </button>
