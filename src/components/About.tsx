@@ -10,8 +10,8 @@ export function About() {
   const t = useT();
   const portraitAlt =
     lang === "fr"
-      ? "Fondateur de TWM Advisory — 17 ans d'expérience e-commerce et direction d'organisation"
-      : "Founder of TWM Advisory — 17 years in e-commerce and organizational leadership";
+      ? "Tannous Mekari, fondateur de TWM Advisory"
+      : "Tannous Mekari, founder of TWM Advisory";
 
   return (
     <Reveal>

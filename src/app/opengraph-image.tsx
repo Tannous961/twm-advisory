@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "TWM Advisory — Conseil, produits & agents IA en production";
+export const alt = "TWM Advisory — Conseil et déploiement de solutions IA";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -80,7 +80,7 @@ export default function OpenGraphImage() {
               fontFamily: "monospace",
             }}
           >
-            DIRECTIONS · ASSOCIÉS · DIRIGEANTS
+            CONSEIL · CONCEPTION · DÉPLOIEMENT
           </div>
           <div
             style={{
@@ -93,9 +93,9 @@ export default function OpenGraphImage() {
               maxWidth: 920,
             }}
           >
-            <span>Vos enjeux de direction,</span>
+            <span>Des solutions d&apos;IA conçues</span>
             <span style={{ color: "#E3AC6C", fontStyle: "italic" }}>
-              réglés par des solutions qui tournent.
+              pour vos opérations.
             </span>
           </div>
           <div
@@ -107,7 +107,7 @@ export default function OpenGraphImage() {
               lineHeight: 1.4,
             }}
           >
-            Audit. Déploiement. Mesure. Cadre data clair.
+            Diagnostic. Déploiement. Mesure. Supervision humaine.
           </div>
         </div>
 
@@ -124,8 +124,8 @@ export default function OpenGraphImage() {
             letterSpacing: "0.08em",
           }}
         >
-          <span>OPÉRATEUR EMBARQUÉ</span>
-          <span style={{ color: "#B87333" }}>15 AGENTS INTERNES</span>
+          <span>ACCOMPAGNEMENT OPÉRATIONNEL</span>
+          <span style={{ color: "#B87333" }}>TWM ADVISORY</span>
         </div>
       </div>
     ),

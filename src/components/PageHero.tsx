@@ -28,7 +28,7 @@ export function PageHero({ page }: { page: PageKey }) {
           ← TWM Advisory
         </Link>
         <p className="mb-3 font-mono text-[11px] tracking-[0.18em] text-accent uppercase">
-          {t(data.title)}
+          TWM Advisory
         </p>
         <h1 className="max-w-3xl font-display text-[clamp(2rem,6vw,3.75rem)] leading-[1.08] tracking-[-0.02em]">
           {t(data.title)}

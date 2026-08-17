@@ -3,26 +3,26 @@ export type Lang = "fr" | "en";
 export const content = {
   meta: {
     title: {
-      fr: "TWM Advisory — Conseil, produits & agents IA en production",
-      en: "TWM Advisory — Advisory, products & AI agents in production",
+      fr: "TWM Advisory — Conseil et déploiement de solutions IA",
+      en: "TWM Advisory — AI advisory and deployment",
     },
     description: {
-      fr: "TWM Advisory conseille, construit et déploie l'IA agentique dans votre opérationnel — de la stratégie au produit en production. Cadre data et confidentialité. Direction IA à temps partagé.",
-      en: "TWM Advisory advises, builds and deploys agentic AI into your operations — from strategy to product in production. Data framework and confidentiality. Fractional AI leadership.",
+      fr: "TWM Advisory accompagne les organisations dans l'audit, la conception et le déploiement de solutions IA, avec un cadre adapté aux données, à la sécurité et à la supervision humaine.",
+      en: "TWM Advisory helps organizations assess, design and deploy AI solutions with appropriate data, security and human oversight controls.",
     },
   },
   nav: {
     home: { fr: "Accueil", en: "Home" },
     approach: { fr: "Approche", en: "Approach" },
     offers: { fr: "Offres", en: "Services" },
-    architecture: { fr: "L'entreprise agentique", en: "The agentic company" },
+    architecture: { fr: "Organisation IA", en: "AI operations" },
     partners: { fr: "Partenaires", en: "Partners" },
     who: { fr: "Pour qui", en: "Who it's for" },
     about: { fr: "À propos", en: "About" },
     faq: { fr: "FAQ", en: "FAQ" },
     signal: { fr: "Signal", en: "Signal" },
     contact: { fr: "Contact", en: "Contact" },
-    cta: { fr: "Lancer le briefing", en: "Start the briefing" },
+    cta: { fr: "Décrire votre besoin", en: "Describe your needs" },
     menu: { fr: "Menu", en: "Menu" },
     close: { fr: "Fermer", en: "Close" },
     skipToContent: { fr: "Aller au contenu", en: "Skip to content" },
@@ -32,13 +32,13 @@ export const content = {
     homeAria: { fr: "TWM Advisory — Accueil", en: "TWM Advisory — Home" },
   },
   audience: {
-    title: { fr: "TWM pour", en: "TWM for" },
+    title: { fr: "Organisations accompagnées", en: "Organizations we support" },
     items: [
       {
         title: { fr: "Directions générales", en: "Executive teams" },
         body: {
-          fr: "Direction IA à temps partagé quand le comité veut du concret.",
-          en: "Fractional AI leadership when the board wants something live.",
+          fr: "Direction IA à temps partagé pour structurer les priorités et piloter leur mise en œuvre.",
+          en: "Fractional AI leadership to set priorities and oversee implementation.",
         },
       },
       {
@@ -51,22 +51,22 @@ export const content = {
       {
         title: { fr: "Conseil & audit", en: "Consulting & audit" },
         body: {
-          fr: "Rendre du temps facturable aux seniors — drafts, notes, reporting.",
-          en: "Return billable time to seniors — drafts, notes, reporting.",
+          fr: "Réduire le temps consacré aux brouillons, aux synthèses et au reporting.",
+          en: "Reduce time spent on drafts, summaries and reporting.",
         },
       },
       {
         title: { fr: "Expertise comptable", en: "Accounting firms" },
         body: {
-          fr: "Synthèses, dossiers et relances cadrés, experts qui tranchent.",
-          en: "Summaries, files and follow-ups framed — experts still decide.",
+          fr: "Préparer les synthèses, les dossiers et les relances tout en maintenant la validation des experts.",
+          en: "Prepare summaries, files and follow-ups while keeping experts responsible for approval.",
         },
       },
       {
         title: { fr: "Organisations opérationnelles", en: "Operating organizations" },
         body: {
-          fr: "Agents en production sur le travail invisible autour du métier.",
-          en: "Agents in production on the invisible work around the craft.",
+          fr: "Automatiser les tâches administratives et de support autour du cœur de métier.",
+          en: "Automate administrative and support work around core operations.",
         },
       },
     ],
@@ -75,29 +75,29 @@ export const content = {
     approach: {
       title: { fr: "Approche", en: "Approach" },
       lead: {
-        fr: "Je m'embarque, je trouve la fuite de temps, je déploie — jusqu'à la production.",
-        en: "I embed, find the time leak, deploy — through production.",
+        fr: "Une méthode en trois étapes : identifier un cas d'usage pertinent, déployer une première solution et mesurer ses résultats.",
+        en: "A three-step method: identify a relevant use case, deploy an initial solution and measure its results.",
       },
     },
     offers: {
       title: { fr: "Offres", en: "Services" },
       lead: {
-        fr: "Toujours le même parcours : audit, déploiement, mesure, extension. On commence petit, on prouve, on élargit.",
-        en: "Always the same path: audit, deploy, measure, extend. Start small, prove it, then expand.",
+        fr: "Des services adaptés à vos objectifs, à votre niveau de maturité et aux contraintes de votre organisation.",
+        en: "Services tailored to your objectives, maturity and organizational constraints.",
       },
     },
     architecture: {
-      title: { fr: "L'entreprise agentique", en: "The agentic company" },
+      title: { fr: "Organisation IA", en: "AI operations" },
       lead: {
-        fr: "15 agents organisés comme une entreprise. Moi : la relation et les décisions.",
-        en: "15 agents organized like a firm. Me: relationships and decisions.",
+        fr: "Les assistants et automatisations utilisés en interne, avec une validation humaine pour les décisions.",
+        en: "The assistants and automations used internally, with human review for decisions.",
       },
     },
     about: {
       title: { fr: "À propos", en: "About" },
       lead: {
-        fr: "Un opérateur terrain — pas un vendeur de techno.",
-        en: "A field operator — not a tech vendor.",
+        fr: "Une expérience de direction, d'opérations et de transformation numérique.",
+        en: "Experience in leadership, operations and digital transformation.",
       },
     },
     faq: {
@@ -110,29 +110,29 @@ export const content = {
     contact: {
       title: { fr: "Contact", en: "Contact" },
       lead: {
-        fr: "30 minutes. Gratuit. On regarde un premier cas concret.",
-        en: "30 minutes. Free. We look at a concrete first case.",
+        fr: "Présentez votre besoin et vos contraintes lors d'un premier échange de 30 minutes.",
+        en: "Discuss your needs and constraints in an initial 30-minute conversation.",
       },
     },
     intake: {
       title: { fr: "Démarrer", en: "Start" },
       lead: {
-        fr: "Un briefing opérateur avant le premier call — score, chemin, signal.",
-        en: "An operator briefing before the first call — score, path, signal.",
+        fr: "Un questionnaire court pour préparer le premier échange et proposer une orientation initiale.",
+        en: "A short questionnaire to prepare the first conversation and suggest an initial direction.",
       },
     },
     signal: {
       title: { fr: "Signal", en: "Signal" },
       lead: {
-        fr: "Un insight. Un verdict. Pas de newsletter creuse.",
-        en: "One insight. One verdict. No empty newsletter.",
+        fr: "Des analyses courtes sur l'usage de l'IA en entreprise.",
+        en: "Concise analysis of AI use in organizations.",
       },
     },
     partnerships: {
       title: { fr: "Partenaires", en: "Partners" },
       lead: {
-        fr: "Socle BD & partenariats — règles claires, un interlocuteur côté client.",
-        en: "BD & partnership foundation — clear rules, one counterpart for the client.",
+        fr: "Un cadre clair pour les partenariats commerciaux, techniques et sectoriels.",
+        en: "A clear framework for commercial, technical and sector partnerships.",
       },
     },
     legal: {
@@ -151,31 +151,31 @@ export const content = {
     },
   },
   home: {
-    featuresEyebrow: { fr: "Ce que je déploie", en: "What I deploy" },
+    featuresEyebrow: { fr: "Méthode", en: "Method" },
     featuresTitle: {
-      fr: "Du diagnostic à la production,",
-      en: "From diagnostic to production,",
+      fr: "Du diagnostic",
+      en: "From assessment",
     },
     featuresTitleEm: {
-      fr: "sans laisser un PowerPoint derrière.",
-      en: "without leaving a deck behind.",
+      fr: "à la mise en production.",
+      en: "to production.",
     },
     archTeaser: {
-      fr: "Voir l'entreprise agentique",
-      en: "See the agentic company",
+      fr: "Voir l'organisation IA",
+      en: "See our AI operations",
     },
-    faqTeaser: { fr: "Voir toutes les questions", en: "See all questions" },
+    faqTeaser: { fr: "Consulter la FAQ", en: "Read the FAQ" },
     ctaBandTitle: {
-      fr: "Un enjeu qui coûte.",
-      en: "A stake that costs.",
+      fr: "Échangeons sur",
+      en: "Discuss",
     },
     ctaBandTitleEm: {
-      fr: "Une solution qui tourne.",
-      en: "A solution that runs.",
+      fr: "votre besoin.",
+      en: "your needs.",
     },
     ctaBandBody: {
-      fr: "Lancez le briefing. On regarde où ça fuit — marge, temps, positions — et un premier cas concret. Gratuit. Sans engagement.",
-      en: "Start the briefing. We look at where it leaks — margin, time, ground — and one concrete first case. Free. No commitment.",
+      fr: "Présentez vos priorités et vos contraintes. Nous identifierons ensemble un premier cas d'usage adapté à votre organisation.",
+      en: "Share your priorities and constraints. Together, we will identify an initial use case suited to your organization.",
     },
     ctaBandNote: {
       fr: "Réponse sous 48 h ouvrées.",
@@ -202,37 +202,37 @@ export const content = {
   },
   hero: {
     eyebrow: {
-      fr: "Pour directions générales, associés et dirigeants",
-      en: "For executive teams, partners and leaders",
+      fr: "Conseil et déploiement de solutions IA",
+      en: "AI advisory and deployment",
     },
     titleBefore: {
-      fr: "Vos enjeux de direction,",
-      en: "Your leadership stakes,",
+      fr: "Des solutions d'IA conçues",
+      en: "AI solutions designed",
     },
     titleEm: {
-      fr: "réglés par des solutions qui tournent.",
-      en: "settled by solutions that run.",
+      fr: "pour vos opérations.",
+      en: "for your operations.",
     },
     lead: {
-      fr: "Je pars du problème qui vous coûte vraiment — une marge qui se tend, un délai qui vous fait perdre des positions, une ligne qui ne décolle pas. Je le règle avec une solution qui tourne dans votre opérationnel, pas une recommandation. L'IA agentique, c'est le levier que j'active pour bouger l'indicateur.",
-      en: "I start from the problem that actually costs you — a margin under pressure, a delay that costs you ground, a line that won't take off. I solve it with a solution that runs in your operations, not a recommendation. Agentic AI is the lever I pull to move the metric.",
+      fr: "TWM Advisory identifie les cas d'usage prioritaires, conçoit les solutions adaptées et accompagne leur mise en production, avec des règles claires pour les données, la sécurité et la supervision humaine.",
+      en: "TWM Advisory identifies priority use cases, designs appropriate solutions and supports production deployment with clear rules for data, security and human oversight.",
     },
-    ctaPrimary: { fr: "Lancer le briefing", en: "Start the briefing" },
-    ctaSecondary: { fr: "Voir les offres", en: "See services" },
+    ctaPrimary: { fr: "Décrire votre besoin", en: "Describe your needs" },
+    ctaSecondary: { fr: "Découvrir les services", en: "Explore services" },
     note: {
-      fr: "Premier échange gratuit. Sans engagement.",
-      en: "First conversation free. No commitment.",
+      fr: "Premier échange de 30 minutes, sans engagement.",
+      en: "Initial 30-minute conversation, with no commitment.",
     },
-    floatTitle: { fr: "Sur le terrain", en: "On the ground" },
+    floatTitle: { fr: "Accompagnement opérationnel", en: "Operational support" },
     floatBody: {
-      fr: "Je construis avec vous et je reste jusqu'à ce que ça tourne en production.",
-      en: "I build with you and stay until it runs in production.",
+      fr: "De la définition du besoin à la mise en production.",
+      en: "From defining the need through production deployment.",
     },
     terrain: { fr: "Expérience", en: "Experience" },
     years: { fr: "ans", en: "years" },
     terrainSub: {
-      fr: "direction d'organisation",
-      en: "running organizations",
+      fr: "direction et opérations",
+      en: "leadership and operations",
     },
   },
   stats: [
@@ -260,71 +260,71 @@ export const content = {
   problem: {
     section: { fr: "Le constat", en: "The situation" },
     title: {
-      fr: "Vos enjeux les plus lourds attendent",
-      en: "Your heaviest stakes are waiting",
+      fr: "Où l'IA peut apporter",
+      en: "Where AI can deliver",
     },
     titleMuted: {
-      fr: "une ressource qui n'existe pas en interne.",
-      en: "for a resource that doesn't exist in-house.",
+      fr: "une valeur mesurable.",
+      en: "measurable value.",
     },
     items: [
       {
-        fr: "Le travail à faible jugement — rédaction, recherche, reporting, suivi — tire vos meilleurs profils hors de ce qui crée vraiment de la valeur.",
-        en: "Low-judgment work — drafting, research, reporting, follow-up — pulls your best people off what actually creates value.",
+        fr: "La rédaction, la recherche, le reporting et le suivi mobilisent souvent des profils expérimentés au détriment de tâches à plus forte valeur ajoutée.",
+        en: "Drafting, research, reporting and follow-up often occupy experienced staff at the expense of higher-value work.",
       },
       {
-        fr: "Les outils grand public exposent vos données. Peu de directions mesurent réellement le retour. L'avantage, ce n'est pas d'avoir testé ChatGPT : c'est de déployer dans un cadre que le risque peut signer.",
-        en: "Consumer tools expose your data. Few leadership teams actually track return. The edge isn't having tried ChatGPT — it's deploying in a frame risk can sign off on.",
+        fr: "Les outils grand public ne répondent pas toujours aux exigences de confidentialité et de gouvernance. Un déploiement professionnel doit définir les accès, les usages autorisés et les indicateurs de résultat.",
+        en: "Consumer tools do not always meet confidentiality and governance requirements. A professional deployment should define access, permitted uses and outcome metrics.",
       },
       {
-        fr: "Personne en interne pour trancher, cadrer et mettre en production. Le sujet reste une slide au comité — pendant que l'enjeu, lui, ne bouge pas.",
-        en: "No one internal to decide, frame and ship to production. The topic stays a board slide — while the stake itself doesn't move.",
+        fr: "Sans responsable clairement identifié pour cadrer les choix et piloter la mise en production, les initiatives restent souvent au stade de l'expérimentation.",
+        en: "Without clear ownership for decisions and production delivery, initiatives often remain at the experimental stage.",
       },
     ],
   },
   approach: {
     title: {
-      fr: "Je ne livre pas un rapport.",
-      en: "I don't deliver a report.",
+      fr: "Du diagnostic",
+      en: "From assessment",
     },
     titleEm: {
-      fr: "Je livre quelque chose qui tourne.",
-      en: "I deliver something that runs.",
+      fr: "à la mise en production.",
+      en: "to production.",
     },
     body: {
-      fr: "Je m'embarque dans vos équipes, je trouve où l'enjeu vous coûte le plus — marge, temps, positions — et je déploie des agents jusqu'en production. Les bons modèles, dans une posture où le matériel client reste dans un environnement contrôlé, que votre équipe risque et conformité peut valider. Ni PowerPoint à classer, ni outil lâché sans règles.",
-      en: "I embed with your teams, find where the stake costs you most — margin, time, positions — and deploy agents into production. The right models, on a posture where client material stays in a controlled environment, one your risk and compliance team can sign off on. Not a deck to file, not a tool dropped with no rules.",
+      fr: "TWM Advisory travaille avec vos équipes pour identifier les cas d'usage prioritaires, concevoir les solutions et accompagner leur mise en production. L'architecture, les modèles et les règles d'utilisation sont définis en fonction de vos contraintes de données, de risque et de conformité.",
+      en: "TWM Advisory works with your teams to identify priority use cases, design solutions and support production deployment. Architecture, models and usage rules are defined around your data, risk and compliance requirements.",
     },
     quote: {
-      fr: "L'IA rédige, recherche, capture et surveille. Le conseil, l'arbitrage et la relation restent humains — c'est ce pour quoi on vous paie vraiment.",
-      en: "AI drafts, researches, captures and monitors. Advice, judgment and the relationship stay human — that's what you're really paid for.",
+      fr: "L'IA peut assister la rédaction, la recherche, la collecte et le suivi. Le conseil, l'arbitrage et la relation restent sous responsabilité humaine.",
+      en: "AI can support drafting, research, collection and monitoring. Advice, judgment and relationships remain under human responsibility.",
     },
     steps: [
       {
         label: { fr: "Étape 01", en: "Step 01" },
         title: {
-          fr: "Repérer l'enjeu qui coûte le plus",
-          en: "Find the stake that costs the most",
+          fr: "Identifier la priorité",
+          en: "Identify the priority",
         },
         body: {
-          fr: "L'endroit où vous perdez de la marge, du temps ou des positions — et où une première solution sûre peut vivre.",
-          en: "Where you lose margin, time or ground — and where a safe first solution can live.",
+          fr: "Évaluer les processus, les contraintes et les gains attendus afin de choisir un premier cas d'usage.",
+          en: "Assess processes, constraints and expected gains to select an initial use case.",
         },
       },
       {
         label: { fr: "Étape 02", en: "Step 02" },
-        title: { fr: "Installer, encadré", en: "Install it, governed" },
+        title: { fr: "Concevoir et déployer", en: "Design and deploy" },
         body: {
-          fr: "Un premier agent en production, avec vos équipes, dans un cadre où les données confidentielles restent contrôlées et traçables.",
-          en: "A first agent in production, with your teams, in a frame where confidential data stays controlled and traceable.",
+          fr: "Mettre en place une première solution avec les contrôles d'accès, la traçabilité et les validations nécessaires.",
+          en: "Implement an initial solution with the required access controls, traceability and approvals.",
         },
       },
       {
         label: { fr: "Étape 03", en: "Step 03" },
         title: { fr: "Former et ancrer", en: "Train and embed" },
         body: {
-          fr: "Chaque rôle apprend où l'IA entre dans son vrai travail. On mesure l'impact sur l'indicateur qui compte, puis on étend.",
-          en: "Each role learns where AI fits their real work. We measure impact on the metric that matters, then expand.",
+          fr: "Accompagner les utilisateurs, mesurer les résultats et décider des extensions utiles.",
+          en: "Support users, measure results and decide which extensions are useful.",
         },
       },
     ],
@@ -332,14 +332,14 @@ export const content = {
   offers: {
     section: { fr: "Offres", en: "Services" },
     title: {
-      fr: "Cinq façons d'avancer — dans le bon ordre.",
-      en: "Five ways forward — in the right order.",
+      fr: "Cinq services selon votre niveau de maturité.",
+      en: "Five services for different levels of maturity.",
     },
     thread: {
       section: { fr: "Le fil rouge", en: "The throughline" },
       body: {
-        fr: "Toujours le même parcours : audit → déploiement → mesure → extension. On commence petit, on prouve, on élargit. Rien ne se vend sans preuve.",
-        en: "Always the same path: audit → deploy → measure → extend. Start small, prove it, then expand. Nothing ships without proof.",
+        fr: "Le parcours recommandé suit quatre étapes : diagnostic, déploiement, mesure et extension. Chaque nouvelle étape s'appuie sur les résultats de la précédente.",
+        en: "The recommended path follows four stages: assessment, deployment, measurement and expansion. Each stage builds on the results of the previous one.",
       },
     },
     labels: {
@@ -350,74 +350,74 @@ export const content = {
     items: [
       {
         title: {
-          fr: "Audit IA de ton organisation",
-          en: "AI audit of your organization",
+          fr: "Diagnostic des usages de l'IA",
+          en: "AI use assessment",
         },
         body: {
-          fr: "Où l'IA te fait vraiment gagner du temps — et où elle ne sert à rien. On cartographie tes tâches, on les priorise par impact et effort.",
-          en: "Where AI actually saves you time — and where it doesn't. We map your work, then prioritize by impact and effort.",
+          fr: "Cartographier les processus, identifier les cas d'usage pertinents et les prioriser selon leur impact, leur faisabilité et leurs contraintes.",
+          en: "Map processes, identify relevant use cases and prioritize them by impact, feasibility and constraints.",
         },
         deliverable: {
-          fr: "Une feuille de route chiffrée.",
-          en: "A costed roadmap.",
+          fr: "Une feuille de route priorisée et chiffrée.",
+          en: "A prioritized, costed roadmap.",
         },
         audience: {
-          fr: "Tous. C'est la porte d'entrée idéale.",
-          en: "Everyone. The ideal entry point.",
+          fr: "Organisations qui souhaitent structurer leurs premières initiatives IA.",
+          en: "Organizations seeking to structure their first AI initiatives.",
         },
       },
       {
         title: {
-          fr: "Déploiement d'agents",
-          en: "Agent deployment",
+          fr: "Conception et déploiement d'agents IA",
+          en: "AI agent design and deployment",
         },
         body: {
-          fr: "Un agent, c'est un collaborateur logiciel qui exécute une tâche de bout en bout. Automatisation, reporting, prospection : on met en production ce qui te fait perdre du temps.",
-          en: "An agent is a software coworker that runs a task end to end. Automation, reporting, prospecting: we put into production what is costing you time.",
+          fr: "Concevoir une solution pour un processus défini, l'intégrer aux outils existants et l'accompagner jusqu'à sa mise en production.",
+          en: "Design a solution for a defined process, integrate it with existing tools and support it through production deployment.",
         },
         deliverable: {
-          fr: "Des agents en production + le transfert de compétences.",
-          en: "Agents in production + skills transfer.",
+          fr: "Une solution en production, sa documentation et le transfert de compétences.",
+          en: "A production solution, documentation and knowledge transfer.",
         },
         audience: {
-          fr: "Ceux qui ont déjà identifié un cas d'usage.",
-          en: "Those who already have a use case identified.",
+          fr: "Organisations qui ont déjà identifié un cas d'usage prioritaire.",
+          en: "Organizations that have already identified a priority use case.",
         },
       },
       {
         title: {
-          fr: "Audit & certification de tes systèmes IA",
-          en: "Audit & certification of your AI systems",
+          fr: "Évaluation des systèmes IA existants",
+          en: "Assessment of existing AI systems",
         },
         body: {
-          fr: "Tu as déployé des agents. Lesquels tournent encore vraiment ? Les modèles changent de version, les usages dérivent, une équipe arrête d'utiliser un outil sans prévenir personne. Le prestataire dit que ça marche. La DSI dit que ça tourne. Ce n'est pas la même chose. Je teste, je mesure, je tranche.",
-          en: "You've deployed agents. Which ones still actually run? Models change versions, usage drifts, a team stops using a tool and tells no one. The vendor says it works. IT says it's up. Not the same thing. I test, measure, and call it.",
+          fr: "Évaluer l'utilisation, la fiabilité, les coûts, les risques et les résultats des systèmes déjà déployés afin de déterminer les actions correctives utiles.",
+          en: "Assess adoption, reliability, cost, risk and outcomes of deployed systems to determine useful corrective actions.",
         },
         deliverable: {
-          fr: "Un verdict clair, système par système. Ce qui tient, ce qui dérive, ce qu'il faut couper.",
-          en: "A clear verdict, system by system. What holds, what drifts, what to cut.",
+          fr: "Un rapport d'évaluation par système, accompagné de recommandations priorisées.",
+          en: "A system-by-system assessment report with prioritized recommendations.",
         },
         audience: {
-          fr: "Ceux qui ont déjà des systèmes IA en production et personne pour dire s'ils marchent.",
-          en: "Those with AI systems already in production and no one to say if they work.",
+          fr: "Organisations disposant déjà de systèmes IA en production.",
+          en: "Organizations with AI systems already in production.",
         },
       },
       {
         title: {
-          fr: "Accompagnement stratégique",
-          en: "Strategic advisory",
+          fr: "Stratégie et gouvernance de l'IA",
+          en: "AI strategy and governance",
         },
         body: {
-          fr: "Une vision, pas juste un outil. Feuille de route IA, priorisation, mesure du ROI, conduite du changement. Direction IA à temps partagé quand le comité veut du concret sans le poste full-time.",
-          en: "A vision, not just a tool. AI roadmap, prioritization, ROI measurement, change leadership. Fractional AI leadership when the board wants something live without a full-time seat.",
+          fr: "Définir une feuille de route, prioriser les investissements, organiser la gouvernance, suivre les résultats et accompagner le changement. Une direction IA à temps partagé peut assurer ce pilotage sans créer immédiatement un poste permanent.",
+          en: "Define a roadmap, prioritize investment, establish governance, track outcomes and support change. Fractional AI leadership can provide this oversight without immediately creating a permanent role.",
         },
         deliverable: {
-          fr: "Un plan + un suivi.",
-          en: "A plan + ongoing follow-through.",
+          fr: "Une feuille de route, un cadre de gouvernance et un suivi régulier.",
+          en: "A roadmap, governance framework and regular oversight.",
         },
         audience: {
-          fr: "Les dirigeants qui veulent une direction, pas un gadget.",
-          en: "Leaders who want direction, not a gadget.",
+          fr: "Directions qui souhaitent structurer et piloter leurs initiatives IA.",
+          en: "Leadership teams seeking to structure and oversee AI initiatives.",
         },
       },
       {
@@ -426,12 +426,12 @@ export const content = {
           en: "Training & awareness",
         },
         body: {
-          fr: "Le vrai risque, ce n'est pas que tes équipes ne sachent pas se servir de l'IA. C'est qu'elles s'en servent sans savoir dire si le résultat est bon. On démystifie sans infantiliser. Tes équipes repartent avec la capacité de juger, pas seulement d'exécuter.",
-          en: "The real risk isn't that your teams can't use AI. It's that they use it without knowing if the output is good. We demystify without talking down. Your teams leave able to judge — not only to execute.",
+          fr: "Former les équipes à utiliser les outils, évaluer la qualité des résultats, protéger les données et identifier les situations qui exigent une validation humaine.",
+          en: "Train teams to use tools, assess output quality, protect data and identify situations that require human review.",
         },
         deliverable: {
-          fr: "Une session sur mesure.",
-          en: "A tailored session.",
+          fr: "Une session adaptée aux rôles, aux usages et aux règles de l'organisation.",
+          en: "A session tailored to organizational roles, use cases and policies.",
         },
         audience: {
           fr: "Cabinets, ordres, réseaux, comités de direction, événements.",
@@ -441,15 +441,15 @@ export const content = {
           {
             title: { fr: "Conférence", en: "Keynote" },
             body: {
-              fr: "Démystifier l'IA agentique en une heure. Pour un comité de direction, un ordre professionnel, un réseau, un événement.",
-              en: "Demystify agentic AI in one hour. For an executive committee, professional body, network, or event.",
+              fr: "Présenter les principes, les usages et les limites de l'IA agentique en une heure.",
+              en: "Present the principles, uses and limitations of agentic AI in one hour.",
             },
           },
           {
             title: { fr: "Atelier", en: "Workshop" },
             body: {
-              fr: "Les mains dans le cambouis. Tes équipes repartent avec un cas d'usage identifié sur leurs propres tâches.",
-              en: "Hands in the work. Your teams leave with a use case identified on their own tasks.",
+              fr: "Un atelier pratique pour identifier un cas d'usage à partir des tâches de vos équipes.",
+              en: "A practical workshop to identify a use case from your teams' work.",
             },
           },
           {
@@ -458,8 +458,8 @@ export const content = {
               en: "Executive acculturation",
             },
             body: {
-              fr: "Une session dédiée pour trancher : par où commencer, quoi déléguer à un agent, quoi garder humain.",
-              en: "A dedicated session to decide: where to start, what to hand to an agent, what to keep human.",
+              fr: "Une session dédiée pour déterminer par où commencer, quelles tâches assister et quelles décisions maintenir sous contrôle humain.",
+              en: "A dedicated session to decide where to begin, which tasks to support and which decisions should remain under human control.",
             },
           },
         ],
@@ -468,16 +468,16 @@ export const content = {
     ecosystem: {
       section: { fr: "Écosystème", en: "Ecosystem" },
       title: {
-        fr: "Je déploie seul.",
-        en: "I deploy alone.",
+        fr: "Un seul interlocuteur.",
+        en: "One point of contact.",
       },
       titleEm: {
-        fr: "Je ne raisonne pas seul.",
-        en: "I don't reason alone.",
+        fr: "Un réseau de spécialistes.",
+        en: "A network of specialists.",
       },
       body: {
-        fr: "L'IA agentique touche à ta donnée, ta conformité, ton infrastructure. Je m'entoure d'un réseau qui couvre ce que je ne fais pas moi-même — pour que tu aies un seul interlocuteur, pas dix prestataires à coordonner.",
-        en: "Agentic AI touches your data, compliance, and infrastructure. I work with a network that covers what I don't do myself — so you have one counterpart, not ten vendors to coordinate.",
+        fr: "Les projets d'IA peuvent mobiliser des compétences en données, conformité, sécurité et infrastructure. TWM Advisory coordonne, lorsque nécessaire, un réseau de partenaires spécialisés tout en conservant un interlocuteur principal côté client.",
+        en: "AI projects can require data, compliance, security and infrastructure expertise. When needed, TWM Advisory coordinates specialist partners while maintaining one primary client contact.",
       },
       cta: {
         fr: "Devenir partenaire",
@@ -488,11 +488,11 @@ export const content = {
   fit: {
     section: { fr: "Pour qui", en: "Who it's for" },
     title: {
-      fr: "On avance bien ensemble si…",
-      en: "We work well together if…",
+      fr: "Conditions de réussite",
+      en: "Conditions for success",
     },
-    yesTitle: { fr: "Oui, si", en: "Yes, if" },
-    noTitle: { fr: "Non, si", en: "No, if" },
+    yesTitle: { fr: "Accompagnement adapté", en: "A good fit" },
+    noTitle: { fr: "Limites de l'accompagnement", en: "Engagement boundaries" },
     yes: [
       {
         fr: "Vous dirigez une organisation — cabinet, conseil, expertise comptable, PME, direction — où les décisions pèsent plus que le volume.",
@@ -509,50 +509,50 @@ export const content = {
     ],
     no: [
       {
-        fr: "Vous voulez que l'IA prenne l'arbitrage professionnel ou donne un conseil non relu.",
-        en: "You want AI making the professional judgment call or giving unreviewed advice.",
+        fr: "L'IA ne remplace pas l'arbitrage professionnel et ne doit pas produire de conseil sans validation.",
+        en: "AI does not replace professional judgment and should not provide advice without review.",
       },
       {
-        fr: "Vous seriez prêt à faire passer du matériel client privilégié dans des outils non encadrés.",
-        en: "You'd put privileged client material through ungoverned tools.",
+        fr: "Les données confidentielles ne sont pas traitées dans des outils qui n'ont pas été encadrés et approuvés.",
+        en: "Confidential data is not processed in tools that have not been governed and approved.",
       },
       {
-        fr: "Vous n'êtes pas prêt à changer la façon dont le travail est produit.",
-        en: "You're not willing to change how the work gets produced.",
+        fr: "La mise en œuvre nécessite une participation des équipes et une évolution de certains processus.",
+        en: "Implementation requires team participation and changes to some processes.",
       },
     ],
   },
   partners: {
     section: { fr: "Écosystème", en: "Ecosystem" },
     title: {
-      fr: "Je déploie seul.",
-      en: "I deploy alone.",
+      fr: "Un seul interlocuteur.",
+      en: "One point of contact.",
     },
     titleEm: {
-      fr: "Je ne raisonne pas seul.",
-      en: "I don't reason alone.",
+      fr: "Un réseau de spécialistes.",
+      en: "A network of specialists.",
     },
     body: {
-      fr: "L'IA agentique touche à ta donnée, ta conformité, ton infrastructure. Je m'entoure d'un réseau qui couvre ce que je ne fais pas moi-même — pour que tu aies un seul interlocuteur, pas dix prestataires à coordonner.",
-      en: "Agentic AI touches your data, compliance, and infrastructure. I work with a network that covers what I don't do myself — so you have one counterpart, not ten vendors to coordinate.",
+      fr: "TWM Advisory fait appel à des partenaires spécialisés en données, conformité, sécurité ou infrastructure lorsque le périmètre d'une mission l'exige.",
+      en: "TWM Advisory works with data, compliance, security and infrastructure specialists when a project requires their expertise.",
     },
     cta: {
-      fr: "Voir le socle partenaires",
-      en: "See the partner foundation",
+      fr: "Voir le cadre de partenariat",
+      en: "See the partnership framework",
     },
   },
   partnerships: {
     whyTitle: {
-      fr: "Pourquoi un socle partenaires.",
-      en: "Why a partner foundation.",
+      fr: "Pourquoi un cadre de partenariat ?",
+      en: "Why a partnership framework?",
     },
     whyBody: {
-      fr: "Business development et co-delivery ne se bricolent pas au feeling. On pose les règles une fois — pour que le client garde un seul interlocuteur, et que chaque partenaire sache exactement ce qu'il apporte.",
-      en: "Business development and co-delivery aren't improvised. We set the rules once — so the client keeps one counterpart, and each partner knows exactly what they bring.",
+      fr: "Un cadre formalisé précise les responsabilités, la relation client, la confidentialité et les modalités commerciales avant le début de chaque collaboration.",
+      en: "A formal framework defines responsibilities, client ownership, confidentiality and commercial terms before each collaboration begins.",
     },
     typesTitle: {
-      fr: "Quatre façons de s'allier.",
-      en: "Four ways to partner.",
+      fr: "Quatre formes de partenariat",
+      en: "Four partnership models",
     },
     types: [
       {
@@ -561,8 +561,8 @@ export const content = {
           en: "Deal introducers",
         },
         body: {
-          fr: "Tu qualifies un besoin réel. Je prends la relation et la delivery. Cadre commercial clair, sur accord écrit — avant la première intro.",
-          en: "You qualify a real need. I own the relationship and delivery. Clear commercial frame, in writing — before the first intro.",
+          fr: "Vous identifiez et qualifiez un besoin. TWM Advisory prend en charge la relation client et la réalisation selon un accord commercial écrit.",
+          en: "You identify and qualify a need. TWM Advisory manages the client relationship and delivery under a written commercial agreement.",
         },
       },
       {
@@ -571,8 +571,8 @@ export const content = {
           en: "Integrators & tech",
         },
         body: {
-          fr: "Infra, data, sécurité, outillage. Tu portes la couche technique ; je porte le cas métier et le cadre d'usage.",
-          en: "Infra, data, security, tooling. You own the technical layer; I own the business case and usage frame.",
+          fr: "Vous prenez en charge l'infrastructure, les données, la sécurité ou l'outillage ; TWM Advisory pilote le cas métier et le cadre d'usage.",
+          en: "You provide infrastructure, data, security or tooling expertise; TWM Advisory leads the business case and usage framework.",
         },
       },
       {
@@ -581,63 +581,63 @@ export const content = {
           en: "Firms & domain networks",
         },
         body: {
-          fr: "Expertise sectorielle (droit, audit, conseil, industrie). On combine ton crédit métier avec mon déploiement agentique.",
-          en: "Domain expertise (law, audit, consulting, industry). We combine your professional credibility with my agentic deployment.",
+          fr: "Votre expertise sectorielle complète les compétences de conception et de déploiement de TWM Advisory.",
+          en: "Your sector expertise complements TWM Advisory's design and deployment capabilities.",
         },
       },
       {
         title: {
-          fr: "Co-delivery",
-          en: "Co-delivery",
+          fr: "Réalisation conjointe",
+          en: "Joint delivery",
         },
         body: {
-          fr: "Mission partagée quand le scope dépasse ce qu'un seul opérateur peut porter. Pilotage unique côté client — pas un comité de prestataires.",
-          en: "Shared mission when the scope exceeds what one operator can carry. One lead for the client — not a vendor committee.",
+          fr: "Une réalisation conjointe peut être organisée lorsque le périmètre mobilise plusieurs expertises, avec un pilotage unique côté client.",
+          en: "Joint delivery can be arranged when a project requires multiple areas of expertise, with a single lead for the client.",
         },
       },
     ],
     rulesTitle: {
-      fr: "Les règles du jeu.",
-      en: "The rules of the game.",
+      fr: "Cadre de collaboration",
+      en: "Collaboration framework",
     },
     rules: [
       {
-        fr: "Un interlocuteur côté client. Toujours. Même si plusieurs partenaires sont activés.",
-        en: "One counterpart for the client. Always. Even when several partners are activated.",
+        fr: "Un interlocuteur principal est désigné côté client, même lorsque plusieurs partenaires interviennent.",
+        en: "One primary client contact is designated, even when several partners are involved.",
       },
       {
-        fr: "Cadre data et confidentialité avant toute collab — surtout sur du matériel client privilégié.",
-        en: "Data and confidentiality frame before any collab — especially on privileged client material.",
+        fr: "Les règles relatives aux données et à la confidentialité sont définies avant toute collaboration.",
+        en: "Data and confidentiality requirements are defined before any collaboration.",
       },
       {
-        fr: "Qui facture, qui porte la relation, qui livre : tranché par écrit avant le premier euro.",
-        en: "Who bills, who owns the relationship, who delivers: decided in writing before the first euro.",
+        fr: "La facturation, la relation client et les responsabilités de réalisation sont définies par écrit avant le début de la mission.",
+        en: "Billing, client ownership and delivery responsibilities are agreed in writing before the project begins.",
       },
       {
-        fr: "Pas de logo inventé, pas de liste vanity. On active un partenaire quand le besoin le exige.",
-        en: "No invented logos, no vanity list. We activate a partner when the need requires it.",
+        fr: "Un partenaire intervient uniquement lorsque son expertise répond à un besoin identifié.",
+        en: "A partner is involved only when their expertise addresses an identified need.",
       },
     ],
     formTitle: {
-      fr: "Proposer un partenariat.",
-      en: "Propose a partnership.",
+      fr: "Proposer un partenariat",
+      en: "Propose a partnership",
     },
     formBody: {
-      fr: "Dis-moi qui tu es, ce que tu apportes, et un premier angle de collaboration. Réponse sous 48 h ouvrées.",
-      en: "Tell me who you are, what you bring, and a first collaboration angle. Reply within 2 business days.",
+      fr: "Présentez votre organisation, vos compétences et une première proposition de collaboration. Réponse sous deux jours ouvrés.",
+      en: "Introduce your organization, capabilities and an initial collaboration proposal. Reply within two business days.",
     },
     fields: {
       name: { fr: "Prénom", en: "First name" },
       email: { fr: "Email", en: "Email" },
       company: { fr: "Société / réseau", en: "Company / network" },
       type: { fr: "Type de partenariat", en: "Partnership type" },
-      message: { fr: "Angle de collab", en: "Collaboration angle" },
+      message: { fr: "Proposition de collaboration", en: "Collaboration proposal" },
     },
     typeOptions: {
       introducer: { fr: "Apporteur d'affaires", en: "Deal introducer" },
       tech: { fr: "Intégrateur / tech", en: "Integrator / tech" },
       domain: { fr: "Cabinet / réseau métier", en: "Firm / domain network" },
-      codelivery: { fr: "Co-delivery", en: "Co-delivery" },
+      codelivery: { fr: "Réalisation conjointe", en: "Joint delivery" },
       other: { fr: "Autre", en: "Other" },
     },
     consent: {
@@ -652,62 +652,62 @@ export const content = {
     submitting: { fr: "Envoi…", en: "Sending…" },
     doneTitle: { fr: "Proposition reçue.", en: "Proposal received." },
     doneBody: {
-      fr: "Je reviens sous 48 h ouvrées avec une suite claire — ou un non franc.",
-      en: "I'll come back within 2 business days with a clear next step — or a clear no.",
+      fr: "Votre proposition a bien été reçue. Une réponse vous sera adressée sous deux jours ouvrés.",
+      en: "Your proposal has been received. You will receive a response within two business days.",
     },
     error: {
-      fr: "Envoi interrompu. Réessaie ou écris-nous.",
-      en: "Send interrupted. Try again or email us.",
+      fr: "Envoi impossible. Réessayez ou écrivez-nous.",
+      en: "Unable to send. Please try again or email us.",
     },
     messagePlaceholder: {
-      fr: "Ex. Réseau de 40 cabinets — intros qualifiées sur fuites de temps offres / reporting…",
-      en: "E.g. Network of 40 firms — qualified intros on proposal / reporting time leaks…",
+      fr: "Ex. Réseau de cabinets souhaitant collaborer sur l'automatisation des offres et du reporting…",
+      en: "E.g. A network of firms seeking to collaborate on proposal and reporting automation…",
     },
   },
   watch: {
     section: { fr: "Veille", en: "Watch" },
     title: {
-      fr: "Le marché bouge vite. Je trie pour vous.",
-      en: "The market moves fast. I filter it for you.",
+      fr: "Veille sur les modèles, les agents et les outils",
+      en: "Monitoring models, agents and tools",
     },
     body: {
-      fr: "Je suis les modèles, les agents et les outils. Je teste avant de recommander. Vous gardez le signal utile — sans y passer vos nuits, ni coller du client dans le dernier gadget à la mode.",
-      en: "I track models, agents and tools. I test before I recommend. You get useful signal — without the late nights, or pasting clients into the latest gadget.",
+      fr: "TWM Advisory suit les évolutions techniques, teste les outils avant de les recommander et évalue leur pertinence au regard des usages et des exigences de confidentialité.",
+      en: "TWM Advisory monitors technical developments, tests tools before recommending them and assesses their relevance against use cases and confidentiality requirements.",
     },
   },
   infrastructure: {
-    section: { fr: "L'entreprise agentique", en: "The agentic company" },
+    section: { fr: "Organisation IA", en: "AI operations" },
     title: {
-      fr: "15 agents. Une entreprise qui tourne.",
-      en: "15 agents. A firm that runs.",
+      fr: "Des assistants organisés par fonction.",
+      en: "Assistants organized by function.",
     },
     titleEm: {
-      fr: "Moi : la relation et les décisions.",
-      en: "Me: relationships and decisions.",
+      fr: "Des décisions sous contrôle humain.",
+      en: "Decisions remain under human control.",
     },
     body: {
-      fr: "TWM Advisory fonctionne comme une organisation complète. Chaque agent a un nom, un rôle précis. Résultat : mon temps reste sur les échanges dirigeants, la confiance et les arbitrages — exactement ce que je vous aide à protéger chez vous.",
-      en: "TWM Advisory runs like a full organization. Each agent has a name and a clear role. So my time stays on executive conversations, trust and decisions — exactly what I help you protect in your firm.",
+      fr: "TWM Advisory utilise des assistants et des automatisations internes pour la recherche, la préparation de documents, le suivi opérationnel et certaines tâches administratives. Les décisions, les validations et les relations clients restent sous responsabilité humaine.",
+      en: "TWM Advisory uses internal assistants and automations for research, document preparation, operational tracking and selected administrative tasks. Decisions, approvals and client relationships remain under human responsibility.",
     },
     humanLabel: { fr: "Humain", en: "Human" },
     humanRole: {
-      fr: "Relation C-level, deals, arbitrages",
-      en: "C-level relationships, deals, decisions",
+      fr: "Relation client, validation et arbitrages",
+      en: "Client relationships, approval and decisions",
     },
     ceo: {
       name: "Aria",
-      role: { fr: "DG", en: "CEO" },
+      role: { fr: "Coordination", en: "Coordination" },
       mission: {
-        fr: "Orchestre les priorités, aligne les équipes agents, synthétise pour la direction.",
-        en: "Orchestrates priorities, aligns agent teams, synthesizes for leadership.",
+        fr: "Prépare la synthèse des priorités et coordonne les flux entre assistants.",
+        en: "Prepares priority summaries and coordinates workflows between assistants.",
       },
     },
     ceoAssistant: {
       name: "Nexi",
-      role: { fr: "Assistant DG", en: "CEO assistant" },
+      role: { fr: "Suivi des priorités", en: "Priority tracking" },
       mission: {
-        fr: "Bras droit d'Aria — agenda direction, briefings, suivi des priorités et relais avec les équipes.",
-        en: "Aria's right hand — executive agenda, briefings, priority tracking and relay with the teams.",
+        fr: "Prépare les ordres du jour, les synthèses et le suivi des actions.",
+        en: "Prepares agendas, summaries and action tracking.",
       },
     },
     departments: [
@@ -718,8 +718,8 @@ export const content = {
             name: "Mira",
             role: { fr: "Finance", en: "Finance" },
             mission: {
-              fr: "Trésorerie, forecast, pilotage des marges.",
-              en: "Cash, forecast, margin oversight.",
+              fr: "Trésorerie, prévisions et suivi des marges.",
+              en: "Cash flow, forecasting and margin monitoring.",
             },
           },
           {
@@ -755,16 +755,16 @@ export const content = {
             name: "Lin",
             role: { fr: "Développement", en: "Developer" },
             mission: {
-              fr: "Build des agents et automatisations pour TWM et les clients.",
+              fr: "Conception des agents et automatisations pour TWM et les clients.",
               en: "Builds agents and automations for TWM and clients.",
             },
           },
           {
             name: "Elia",
-            role: { fr: "Customer success", en: "Customer success" },
+            role: { fr: "Suivi client", en: "Client success" },
             mission: {
-              fr: "Satisfaction, renouvellement, signaux d'upsell.",
-              en: "Satisfaction, renewal, upsell signals.",
+              fr: "Satisfaction, renouvellement et besoins complémentaires.",
+              en: "Satisfaction, renewal and additional needs.",
             },
           },
         ],
@@ -776,16 +776,16 @@ export const content = {
             name: "Nils",
             role: { fr: "Commercial", en: "Sales" },
             mission: {
-              fr: "Pipeline advisory, relances, préparation d'échanges.",
-              en: "Advisory pipeline, follow-ups, call prep.",
+              fr: "Suivi commercial, relances et préparation des échanges.",
+              en: "Commercial pipeline, follow-ups and meeting preparation.",
             },
           },
           {
             name: "Tess",
-            role: { fr: "BD SaaS", en: "SaaS BD" },
+            role: { fr: "Partenariats SaaS", en: "SaaS partnerships" },
             mission: {
-              fr: "Partenariats produits et deals tech.",
-              en: "Product partnerships and tech deals.",
+              fr: "Partenariats produits et collaborations techniques.",
+              en: "Product partnerships and technical collaborations.",
             },
           },
           {
@@ -816,8 +816,8 @@ export const content = {
             name: "Vale",
             role: { fr: "Veille tech", en: "Tech watch" },
             mission: {
-              fr: "Modèles, outils, signal utile vs bruit.",
-              en: "Models, tools, useful signal vs noise.",
+              fr: "Suivi des modèles, des outils et des évolutions pertinentes.",
+              en: "Monitoring models, tools and relevant developments.",
             },
           },
         ],
@@ -829,35 +829,35 @@ export const content = {
             name: "Pax",
             role: { fr: "CRM / data", en: "CRM / data" },
             mission: {
-              fr: "Hygiène pipeline, scoring, sync des outils.",
-              en: "Pipeline hygiene, scoring, tool sync.",
+              fr: "Qualité des données commerciales, priorisation et synchronisation des outils.",
+              en: "Commercial data quality, prioritization and tool synchronization.",
             },
           },
         ],
       },
     ],
     closing: {
-      fr: "Je déploie chez vous ce qui fait déjà tourner TWM.",
-      en: "I deploy with you what already runs TWM.",
+      fr: "Cette expérience interne contribue à la conception des solutions proposées aux clients.",
+      en: "This internal experience informs the solutions designed for clients.",
     },
   },
   about: {
-    section: { fr: "Pourquoi moi", en: "Why me" },
+    section: { fr: "Expérience", en: "Experience" },
     title: {
-      fr: "Un opérateur, pas un vendeur de techno.",
-      en: "An operator, not a tech vendor.",
+      fr: "Direction, opérations et transformation numérique",
+      en: "Leadership, operations and digital transformation",
     },
     p1: {
-      fr: "17 ans à construire des mécaniques business et à diriger des organisations. Je parle chiffres, risque et exécution parce que je les ai portés — pas parce qu'ils figurent sur une slide.",
-      en: "17 years building business engines and leading organizations. I speak numbers, risk and execution because I've carried them — not because they sit on a slide.",
+      fr: "Tannous Mekari accompagne les organisations dans l'identification, la conception et le déploiement de solutions IA. Son parcours comprend 17 années d'expérience en e-commerce, développement d'activités et direction d'équipes.",
+      en: "Tannous Mekari helps organizations identify, design and deploy AI solutions. His background includes 17 years of experience in e-commerce, business development and team leadership.",
     },
     p2: {
-      fr: "Trilingue — français, anglais, arabe. Je relie vision, ops et terrain.",
-      en: "Trilingual — French, English, Arabic. I connect vision, ops and the floor.",
+      fr: "Il travaille en français, en anglais et en arabe, à l'interface entre stratégie, opérations et mise en œuvre.",
+      en: "He works in French, English and Arabic at the intersection of strategy, operations and implementation.",
     },
     p3: {
-      fr: "TWM tourne avec 15 agents organisés comme une entreprise. Ça me laisse le temps pour ce qui compte vraiment : la relation et les décisions.",
-      en: "TWM runs with 15 agents organized like a firm. That leaves me time for what actually matters: relationships and decisions.",
+      fr: "TWM Advisory utilise des assistants internes pour préparer et suivre certaines tâches. La relation client, les validations et les décisions restent assurées par le fondateur.",
+      en: "TWM Advisory uses internal assistants to prepare and track selected tasks. The founder remains responsible for client relationships, approvals and decisions.",
     },
     metrics: [
       {
@@ -886,8 +886,8 @@ export const content = {
           en: "Where do we start?",
         },
         a: {
-          fr: "Par l'enjeu qui coûte le plus et le cas le plus sûr. On livre un premier résultat mesurable vite, vous gardez la propriété de la décision.",
-          en: "With the stake that costs the most and the safest first case. We ship a measurable first result fast — you keep ownership of the decision.",
+          fr: "Par la priorité à plus fort impact et le cas d'usage le plus adapté à vos contraintes. Un premier périmètre permet de mesurer les résultats avant d'étendre.",
+          en: "Start with the highest-impact priority and the use case best suited to your constraints. An initial scope allows results to be measured before expanding.",
         },
       },
       {
@@ -896,8 +896,8 @@ export const content = {
           en: "Does this replace our experts?",
         },
         a: {
-          fr: "Non. Ça retire le travail de bureau autour du jugement — rédaction, synthèses, recherche, relances. Le conseil, l'arbitrage et la relation restent humains. Une organisation qui s'en sert bien vend son jugement, pas son temps de bureau.",
-          en: "No. It removes the desk work around expert judgment — drafting, summarizing, research, follow-ups. Advice, the call and the relationship stay human. Organizations that use it well sell their judgment, not their desk time.",
+          fr: "Non. L'IA peut assister la rédaction, les synthèses, la recherche et les relances. Le conseil, l'arbitrage et la relation restent sous responsabilité humaine.",
+          en: "No. AI can support drafting, summaries, research and follow-ups. Advice, judgment and relationships remain under human responsibility.",
         },
       },
       {
@@ -906,8 +906,8 @@ export const content = {
           en: "Do you deliver a report or actually deploy?",
         },
         a: {
-          fr: "Je déploie. Je m'embarque dans vos équipes jusqu'à la mise en production, avec un cadre data et une mesure de l'impact.",
-          en: "I deploy. I embed with your teams through go-live, with a data frame and a measure of impact.",
+          fr: "L'accompagnement peut couvrir le diagnostic, la conception, l'intégration et la mise en production, avec un cadre de gouvernance et des indicateurs de résultat.",
+          en: "Support can cover assessment, design, integration and production deployment, with governance controls and outcome metrics.",
         },
       },
       {
@@ -916,8 +916,8 @@ export const content = {
           en: "Is it safe with client-confidential information?",
         },
         a: {
-          fr: "Uniquement dans un environnement encadré : accès contrôlés, pas d'entraînement de modèles publics sur vos entrées. Le vrai risque, c'est le collage dans des outils grand public — un déploiement géré et une politique claire le retirent.",
-          en: "Only inside a governed environment: controlled access, no training public models on your inputs. The real risk is staff pasting into consumer tools — a managed rollout and clear policy remove that.",
+          fr: "Les mesures dépendent du cas d'usage et de l'architecture retenue. Elles peuvent inclure des accès restreints, une journalisation, des règles de conservation et des services qui n'utilisent pas les données transmises pour entraîner leurs modèles. Ces éléments sont définis avant le déploiement.",
+          en: "Controls depend on the use case and architecture. They may include restricted access, logging, retention rules and services that do not use submitted data to train their models. These controls are defined before deployment.",
         },
       },
       {
@@ -944,18 +944,18 @@ export const content = {
   },
   contact: {
     title: {
-      fr: "Le moyen le plus rapide de savoir si on est faits pour travailler ensemble,",
-      en: "The fastest way to know whether we're the right fit,",
+      fr: "Parlons",
+      en: "Discuss",
     },
     titleEm: {
-      fr: "c'est un échange.",
-      en: "is a conversation.",
+      fr: "de votre projet.",
+      en: "your project.",
     },
     lead: {
-      fr: "30 minutes. Gratuit. On regarde les fuites de temps, le cadre data, et un premier cas concret — souvent offres ou recherche.",
-      en: "30 minutes. Free. We look at time leaks, the data frame, and a concrete first case — often proposals or research.",
+      fr: "Présentez brièvement votre besoin, vos contraintes et le résultat attendu. Le premier échange dure 30 minutes et est sans engagement.",
+      en: "Briefly describe your needs, constraints and expected outcome. The initial conversation lasts 30 minutes and carries no commitment.",
     },
-    cta: { fr: "Lancer le briefing", en: "Start the briefing" },
+    cta: { fr: "Décrire votre besoin", en: "Describe your needs" },
     secondary: { fr: "Écrire un email", en: "Send an email" },
     note: {
       fr: "Réponse sous 48 h ouvrées.",
@@ -964,101 +964,101 @@ export const content = {
   },
   signal: {
     section: { fr: "Signal", en: "Signal" },
-    insightLabel: { fr: "Insight", en: "Insight" },
-    verdictLabel: { fr: "Verdict", en: "Verdict" },
-    readCta: { fr: "Lire le signal", en: "Read the signal" },
-    back: { fr: "Tous les signaux", en: "All signals" },
+    insightLabel: { fr: "Point principal", en: "Key point" },
+    verdictLabel: { fr: "Conclusion", en: "Conclusion" },
+    readCta: { fr: "Lire l'article", en: "Read the article" },
+    back: { fr: "Tous les articles", en: "All articles" },
     minutes: { fr: "min", en: "min" },
     briefingCta: {
-      fr: "Préparer mon call sur ce sujet",
-      en: "Prep my call on this topic",
+      fr: "Demander un échange sur ce sujet",
+      en: "Discuss this topic",
     },
     briefingNote: {
-      fr: "Le briefing s'ouvre avec l'intention déjà allumée.",
-      en: "The briefing opens with the intent already lit.",
+      fr: "Le questionnaire reprend le sujet de cet article.",
+      en: "The questionnaire will retain the topic of this article.",
     },
   },
   intake: {
     brand: { fr: "TWM Advisory", en: "TWM Advisory" },
     mission: {
-      fr: "On prépare ton premier call comme un briefing opérateur.",
-      en: "We prep your first call like an operator briefing.",
+      fr: "Préparons votre premier échange.",
+      en: "Prepare your first conversation.",
     },
     missionBody: {
-      fr: "Quelques micro-défis. Un score. Un chemin. Un signal. Ensuite on te propose un créneau.",
-      en: "A few micro-challenges. A score. A path. A signal. Then we propose a slot.",
+      fr: "Répondez à quelques questions sur votre organisation, vos priorités et vos contraintes. Une première orientation vous sera proposée avant la prise de contact.",
+      en: "Answer a few questions about your organization, priorities and constraints. You will receive an initial direction before we arrange a conversation.",
     },
-    start: { fr: "Entrer en mission", en: "Enter the mission" },
+    start: { fr: "Commencer", en: "Start" },
     next: { fr: "Continuer", en: "Continue" },
     back: { fr: "Retour", en: "Back" },
     skipVideo: { fr: "Passer à l'écrit", en: "Switch to text" },
-    useVideo: { fr: "Filmer mon signal", en: "Record my signal" },
+    useVideo: { fr: "Répondre en vidéo", en: "Respond by video" },
     record: { fr: "Enregistrer", en: "Record" },
     stop: { fr: "Stop", en: "Stop" },
     retake: { fr: "Reprendre", en: "Retake" },
-    submit: { fr: "Envoyer mon briefing", en: "Send my briefing" },
-    submitting: { fr: "Transmission…", en: "Sending…" },
+    submit: { fr: "Envoyer la demande", en: "Send request" },
+    submitting: { fr: "Envoi en cours…", en: "Sending…" },
     stepOf: { fr: "Étape", en: "Step" },
-    scoreLabel: { fr: "Maturité IA", en: "AI maturity" },
-    entryLabel: { fr: "Porte d'entrée", en: "Entry point" },
-    pathLabel: { fr: "Ton chemin", en: "Your path" },
-    feedbackLabel: { fr: "Signal live", en: "Live signal" },
+    scoreLabel: { fr: "Profil du besoin", en: "Needs profile" },
+    entryLabel: { fr: "Service à envisager", en: "Service to consider" },
+    pathLabel: { fr: "Orientation proposée", en: "Suggested direction" },
+    feedbackLabel: { fr: "Observation", en: "Observation" },
     intentTitle: {
-      fr: "Tu en es où ?",
-      en: "Where are you at?",
+      fr: "Où en êtes-vous ?",
+      en: "Where are you today?",
     },
     intentBody: {
-      fr: "Un seul choix. Ça allume le bon nœud sur le parcours.",
-      en: "One choice. It lights the right node on the path.",
+      fr: "Choisissez la situation qui correspond le mieux à votre besoin.",
+      en: "Choose the situation that best matches your needs.",
     },
     intents: {
       discover: {
         title: { fr: "Je découvre", en: "I'm exploring" },
         body: {
-          fr: "Je veux savoir où l'IA crée vraiment de la valeur.",
-          en: "I want to know where AI actually creates value.",
+          fr: "Je souhaite identifier les usages de l'IA les plus pertinents.",
+          en: "I want to identify the most relevant uses of AI.",
         },
       },
       use_case: {
         title: { fr: "J'ai un cas précis", en: "I have a clear case" },
         body: {
-          fr: "Une fuite de temps identifiée — je veux la mettre en production.",
-          en: "A time leak identified — I want it in production.",
+          fr: "J'ai identifié un processus à améliorer et je souhaite déployer une solution.",
+          en: "I have identified a process to improve and want to deploy a solution.",
         },
       },
       has_agents: {
         title: { fr: "J'ai déjà des agents", en: "I already have agents" },
         body: {
-          fr: "Ça tourne… ou ça dérive. J'ai besoin d'un verdict.",
-          en: "It's running… or drifting. I need a verdict.",
+          fr: "Je souhaite évaluer des systèmes IA déjà déployés.",
+          en: "I want to assess AI systems that are already deployed.",
         },
       },
       strategy: {
         title: { fr: "Je veux une direction", en: "I want direction" },
         body: {
-          fr: "Feuille de route, ROI, conduite du changement — pas un gadget.",
-          en: "Roadmap, ROI, change leadership — not a gadget.",
+          fr: "Je souhaite structurer une feuille de route, la gouvernance et le suivi des résultats.",
+          en: "I want to structure a roadmap, governance and outcome tracking.",
         },
       },
       training: {
         title: { fr: "Je veux former", en: "I want training" },
         body: {
-          fr: "Équipes ou dirigeants : juger l'IA, pas seulement l'exécuter.",
-          en: "Teams or leaders: judge AI, not only execute it.",
+          fr: "Je souhaite former les équipes ou les dirigeants à un usage responsable de l'IA.",
+          en: "I want to train teams or leaders in responsible AI use.",
         },
       },
     },
     probesTitle: {
-      fr: "Trois micro-défis.",
-      en: "Three micro-challenges.",
+      fr: "Trois questions",
+      en: "Three questions",
     },
     probesBody: {
-      fr: "Chaque réponse ajuste ton score et ton chemin.",
-      en: "Each answer adjusts your score and your path.",
+      fr: "Vos réponses permettent d'affiner l'orientation proposée.",
+      en: "Your answers help refine the suggested direction.",
     },
     probes: {
       orgSize: {
-        title: { fr: "Taille de l'orga", en: "Org size" },
+        title: { fr: "Taille de l'organisation", en: "Organization size" },
         options: {
           solo: { fr: "Solo / duo", en: "Solo / duo" },
           small: { fr: "3–20", en: "3–20" },
@@ -1071,7 +1071,7 @@ export const content = {
         options: {
           explore: { fr: "Je cartographie", en: "Mapping it out" },
           quarter: { fr: "Ce trimestre", en: "This quarter" },
-          now: { fr: "C'est chaud", en: "It's urgent" },
+          now: { fr: "Sous 30 jours", en: "Within 30 days" },
         },
       },
       dataConstraint: {
@@ -1084,12 +1084,12 @@ export const content = {
       },
     },
     mapTitle: {
-      fr: "Ton parcours s'allume.",
-      en: "Your path lights up.",
+      fr: "Orientation proposée",
+      en: "Suggested direction",
     },
     mapBody: {
-      fr: "Voici la porte d'entrée la plus juste — on affinera au call.",
-      en: "Here's the most fitting entry point — we'll refine on the call.",
+      fr: "Cette orientation est indicative et sera confirmée lors du premier échange.",
+      en: "This direction is indicative and will be confirmed during the initial conversation.",
     },
     offers: {
       audit: {
@@ -1101,8 +1101,8 @@ export const content = {
         en: "Deploy",
       },
       certify: {
-        fr: "Certification",
-        en: "Certification",
+        fr: "Évaluation",
+        en: "Assessment",
       },
       advisory: {
         fr: "Stratégie",
@@ -1115,93 +1115,93 @@ export const content = {
     },
     feedback: {
       "intent.discover": {
-        fr: "On commence par cartographier — pas par déployer.",
-        en: "We start by mapping — not deploying.",
+        fr: "Un diagnostic permet d'identifier et de prioriser les premiers usages.",
+        en: "An assessment can identify and prioritize initial use cases.",
       },
       "intent.use_case": {
-        fr: "Cas clair : on vise la production.",
-        en: "Clear case: we aim for production.",
+        fr: "Un cas d'usage identifié peut faire l'objet d'une étude de faisabilité et d'un premier déploiement.",
+        en: "An identified use case can proceed to feasibility review and an initial deployment.",
       },
       "intent.has_agents": {
-        fr: "Tu as déjà du terrain. On mesure avant d'étendre.",
-        en: "You already have ground. We measure before expanding.",
+        fr: "Les systèmes existants doivent être évalués avant toute extension.",
+        en: "Existing systems should be assessed before expansion.",
       },
       "intent.strategy": {
-        fr: "Direction avant outils. Le comité voudra du concret.",
-        en: "Direction before tools. The board will want something live.",
+        fr: "La feuille de route et la gouvernance précèdent le choix des outils.",
+        en: "Roadmap and governance should precede tool selection.",
       },
       "intent.training": {
-        fr: "Former à juger — le vrai levier d'adoption.",
-        en: "Train to judge — the real adoption lever.",
+        fr: "La formation doit couvrir l'utilisation des outils, l'évaluation des résultats et les règles de sécurité.",
+        en: "Training should cover tool use, output assessment and security policies.",
       },
       "size.solo": {
-        fr: "Petite structure : impact rapide, scope serré.",
-        en: "Small shop: fast impact, tight scope.",
+        fr: "Une petite structure bénéficie généralement d'un périmètre initial ciblé.",
+        en: "A small organization generally benefits from a focused initial scope.",
       },
       "size.small": {
-        fr: "Taille idéale pour un premier agent utile.",
-        en: "Ideal size for a first useful agent.",
+        fr: "Un premier cas d'usage peut être défini autour d'un processus partagé.",
+        en: "An initial use case can be defined around a shared process.",
       },
       "size.mid": {
-        fr: "Assez de process pour un fil rouge mesurable.",
-        en: "Enough process for a measurable throughline.",
+        fr: "Les processus existants permettent de définir des indicateurs mesurables.",
+        en: "Existing processes allow measurable indicators to be defined.",
       },
       "size.large": {
-        fr: "Gouvernance et cadre data seront au centre.",
-        en: "Governance and data frame will be central.",
+        fr: "La gouvernance et les règles relatives aux données seront prioritaires.",
+        en: "Governance and data controls will be a priority.",
       },
       "urgency.explore": {
-        fr: "Tempo découverte — on priorise la clarté.",
-        en: "Discovery pace — we prioritize clarity.",
+        fr: "Une phase de diagnostic permettra de clarifier les priorités.",
+        en: "An assessment phase can clarify priorities.",
       },
       "urgency.quarter": {
-        fr: "Fenêtre trimestre : feuille de route actionnable.",
-        en: "Quarter window: actionable roadmap.",
+        fr: "Un objectif trimestriel nécessite une feuille de route directement exploitable.",
+        en: "A quarterly objective requires an actionable roadmap.",
       },
       "urgency.now": {
-        fr: "Urgence haute — on tranche vite sur le premier cas.",
-        en: "High urgency — we decide fast on the first case.",
+        fr: "Un délai court nécessite de limiter le premier périmètre et de confirmer rapidement sa faisabilité.",
+        en: "A short timeline requires a limited initial scope and rapid feasibility confirmation.",
       },
       "data.open": {
-        fr: "Moins de friction data : on peut prototyper plus vite.",
-        en: "Less data friction: we can prototype faster.",
+        fr: "Des données peu sensibles peuvent simplifier la phase de prototype.",
+        en: "Low-sensitivity data can simplify the prototype phase.",
       },
       "data.sensitive": {
-        fr: "Confidentialité : le cadre arrive avant l'outil.",
-        en: "Confidentiality: the frame comes before the tool.",
+        fr: "Les règles de confidentialité doivent être définies avant le choix de l'outil.",
+        en: "Confidentiality controls should be defined before selecting a tool.",
       },
       "data.strict": {
-        fr: "Cadre strict : audit et règles avant tout déploiement.",
-        en: "Strict frame: audit and rules before any deployment.",
+        fr: "Un environnement réglementé nécessite une analyse des risques et des règles formalisées avant tout déploiement.",
+        en: "A regulated environment requires risk assessment and formal controls before deployment.",
       },
     },
     signalTitle: {
-      fr: "Capture ton signal.",
-      en: "Capture your signal.",
+      fr: "Décrivez votre contexte",
+      en: "Describe your situation",
     },
     signalBody: {
-      fr: "60–90 secondes : quelle fuite de temps ou quel système IA te pose problème ? Ou écris-le.",
-      en: "60–90 seconds: which time leak or AI system is the problem? Or write it.",
+      fr: "En 60 à 90 secondes, présentez le processus ou le système IA concerné. Vous pouvez répondre en vidéo ou par écrit.",
+      en: "In 60 to 90 seconds, describe the relevant process or AI system. You can respond by video or in writing.",
     },
     signalPlaceholder: {
-      fr: "Ex. Nos associés passent 6 h/semaine sur les offres. On a testé un outil, personne ne l'utilise vraiment…",
-      en: "E.g. Partners spend 6h/week on proposals. We tried a tool; no one really uses it…",
+      fr: "Ex. Nos associés consacrent six heures par semaine aux offres. L'outil testé est peu utilisé…",
+      en: "E.g. Partners spend six hours a week on proposals. The tool we tested has low adoption…",
     },
     consent: {
-      fr: "J'accepte que ce signal (vidéo ou texte) soit stocké de façon privée pour préparer mon call, puis effacé sous 30 jours.",
-      en: "I agree this signal (video or text) is stored privately to prep my call, then deleted within 30 days.",
+      fr: "J'accepte que cette réponse (vidéo ou texte) soit stockée de façon privée pour préparer l'échange, puis effacée sous 30 jours.",
+      en: "I agree that this response (video or text) may be stored privately to prepare the conversation and deleted within 30 days.",
     },
     consentPrivacy: {
       fr: "Politique de confidentialité",
       en: "Privacy policy",
     },
     identityTitle: {
-      fr: "Qui reçoit le créneau ?",
-      en: "Who gets the slot?",
+      fr: "Vos coordonnées",
+      en: "Your contact details",
     },
     identityBody: {
-      fr: "On te revient sous 48 h ouvrées avec une proposition de créneau.",
-      en: "We'll come back within 2 business days with a proposed slot.",
+      fr: "Vous recevrez une proposition de créneau sous deux jours ouvrés.",
+      en: "You will receive a proposed time within two business days.",
     },
     fields: {
       name: { fr: "Prénom", en: "First name" },
@@ -1209,28 +1209,28 @@ export const content = {
       company: { fr: "Société (optionnel)", en: "Company (optional)" },
     },
     doneTitle: {
-      fr: "Briefing reçu.",
-      en: "Briefing received.",
+      fr: "Demande enregistrée.",
+      en: "Request received.",
     },
     doneBody: {
-      fr: "Créneau proposé sous 48 h ouvrées. Tu arrives au call avec un fil déjà tendu.",
-      en: "Slot proposed within 2 business days. You arrive on the call with a thread already pulled.",
+      fr: "Une proposition de créneau vous sera adressée sous deux jours ouvrés. Les informations transmises serviront à préparer l'échange.",
+      en: "You will receive a proposed time within two business days. The information provided will be used to prepare the conversation.",
     },
     doneHome: { fr: "Retour à l'accueil", en: "Back home" },
     error: {
-      fr: "Transmission interrompue. Réessaie — ou écris-nous.",
-      en: "Transmission interrupted. Try again — or email us.",
+      fr: "Envoi impossible. Réessayez ou écrivez-nous.",
+      en: "Unable to send. Please try again or email us.",
     },
     camDenied: {
-      fr: "Caméra indisponible. Passe à l'écrit.",
-      en: "Camera unavailable. Switch to text.",
+      fr: "Caméra indisponible. Utilisez la réponse écrite.",
+      en: "Camera unavailable. Please use the written response.",
     },
   },
   cookieConsent: {
     title: { fr: "Cookies & mesure", en: "Cookies & measurement" },
     body: {
-      fr: "Nous utilisons Google Tag Manager / Google Analytics uniquement si vous acceptez — pour comprendre le parcours (pages, briefing, formulaires). Pas de pub. Vous pouvez refuser.",
-      en: "We use Google Tag Manager / Google Analytics only if you accept — to understand the journey (pages, briefing, forms). No ads. You can decline.",
+      fr: "Nous utilisons Google Tag Manager et Google Analytics uniquement avec votre accord afin de mesurer la navigation sur le site. Aucune donnée n'est utilisée à des fins publicitaires. Vous pouvez refuser.",
+      en: "We use Google Tag Manager and Google Analytics only with your consent to measure website usage. No data is used for advertising. You can decline.",
     },
     accept: { fr: "Accepter", en: "Accept" },
     decline: { fr: "Refuser", en: "Decline" },
@@ -1240,7 +1240,7 @@ export const content = {
     legal: { fr: "Mentions légales", en: "Legal" },
     privacy: { fr: "Confidentialité", en: "Privacy" },
     city: {
-      fr: "France · présentiel et remote",
+      fr: "France · sur site et à distance",
       en: "France · on-site and remote",
     },
   },
@@ -1303,8 +1303,8 @@ export const content = {
       {
         title: { fr: "Données collectées", en: "Data we collect" },
         body: {
-          fr: "Via le briefing (/demarrer) : prénom, email, société (optionnelle), réponses au parcours, score, signal texte ou vidéo, consentement. Via /partenaires : identité, email, société, type de partenariat, message, consentement. Cookies techniques : langue, thème (dev), splash déjà vu. Cookies de mesure (si acceptés) : Google Tag Manager et Google Analytics 4 (identifiant technique, pages vues, événements de parcours — sans contenu des formulaires comme email ou nom).",
-          en: "Via the briefing (/demarrer): first name, email, company (optional), journey answers, score, text or video signal, consent. Via /partenaires: identity, email, company, partnership type, message, consent. Technical cookies: language, theme (dev), splash already seen. Measurement cookies (if accepted): Google Tag Manager and Google Analytics 4 (technical ID, page views, journey events — no form contents such as email or name).",
+          fr: "Via le questionnaire (/demarrer) : prénom, email, société (optionnelle), réponses, profil du besoin, signal texte ou vidéo, consentement. Via /partenaires : identité, email, société, type de partenariat, message, consentement. Cookies techniques : langue, thème et introduction déjà vue. Cookies de mesure (si acceptés) : Google Tag Manager et Google Analytics 4 (identifiant technique, pages vues et événements de navigation, sans contenu des formulaires comme l'email ou le nom).",
+          en: "Via the questionnaire (/demarrer): first name, email, company (optional), answers, needs profile, text or video response and consent. Via /partenaires: identity, email, company, partnership type, message and consent. Technical cookies: language, theme and introduction status. Measurement cookies (if accepted): Google Tag Manager and Google Analytics 4 (technical ID, page views and navigation events, excluding form contents such as email or name).",
         },
       },
       {
@@ -1313,15 +1313,15 @@ export const content = {
           en: "Purposes and legal basis",
         },
         body: {
-          fr: "Préparer un échange commercial ou un partenariat, répondre à votre demande, et améliorer le parcours. Base : consentement (formulaires et cookies analytics via GTM/GA4) et intérêt légitime (fonctionnement technique du site). Les cookies de mesure ne sont déposés qu'après acceptation via la bannière.",
-          en: "Prepare a commercial conversation or partnership, answer your request, and improve the journey. Basis: consent (forms and analytics cookies via GTM/GA4) and legitimate interest (technical site operation). Measurement cookies are set only after you accept via the banner.",
+          fr: "Préparer un échange commercial ou un partenariat, répondre à votre demande et améliorer l'utilisation du site. Base : consentement (formulaires et cookies analytics via GTM/GA4) et intérêt légitime (fonctionnement technique du site). Les cookies de mesure ne sont déposés qu'après acceptation via la bannière.",
+          en: "Prepare a commercial conversation or partnership, respond to your request and improve website use. Basis: consent (forms and analytics cookies via GTM/GA4) and legitimate interest (technical site operation). Measurement cookies are set only after you accept via the banner.",
         },
       },
       {
         title: { fr: "Durée de conservation", en: "Retention" },
         body: {
-          fr: "Signal vidéo / texte du briefing : conservation privée puis effacement sous 30 jours. Leads briefing et partenaires : conservation le temps nécessaire au suivi commercial, puis archivage ou suppression. Cookies techniques : session ou durée limitée. Consentement analytics : 12 mois. Données GA4 : selon la rétention configurée dans Google Analytics.",
-          en: "Briefing video / text signal: private storage then deletion within 30 days. Briefing and partner leads: retained as needed for commercial follow-up, then archived or deleted. Technical cookies: session or limited duration. Analytics consent: 12 months. GA4 data: per retention set in Google Analytics.",
+          fr: "Réponse vidéo ou texte du questionnaire : conservation privée puis effacement sous 30 jours. Demandes de contact et propositions de partenariat : conservation le temps nécessaire au suivi commercial, puis archivage ou suppression. Cookies techniques : session ou durée limitée. Consentement analytics : 12 mois. Données GA4 : selon la rétention configurée dans Google Analytics.",
+          en: "Questionnaire video or text response: private storage followed by deletion within 30 days. Contact and partnership requests: retained as needed for commercial follow-up, then archived or deleted. Technical cookies: session or limited duration. Analytics consent: 12 months. GA4 data: according to the retention configured in Google Analytics.",
         },
       },
       {
@@ -1349,8 +1349,8 @@ export const content = {
   },
   splash: {
     line: {
-      fr: "De la stratégie à la production",
-      en: "From strategy to production",
+      fr: "Conseil et déploiement de solutions IA",
+      en: "AI advisory and deployment",
     },
     pillars: {
       fr: "Audit · Déploiement · Mesure",

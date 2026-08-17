@@ -49,7 +49,7 @@ export function OperatorPortrait() {
 
       <div className="animate-drift glass-card absolute top-2 right-0 hidden w-52 rounded-2xl p-4 md:block lg:right-[-8px]">
         <div className="mb-3 font-mono text-[9px] tracking-[0.2em] text-muted-3 uppercase">
-          Forward deployed
+          {t(c.home.featuresEyebrow)}
         </div>
         <div className="flex items-center gap-2 text-[13px] text-fg">
           <span className="size-1.5 rounded-full bg-accent" />

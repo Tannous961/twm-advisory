@@ -97,12 +97,12 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
   },
   approche: {
     path: "/approche",
-    title: "Approche — opérateur embarqué, de l'audit à la production",
-    titleEn: "Approach — embedded operator, from audit to production",
+    title: "Approche — du diagnostic à la mise en production",
+    titleEn: "Approach — from assessment to production",
     description:
-      "Méthode TWM : je m'embarque dans vos équipes, je trouve où ça coûte (marge, temps, positions), je déploie des agents IA jusqu'en production — avec cadre data.",
+      "La méthode TWM Advisory couvre l'identification des cas d'usage, la conception, le déploiement, la formation et la mesure des résultats.",
     descriptionEn:
-      "TWM method: I embed with your teams, find where it costs (margin, time, ground), deploy AI agents into production — with a data frame.",
+      "The TWM Advisory method covers use case identification, design, deployment, training and outcome measurement.",
     keywords: [
       "approche conseil IA",
       "opérateur embarqué IA",
@@ -111,52 +111,52 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
   },
   offres: {
     path: "/offres",
-    title: "Offres IA — audit, agents, certification, stratégie, formation",
-    titleEn: "AI services — audit, agents, certification, strategy, training",
+    title: "Services IA — diagnostic, déploiement, évaluation et formation",
+    titleEn: "AI services — assessment, deployment, review and training",
     description:
-      "5 offres TWM Advisory : audit IA, déploiement d'agents, certification de systèmes IA, accompagnement stratégique (direction IA à temps partagé), formation dirigeants.",
+      "Services TWM Advisory : diagnostic des usages, déploiement d'agents IA, évaluation de systèmes, stratégie, gouvernance et formation.",
     descriptionEn:
-      "5 TWM Advisory offers: AI audit, agent deployment, AI systems certification, strategic advisory (fractional AI leadership), executive training.",
+      "TWM Advisory services: AI use assessment, agent deployment, system review, strategy, governance and training.",
     keywords: [
       "audit IA entreprise",
       "déploiement agents IA",
-      "certification systèmes IA",
+      "évaluation systèmes IA",
       "direction IA temps partagé",
       "formation IA dirigeants",
     ],
   },
   signal: {
     path: "/signal",
-    title: "Signal — insights IA pour dirigeants",
-    titleEn: "Signal — AI insights for executives",
+    title: "Signal — analyses sur l'IA en entreprise",
+    titleEn: "Signal — analysis of AI in organizations",
     description:
-      "Insights et verdicts TWM sur l'IA en entreprise : agents en production, jugement, audit, confidentialité. Pas de newsletter creuse.",
+      "Articles courts de TWM Advisory sur le déploiement, l'évaluation, la gouvernance et l'usage responsable de l'IA en entreprise.",
     descriptionEn:
-      "TWM insights and verdicts on enterprise AI: agents in production, judgment, audit, confidentiality. No empty newsletter.",
+      "Concise TWM Advisory articles on AI deployment, assessment, governance and responsible use in organizations.",
     keywords: ["blog IA entreprise", "insights agents IA", "Signal TWM"],
   },
   partenaires: {
     path: "/partenaires",
-    title: "Partenaires — BD, tech & co-delivery IA",
-    titleEn: "Partners — BD, tech & AI co-delivery",
+    title: "Partenaires — cadre de collaboration",
+    titleEn: "Partners — collaboration framework",
     description:
-      "Devenez partenaire TWM Advisory : apporteur d'affaires, intégrateur tech, réseau métier ou co-delivery. Règles claires, un interlocuteur côté client.",
+      "Cadre de collaboration de TWM Advisory pour les apporteurs d'affaires, intégrateurs, réseaux métier et partenaires de réalisation.",
     descriptionEn:
-      "Partner with TWM Advisory: deal introducer, tech integrator, domain network or co-delivery. Clear rules, one client counterpart.",
+      "TWM Advisory's collaboration framework for introducers, integrators, industry networks and delivery partners.",
     keywords: [
       "partenariat conseil IA",
       "apporteur affaires IA",
-      "co-delivery agents IA",
+      "réalisation conjointe agents IA",
     ],
   },
   architecture: {
     path: "/architecture",
-    title: "Agents IA en production — l'organisation TWM qui tourne",
-    titleEn: "AI agents in production — the TWM org that runs",
+    title: "Organisation IA — assistants et automatisations internes",
+    titleEn: "AI operations — internal assistants and automations",
     description:
-      "15 agents IA nommés (Aria, Nexi…) organisés comme une firme. Preuve terrain : ce que TWM déploie chez soi avant de le déployer chez vous. Moi : la relation et les décisions.",
+      "Présentation des assistants et automatisations utilisés par TWM Advisory, de leurs fonctions et des validations qui restent sous responsabilité humaine.",
     descriptionEn:
-      "15 named AI agents (Aria, Nexi…) organized like a firm. Field proof: what TWM runs in-house before deploying with you. Me: relationships and decisions.",
+      "An overview of the assistants and automations used by TWM Advisory, their functions and the approvals that remain under human responsibility.",
     keywords: [
       "agents IA en production",
       "organisation agentique",
@@ -166,12 +166,12 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
   },
   "a-propos": {
     path: "/a-propos",
-    title: "À propos — Tannous Mekari, opérateur IA terrain",
-    titleEn: "About — Tannous Mekari, field AI operator",
+    title: "À propos — Tannous Mekari, fondateur de TWM Advisory",
+    titleEn: "About — Tannous Mekari, founder of TWM Advisory",
     description:
-      "Tannous Mekari, président de TWM ADVISORY (SIREN 106 067 549). 17 ans e-commerce et direction. Conseil IA, produits et agents en production — pas un vendeur de slides.",
+      "Tannous Mekari, président de TWM ADVISORY. 17 années d'expérience en e-commerce, développement d'activités et direction d'équipes.",
     descriptionEn:
-      "Tannous Mekari, president of TWM ADVISORY. 17 years in e-commerce and leadership. AI advisory, products and agents in production — not a slide vendor.",
+      "Tannous Mekari, president of TWM ADVISORY. 17 years of experience in e-commerce, business development and team leadership.",
     keywords: [
       "Tannous Mekari",
       "TWM ADVISORY",
@@ -184,9 +184,9 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
     title: "FAQ — questions dirigeants avant un projet IA",
     titleEn: "FAQ — executive questions before an AI project",
     description:
-      "FAQ TWM Advisory : confidentialité des données, délais, offres, direction IA à temps partagé, agents en production. Réponses directes pour DG et associés.",
+      "Questions fréquentes sur les services TWM Advisory, la confidentialité des données, les budgets, le déploiement et la supervision humaine.",
     descriptionEn:
-      "TWM Advisory FAQ: data confidentiality, timelines, offers, fractional AI leadership, agents in production. Straight answers for executives and partners.",
+      "Common questions about TWM Advisory services, data confidentiality, budgets, deployment and human oversight.",
     keywords: [
       "FAQ conseil IA",
       "confidentialité IA entreprise",
@@ -195,15 +195,15 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
   },
   demarrer: {
     path: "/demarrer",
-    title: "Lancer le briefing — qualification IA gratuite",
-    titleEn: "Start the briefing — free AI qualification",
+    title: "Décrire votre besoin — questionnaire initial",
+    titleEn: "Describe your needs — initial questionnaire",
     description:
-      "Briefing opérateur TWM gratuit : intention, score de maturité, chemin d'offres, signal vidéo ou texte. Créneau proposé sous 48 h. Sans engagement.",
+      "Questionnaire initial TWM Advisory : objectifs, taille de l'organisation, délai, contraintes de données et description du besoin.",
     descriptionEn:
-      "Free TWM operator briefing: intent, maturity score, offer path, video or text signal. Slot proposed within 48h. No commitment.",
+      "TWM Advisory's initial questionnaire covers objectives, organization size, timeline, data constraints and a description of your needs.",
     keywords: [
-      "briefing IA gratuit",
-      "audit maturité IA",
+      "questionnaire projet IA",
+      "diagnostic IA entreprise",
       "prendre rendez-vous consultant IA",
     ],
   },
@@ -212,9 +212,9 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
     title: "Contact — tannous@twm.expert",
     titleEn: "Contact — tannous@twm.expert",
     description:
-      "Contactez TWM Advisory : lancer le briefing ou écrire à tannous@twm.expert. Réponse sous 48 h ouvrées. France · présentiel et remote.",
+      "Contactez TWM Advisory en décrivant votre besoin ou en écrivant à tannous@twm.expert. Réponse sous deux jours ouvrés.",
     descriptionEn:
-      "Contact TWM Advisory: start the briefing or email tannous@twm.expert. Reply within 2 business days. France · on-site and remote.",
+      "Contact TWM Advisory by describing your needs or emailing tannous@twm.expert. Reply within two business days.",
     keywords: ["contact TWM Advisory", "tannous@twm.expert"],
   },
   "mentions-legales": {
@@ -233,9 +233,9 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
     title: "Politique de confidentialité",
     titleEn: "Privacy policy",
     description:
-      "Politique de confidentialité TWM Advisory : données briefing et partenariats, cookies GTM/GA4 (sur consentement), droits RGPD, sous-traitants (Vercel, Supabase, Resend, Google).",
+      "Politique de confidentialité TWM Advisory : données des questionnaires et partenariats, cookies GTM/GA4 sur consentement, droits RGPD et sous-traitants.",
     descriptionEn:
-      "TWM Advisory privacy policy: briefing and partnership data, GTM/GA4 cookies (with consent), GDPR rights, processors (Vercel, Supabase, Resend, Google).",
+      "TWM Advisory privacy policy: questionnaire and partnership data, consent-based GTM/GA4 cookies, GDPR rights and processors.",
     changeFrequency: "yearly",
     priority: 0.3,
   },
@@ -479,7 +479,7 @@ export function buildJsonLd() {
     legalName: siteConfig.legalName,
     url: siteConfig.url,
     description: content.meta.description.fr,
-    slogan: "Conseil, produits & agents IA en production.",
+    slogan: "Conseil et déploiement de solutions IA.",
     foundingDate: "2026-06-04",
     taxID: siteConfig.siren,
     vatID: siteConfig.vatId,
@@ -508,10 +508,10 @@ export function buildJsonLd() {
       "IA pour experts-comptables",
     ],
     serviceType: [
-      "Audit IA de ton organisation",
-      "Déploiement d'agents",
-      "Audit & certification de tes systèmes IA",
-      "Accompagnement stratégique",
+      "Diagnostic des usages de l'IA",
+      "Conception et déploiement d'agents IA",
+      "Évaluation des systèmes IA existants",
+      "Stratégie et gouvernance de l'IA",
       "Formation & sensibilisation",
     ],
     email: siteConfig.email,
@@ -530,7 +530,7 @@ export function buildJsonLd() {
     "@type": "Person",
     "@id": `${siteConfig.url}/#person`,
     name: siteConfig.founderName,
-    jobTitle: "Président — opérateur IA & direction IA à temps partagé",
+    jobTitle: "Président — conseil et déploiement de solutions IA",
     worksFor: { "@id": `${siteConfig.url}/#organization` },
     description: content.about.p1.fr,
     knowsLanguage: ["fr", "en", "ar"],
@@ -550,7 +550,7 @@ export function buildJsonLd() {
     publisher: { "@id": `${siteConfig.url}/#organization` },
     potentialAction: {
       "@type": "CommunicateAction",
-      name: "Lancer le briefing",
+      name: "Décrire votre besoin",
       target: `${siteConfig.url}/demarrer`,
     },
   };
