@@ -42,9 +42,11 @@ export function IntakeGame() {
   const t = useT();
   const i = c.intake;
   const searchParams = useSearchParams();
+  const requestedIntent = searchParams.get("intent");
+  const initialIntent = isIntentId(requestedIntent) ? requestedIntent : null;
 
-  const [step, setStep] = useState<Step>("boot");
-  const [intent, setIntent] = useState<IntentId | null>(null);
+  const [step, setStep] = useState<Step>(initialIntent ? "probes" : "boot");
+  const [intent, setIntent] = useState<IntentId | null>(initialIntent);
   const [orgSize, setOrgSize] = useState<OrgSize | null>(null);
   const [urgency, setUrgency] = useState<Urgency | null>(null);
   const [dataConstraint, setDataConstraint] = useState<DataConstraint | null>(
@@ -61,16 +63,11 @@ export function IntakeGame() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [doneOffer, setDoneOffer] = useState<string>("audit");
-  const [prefilledFromSignal, setPrefilledFromSignal] = useState(false);
 
   useEffect(() => {
-    const raw = searchParams.get("intent");
-    if (!isIntentId(raw) || prefilledFromSignal) return;
-    setIntent(raw);
-    setStep("probes");
-    setPrefilledFromSignal(true);
-    track("intake_started", { lang, intent: raw });
-  }, [searchParams, prefilledFromSignal, lang]);
+    if (!initialIntent) return;
+    track("intake_started", { lang, intent: initialIntent });
+  }, [initialIntent, lang]);
 
   useEffect(() => {
     if (step === "boot") return;
