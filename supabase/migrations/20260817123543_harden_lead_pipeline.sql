@@ -14,6 +14,19 @@ alter table public.intake_leads
     check (processing_attempts >= 0),
   add column if not exists processing_error text;
 
+alter table public.intake_leads
+  add column if not exists submission_session_id uuid;
+
+update public.intake_leads
+set submission_session_id = gen_random_uuid()
+where submission_session_id is null;
+
+alter table public.intake_leads
+  alter column submission_session_id set not null;
+
+create unique index if not exists intake_leads_submission_session_id_idx
+  on public.intake_leads (submission_session_id);
+
 update public.intake_leads
 set
   status = case
@@ -50,6 +63,19 @@ alter table public.partner_leads
   add column if not exists processing_attempts integer not null default 0
     check (processing_attempts >= 0),
   add column if not exists processing_error text;
+
+alter table public.partner_leads
+  add column if not exists submission_id uuid;
+
+update public.partner_leads
+set submission_id = gen_random_uuid()
+where submission_id is null;
+
+alter table public.partner_leads
+  alter column submission_id set not null;
+
+create unique index if not exists partner_leads_submission_id_idx
+  on public.partner_leads (submission_id);
 
 update public.partner_leads
 set

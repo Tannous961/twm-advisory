@@ -35,6 +35,7 @@ export function Partnerships() {
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const [turnstileResetKey, setTurnstileResetKey] = useState(0);
   const [confirmationSent, setConfirmationSent] = useState(false);
+  const [submissionId, setSubmissionId] = useState<string | null>(null);
 
   async function submit() {
     if (!consent || !name.trim() || !email.trim() || !partnerType) return;
@@ -42,6 +43,8 @@ export function Partnerships() {
 
     setSubmitting(true);
     setError(null);
+    const currentSubmissionId = submissionId ?? crypto.randomUUID();
+    setSubmissionId(currentSubmissionId);
 
     try {
       const res = await fetch("/api/partners", {
@@ -56,6 +59,7 @@ export function Partnerships() {
           message: message.trim(),
           consent: true,
           turnstileToken,
+          submissionId: currentSubmissionId,
         }),
       });
       if (!res.ok) throw new Error("fail");

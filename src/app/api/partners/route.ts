@@ -33,6 +33,7 @@ const bodySchema = z.object({
   message: z.string().trim().min(20).max(4000),
   consent: z.literal(true),
   turnstileToken: z.string().min(1).max(4096).nullable(),
+  submissionId: z.uuid(),
 });
 
 async function retryEmail(
@@ -94,6 +95,7 @@ export async function POST(request: Request) {
     const { data: row, error: insertError } = await supabase
       .from("partner_leads")
       .insert({
+        submission_id: data.submissionId,
         lang: data.lang,
         name: data.name,
         email: data.email,
@@ -106,6 +108,22 @@ export async function POST(request: Request) {
       })
       .select("id")
       .single();
+
+    if (insertError?.code === "23505") {
+      const { data: existing } = await supabase
+        .from("partner_leads")
+        .select("id, confirmation_status")
+        .eq("submission_id", data.submissionId)
+        .single();
+
+      if (existing) {
+        return NextResponse.json({
+          id: existing.id,
+          confirmationSent: existing.confirmation_status === "sent",
+          duplicate: true,
+        });
+      }
+    }
 
     if (insertError || !row) {
       console.error("[partners] insert", insertError);

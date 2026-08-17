@@ -152,6 +152,7 @@ export async function POST(request: Request) {
     const { data: row, error: insertError } = await supabase
       .from("intake_leads")
       .insert({
+        submission_session_id: session.sessionId,
         lang: data.lang,
         intent: data.intent,
         answers: data.answers,
@@ -168,6 +169,24 @@ export async function POST(request: Request) {
       })
       .select("id")
       .single();
+
+    if (insertError?.code === "23505") {
+      const { data: existing } = await supabase
+        .from("intake_leads")
+        .select("id, entry_offer, confirmation_status")
+        .eq("submission_session_id", session.sessionId)
+        .single();
+
+      if (existing) {
+        return NextResponse.json({
+          id: existing.id,
+          score: maturity.score,
+          entryOffer: existing.entry_offer,
+          confirmationSent: existing.confirmation_status === "sent",
+          duplicate: true,
+        });
+      }
+    }
 
     if (insertError || !row) {
       console.error("[intake] insert", insertError);
