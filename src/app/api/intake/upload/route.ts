@@ -1,4 +1,10 @@
 import { NextResponse } from "next/server";
+import {
+  getBearerToken,
+  verifyIntakeSession,
+} from "@/lib/security/intake-session";
+import { enforceRateLimit } from "@/lib/security/request-protection";
+import { detectSupportedVideo } from "@/lib/security/video-validation";
 import { getSupabaseAdmin, hasSupabaseAdmin } from "@/lib/supabase/server";
 
 export const runtime = "nodejs";
@@ -13,6 +19,27 @@ export async function POST(request: Request) {
       );
     }
 
+    const session = verifyIntakeSession(getBearerToken(request));
+    if (!session) {
+      return NextResponse.json(
+        { error: "Invalid or expired intake session" },
+        { status: 401 },
+      );
+    }
+
+    const supabase = getSupabaseAdmin();
+    const rateLimit = await enforceRateLimit(supabase, request, {
+      scope: `intake-upload:${session.sessionId}`,
+      maxRequests: 3,
+      windowSeconds: 30 * 60,
+    });
+    if (!rateLimit.ok) {
+      return NextResponse.json(
+        { error: rateLimit.error },
+        { status: rateLimit.status },
+      );
+    }
+
     const form = await request.formData();
     const file = form.get("file");
     if (!(file instanceof File)) {
@@ -23,25 +50,30 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "File too large" }, { status: 413 });
     }
 
-    const ext = file.type.includes("mp4")
-      ? "mp4"
-      : file.type.includes("quicktime")
-        ? "mov"
-        : "webm";
-    const path = `${crypto.randomUUID()}.${ext}`;
     const bytes = Buffer.from(await file.arrayBuffer());
-    const supabase = getSupabaseAdmin();
+    const detected = detectSupportedVideo(bytes);
+    if (!detected) {
+      return NextResponse.json(
+        { error: "Unsupported or invalid video file" },
+        { status: 415 },
+      );
+    }
+
+    const path = `${session.sessionId}/${crypto.randomUUID()}.${detected.extension}`;
 
     const { error } = await supabase.storage
       .from("intake-videos")
       .upload(path, bytes, {
-        contentType: file.type || "video/webm",
+        contentType: detected.mimeType,
         upsert: false,
       });
 
     if (error) {
-      console.error("[intake/upload]", error);
-      return NextResponse.json({ error: error.message }, { status: 500 });
+      console.error("[intake/upload]", {
+        code: "storage_upload_failed",
+        message: error.message,
+      });
+      return NextResponse.json({ error: "Upload failed" }, { status: 500 });
     }
 
     return NextResponse.json({ path });

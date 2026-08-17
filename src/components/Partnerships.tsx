@@ -6,6 +6,7 @@ import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
 import { track } from "@/lib/analytics";
 import { useI18n, useT } from "@/lib/i18n";
+import { Turnstile } from "./Turnstile";
 
 const TYPE_KEYS = [
   "introducer",
@@ -31,6 +32,9 @@ export function Partnerships() {
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [turnstileResetKey, setTurnstileResetKey] = useState(0);
+  const [confirmationSent, setConfirmationSent] = useState(false);
 
   async function submit() {
     if (!consent || !name.trim() || !email.trim() || !partnerType) return;
@@ -51,15 +55,19 @@ export function Partnerships() {
           partnerType,
           message: message.trim(),
           consent: true,
+          turnstileToken,
         }),
       });
       if (!res.ok) throw new Error("fail");
+      const result = (await res.json()) as { confirmationSent: boolean };
+      setConfirmationSent(result.confirmationSent);
       track("partner_form_submitted", { lang });
       setDone(true);
     } catch {
       setError(t(p.error));
     } finally {
       setSubmitting(false);
+      setTurnstileResetKey((value) => value + 1);
     }
   }
 
@@ -135,6 +143,11 @@ export function Partnerships() {
             <div className="glass-card max-w-xl rounded-3xl p-8">
               <h3 className="type-h3 mb-3">{t(p.doneTitle)}</h3>
               <p className="text-muted">{t(p.doneBody)}</p>
+              <p className="mt-3 text-muted">
+                {confirmationSent
+                  ? t(p.doneConfirmationSent)
+                  : t(p.doneConfirmationPending)}
+              </p>
             </div>
           ) : (
             <div className="glass-card max-w-xl rounded-3xl p-7 sm:p-8">
@@ -213,6 +226,11 @@ export function Partnerships() {
                   </Link>
                 </span>
               </label>
+              <Turnstile
+                action="partner"
+                onToken={setTurnstileToken}
+                resetKey={turnstileResetKey}
+              />
               {error ? (
                 <p role="alert" className="mb-4 text-sm text-accent-soft">
                   {error}
