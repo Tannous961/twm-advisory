@@ -6,6 +6,7 @@ import { useEffect, useId, useMemo, useState } from "react";
 import { track } from "@/lib/analytics";
 import {
   computeMaturity,
+  getNeedProfile,
   type DataConstraint,
   type IntentId,
   type OrgSize,
@@ -124,18 +125,18 @@ export function IntakeGame() {
       : null,
   };
 
-  const feedbackItems = maturity.feedbackKeys
-    .map((key) =>
-      key in i.feedback
-        ? t(i.feedback[key as keyof typeof i.feedback])
-        : null,
-    )
-    .filter((item): item is string => !!item);
+  const implication =
+    intent && `intent.${intent}` in i.feedback
+      ? t(i.feedback[`intent.${intent}` as keyof typeof i.feedback])
+      : null;
 
   const offerDescription =
     maturity.entryOffer && maturity.entryOffer in i.offerDescriptions
       ? t(i.offerDescriptions[maturity.entryOffer])
       : null;
+
+  const needProfile = getNeedProfile(maturity.score);
+  const scoreLevel = i.scoreLevels[needProfile];
 
   const contextPanelProps = {
     intent,
@@ -146,12 +147,20 @@ export function IntakeGame() {
     urgencyLabel: probeLabels.urgency,
     dataConstraint,
     dataConstraintLabel: probeLabels.dataConstraint,
-    score: maturity.score,
+    needProfile,
     scoreLabel: t(i.scoreLabel),
+    scoreHint: t(i.scoreHint),
+    scoreTitle: t(scoreLevel.title),
+    scoreBody: t(scoreLevel.body),
+    scoreLevelLabels: {
+      explore: t(i.scoreLevels.explore.title),
+      frame: t(i.scoreLevels.frame.title),
+      execute: t(i.scoreLevels.execute.title),
+    },
     entryOffer: maturity.entryOffer,
     offerLabels,
     offerDescription,
-    feedbackItems,
+    implication,
     feedbackLabel: t(i.feedbackLabel),
     contextTitle: t(i.contextTitle),
     situationLabel: t(i.situationLabel),
@@ -159,6 +168,7 @@ export function IntakeGame() {
     entryLabel: t(i.entryLabel),
     pathLabel: t(i.pathLabel),
     pathEntryHint: t(i.pathEntryHint),
+    recommendedLabel: t(i.recommendedLabel),
     orientationPending: t(i.orientationPending),
     contextPending: t(i.contextPending),
   };

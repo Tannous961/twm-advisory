@@ -4,6 +4,7 @@ import type {
   DataConstraint,
   EntryOffer,
   IntentId,
+  NeedProfile,
   OrgSize,
   Urgency,
 } from "@/lib/intake";
@@ -21,12 +22,16 @@ export function IntakeContextPanel({
   urgencyLabel,
   dataConstraint,
   dataConstraintLabel,
-  score,
+  needProfile,
   scoreLabel,
+  scoreHint,
+  scoreTitle,
+  scoreBody,
+  scoreLevelLabels,
   entryOffer,
   offerLabels,
   offerDescription,
-  feedbackItems,
+  implication,
   feedbackLabel,
   contextTitle,
   situationLabel,
@@ -34,6 +39,7 @@ export function IntakeContextPanel({
   entryLabel,
   pathLabel,
   pathEntryHint,
+  recommendedLabel,
   orientationPending,
   contextPending,
   compact = false,
@@ -46,12 +52,16 @@ export function IntakeContextPanel({
   urgencyLabel: string | null;
   dataConstraint: DataConstraint | null;
   dataConstraintLabel: string | null;
-  score: number;
+  needProfile: NeedProfile;
   scoreLabel: string;
+  scoreHint: string;
+  scoreTitle: string;
+  scoreBody: string;
+  scoreLevelLabels: Record<NeedProfile, string>;
   entryOffer: EntryOffer | null;
   offerLabels: OfferLabels;
   offerDescription: string | null;
-  feedbackItems: string[];
+  implication: string | null;
   feedbackLabel: string;
   contextTitle: string;
   situationLabel: string;
@@ -59,6 +69,7 @@ export function IntakeContextPanel({
   entryLabel: string;
   pathLabel: string;
   pathEntryHint: string;
+  recommendedLabel: string;
   orientationPending: string;
   contextPending: string;
   compact?: boolean;
@@ -122,7 +133,14 @@ export function IntakeContextPanel({
 
           {contextComplete ? (
             <div className="mb-4 border-t border-white/8 pt-4">
-              <ScoreMeter score={score} label={scoreLabel} />
+              <ScoreMeter
+                level={needProfile}
+                label={scoreLabel}
+                hint={scoreHint}
+                title={scoreTitle}
+                body={scoreBody}
+                levelLabels={scoreLevelLabels}
+              />
             </div>
           ) : null}
 
@@ -133,25 +151,17 @@ export function IntakeContextPanel({
                 labels={offerLabels}
                 pathLabel={pathLabel}
                 pathEntryHint={pathEntryHint}
+                recommendedLabel={recommendedLabel}
               />
             </div>
           ) : null}
 
-          {feedbackItems.length > 0 ? (
+          {implication ? (
             <div
               className={`${contextComplete || hasContext ? "mt-5 border-t border-white/8 pt-5" : "border-t border-white/8 pt-4"}`}
             >
-              <p className="mb-3 type-caption text-muted-3">{feedbackLabel}</p>
-              <ul className="space-y-2">
-                {feedbackItems.map((item, index) => (
-                  <li
-                    key={`${index}-${item.slice(0, 24)}`}
-                    className="type-body-sm text-muted before:mr-2 before:text-accent before:content-['·']"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <p className="mb-2 type-caption text-muted-3">{feedbackLabel}</p>
+              <p className="type-body-sm text-muted">{implication}</p>
             </div>
           ) : null}
 

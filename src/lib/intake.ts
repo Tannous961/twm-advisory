@@ -72,6 +72,14 @@ const INTENT_SCORE: Record<IntentId, number> = {
   training: 16,
 };
 
+export type NeedProfile = "explore" | "frame" | "execute";
+
+export function getNeedProfile(score: number): NeedProfile {
+  if (score >= 75) return "execute";
+  if (score >= 55) return "frame";
+  return "explore";
+}
+
 export function computeMaturity(
   intent: IntentId,
   answers: Partial<IntakeAnswers>,

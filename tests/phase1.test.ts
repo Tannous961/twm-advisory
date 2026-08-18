@@ -6,6 +6,7 @@ import {
 } from "../src/lib/security/intake-session";
 import { detectSupportedVideo } from "../src/lib/security/video-validation";
 import { isProfessionalEmail } from "../src/lib/security/professional-email";
+import { getNeedProfile } from "../src/lib/intake";
 import { enforceRateLimit } from "../src/lib/security/request-protection";
 import { withRetry } from "../src/lib/operations";
 
@@ -156,5 +157,16 @@ describe("professional email validation", () => {
     assert.equal(isProfessionalEmail("lead@outlook.fr"), false);
     assert.equal(isProfessionalEmail("lead@orange.fr"), false);
     assert.equal(isProfessionalEmail("not-an-email"), false);
+  });
+});
+
+describe("need profile", () => {
+  it("maps the internal score to a readable preparation level", () => {
+    assert.equal(getNeedProfile(40), "explore");
+    assert.equal(getNeedProfile(54), "explore");
+    assert.equal(getNeedProfile(55), "frame");
+    assert.equal(getNeedProfile(74), "frame");
+    assert.equal(getNeedProfile(75), "execute");
+    assert.equal(getNeedProfile(100), "execute");
   });
 });

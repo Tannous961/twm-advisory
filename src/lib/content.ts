@@ -1032,24 +1032,52 @@ export const content = {
     probeProgress: { fr: "Question", en: "Question" },
     probeProgressOf: { fr: "sur", en: "of" },
     pathEntryHint: {
-      fr: "Le service en surbrillance correspond à votre situation. Les étapes précédentes illustrent le parcours type, pas des prérequis obligatoires.",
-      en: "The highlighted service matches your situation. Earlier steps illustrate a typical path, not mandatory prerequisites.",
+      fr: "Le service recommandé est votre point d'entrée. Les autres restent disponibles selon l'échange.",
+      en: "The recommended service is your entry point. The others remain available depending on the conversation.",
     },
+    recommendedLabel: { fr: "Recommandé", en: "Recommended" },
     orientationPending: {
       fr: "Choisissez votre situation pour afficher une première orientation.",
       en: "Choose your situation to reveal an initial direction.",
     },
     contextPending: {
-      fr: "Répondez aux trois questions pour compléter le contexte et afficher le parcours type.",
-      en: "Answer the three questions to complete your context and reveal the typical path.",
+      fr: "Répondez aux trois questions pour préciser le contexte.",
+      en: "Answer the three questions to refine your context.",
     },
     mapLogic: {
       fr: "Votre situation détermine le service d'entrée. Vos réponses sur l'organisation, l'urgence et les données affinent la préparation du premier échange — elles ne changent pas le type de service proposé.",
       en: "Your situation determines the entry service. Your answers on organization, urgency and data refine preparation for the first conversation — they do not change the type of service suggested.",
     },
     scoreLabel: { fr: "Profil du besoin", en: "Needs profile" },
+    scoreHint: {
+      fr: "Ce n'est pas une note. Il indique le niveau de préparation du premier échange, à partir de votre situation, de l'urgence et du cadre data.",
+      en: "This is not a score. It indicates how prepared the first conversation can be, based on your situation, urgency and data context.",
+    },
+    scoreLevels: {
+      explore: {
+        title: { fr: "Exploration", en: "Exploration" },
+        body: {
+          fr: "Le besoin est encore à clarifier. L'échange portera sur les usages possibles et un premier périmètre réaliste.",
+          en: "The need is still being clarified. The conversation will cover possible use cases and a realistic initial scope.",
+        },
+      },
+      frame: {
+        title: { fr: "Cadrage", en: "Scoping" },
+        body: {
+          fr: "Les priorités sont assez claires. Nous préparerons un périmètre, les contraintes data et un premier plan d'action.",
+          en: "Priorities are reasonably clear. We will prepare a scope, data constraints and an initial action plan.",
+        },
+      },
+      execute: {
+        title: { fr: "Mise en œuvre", en: "Delivery" },
+        body: {
+          fr: "Le contexte est déjà avancé. L'échange visera un premier livrable concret, avec un périmètre limité.",
+          en: "The context is already advanced. The conversation will aim at a concrete first deliverable, with a limited scope.",
+        },
+      },
+    },
     entryLabel: { fr: "Service recommandé", en: "Recommended service" },
-    pathLabel: { fr: "Parcours type TWM", en: "TWM typical path" },
+    pathLabel: { fr: "Nos services", en: "Our services" },
     feedbackLabel: { fr: "Ce que cela implique", en: "What this means" },
     intentTitle: {
       fr: "Où en êtes-vous ?",
