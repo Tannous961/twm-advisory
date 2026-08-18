@@ -1258,13 +1258,21 @@ export const content = {
       en: "Your contact details",
     },
     identityBody: {
-      fr: "Vous recevrez une proposition de créneau sous deux jours ouvrés.",
-      en: "You will receive a proposed time within two business days.",
+      fr: "Indiquez un email professionnel et le nom de votre société. Vous recevrez une proposition de créneau sous deux jours ouvrés.",
+      en: "Enter a professional email and your company name. You will receive a proposed time within two business days.",
     },
     fields: {
       name: { fr: "Prénom", en: "First name" },
-      email: { fr: "Email", en: "Email" },
-      company: { fr: "Société (optionnel)", en: "Company (optional)" },
+      email: { fr: "Email professionnel", en: "Work email" },
+      company: { fr: "Société", en: "Company" },
+    },
+    emailHint: {
+      fr: "Un email d'entreprise est requis (pas Gmail, Outlook, Orange, etc.).",
+      en: "A company email is required (not Gmail, Outlook, Orange, etc.).",
+    },
+    emailPersonalError: {
+      fr: "Utilisez un email professionnel. Les adresses personnelles ne sont pas acceptées.",
+      en: "Use a professional email. Personal addresses are not accepted.",
     },
     doneTitle: {
       fr: "Demande enregistrée.",
@@ -1369,8 +1377,8 @@ export const content = {
       {
         title: { fr: "Données collectées", en: "Data we collect" },
         body: {
-          fr: "Via le questionnaire (/demarrer) : prénom, email, société (optionnelle), réponses, profil du besoin, signal texte ou vidéo, consentement. Via /partenaires : identité, email, société, type de partenariat, message, consentement. Cookies techniques : langue, thème et introduction déjà vue. Cookies de mesure (si acceptés) : Google Tag Manager et Google Analytics 4 (identifiant technique, pages vues et événements de navigation, sans contenu des formulaires comme l'email ou le nom).",
-          en: "Via the questionnaire (/demarrer): first name, email, company (optional), answers, needs profile, text or video response and consent. Via /partenaires: identity, email, company, partnership type, message and consent. Technical cookies: language, theme and introduction status. Measurement cookies (if accepted): Google Tag Manager and Google Analytics 4 (technical ID, page views and navigation events, excluding form contents such as email or name).",
+          fr: "Via le questionnaire (/demarrer) : prénom, email professionnel, société, réponses, profil du besoin, signal texte ou vidéo, consentement. Via /partenaires : identité, email, société, type de partenariat, message, consentement. Cookies techniques : langue, thème et introduction déjà vue. Cookies de mesure (si acceptés) : Google Tag Manager et Google Analytics 4 (identifiant technique, pages vues et événements de navigation, sans contenu des formulaires comme l'email ou le nom).",
+          en: "Via the questionnaire (/demarrer): first name, professional email, company, answers, needs profile, text or video response and consent. Via /partenaires: identity, email, company, partnership type, message and consent. Technical cookies: language, theme and introduction status. Measurement cookies (if accepted): Google Tag Manager and Google Analytics 4 (technical ID, page views and navigation events, excluding form contents such as email or name).",
         },
       },
       {
