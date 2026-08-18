@@ -12,6 +12,7 @@ import {
   type Urgency,
 } from "@/lib/intake";
 import { useI18n, useT } from "@/lib/i18n";
+import { isProfessionalEmail } from "@/lib/security/professional-email";
 import { OperatorPortrait } from "../OperatorPortrait";
 import { Turnstile } from "../Turnstile";
 import { IntakeContextPanel } from "./IntakeContextPanel";
@@ -174,7 +175,11 @@ export function IntakeGame() {
   async function submit() {
     if (!intent || !orgSize || !urgency || !dataConstraint || !maturity.entryOffer)
       return;
-    if (!consent || !name.trim() || !email.trim()) return;
+    if (!consent || !name.trim() || !company.trim()) return;
+    if (!isProfessionalEmail(email.trim())) {
+      setError(t(i.emailPersonalError));
+      return;
+    }
     if (!signalText.trim() && !videoBlob) {
       setError(t(i.error));
       track("intake_error", { reason: "missing_signal", lang });
@@ -227,7 +232,7 @@ export function IntakeGame() {
           entryOffer,
           name: name.trim(),
           email: email.trim(),
-          company: company.trim() || null,
+          company: company.trim(),
           signalText: signalText.trim() || null,
           videoPath,
           consent: true,
@@ -557,6 +562,7 @@ export function IntakeGame() {
                   value={name}
                   onChange={setName}
                   autoComplete="given-name"
+                  required
                 />
                 <Field
                   label={t(i.fields.email)}
@@ -564,12 +570,20 @@ export function IntakeGame() {
                   onChange={setEmail}
                   type="email"
                   autoComplete="email"
+                  required
+                  hint={t(i.emailHint)}
+                  error={
+                    email.trim() && !isProfessionalEmail(email.trim())
+                      ? t(i.emailPersonalError)
+                      : null
+                  }
                 />
                 <Field
                   label={t(i.fields.company)}
                   value={company}
                   onChange={setCompany}
                   autoComplete="organization"
+                  required
                 />
               </div>
               <label className="mb-8 flex cursor-pointer items-start gap-3 type-body-sm text-muted">
@@ -608,7 +622,8 @@ export function IntakeGame() {
                     submitting ||
                     !consent ||
                     !name.trim() ||
-                    !email.trim()
+                    !company.trim() ||
+                    !isProfessionalEmail(email.trim())
                   }
                   onClick={() => void submit()}
                 >
@@ -716,14 +731,22 @@ function Field({
   onChange,
   type = "text",
   autoComplete,
+  required = false,
+  hint,
+  error,
 }: {
   label: string;
   value: string;
   onChange: (v: string) => void;
   type?: string;
   autoComplete?: string;
+  required?: boolean;
+  hint?: string;
+  error?: string | null;
 }) {
   const id = useId();
+  const hintId = hint ? `${id}-hint` : undefined;
+  const errorId = error ? `${id}-error` : undefined;
 
   return (
     <div className="block">
@@ -738,10 +761,22 @@ function Field({
         type={type}
         value={value}
         autoComplete={autoComplete}
-        required={type === "email" || autoComplete === "given-name"}
+        required={required}
+        aria-invalid={error ? true : undefined}
+        aria-describedby={[hintId, errorId].filter(Boolean).join(" ") || undefined}
         onChange={(e) => onChange(e.target.value)}
         className="w-full rounded-2xl border border-white/10 bg-panel px-4 py-3 type-body text-fg focus:border-accent/40"
       />
+      {hint ? (
+        <p id={hintId} className="mt-2 type-caption text-muted-3">
+          {hint}
+        </p>
+      ) : null}
+      {error ? (
+        <p id={errorId} role="alert" className="mt-2 type-caption text-accent-soft">
+          {error}
+        </p>
+      ) : null}
     </div>
   );
 }

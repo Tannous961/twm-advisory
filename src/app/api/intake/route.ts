@@ -22,6 +22,7 @@ import {
   getBearerToken,
   verifyIntakeSession,
 } from "@/lib/security/intake-session";
+import { isProfessionalEmail } from "@/lib/security/professional-email";
 import { enforceRateLimit } from "@/lib/security/request-protection";
 import { getSupabaseAdmin, hasSupabaseAdmin } from "@/lib/supabase/server";
 
@@ -51,8 +52,13 @@ const bodySchema = z.object({
     "training",
   ]),
   name: z.string().trim().min(1).max(120),
-  email: z.string().trim().email().max(200),
-  company: z.string().trim().max(160).nullable(),
+  email: z
+    .string()
+    .trim()
+    .email()
+    .max(200)
+    .refine(isProfessionalEmail, { message: "professional_email_required" }),
+  company: z.string().trim().min(1).max(160),
   signalText: z.string().trim().max(8000).nullable(),
   videoPath: z.string().trim().max(240).nullable(),
   consent: z.literal(true),

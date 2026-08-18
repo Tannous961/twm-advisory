@@ -5,6 +5,7 @@ import {
   verifyIntakeSession,
 } from "../src/lib/security/intake-session";
 import { detectSupportedVideo } from "../src/lib/security/video-validation";
+import { isProfessionalEmail } from "../src/lib/security/professional-email";
 import { enforceRateLimit } from "../src/lib/security/request-protection";
 import { withRetry } from "../src/lib/operations";
 
@@ -144,5 +145,16 @@ describe("request protection fallback", () => {
     assert.deepEqual(second, { ok: true, degraded: true });
     assert.equal(blocked.ok, false);
     if (!blocked.ok) assert.equal(blocked.status, 429);
+  });
+});
+
+describe("professional email validation", () => {
+  it("accepts company domains and rejects consumer inboxes", () => {
+    assert.equal(isProfessionalEmail("tannous@twm.expert"), true);
+    assert.equal(isProfessionalEmail("marie.dupont@cabinet-avocats.fr"), true);
+    assert.equal(isProfessionalEmail("lead@gmail.com"), false);
+    assert.equal(isProfessionalEmail("lead@outlook.fr"), false);
+    assert.equal(isProfessionalEmail("lead@orange.fr"), false);
+    assert.equal(isProfessionalEmail("not-an-email"), false);
   });
 });
