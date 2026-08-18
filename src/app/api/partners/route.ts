@@ -10,6 +10,7 @@ import {
   toProcessingError,
   withRetry,
 } from "@/lib/operations";
+import { isProfessionalEmail } from "@/lib/security/professional-email";
 import {
   enforceRateLimit,
   verifyTurnstile,
@@ -21,8 +22,13 @@ export const runtime = "nodejs";
 const bodySchema = z.object({
   lang: z.enum(["fr", "en"]),
   name: z.string().trim().min(1).max(120),
-  email: z.string().trim().email().max(200),
-  company: z.string().trim().max(160).nullable(),
+  email: z
+    .string()
+    .trim()
+    .email()
+    .max(200)
+    .refine(isProfessionalEmail, { message: "professional_email_required" }),
+  company: z.string().trim().min(1).max(160),
   partnerType: z.enum([
     "introducer",
     "tech",

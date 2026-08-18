@@ -572,6 +572,7 @@ export function IntakeGame() {
                   autoComplete="email"
                   required
                   hint={t(i.emailHint)}
+                  placeholder={t(i.emailPlaceholder)}
                   error={
                     email.trim() && !isProfessionalEmail(email.trim())
                       ? t(i.emailPersonalError)
@@ -734,6 +735,7 @@ function Field({
   required = false,
   hint,
   error,
+  placeholder,
 }: {
   label: string;
   value: string;
@@ -743,6 +745,7 @@ function Field({
   required?: boolean;
   hint?: string;
   error?: string | null;
+  placeholder?: string;
 }) {
   const id = useId();
   const hintId = hint ? `${id}-hint` : undefined;
@@ -755,6 +758,12 @@ function Field({
         className="mb-2 block type-caption text-muted-3"
       >
         {label}
+        {required ? (
+          <span className="text-accent" aria-hidden>
+            {" "}
+            *
+          </span>
+        ) : null}
       </label>
       <input
         id={id}
@@ -762,6 +771,7 @@ function Field({
         value={value}
         autoComplete={autoComplete}
         required={required}
+        placeholder={placeholder}
         aria-invalid={error ? true : undefined}
         aria-describedby={[hintId, errorId].filter(Boolean).join(" ") || undefined}
         onChange={(e) => onChange(e.target.value)}

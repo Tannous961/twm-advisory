@@ -6,6 +6,7 @@ import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
 import { track } from "@/lib/analytics";
 import { useI18n, useT } from "@/lib/i18n";
+import { isProfessionalEmail } from "@/lib/security/professional-email";
 import { Turnstile } from "./Turnstile";
 
 const TYPE_KEYS = [
@@ -38,7 +39,11 @@ export function Partnerships() {
   const [submissionId, setSubmissionId] = useState<string | null>(null);
 
   async function submit() {
-    if (!consent || !name.trim() || !email.trim() || !partnerType) return;
+    if (!consent || !name.trim() || !company.trim() || !partnerType) return;
+    if (!isProfessionalEmail(email.trim())) {
+      setError(t(p.emailPersonalError));
+      return;
+    }
     if (message.trim().length < 20) return;
 
     setSubmitting(true);
@@ -54,7 +59,7 @@ export function Partnerships() {
           lang,
           name: name.trim(),
           email: email.trim(),
-          company: company.trim() || null,
+          company: company.trim(),
           partnerType,
           message: message.trim(),
           consent: true,
@@ -161,6 +166,7 @@ export function Partnerships() {
                   value={name}
                   onChange={setName}
                   autoComplete="given-name"
+                  required
                 />
                 <Field
                   label={t(p.fields.email)}
@@ -168,12 +174,21 @@ export function Partnerships() {
                   onChange={setEmail}
                   type="email"
                   autoComplete="email"
+                  required
+                  hint={t(p.emailHint)}
+                  placeholder={t(p.emailPlaceholder)}
+                  error={
+                    email.trim() && !isProfessionalEmail(email.trim())
+                      ? t(p.emailPersonalError)
+                      : null
+                  }
                 />
                 <Field
                   label={t(p.fields.company)}
                   value={company}
                   onChange={setCompany}
                   autoComplete="organization"
+                  required
                 />
                 <label className="block" htmlFor="partner-type">
                   <span className="mb-2 block type-caption text-muted-3">
@@ -247,7 +262,8 @@ export function Partnerships() {
                   submitting ||
                   !consent ||
                   !name.trim() ||
-                  !email.trim() ||
+                  !company.trim() ||
+                  !isProfessionalEmail(email.trim()) ||
                   !partnerType ||
                   message.trim().length < 20
                 }
@@ -269,14 +285,24 @@ function Field({
   onChange,
   type = "text",
   autoComplete,
+  required = false,
+  hint,
+  error,
+  placeholder,
 }: {
   label: string;
   value: string;
   onChange: (v: string) => void;
   type?: string;
   autoComplete?: string;
+  required?: boolean;
+  hint?: string;
+  error?: string | null;
+  placeholder?: string;
 }) {
   const id = useId();
+  const hintId = hint ? `${id}-hint` : undefined;
+  const errorId = error ? `${id}-error` : undefined;
 
   return (
     <div className="block">
@@ -285,16 +311,35 @@ function Field({
         className="mb-2 block type-caption text-muted-3"
       >
         {label}
+        {required ? (
+          <span className="text-accent" aria-hidden>
+            {" "}
+            *
+          </span>
+        ) : null}
       </label>
       <input
         id={id}
         type={type}
         value={value}
         autoComplete={autoComplete}
-        required={type === "email" || autoComplete === "given-name"}
+        required={required}
+        placeholder={placeholder}
+        aria-invalid={error ? true : undefined}
+        aria-describedby={[hintId, errorId].filter(Boolean).join(" ") || undefined}
         onChange={(e) => onChange(e.target.value)}
         className="w-full rounded-2xl border border-white/10 bg-panel px-4 py-3 type-body text-fg focus:border-accent/40"
       />
+      {hint ? (
+        <p id={hintId} className="mt-2 type-caption text-muted-3">
+          {hint}
+        </p>
+      ) : null}
+      {error ? (
+        <p id={errorId} role="alert" className="mt-2 type-caption text-accent-soft">
+          {error}
+        </p>
+      ) : null}
     </div>
   );
 }
