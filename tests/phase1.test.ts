@@ -5,6 +5,7 @@ import {
   verifyIntakeSession,
 } from "../src/lib/security/intake-session";
 import { detectSupportedVideo } from "../src/lib/security/video-validation";
+import { enforceRateLimit } from "../src/lib/security/request-protection";
 import { withRetry } from "../src/lib/operations";
 
 describe("signed intake sessions", () => {
@@ -103,5 +104,45 @@ describe("external operation retries", () => {
         }, { attempts: 2, delayMs: 1 }),
       /still failing/,
     );
+  });
+});
+
+describe("request protection fallback", () => {
+  it("keeps forms available while enforcing a local limit if the RPC is absent", async () => {
+    const supabase = {
+      rpc: async () => ({
+        data: null,
+        error: { code: "PGRST202" },
+      }),
+    };
+    const request = new Request("https://www.twm.expert/api/test", {
+      headers: { "x-forwarded-for": "192.0.2.44" },
+    });
+    const options = {
+      scope: `test-${crypto.randomUUID()}`,
+      maxRequests: 2,
+      windowSeconds: 60,
+    };
+
+    const first = await enforceRateLimit(
+      supabase as never,
+      request,
+      options,
+    );
+    const second = await enforceRateLimit(
+      supabase as never,
+      request,
+      options,
+    );
+    const blocked = await enforceRateLimit(
+      supabase as never,
+      request,
+      options,
+    );
+
+    assert.deepEqual(first, { ok: true, degraded: true });
+    assert.deepEqual(second, { ok: true, degraded: true });
+    assert.equal(blocked.ok, false);
+    if (!blocked.ok) assert.equal(blocked.status, 429);
   });
 });
