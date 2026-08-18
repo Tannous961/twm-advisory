@@ -273,7 +273,7 @@ export function IntakeGame() {
                       setStep("probes");
                       setProbeIndex(0);
                     }}
-                    className={`glass-card rounded-3xl p-6 text-left transition duration-300 hover:-translate-y-0.5 hover:border-accent/35 ${
+                    className={`glass-card cursor-pointer rounded-3xl p-6 text-left transition duration-300 hover:-translate-y-0.5 hover:border-accent/35 ${
                       intent === id ? "border-accent/40" : ""
                     }`}
                   >
@@ -349,7 +349,7 @@ export function IntakeGame() {
 
               <button
                 type="button"
-                className="mt-8 type-label tracking-[0.12em] text-muted-3"
+                className="mt-8 cursor-pointer type-label tracking-[0.12em] text-muted-3"
                 onClick={() => {
                   if (probeIndex === 0) setStep("intent");
                   else setProbeIndex((n) => n - 1);
@@ -413,7 +413,7 @@ export function IntakeGame() {
                 <button
                   type="button"
                   aria-pressed={signalMode === "video"}
-                  className={`type-label rounded-full px-4 py-2.5 tracking-[0.12em] ${
+                  className={`type-label cursor-pointer rounded-full px-4 py-2.5 tracking-[0.12em] ${
                     signalMode === "video"
                       ? "bg-accent text-ink"
                       : "border border-white/15 text-muted"
@@ -428,7 +428,7 @@ export function IntakeGame() {
                 <button
                   type="button"
                   aria-pressed={signalMode === "text"}
-                  className={`type-label rounded-full px-4 py-2.5 tracking-[0.12em] ${
+                  className={`type-label cursor-pointer rounded-full px-4 py-2.5 tracking-[0.12em] ${
                     signalMode === "text"
                       ? "bg-accent text-ink"
                       : "border border-white/15 text-muted"
@@ -654,7 +654,7 @@ function ProbeCards({
             role="radio"
             aria-checked={selected === opt.key}
             onClick={() => onSelect(opt.key)}
-            className={`type-body rounded-2xl border px-5 py-4 text-left transition hover:border-accent/40 ${
+            className={`type-body cursor-pointer rounded-2xl border px-5 py-4 text-left transition hover:border-accent/40 ${
               selected === opt.key
                 ? "border-accent/50 bg-accent/10 text-fg"
                 : "border-white/10 bg-panel text-muted"

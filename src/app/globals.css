@@ -317,6 +317,7 @@ a:hover {
 
 .btn-primary {
   display: inline-block;
+  cursor: pointer;
   background: var(--accent);
   color: var(--ink) !important;
   font-weight: 600;
@@ -337,8 +338,13 @@ a:hover {
   transform: translateY(-1px);
 }
 
+.btn-primary:disabled {
+  cursor: not-allowed;
+}
+
 .btn-secondary {
   display: inline-block;
+  cursor: pointer;
   background: transparent;
   color: var(--fg) !important;
   font-weight: 500;
@@ -357,6 +363,10 @@ a:hover {
   color: var(--accent-soft) !important;
   background: rgb(var(--accent-rgb) / 0.08);
   transform: translateY(-1px);
+}
+
+.btn-secondary:disabled {
+  cursor: not-allowed;
 }
 
 .glass-card {
