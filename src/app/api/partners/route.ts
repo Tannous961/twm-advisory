@@ -46,8 +46,21 @@ async function retryEmail(
   });
 }
 
+function isMissingHardenedSchema(error: {
+  code?: string;
+  message?: string;
+} | null): boolean {
+  return Boolean(
+    error &&
+      (error.code === "PGRST204" ||
+        error.code === "42703" ||
+        error.message?.includes("submission_id")),
+  );
+}
+
 export async function POST(request: Request) {
   let leadId: string | null = null;
+  let hardenedSchema: boolean | null = null;
 
   try {
     if (!hasSupabaseAdmin()) {
@@ -92,24 +105,42 @@ export async function POST(request: Request) {
       );
     }
 
-    const { data: row, error: insertError } = await supabase
+    const leadPayload = {
+      lang: data.lang,
+      name: data.name,
+      email: data.email,
+      company: data.company,
+      partner_type: data.partnerType,
+      message: data.message,
+      consent_at: new Date().toISOString(),
+      status: "received",
+    };
+    let insertResult = await supabase
       .from("partner_leads")
       .insert({
+        ...leadPayload,
         submission_id: data.submissionId,
-        lang: data.lang,
-        name: data.name,
-        email: data.email,
-        company: data.company,
-        partner_type: data.partnerType,
-        message: data.message,
-        consent_at: new Date().toISOString(),
-        status: "received",
         processing_attempts: 1,
       })
       .select("id")
       .single();
 
-    if (insertError?.code === "23505") {
+    hardenedSchema = true;
+    if (isMissingHardenedSchema(insertResult.error)) {
+      hardenedSchema = false;
+      console.warn(
+        "[partners] hardened schema missing; using compatibility mode",
+      );
+      insertResult = await supabase
+        .from("partner_leads")
+        .insert(leadPayload)
+        .select("id")
+        .single();
+    }
+
+    const { data: row, error: insertError } = insertResult;
+
+    if (hardenedSchema && insertError?.code === "23505") {
       const { data: existing } = await supabase
         .from("partner_leads")
         .select("id, confirmation_status")
@@ -134,10 +165,12 @@ export async function POST(request: Request) {
     }
     leadId = row.id;
 
-    await supabase
-      .from("partner_leads")
-      .update({ status: "processing" })
-      .eq("id", row.id);
+    if (hardenedSchema) {
+      await supabase
+        .from("partner_leads")
+        .update({ status: "processing" })
+        .eq("id", row.id);
+    }
 
     const notifyTo =
       process.env.INTAKE_NOTIFY_EMAIL ||
@@ -199,14 +232,19 @@ export async function POST(request: Request) {
 
     const completed =
       notificationStatus === "sent" && confirmationStatus === "sent";
+    const finalUpdate = hardenedSchema
+      ? {
+          status: completed ? "completed" : "partial",
+          notification_status: notificationStatus,
+          confirmation_status: confirmationStatus,
+          processing_error: processingError,
+        }
+      : {
+          status: notificationStatus === "sent" ? "emailed" : "received",
+        };
     const { error: finalUpdateError } = await supabase
       .from("partner_leads")
-      .update({
-        status: completed ? "completed" : "partial",
-        notification_status: notificationStatus,
-        confirmation_status: confirmationStatus,
-        processing_error: processingError,
-      })
+      .update(finalUpdate)
       .eq("id", row.id);
 
     if (finalUpdateError) {
@@ -223,7 +261,7 @@ export async function POST(request: Request) {
     });
   } catch (err) {
     console.error("[partners]", err);
-    if (leadId && hasSupabaseAdmin()) {
+    if (leadId && hardenedSchema && hasSupabaseAdmin()) {
       await getSupabaseAdmin()
         .from("partner_leads")
         .update({

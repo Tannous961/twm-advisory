@@ -83,8 +83,21 @@ function fallbackBrief(data: z.infer<typeof bodySchema>, score: number): string 
   ].join("\n");
 }
 
+function isMissingHardenedSchema(error: {
+  code?: string;
+  message?: string;
+} | null): boolean {
+  return Boolean(
+    error &&
+      (error.code === "PGRST204" ||
+        error.code === "42703" ||
+        error.message?.includes("submission_session_id")),
+  );
+}
+
 export async function POST(request: Request) {
   let leadId: string | null = null;
+  let hardenedSchema: boolean | null = null;
 
   try {
     if (!hasSupabaseAdmin()) {
@@ -149,28 +162,47 @@ export async function POST(request: Request) {
 
     const consentAt = new Date().toISOString();
 
-    const { data: row, error: insertError } = await supabase
+    const leadPayload = {
+      lang: data.lang,
+      intent: data.intent,
+      answers: data.answers,
+      score: maturity.score,
+      entry_offer: maturity.entryOffer,
+      name: data.name,
+      email: data.email,
+      company: data.company,
+      signal_text: data.signalText,
+      video_path: data.videoPath,
+      consent_at: consentAt,
+      status: "received",
+    };
+
+    let insertResult = await supabase
       .from("intake_leads")
       .insert({
+        ...leadPayload,
         submission_session_id: session.sessionId,
-        lang: data.lang,
-        intent: data.intent,
-        answers: data.answers,
-        score: maturity.score,
-        entry_offer: maturity.entryOffer,
-        name: data.name,
-        email: data.email,
-        company: data.company,
-        signal_text: data.signalText,
-        video_path: data.videoPath,
-        consent_at: consentAt,
-        status: "received",
         processing_attempts: 1,
       })
       .select("id")
       .single();
 
-    if (insertError?.code === "23505") {
+    hardenedSchema = true;
+    if (isMissingHardenedSchema(insertResult.error)) {
+      hardenedSchema = false;
+      console.warn(
+        "[intake] hardened schema missing; using compatibility mode",
+      );
+      insertResult = await supabase
+        .from("intake_leads")
+        .insert(leadPayload)
+        .select("id")
+        .single();
+    }
+
+    const { data: row, error: insertError } = insertResult;
+
+    if (hardenedSchema && insertError?.code === "23505") {
       const { data: existing } = await supabase
         .from("intake_leads")
         .select("id, entry_offer, confirmation_status")
@@ -197,10 +229,12 @@ export async function POST(request: Request) {
     }
     leadId = row.id;
 
-    await supabase
-      .from("intake_leads")
-      .update({ status: "processing" })
-      .eq("id", row.id);
+    if (hardenedSchema) {
+      await supabase
+        .from("intake_leads")
+        .update({ status: "processing" })
+        .eq("id", row.id);
+    }
 
     let videoBytes: Buffer | null = null;
     let videoMime: string | null = null;
@@ -255,13 +289,20 @@ export async function POST(request: Request) {
       });
     }
 
+    const briefUpdate = hardenedSchema
+      ? {
+          transcript,
+          brief_md: briefMd,
+          brief_status: briefStatus,
+        }
+      : {
+          transcript,
+          brief_md: briefMd,
+          status: "briefed",
+        };
     await supabase
       .from("intake_leads")
-      .update({
-        transcript,
-        brief_md: briefMd,
-        brief_status: briefStatus,
-      })
+      .update(briefUpdate)
       .eq("id", row.id);
 
     const notifyTo =
@@ -328,14 +369,19 @@ export async function POST(request: Request) {
       briefStatus === "completed" &&
       notificationStatus === "sent" &&
       confirmationStatus === "sent";
+    const finalUpdate = hardenedSchema
+      ? {
+          status: completed ? "completed" : "partial",
+          notification_status: notificationStatus,
+          confirmation_status: confirmationStatus,
+          processing_error: processingError,
+        }
+      : {
+          status: notificationStatus === "sent" ? "emailed" : "briefed",
+        };
     const { error: finalUpdateError } = await supabase
       .from("intake_leads")
-      .update({
-        status: completed ? "completed" : "partial",
-        notification_status: notificationStatus,
-        confirmation_status: confirmationStatus,
-        processing_error: processingError,
-      })
+      .update(finalUpdate)
       .eq("id", row.id);
 
     if (finalUpdateError) {
@@ -354,7 +400,7 @@ export async function POST(request: Request) {
     });
   } catch (err) {
     console.error("[intake]", err);
-    if (leadId && hasSupabaseAdmin()) {
+    if (leadId && hardenedSchema && hasSupabaseAdmin()) {
       await getSupabaseAdmin()
         .from("intake_leads")
         .update({
