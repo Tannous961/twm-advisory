@@ -1007,10 +1007,38 @@ export const content = {
     submit: { fr: "Envoyer la demande", en: "Send request" },
     submitting: { fr: "Envoi en cours…", en: "Sending…" },
     stepOf: { fr: "Étape", en: "Step" },
+    stepNames: {
+      intent: { fr: "Situation", en: "Situation" },
+      probes: { fr: "Contexte", en: "Context" },
+      map: { fr: "Orientation", en: "Direction" },
+      signal: { fr: "Message", en: "Message" },
+      identity: { fr: "Contact", en: "Contact" },
+    },
+    contextTitle: { fr: "Votre parcours", en: "Your journey" },
+    situationLabel: { fr: "Situation choisie", en: "Selected situation" },
+    contextAnswersLabel: { fr: "Votre contexte", en: "Your context" },
+    probeProgress: { fr: "Question", en: "Question" },
+    probeProgressOf: { fr: "sur", en: "of" },
+    pathEntryHint: {
+      fr: "Le service en surbrillance correspond à votre situation. Les étapes précédentes illustrent le parcours type, pas des prérequis obligatoires.",
+      en: "The highlighted service matches your situation. Earlier steps illustrate a typical path, not mandatory prerequisites.",
+    },
+    orientationPending: {
+      fr: "Choisissez votre situation pour afficher une première orientation.",
+      en: "Choose your situation to reveal an initial direction.",
+    },
+    contextPending: {
+      fr: "Répondez aux trois questions pour compléter le contexte et afficher le parcours type.",
+      en: "Answer the three questions to complete your context and reveal the typical path.",
+    },
+    mapLogic: {
+      fr: "Votre situation détermine le service d'entrée. Vos réponses sur l'organisation, l'urgence et les données affinent la préparation du premier échange — elles ne changent pas le type de service proposé.",
+      en: "Your situation determines the entry service. Your answers on organization, urgency and data refine preparation for the first conversation — they do not change the type of service suggested.",
+    },
     scoreLabel: { fr: "Profil du besoin", en: "Needs profile" },
-    entryLabel: { fr: "Service à envisager", en: "Service to consider" },
-    pathLabel: { fr: "Orientation proposée", en: "Suggested direction" },
-    feedbackLabel: { fr: "Observation", en: "Observation" },
+    entryLabel: { fr: "Service recommandé", en: "Recommended service" },
+    pathLabel: { fr: "Parcours type TWM", en: "TWM typical path" },
+    feedbackLabel: { fr: "Ce que cela implique", en: "What this means" },
     intentTitle: {
       fr: "Où en êtes-vous ?",
       en: "Where are you today?",
@@ -1057,12 +1085,12 @@ export const content = {
       },
     },
     probesTitle: {
-      fr: "Trois questions",
-      en: "Three questions",
+      fr: "Précisez votre contexte",
+      en: "Refine your context",
     },
     probesBody: {
-      fr: "Vos réponses permettent d'affiner l'orientation proposée.",
-      en: "Your answers help refine the suggested direction.",
+      fr: "Ces trois réponses affinent la préparation de l'échange. Elles complètent la situation choisie — elles ne remplacent pas l'orientation initiale.",
+      en: "These three answers refine how we prepare the conversation. They complement your chosen situation — they do not replace the initial direction.",
     },
     probes: {
       orgSize: {
@@ -1092,12 +1120,12 @@ export const content = {
       },
     },
     mapTitle: {
-      fr: "Orientation proposée",
-      en: "Suggested direction",
+      fr: "Votre orientation",
+      en: "Your direction",
     },
     mapBody: {
-      fr: "Cette orientation est indicative et sera confirmée lors du premier échange.",
-      en: "This direction is indicative and will be confirmed during the initial conversation.",
+      fr: "Voici le service que nous recommandons en entrée, compte tenu de votre situation et de votre contexte. Cette proposition est indicative et sera confirmée lors du premier échange.",
+      en: "Here is the service we recommend as an entry point, based on your situation and context. This suggestion is indicative and will be confirmed during the initial conversation.",
     },
     offers: {
       audit: {
@@ -1119,6 +1147,28 @@ export const content = {
       training: {
         fr: "Formation",
         en: "Training",
+      },
+    },
+    offerDescriptions: {
+      audit: {
+        fr: "Identifier et prioriser les premiers usages de l'IA adaptés à votre organisation.",
+        en: "Identify and prioritize the first AI use cases suited to your organization.",
+      },
+      deploy: {
+        fr: "Concevoir et mettre en production une solution sur un cas d'usage identifié.",
+        en: "Design and deploy a solution for an identified use case.",
+      },
+      certify: {
+        fr: "Évaluer des systèmes IA existants avant toute extension ou industrialisation.",
+        en: "Assess existing AI systems before expansion or scale-up.",
+      },
+      advisory: {
+        fr: "Structurer la feuille de route, la gouvernance et le suivi des résultats.",
+        en: "Structure the roadmap, governance and outcome tracking.",
+      },
+      training: {
+        fr: "Former les équipes ou dirigeants à un usage responsable et mesurable de l'IA.",
+        en: "Train teams or leaders in responsible, measurable AI use.",
       },
     },
     feedback: {

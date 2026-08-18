@@ -317,6 +317,7 @@ a:hover {
 
 .btn-primary {
   display: inline-block;
+  cursor: pointer;
   background: var(--accent);
   color: var(--ink) !important;
   font-weight: 600;
@@ -339,6 +340,7 @@ a:hover {
 
 .btn-secondary {
   display: inline-block;
+  cursor: pointer;
   background: transparent;
   color: var(--fg) !important;
   font-weight: 500;
