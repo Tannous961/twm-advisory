@@ -10,14 +10,14 @@ export function Stats() {
   return (
     <Reveal>
       <section className="border-y border-white/7 bg-white/[0.014]">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 sm:grid-cols-3">
           {c.stats.map((stat, i) => (
             <div
               key={i}
               className={`px-5 py-10 sm:px-7 sm:py-12 ${
-                i % 2 === 0 ? "border-r border-white/6" : ""
-              } ${i < 2 ? "border-b border-white/6 lg:border-b-0" : ""} ${
-                i < 3 ? "lg:border-r lg:border-white/6" : ""
+                i < c.stats.length - 1
+                  ? "border-b border-white/6 sm:border-b-0 sm:border-r sm:border-white/6"
+                  : ""
               }`}
             >
               <div className="type-stat text-accent">

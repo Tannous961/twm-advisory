@@ -169,9 +169,9 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
     title: "À propos — Tannous Mekari, fondateur de TWM Advisory",
     titleEn: "About — Tannous Mekari, founder of TWM Advisory",
     description:
-      "Tannous Mekari, président de TWM ADVISORY. 17 années d'expérience en e-commerce, développement d'activités et direction d'équipes.",
+      "Tannous Mekari, président de TWM ADVISORY. 17 années d'expérience en e-commerce, développement d'activités et direction opérationnelle.",
     descriptionEn:
-      "Tannous Mekari, president of TWM ADVISORY. 17 years of experience in e-commerce, business development and team leadership.",
+      "Tannous Mekari, president of TWM ADVISORY. 17 years of experience in e-commerce, business development and operational leadership.",
     keywords: [
       "Tannous Mekari",
       "TWM ADVISORY",
@@ -212,9 +212,9 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
     title: "Contact — tannous@twm.expert",
     titleEn: "Contact — tannous@twm.expert",
     description:
-      "Contactez TWM Advisory en décrivant votre besoin ou en écrivant à tannous@twm.expert. Réponse sous deux jours ouvrés.",
+      "Contactez TWM Advisory en décrivant votre besoin ou en écrivant à tannous@twm.expert. Premier échange de 30 minutes, sans engagement.",
     descriptionEn:
-      "Contact TWM Advisory by describing your needs or emailing tannous@twm.expert. Reply within two business days.",
+      "Contact TWM Advisory by describing your needs or emailing tannous@twm.expert. Initial 30-minute conversation, with no commitment.",
     keywords: ["contact TWM Advisory", "tannous@twm.expert"],
   },
   "mentions-legales": {

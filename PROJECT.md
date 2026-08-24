@@ -113,7 +113,7 @@ Pas de tarifs / durées inventés.
 ```
 Intro → Intention → 3 micro-défis → Carte + score
 → Signal (vidéo 60–90s OU texte) → Identité + consentement
-→ API → Brief IA → Email → Confirmation (créneau sous 48h)
+→ API → Brief IA → Email → Confirmation (créneau proposé par email)
 ```
 
 - Score maturité **déterministe** (`src/lib/intake.ts`)
@@ -238,7 +238,7 @@ flowchart LR
 
 ## 12. Gaps connus / prochaines pistes
 
-- **Calendrier** : créneau toujours manuel (email 48h)
+- **Calendrier** : créneau toujours manuel (proposé par email)
 - **OpenRouter / Resend / Supabase** : clés à renseigner en prod sur Vercel
 - **Mentions légales** : SIREN / RCS intégrés (adresse volontairement omise)
 - **Admin** : lecture leads via Supabase Studio (pas de dashboard custom)
