@@ -178,8 +178,8 @@ export const content = {
       en: "Share your priorities and constraints. Together, we will identify an initial use case suited to your organization.",
     },
     ctaBandNote: {
-      fr: "Réponse sous 48 h ouvrées.",
-      en: "Reply within 2 business days.",
+      fr: "Premier échange de 30 minutes, sans engagement.",
+      en: "Initial 30-minute conversation, with no commitment.",
     },
     marquee: {
       fr: [
@@ -245,11 +245,6 @@ export const content = {
       value: "15",
       suffix: { fr: "", en: "" },
       label: { fr: "agents · architecture TWM", en: "agents · TWM architecture" },
-    },
-    {
-      value: "120",
-      suffix: { fr: "", en: "" },
-      label: { fr: "personnes dirigées", en: "people led" },
     },
     {
       value: "11",
@@ -868,8 +863,8 @@ export const content = {
       en: "Leadership, operations and digital transformation",
     },
     p1: {
-      fr: "Tannous Mekari accompagne les organisations dans l'identification, la conception et le déploiement de solutions IA. Son parcours comprend 17 années d'expérience en e-commerce, développement d'activités et direction d'équipes.",
-      en: "Tannous Mekari helps organizations identify, design and deploy AI solutions. His background includes 17 years of experience in e-commerce, business development and team leadership.",
+      fr: "Tannous Mekari accompagne les organisations dans l'identification, la conception et le déploiement de solutions IA. Son parcours mêle 17 années d'expérience en e-commerce, développement d'activités et direction opérationnelle.",
+      en: "Tannous Mekari helps organizations identify, design and deploy AI solutions. His background spans 17 years in e-commerce, business development and operational leadership.",
     },
     p2: {
       fr: "Il travaille en français, en anglais et en arabe, à l'interface entre stratégie, opérations et mise en œuvre.",
@@ -881,8 +876,8 @@ export const content = {
     },
     metrics: [
       {
-        value: "120",
-        label: { fr: "personnes dirigées", en: "people led" },
+        value: "17",
+        label: { fr: "ans d'expérience", en: "years of experience" },
       },
       {
         value: "11",
@@ -978,8 +973,8 @@ export const content = {
     cta: { fr: "Décrire votre besoin", en: "Describe your needs" },
     secondary: { fr: "Écrire un email", en: "Send an email" },
     note: {
-      fr: "Réponse sous 48 h ouvrées.",
-      en: "Reply within 2 business days.",
+      fr: "Premier échange de 30 minutes, sans engagement.",
+      en: "Initial 30-minute conversation, with no commitment.",
     },
   },
   signal: {
