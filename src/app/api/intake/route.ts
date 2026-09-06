@@ -97,8 +97,36 @@ function isMissingHardenedSchema(error: {
     error &&
       (error.code === "PGRST204" ||
         error.code === "42703" ||
-        error.message?.includes("submission_session_id")),
+        error.message?.includes("submission_session_id") ||
+        error.message?.includes("processing_attempts")),
   );
+}
+
+function leadInsertHint(error: {
+  code?: string;
+  message?: string;
+} | null): string {
+  const code = error?.code ?? "";
+  const message = (error?.message ?? "").toLowerCase();
+
+  if (code === "42P01" || message.includes("does not exist")) {
+    return "Apply supabase/migrations in order (intake_leads table is missing).";
+  }
+  if (code === "42501" || message.includes("row-level security")) {
+    return "Check SUPABASE_SERVICE_ROLE_KEY (must be the service_role secret, not the anon key).";
+  }
+  if (
+    code === "PGRST204" ||
+    code === "42703" ||
+    message.includes("column") ||
+    message.includes("schema cache")
+  ) {
+    return "Schema drift: apply 20260817123543_harden_lead_pipeline.sql then reload the PostgREST schema cache.";
+  }
+  if (code === "23514") {
+    return "A check constraint rejected the row (often status values). Apply the harden migration status checks.";
+  }
+  return "Inspect Vercel logs for [intake] insert and verify Supabase migrations are applied.";
 }
 
 export async function POST(request: Request) {
@@ -229,7 +257,11 @@ export async function POST(request: Request) {
     if (insertError || !row) {
       console.error("[intake] insert", insertError);
       return NextResponse.json(
-        { error: "Could not save lead" },
+        {
+          error: "Could not save lead",
+          code: insertError?.code ?? "unknown",
+          hint: leadInsertHint(insertError),
+        },
         { status: 500 },
       );
     }

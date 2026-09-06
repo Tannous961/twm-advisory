@@ -238,11 +238,11 @@ flowchart LR
 
 ## 12. Gaps connus / prochaines pistes
 
-- **Calendrier** : créneau toujours manuel (proposé par email)
+- **Calendrier** : Calendly après `/demarrer` (voir branche booking) — encore manuel sur main si non mergé
 - **OpenRouter / Resend / Supabase** : clés à renseigner en prod sur Vercel
+- **Migrations Supabase** : obligatoires en prod — sans `intake_leads`, `/api/intake` renvoie 500 `Could not save lead`
 - **Mentions légales** : SIREN / RCS intégrés (adresse volontairement omise)
 - **Admin** : lecture leads via Supabase Studio (pas de dashboard custom)
-- **Anti-spam** : pas encore de rate limiting sur les APIs
 
 ---
 
@@ -250,7 +250,7 @@ flowchart LR
 
 1. Domaine live : `https://www.twm.expert`
 2. Env Vercel : `NEXT_PUBLIC_SITE_URL=https://www.twm.expert` + Supabase + Resend + OpenRouter
-3. Appliquer les 2 migrations SQL
+3. Appliquer les 3 migrations SQL (`intake_leads`, `partner_leads`, harden pipeline)
 4. Tester `/demarrer` bout-en-bout (texte puis vidéo)
 5. Tester `/partenaires` formulaire
 6. Vérifier email reçu sur `INTAKE_NOTIFY_EMAIL`
