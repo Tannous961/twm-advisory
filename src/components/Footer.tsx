@@ -4,17 +4,19 @@ import Link from "next/link";
 import { useI18n, useT } from "@/lib/i18n";
 
 const product = [
-  { href: "/approche", key: "approach" as const },
-  { href: "/offres", key: "offers" as const },
+  { href: "/performance", key: "offers" as const },
+  { href: "/methode", key: "approach" as const },
+  { href: "/impact", key: "impact" as const },
+  { href: "/technology", key: "architecture" as const },
   { href: "/signal", key: "signal" as const },
   { href: "/partenaires", key: "partners" as const },
-  { href: "/architecture", key: "architecture" as const },
 ];
 
 const company = [
   { href: "/a-propos", key: "about" as const },
   { href: "/faq", key: "faq" as const },
-  { href: "/demarrer", key: "contact" as const },
+  { href: "/contact", key: "contact" as const },
+  { href: "/demarrer", key: "cta" as const },
 ];
 
 export function Footer() {

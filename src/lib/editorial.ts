@@ -186,28 +186,28 @@ export const homeEditorial = {
       },
       body: {
         fr: "Une dépense qui se répète. Un processus qui ralentit la facturation. Des experts absorbés par l'administratif. Nous partons de ces situations pour établir un potentiel économique, puis décider ce qui mérite d'être exécuté.",
-        en: "A recurring expense. A process that slows billing. Experts absorbed by administration. We start from these situations to establish economic potential, then decide what deserves execution.",
+        en: "A recurring expense. A process that slows billing. Experts absorbed by admin work. We start from these situations to establish economic potential, then decide what deserves to be executed.",
       },
       cards: [
         {
           id: "couts-maitrises",
-          title: { fr: "Coûts maîtrisés", en: "Costs under control" },
+          title: { fr: "Coûts maîtrisés", en: "Controlled costs" },
           body: {
             fr: "Rationaliser les outils, les prestations et les opérations redondantes. Mesurer les dépenses réellement évitées.",
-            en: "Rationalize tools, services and redundant operations. Measure spend that is actually avoided.",
+            en: "Rationalize tools, services and redundant operations. Measure spend actually avoided.",
           },
         },
         {
           id: "capacite-retrouvee",
-          title: { fr: "Capacité retrouvée", en: "Capacity reclaimed" },
+          title: { fr: "Capacité retrouvée", en: "Capacity recovered" },
           body: {
             fr: "Réduire les reprises et les tâches de préparation. Relier le temps libéré à une utilisation concrète.",
-            en: "Reduce rework and preparation tasks. Tie freed time to a concrete use.",
+            en: "Reduce rework and preparation tasks. Tie freed time to concrete use.",
           },
         },
         {
           id: "marge-protegee",
-          title: { fr: "Marge protégée", en: "Margin protected" },
+          title: { fr: "Marge protégée", en: "Protected margin" },
           body: {
             fr: "Identifier les prestations non facturées, les remises mal contrôlées et les coûts de traitement qui érodent la rentabilité.",
             en: "Identify unbilled work, poorly controlled discounts and processing costs that erode profitability.",
@@ -264,11 +264,11 @@ export const homeEditorial = {
       label: { fr: "La mesure", en: "Measurement" },
       title: {
         fr: "Des gains qualifiés, avant d'être annoncés.",
-        en: "Gains qualified before they are claimed.",
+        en: "Qualified gains, before they are announced.",
       },
       body: {
         fr: "Une heure libérée, une facture réduite et un encaissement accéléré n'ont pas le même effet économique. Nous suivons séparément la capacité, les économies, la marge et la trésorerie.",
-        en: "A freed hour, a reduced invoice and faster collection do not have the same economic effect. We track capacity, savings, margin and cash separately.",
+        en: "A freed hour, a reduced invoice and faster cash collection do not have the same economic effect. We track capacity, savings, margin and cash separately.",
       },
       cards: [
         {
@@ -279,7 +279,7 @@ export const homeEditorial = {
           },
           body: {
             fr: "Selon le périmètre, notre rémunération associe un socle fixe et une part liée aux gains validés. Les règles de calcul sont convenues avant l'exécution.",
-            en: "Depending on scope, our fees combine a fixed base and a share tied to validated gains. Calculation rules are agreed before execution.",
+            en: "Depending on scope, our fees combine a fixed base and a share linked to validated gains. Calculation rules are agreed before execution.",
           },
         },
       ] as Card[],
@@ -301,7 +301,7 @@ export const homeEditorial = {
       },
       body: {
         fr: "Processus, software, automatisation, IA et accompagnement des équipes : nous retenons les moyens adaptés au problème, aux données et aux contraintes de votre organisation.",
-        en: "Process, software, automation, AI and team support: we select the means suited to the problem, the data and your organization's constraints.",
+        en: "Process, software, automation, AI and team support: we select means suited to the problem, the data and your organization's constraints.",
       },
       cta: {
         label: { fr: "Explorer Performance OS", en: "Explore Performance OS" },
@@ -311,14 +311,14 @@ export const homeEditorial = {
     {
       id: "terrain",
       index: "05",
-      label: { fr: "Le terrain", en: "On the ground" },
+      label: { fr: "Le terrain", en: "The field" },
       title: {
         fr: "Une expérience de direction et d'opérations.",
         en: "Leadership and operations experience.",
       },
       body: {
         fr: "Fondé par Tannous Mekari, TWM Advisory relie stratégie, opérations et mise en œuvre. Votre interlocuteur pilote la mission et mobilise des spécialistes lorsque le périmètre l'exige.",
-        en: "Founded by Tannous Mekari, TWM Advisory connects strategy, operations and delivery. Your counterpart leads the engagement and brings in specialists when the scope requires it.",
+        en: "Founded by Tannous Mekari, TWM Advisory connects strategy, operations and delivery. Your counterpart leads the engagement and brings in specialists when scope requires it.",
       },
       cta: {
         label: { fr: "Rencontrer TWM", en: "Meet TWM" },
@@ -331,11 +331,11 @@ export const homeEditorial = {
       label: { fr: "Les leviers", en: "The levers" },
       title: {
         fr: "Des situations que vos équipes connaissent.",
-        en: "Situations your teams recognize.",
+        en: "Situations your teams already know.",
       },
       body: {
         fr: "Exemples illustratifs de mécanismes d'amélioration. Leur potentiel doit être établi sur vos données.",
-        en: "Illustrative examples of improvement mechanisms. Their potential must be established on your data.",
+        en: "Illustrative improvement mechanisms. Their potential must be established on your data.",
       },
       cards: [
         {
@@ -346,7 +346,7 @@ export const homeEditorial = {
           },
           body: {
             fr: "Des abonnements se cumulent, avec des usages partiels et des fonctions qui se recouvrent.",
-            en: "Subscriptions accumulate, with partial usage and overlapping features.",
+            en: "Subscriptions stack up, with partial usage and overlapping features.",
           },
         },
         {
@@ -815,10 +815,11 @@ export const technologyPage = {
 } as const;
 
 // ---------------------------------------------------------------------------
-// /a-propos
+// /a-propos — shapes consumed by About.tsx
 // ---------------------------------------------------------------------------
 
 export const aboutPage = {
+  eyebrow: { fr: "À propos", en: "About" } as L,
   leadTitle: {
     fr: "Une approche de dirigeant. Une discipline d'exécution.",
     en: "A leadership approach. An execution discipline.",
@@ -829,22 +830,48 @@ export const aboutPage = {
   } as L,
   founder: {
     title: { fr: "Tannous Mekari", en: "Tannous Mekari" } as L,
-    body: {
-      fr: "Le parcours de Tannous Mekari associe 17 années d'expérience en e-commerce, développement d'activités et direction opérationnelle. Il travaille en français, en anglais et en arabe. Cette expérience nourrit une conviction : une transformation se juge dans le fonctionnement de l'entreprise, la qualité du service et ses effets économiques. Le fondateur reste votre interlocuteur pour la relation client, les validations et les arbitrages de la mission. Des spécialistes peuvent être mobilisés lorsque le périmètre requiert une expertise complémentaire.",
-      en: "Tannous Mekari's path combines 17 years in e-commerce, business development and operational leadership. He works in French, English and Arabic. That experience feeds a conviction: a transformation is judged in how the business runs, service quality and economic effects. The founder remains your counterpart for the client relationship, validations and mission arbitrations. Specialists can be brought in when the scope requires complementary expertise.",
-    } as L,
+    body: [
+      {
+        fr: "Le parcours de Tannous Mekari associe 17 années d'expérience en e-commerce, développement d'activités et direction opérationnelle. Il travaille en français, en anglais et en arabe.",
+        en: "Tannous Mekari's path combines 17 years in e-commerce, business development and operational leadership. He works in French, English and Arabic.",
+      },
+      {
+        fr: "Cette expérience nourrit une conviction : une transformation se juge dans le fonctionnement de l'entreprise, la qualité du service et ses effets économiques.",
+        en: "That experience feeds a conviction: a transformation is judged in how the business runs, service quality and economic effects.",
+      },
+      {
+        fr: "Le fondateur reste votre interlocuteur pour la relation client, les validations et les arbitrages de la mission. Des spécialistes peuvent être mobilisés lorsque le périmètre requiert une expertise complémentaire.",
+        en: "The founder remains your counterpart for the client relationship, validations and mission arbitrations. Specialists can be brought in when the scope requires complementary expertise.",
+      },
+    ] as L[],
   },
+  metrics: [
+    {
+      value: "17",
+      label: { fr: "ans d'expérience", en: "years of experience" },
+    },
+    {
+      value: "3",
+      label: { fr: "langues de travail", en: "working languages" },
+    },
+  ] as { value: string; label: L }[],
   partner: {
     title: {
       fr: "Un partenaire engagé dans la réalisation.",
       en: "A partner committed to delivery.",
     } as L,
-    body: {
-      fr: "Nous rapprochons le diagnostic, les choix de moyens et la mise en œuvre. Notre rôle est de rendre une amélioration possible, de la conduire avec vos équipes et de documenter ce qu'elle produit. Un Operating Performance Partner travaille avec la direction sur un objectif économique et reste impliqué dans son exécution. Le terme décrit notre mode d'intervention ; il ne désigne ni une prise de participation ni un mandat de gestion.",
-      en: "We connect diagnosis, choice of means and implementation. Our role is to make an improvement possible, lead it with your teams and document what it produces. An Operating Performance Partner works with leadership on an economic objective and stays involved in execution. The term describes our mode of engagement; it does not mean an equity stake or a management mandate.",
-    } as L,
+    body: [
+      {
+        fr: "Nous rapprochons le diagnostic, les choix de moyens et la mise en œuvre. Notre rôle est de rendre une amélioration possible, de la conduire avec vos équipes et de documenter ce qu'elle produit.",
+        en: "We connect diagnosis, choice of means and implementation. Our role is to make an improvement possible, lead it with your teams and document what it produces.",
+      },
+      {
+        fr: "Un Operating Performance Partner travaille avec la direction sur un objectif économique et reste impliqué dans son exécution. Le terme décrit notre mode d'intervention ; il ne désigne ni une prise de participation ni un mandat de gestion.",
+        en: "An Operating Performance Partner works with leadership on an economic objective and stays involved in execution. The term describes our mode of engagement; it does not mean an equity stake or a management mandate.",
+      },
+    ] as L[],
   },
-  valuesTitle: {
+  valuesIntro: {
     fr: "Clarté dans les objectifs. Rigueur dans les preuves.",
     en: "Clarity in objectives. Rigor in evidence.",
   } as L,
@@ -879,15 +906,23 @@ export const aboutPage = {
       fr: "Les organisations où le temps expert et la qualité comptent.",
       en: "Organizations where expert time and quality matter.",
     } as L,
-    body: {
-      fr: "Directions de PME, entreprises de services, cabinets de conseil, professions du chiffre et du droit : le point commun est une activité où la capacité, la fiabilité et la marge dépendent directement des opérations. Le périmètre et les contrôles tiennent compte des obligations propres à chaque métier. Les décisions professionnelles qui exigent un jugement expert restent validées par les personnes habilitées.",
-      en: "SME leadership teams, service businesses, consulting firms, accounting and legal professions: the common thread is activity where capacity, reliability and margin depend directly on operations. Scope and controls account for each profession's obligations. Professional decisions that require expert judgment remain validated by authorized people.",
-    } as L,
+    body: [
+      {
+        fr: "Directions de PME, entreprises de services, cabinets de conseil, professions du chiffre et du droit : le point commun est une activité où la capacité, la fiabilité et la marge dépendent directement des opérations.",
+        en: "SME leadership teams, service businesses, consulting firms, accounting and legal professions: the common thread is activity where capacity, reliability and margin depend directly on operations.",
+      },
+      {
+        fr: "Le périmètre et les contrôles tiennent compte des obligations propres à chaque métier. Les décisions professionnelles qui exigent un jugement expert restent validées par les personnes habilitées.",
+        en: "Scope and controls account for each profession's obligations. Professional decisions that require expert judgment remain validated by authorized people.",
+      },
+    ] as L[],
   },
   cta: {
-    label: { fr: "Échanger avec TWM", en: "Talk with TWM" },
-    href: "/contact",
-  } as Cta,
+    primary: {
+      label: { fr: "Échanger avec TWM", en: "Talk with TWM" },
+      href: "/contact",
+    },
+  },
 } as const;
 
 // ---------------------------------------------------------------------------
@@ -904,7 +939,7 @@ export const impactCases: ImpactCase[] = [
     },
     situation: {
       fr: "Des abonnements se cumulent, avec des usages partiels et des fonctions qui se recouvrent.",
-      en: "Subscriptions accumulate, with partial usage and overlapping features.",
+      en: "Subscriptions stack up, with partial usage and overlapping features.",
     },
     intervention: {
       fr: "Cartographier contrats, usages et dépendances. Décider des suppressions, consolidations et renégociations, puis accompagner la transition.",
@@ -912,7 +947,7 @@ export const impactCases: ImpactCase[] = [
     },
     measure: {
       fr: "Dépenses réellement supprimées sur la période, nettes des coûts de sortie, de migration et des nouveaux outils.",
-      en: "Spend actually removed over the period, net of exit, migration and replacement-tool costs.",
+      en: "Spend actually removed over the period, net of exit, migration and replacement tool costs.",
     },
     proofs: {
       fr: "Contrats, factures, données d'usage et validation finance.",
@@ -920,14 +955,14 @@ export const impactCases: ImpactCase[] = [
     },
     attention: {
       fr: "Maintenir les fonctions critiques et intégrer les engagements contractuels. Une économie annualisée n'est pas une économie déjà réalisée.",
-      en: "Keep critical functions and account for contractual commitments. An annualized saving is not a saving already realized.",
+      en: "Keep critical functions and respect contractual commitments. An annualized saving is not a realized saving.",
     },
     cta: {
       label: {
         fr: "Ce levier existe-t-il chez vous ?",
         en: "Does this lever exist in your organization?",
       },
-      href: "/contact",
+      href: "/demarrer",
     },
   },
   {
@@ -962,7 +997,7 @@ export const impactCases: ImpactCase[] = [
         fr: "Ce levier existe-t-il chez vous ?",
         en: "Does this lever exist in your organization?",
       },
-      href: "/contact",
+      href: "/demarrer",
     },
   },
   {
@@ -982,11 +1017,11 @@ export const impactCases: ImpactCase[] = [
     },
     measure: {
       fr: "Contribution incrémentale des prestations éligibles facturées, après coûts associés ; encaissement suivi séparément.",
-      en: "Incremental contribution from eligible billed work, after related costs; collections tracked separately.",
+      en: "Incremental contribution from eligible billed items after related costs; cash collection tracked separately.",
     },
     proofs: {
       fr: "Contrats, relevés d'activité, factures, avoirs et rapprochement financier.",
-      en: "Contracts, activity records, invoices, credit notes and financial reconciliation.",
+      en: "Contracts, activity logs, invoices, credit notes and financial reconciliation.",
     },
     attention: {
       fr: "Vérifier l'éligibilité contractuelle. Éviter de compter deux fois un même gain dans les revenus et la trésorerie.",
@@ -997,7 +1032,7 @@ export const impactCases: ImpactCase[] = [
         fr: "Ce levier existe-t-il chez vous ?",
         en: "Does this lever exist in your organization?",
       },
-      href: "/contact",
+      href: "/demarrer",
     },
   },
   {
@@ -1032,7 +1067,7 @@ export const impactCases: ImpactCase[] = [
         fr: "Ce levier existe-t-il chez vous ?",
         en: "Does this lever exist in your organization?",
       },
-      href: "/contact",
+      href: "/demarrer",
     },
   },
   {
@@ -1040,11 +1075,11 @@ export const impactCases: ImpactCase[] = [
     category: { fr: "Coûts", en: "Costs" },
     title: {
       fr: "Réduire les prestations récurrentes évitables",
-      en: "Reduce avoidable recurring external work",
+      en: "Reduce avoidable recurring external services",
     },
     situation: {
       fr: "Des travaux récurrents sont externalisés alors qu'une partie pourrait être simplifiée ou réalisée avec les moyens internes.",
-      en: "Recurring work is outsourced when part of it could be simplified or handled with internal means.",
+      en: "Recurring work is outsourced while part of it could be simplified or handled internally.",
     },
     intervention: {
       fr: "Analyser les missions, distinguer expertise indispensable et tâches répétitives, puis organiser une reprise limitée avec transfert de compétences.",
@@ -1056,18 +1091,18 @@ export const impactCases: ImpactCase[] = [
     },
     proofs: {
       fr: "Factures, périmètres de prestation, charge interne et validation des responsables.",
-      en: "Invoices, service scopes, internal workload and owner validation.",
+      en: "Invoices, service scopes, internal load and owner validation.",
     },
     attention: {
       fr: "Conserver les compétences, responsabilités et indépendances requises. Une charge déplacée n'est pas nécessairement une économie.",
-      en: "Preserve required skills, responsibilities and independence. Shifted workload is not necessarily a saving.",
+      en: "Preserve required skills, responsibilities and independence. Shifted load is not necessarily a saving.",
     },
     cta: {
       label: {
         fr: "Ce levier existe-t-il chez vous ?",
         en: "Does this lever exist in your organization?",
       },
-      href: "/contact",
+      href: "/demarrer",
     },
   },
   {
@@ -1083,15 +1118,15 @@ export const impactCases: ImpactCase[] = [
     },
     intervention: {
       fr: "Clarifier les étapes, les responsabilités et les pièces attendues. Automatiser les rappels utiles et suivre les exceptions.",
-      en: "Clarify steps, ownership and required documents. Automate useful reminders and track exceptions.",
+      en: "Clarify steps, responsibilities and required inputs. Automate useful reminders and track exceptions.",
     },
     measure: {
       fr: "Délai de cycle, dossiers en attente, taux de reprise et délai d'encaissement.",
-      en: "Cycle time, files waiting, rework rate and collection delay.",
+      en: "Cycle time, files waiting, rework rate and cash collection delay.",
     },
     proofs: {
       fr: "Horodatages métier, données de facturation et encaissements rapprochés.",
-      en: "Business timestamps, billing data and reconciled collections.",
+      en: "Operational timestamps, billing data and reconciled collections.",
     },
     attention: {
       fr: "Un encaissement plus rapide améliore la trésorerie ; il n'augmente pas mécaniquement l'EBITDA.",
@@ -1102,7 +1137,7 @@ export const impactCases: ImpactCase[] = [
         fr: "Ce levier existe-t-il chez vous ?",
         en: "Does this lever exist in your organization?",
       },
-      href: "/contact",
+      href: "/demarrer",
     },
   },
 ];
@@ -1116,7 +1151,7 @@ export function getAllImpactSlugs(): string[] {
 }
 
 // ---------------------------------------------------------------------------
-// /contact
+// /contact — shapes consumed by Contact.tsx
 // ---------------------------------------------------------------------------
 
 export const contactPage = {
@@ -1128,27 +1163,38 @@ export const contactPage = {
     fr: "Un premier échange de 30 minutes pour comprendre votre situation, identifier un périmètre et décider si un Performance Scan est pertinent.",
     en: "A 30-minute first conversation to understand your situation, identify a scope and decide whether a Performance Scan is relevant.",
   } as L,
-  formTitle: {
-    fr: "Une priorité suffit.",
-    en: "One priority is enough.",
+  fieldsNote: {
+    fr: "Nom · Email professionnel · Organisation · Votre priorité économique · Disponibilités facultatives.",
+    en: "Name · Professional email · Organization · Your economic priority · Optional availability.",
   } as L,
-  formBody: {
-    fr: "À l'issue de l'échange : un premier périmètre à examiner, les informations nécessaires et une décision sur la suite à donner. Pour préparer la discussion : la friction principale, l'équipe concernée et l'échéance de votre décision. Aucun document confidentiel n'est nécessaire à ce stade.",
-    en: "After the conversation: an initial scope to examine, the information needed and a decision on next steps. To prepare: the main friction, the team involved and your decision deadline. No confidential documents are needed at this stage.",
+  outcome: {
+    fr: "À l'issue de l'échange : un premier périmètre à examiner, les informations nécessaires et une décision sur la suite à donner.",
+    en: "After the conversation: an initial scope to examine, the information needed and a decision on next steps.",
+  } as L,
+  prep: {
+    fr: "Pour préparer la discussion : la friction principale, l'équipe concernée et l'échéance de votre décision. Aucun document confidentiel n'est nécessaire à ce stade.",
+    en: "To prepare the discussion: the main friction, the team involved and your decision deadline. No confidential documents are needed at this stage.",
   } as L,
   note: {
     fr: "Premier échange de 30 minutes, sans engagement.",
     en: "Initial 30-minute conversation, with no commitment.",
   } as L,
-  followUpTitle: {
+  email: {
+    fr: "tannous@twm.expert",
+    en: "tannous@twm.expert",
+  } as L,
+  noAutoSend: {
+    fr: "Version préparée : Préparer mon message → relire → Ouvrir ma messagerie. Aucun envoi automatique.",
+    en: "Prepared version: Draft my message → review → Open my mailbox. No automatic send.",
+  } as L,
+  altTitle: {
     fr: "Un diagnostic ciblé, si le potentiel le justifie.",
     en: "A focused diagnosis, if the potential warrants it.",
   } as L,
-  followUpBody: {
+  altBody: {
     fr: "Nous précisons ensemble le périmètre, les données et les interlocuteurs. Une proposition décrit ensuite le diagnostic, ses honoraires et la décision attendue. L'exécution fait l'objet d'un accord distinct.",
     en: "Together we clarify scope, data and counterparts. A proposal then describes the diagnosis, its fees and the expected decision. Execution is covered by a separate agreement.",
   } as L,
-  email: "tannous@twm.expert",
 } as const;
 
 // ---------------------------------------------------------------------------

@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getAllImpactSlugs } from "@/lib/editorial";
 import { getAllSignalSlugs, getSignalPost } from "@/lib/signal";
 import { siteConfig, sitemapEntries } from "@/lib/seo";
 
@@ -25,6 +26,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: languageAlternates(entry.path),
   }));
 
+  const impact = getAllImpactSlugs().map((slug) => ({
+    url: `${siteConfig.url}/impact/${slug}`,
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+    alternates: languageAlternates(`/impact/${slug}`),
+  }));
+
   const posts = getAllSignalSlugs().map((slug) => {
     const post = getSignalPost(slug)!;
     return {
@@ -36,5 +45,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
-  return [...base, ...posts];
+  return [...base, ...impact, ...posts];
 }

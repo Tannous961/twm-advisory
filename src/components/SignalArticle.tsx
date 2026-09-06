@@ -62,14 +62,21 @@ export function SignalArticle({ post }: { post: SignalPost }) {
         </div>
 
         <div className="mx-auto mb-14 max-w-2xl space-y-5">
-          {post.body[lang].map((paragraph, i) => (
-            <p
-              key={i}
-              className="type-lead text-muted"
-            >
-              {paragraph}
-            </p>
-          ))}
+          {post.body[lang].map((paragraph, i) => {
+            const isHeading = !/[.?!…]$/.test(paragraph.trim());
+            return (
+              <p
+                key={i}
+                className={
+                  isHeading
+                    ? "type-h3 pt-2 text-fg first:pt-0"
+                    : "type-lead text-muted"
+                }
+              >
+                {paragraph}
+              </p>
+            );
+          })}
         </div>
 
         <div className="relative overflow-hidden rounded-[2rem] border border-[color:var(--line)] bg-panel px-6 py-10 text-center sm:px-10 sm:py-12">

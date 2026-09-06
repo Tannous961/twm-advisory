@@ -50,13 +50,22 @@ export function CtaBand() {
             <p className="type-lead mx-auto mt-6 max-w-xl text-pretty text-white/75">
               {t(c.home.ctaBandBody)}
             </p>
-            <Link
-              href="/demarrer"
-              className="btn-primary mt-10 inline-block rounded-full px-8 py-4 sm:py-4.5"
-              onClick={() => track("cta_click", { location: "cta_band" })}
-            >
-              {t(c.hero.ctaPrimary)}
-            </Link>
+            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
+              <Link
+                href="/demarrer"
+                className="btn-primary inline-block rounded-full px-8 py-4 sm:py-4.5"
+                onClick={() => track("cta_click", { location: "cta_band" })}
+              >
+                {t(c.hero.ctaPrimary)}
+              </Link>
+              <Link
+                href="/impact"
+                className="btn-secondary inline-block rounded-full border-white/20 bg-black/20 px-8 py-4 text-fg backdrop-blur-md sm:py-4.5"
+                onClick={() => track("cta_click", { location: "cta_band_impact" })}
+              >
+                {t(c.hero.ctaSecondary)}
+              </Link>
+            </div>
             <p className="type-label mt-6 tracking-[0.1em] text-white/50">
               {t(c.home.ctaBandNote)}
             </p>
