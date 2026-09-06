@@ -971,6 +971,7 @@ export const content = {
       en: "Briefly describe your needs, constraints and expected outcome. The initial conversation lasts 30 minutes and carries no commitment.",
     },
     cta: { fr: "Décrire votre besoin", en: "Describe your needs" },
+    book: { fr: "Réserver un créneau", en: "Book a time" },
     secondary: { fr: "Écrire un email", en: "Send an email" },
     note: {
       fr: "Premier échange de 30 minutes, sans engagement.",
@@ -1293,8 +1294,8 @@ export const content = {
       en: "Your contact details",
     },
     identityBody: {
-      fr: "Indiquez un email professionnel et le nom de votre société. Vous recevrez une proposition de créneau sous deux jours ouvrés.",
-      en: "Enter a professional email and your company name. You will receive a proposed time within two business days.",
+      fr: "Indiquez un email professionnel et le nom de votre société. À la fin, vous pourrez réserver un créneau immédiatement.",
+      en: "Enter a professional email and your company name. At the end, you can book a time immediately.",
     },
     fields: {
       name: { fr: "Prénom", en: "First name" },
@@ -1318,8 +1319,8 @@ export const content = {
       en: "Request received.",
     },
     doneBody: {
-      fr: "Une proposition de créneau vous sera adressée sous deux jours ouvrés. Les informations transmises serviront à préparer l'échange.",
-      en: "You will receive a proposed time within two business days. The information provided will be used to prepare the conversation.",
+      fr: "Votre briefing est prêt. Réservez un créneau de 30 minutes pour en parler — ou revenez plus tard via l'email de confirmation.",
+      en: "Your briefing is ready. Book a 30-minute slot to discuss it — or come back later via the confirmation email.",
     },
     doneConfirmationSent: {
       fr: "Un email de confirmation vient de vous être envoyé.",
@@ -1329,6 +1330,7 @@ export const content = {
       fr: "Votre demande est enregistrée, mais l'email de confirmation n'a pas pu être envoyé. Il n'est pas nécessaire de recommencer.",
       en: "Your request is recorded, but the confirmation email could not be sent. You do not need to submit it again.",
     },
+    doneBook: { fr: "Réserver un créneau", en: "Book a time" },
     doneHome: { fr: "Retour à l'accueil", en: "Back home" },
     error: {
       fr: "Envoi impossible. Réessayez ou écrivez-nous.",
@@ -1440,8 +1442,8 @@ export const content = {
       {
         title: { fr: "Sous-traitants", en: "Processors" },
         body: {
-          fr: "Hébergement : Vercel. Base de données et stockage vidéo : Supabase. Emails transactionnels internes : Resend. Transcription / brief IA : OpenRouter ou OpenAI. Mesure d'audience (si consentement) : Google Ireland Ltd / Google LLC (Google Tag Manager, Google Analytics 4). Ces prestataires traitent les données pour notre compte, dans le cadre de leurs contrats.",
-          en: "Hosting: Vercel. Database and video storage: Supabase. Internal transactional email: Resend. Transcription / AI brief: OpenRouter or OpenAI. Audience measurement (if consent): Google Ireland Ltd / Google LLC (Google Tag Manager, Google Analytics 4). These providers process data on our behalf under their agreements.",
+          fr: "Hébergement : Vercel. Base de données et stockage vidéo : Supabase. Emails transactionnels internes : Resend. Transcription / brief IA : OpenRouter ou OpenAI. Prise de rendez-vous : Calendly (lorsqu'un créneau est réservé). Mesure d'audience (si consentement) : Google Ireland Ltd / Google LLC (Google Tag Manager, Google Analytics 4). Ces prestataires traitent les données pour notre compte, dans le cadre de leurs contrats.",
+          en: "Hosting: Vercel. Database and video storage: Supabase. Internal transactional email: Resend. Transcription / AI brief: OpenRouter or OpenAI. Appointment booking: Calendly (when a slot is booked). Audience measurement (if consent): Google Ireland Ltd / Google LLC (Google Tag Manager, Google Analytics 4). These providers process data on our behalf under their agreements.",
         },
       },
       {

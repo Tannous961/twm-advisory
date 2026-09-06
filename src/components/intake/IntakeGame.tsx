@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useId, useMemo, useState } from "react";
 import { track } from "@/lib/analytics";
+import { buildCalendlyUrl } from "@/lib/calendly";
 import {
   computeMaturity,
   getNeedProfile,
@@ -672,12 +673,29 @@ export function IntakeGame() {
                     doneOffer}
                 </p>
               </div>
-              <Link
-                href="/"
-                className="btn-primary inline-flex rounded-full px-7 py-3.5 text-sm"
-              >
-                {t(i.doneHome)}
-              </Link>
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <a
+                  href={buildCalendlyUrl({
+                    name,
+                    email,
+                    source: "intake_done",
+                  })}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-flex rounded-full px-7 py-3.5 text-center text-sm"
+                  onClick={() =>
+                    track("booking_click", { location: "intake_done" })
+                  }
+                >
+                  {t(i.doneBook)}
+                </a>
+                <Link
+                  href="/"
+                  className="btn-secondary inline-flex rounded-full px-7 py-3.5 text-center text-sm"
+                >
+                  {t(i.doneHome)}
+                </Link>
+              </div>
             </div>
           ) : null}
         </div>

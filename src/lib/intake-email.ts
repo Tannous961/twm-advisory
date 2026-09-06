@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import { buildCalendlyUrl } from "@/lib/calendly";
 
 export type EmailDelivery = {
   ok: boolean;
@@ -90,6 +91,11 @@ export async function sendIntakeConfirmation(input: {
   if (!client) return { ok: false, error: "Email is not configured" };
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.twm.expert";
+  const bookingUrl = buildCalendlyUrl({
+    name: input.name,
+    email: input.to,
+    source: "intake_email",
+  });
   const isFrench = input.lang === "fr";
   const subject = isFrench
     ? "Votre demande TWM Advisory a bien été reçue"
@@ -98,13 +104,14 @@ export async function sendIntakeConfirmation(input: {
     ? `Bonjour ${input.name}, votre demande a bien été enregistrée.`
     : `Hello ${input.name}, your request has been recorded.`;
   const next = isFrench
-    ? "Nous allons l'examiner et vous proposer un créneau sous deux jours ouvrés."
-    : "We will review it and propose a time within two business days.";
+    ? "Réservez un créneau de 30 minutes pour en parler :"
+    : "Book a 30-minute slot to discuss it:";
+  const bookLabel = isFrench ? "Choisir un créneau" : "Choose a time";
   const recommendation = isFrench
     ? `Orientation initiale : ${input.entryOffer}. Elle sera confirmée lors du premier échange.`
     : `Initial direction: ${input.entryOffer}. We will confirm it during the first conversation.`;
   const privacy = isFrench ? "Politique de confidentialité" : "Privacy policy";
-  const text = `${intro}\n\n${next}\n\n${recommendation}\n\n${privacy}: ${siteUrl}/confidentialite`;
+  const text = `${intro}\n\n${next}\n${bookingUrl}\n\n${recommendation}\n\n${privacy}: ${siteUrl}/confidentialite`;
 
   const { data, error } = await client.resend.emails.send(
     {
@@ -115,6 +122,7 @@ export async function sendIntakeConfirmation(input: {
       html: `
         <p>${escapeHtml(intro)}</p>
         <p>${escapeHtml(next)}</p>
+        <p><a href="${escapeHtml(bookingUrl)}">${escapeHtml(bookLabel)}</a></p>
         <p>${escapeHtml(recommendation)}</p>
         <p><a href="${escapeHtml(siteUrl)}/confidentialite">${privacy}</a></p>
       `,
