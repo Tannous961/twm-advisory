@@ -830,48 +830,22 @@ export const aboutPage = {
   } as L,
   founder: {
     title: { fr: "Tannous Mekari", en: "Tannous Mekari" } as L,
-    body: [
-      {
-        fr: "Le parcours de Tannous Mekari associe 17 années d'expérience en e-commerce, développement d'activités et direction opérationnelle. Il travaille en français, en anglais et en arabe.",
-        en: "Tannous Mekari's path combines 17 years in e-commerce, business development and operational leadership. He works in French, English and Arabic.",
-      },
-      {
-        fr: "Cette expérience nourrit une conviction : une transformation se juge dans le fonctionnement de l'entreprise, la qualité du service et ses effets économiques.",
-        en: "That experience feeds a conviction: a transformation is judged in how the business runs, service quality and economic effects.",
-      },
-      {
-        fr: "Le fondateur reste votre interlocuteur pour la relation client, les validations et les arbitrages de la mission. Des spécialistes peuvent être mobilisés lorsque le périmètre requiert une expertise complémentaire.",
-        en: "The founder remains your counterpart for the client relationship, validations and mission arbitrations. Specialists can be brought in when the scope requires complementary expertise.",
-      },
-    ] as L[],
+    body: {
+      fr: "Le parcours de Tannous Mekari associe 17 années d'expérience en e-commerce, développement d'activités et direction opérationnelle. Il travaille en français, en anglais et en arabe. Cette expérience nourrit une conviction : une transformation se juge dans le fonctionnement de l'entreprise, la qualité du service et ses effets économiques. Le fondateur reste votre interlocuteur pour la relation client, les validations et les arbitrages de la mission. Des spécialistes peuvent être mobilisés lorsque le périmètre requiert une expertise complémentaire.",
+      en: "Tannous Mekari's path combines 17 years in e-commerce, business development and operational leadership. He works in French, English and Arabic. That experience feeds a conviction: a transformation is judged in how the business runs, service quality and economic effects. The founder remains your counterpart for the client relationship, validations and mission arbitrations. Specialists can be brought in when the scope requires complementary expertise.",
+    } as L,
   },
-  metrics: [
-    {
-      value: "17",
-      label: { fr: "ans d'expérience", en: "years of experience" },
-    },
-    {
-      value: "3",
-      label: { fr: "langues de travail", en: "working languages" },
-    },
-  ] as { value: string; label: L }[],
   partner: {
     title: {
       fr: "Un partenaire engagé dans la réalisation.",
       en: "A partner committed to delivery.",
     } as L,
-    body: [
-      {
-        fr: "Nous rapprochons le diagnostic, les choix de moyens et la mise en œuvre. Notre rôle est de rendre une amélioration possible, de la conduire avec vos équipes et de documenter ce qu'elle produit.",
-        en: "We connect diagnosis, choice of means and implementation. Our role is to make an improvement possible, lead it with your teams and document what it produces.",
-      },
-      {
-        fr: "Un Operating Performance Partner travaille avec la direction sur un objectif économique et reste impliqué dans son exécution. Le terme décrit notre mode d'intervention ; il ne désigne ni une prise de participation ni un mandat de gestion.",
-        en: "An Operating Performance Partner works with leadership on an economic objective and stays involved in execution. The term describes our mode of engagement; it does not mean an equity stake or a management mandate.",
-      },
-    ] as L[],
+    body: {
+      fr: "Nous rapprochons le diagnostic, les choix de moyens et la mise en œuvre. Notre rôle est de rendre une amélioration possible, de la conduire avec vos équipes et de documenter ce qu'elle produit. Un Operating Performance Partner travaille avec la direction sur un objectif économique et reste impliqué dans son exécution. Le terme décrit notre mode d'intervention ; il ne désigne ni une prise de participation ni un mandat de gestion.",
+      en: "We connect diagnosis, choice of means and implementation. Our role is to make an improvement possible, lead it with your teams and document what it produces. An Operating Performance Partner works with leadership on an economic objective and stays involved in execution. The term describes our mode of engagement; it does not mean an equity stake or a management mandate.",
+    } as L,
   },
-  valuesIntro: {
+  valuesTitle: {
     fr: "Clarté dans les objectifs. Rigueur dans les preuves.",
     en: "Clarity in objectives. Rigor in evidence.",
   } as L,
@@ -906,23 +880,15 @@ export const aboutPage = {
       fr: "Les organisations où le temps expert et la qualité comptent.",
       en: "Organizations where expert time and quality matter.",
     } as L,
-    body: [
-      {
-        fr: "Directions de PME, entreprises de services, cabinets de conseil, professions du chiffre et du droit : le point commun est une activité où la capacité, la fiabilité et la marge dépendent directement des opérations.",
-        en: "SME leadership teams, service businesses, consulting firms, accounting and legal professions: the common thread is activity where capacity, reliability and margin depend directly on operations.",
-      },
-      {
-        fr: "Le périmètre et les contrôles tiennent compte des obligations propres à chaque métier. Les décisions professionnelles qui exigent un jugement expert restent validées par les personnes habilitées.",
-        en: "Scope and controls account for each profession's obligations. Professional decisions that require expert judgment remain validated by authorized people.",
-      },
-    ] as L[],
+    body: {
+      fr: "Directions de PME, entreprises de services, cabinets de conseil, professions du chiffre et du droit : le point commun est une activité où la capacité, la fiabilité et la marge dépendent directement des opérations. Le périmètre et les contrôles tiennent compte des obligations propres à chaque métier. Les décisions professionnelles qui exigent un jugement expert restent validées par les personnes habilitées.",
+      en: "SME leadership teams, service businesses, consulting firms, accounting and legal professions: the common thread is activity where capacity, reliability and margin depend directly on operations. Scope and controls account for each profession's obligations. Professional decisions that require expert judgment remain validated by authorized people.",
+    } as L,
   },
   cta: {
-    primary: {
-      label: { fr: "Échanger avec TWM", en: "Talk with TWM" },
-      href: "/contact",
-    },
-  },
+    label: { fr: "Échanger avec TWM", en: "Talk with TWM" },
+    href: "/contact",
+  } as Cta,
 } as const;
 
 // ---------------------------------------------------------------------------
@@ -1163,35 +1129,32 @@ export const contactPage = {
     fr: "Un premier échange de 30 minutes pour comprendre votre situation, identifier un périmètre et décider si un Performance Scan est pertinent.",
     en: "A 30-minute first conversation to understand your situation, identify a scope and decide whether a Performance Scan is relevant.",
   } as L,
+  formTitle: {
+    fr: "Une priorité suffit.",
+    en: "One priority is enough.",
+  } as L,
   fieldsNote: {
     fr: "Nom · Email professionnel · Organisation · Votre priorité économique · Disponibilités facultatives.",
     en: "Name · Professional email · Organization · Your economic priority · Optional availability.",
   } as L,
-  outcome: {
-    fr: "À l'issue de l'échange : un premier périmètre à examiner, les informations nécessaires et une décision sur la suite à donner.",
-    en: "After the conversation: an initial scope to examine, the information needed and a decision on next steps.",
-  } as L,
-  prep: {
-    fr: "Pour préparer la discussion : la friction principale, l'équipe concernée et l'échéance de votre décision. Aucun document confidentiel n'est nécessaire à ce stade.",
-    en: "To prepare the discussion: the main friction, the team involved and your decision deadline. No confidential documents are needed at this stage.",
+  formBody: {
+    fr: "À l'issue de l'échange : un premier périmètre à examiner, les informations nécessaires et une décision sur la suite à donner. Pour préparer la discussion : la friction principale, l'équipe concernée et l'échéance de votre décision. Aucun document confidentiel n'est nécessaire à ce stade.",
+    en: "After the conversation: an initial scope to examine, the information needed and a decision on next steps. To prepare the discussion: the main friction, the team involved and your decision deadline. No confidential documents are needed at this stage.",
   } as L,
   note: {
     fr: "Premier échange de 30 minutes, sans engagement.",
     en: "Initial 30-minute conversation, with no commitment.",
   } as L,
-  email: {
-    fr: "tannous@twm.expert",
-    en: "tannous@twm.expert",
-  } as L,
+  email: "tannous@twm.expert",
   noAutoSend: {
     fr: "Version préparée : Préparer mon message → relire → Ouvrir ma messagerie. Aucun envoi automatique.",
     en: "Prepared version: Draft my message → review → Open my mailbox. No automatic send.",
   } as L,
-  altTitle: {
+  followUpTitle: {
     fr: "Un diagnostic ciblé, si le potentiel le justifie.",
     en: "A focused diagnosis, if the potential warrants it.",
   } as L,
-  altBody: {
+  followUpBody: {
     fr: "Nous précisons ensemble le périmètre, les données et les interlocuteurs. Une proposition décrit ensuite le diagnostic, ses honoraires et la décision attendue. L'exécution fait l'objet d'un accord distinct.",
     en: "Together we clarify scope, data and counterparts. A proposal then describes the diagnosis, its fees and the expected decision. Execution is covered by a separate agreement.",
   } as L,
