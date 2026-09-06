@@ -52,35 +52,21 @@ export function About() {
               {t(aboutPage.leadBody)}
             </p>
             <h3 className="mb-3 type-h3">{t(aboutPage.founder.title)}</h3>
-            {aboutPage.founder.body.map((paragraph, i) => (
-              <p key={i} className="mb-4 type-body text-pretty text-muted">
-                {t(paragraph)}
-              </p>
-            ))}
-            <div className="mt-6 flex flex-wrap gap-px border border-white/7 bg-white/7">
-              {aboutPage.metrics.map((m) => (
-                <div key={m.value} className="min-w-[120px] flex-1 bg-panel px-5 py-4.5">
-                  <div className="type-stat text-accent">{m.value}</div>
-                  <div className="type-caption mt-1.5 tracking-[0.12em] text-muted-3">
-                    {t(m.label)}
-                  </div>
-                </div>
-              ))}
-            </div>
+            <p className="mb-4 type-body text-pretty text-muted">
+              {t(aboutPage.founder.body)}
+            </p>
           </div>
         </div>
 
         <div className="mt-16 max-w-3xl sm:mt-20">
           <h3 className="mb-4 type-h3">{t(aboutPage.partner.title)}</h3>
-          {aboutPage.partner.body.map((paragraph, i) => (
-            <p key={i} className="mb-4 type-body text-pretty text-muted">
-              {t(paragraph)}
-            </p>
-          ))}
+          <p className="mb-4 type-body text-pretty text-muted">
+            {t(aboutPage.partner.body)}
+          </p>
         </div>
 
         <div className="mt-16 sm:mt-20">
-          <p className="mb-8 type-lead text-fg">{t(aboutPage.valuesIntro)}</p>
+          <p className="mb-8 type-lead text-fg">{t(aboutPage.valuesTitle)}</p>
           <div className="grid gap-px border border-white/7 bg-white/7 sm:grid-cols-3">
             {aboutPage.values.map((value) => (
               <div key={value.id} className="bg-panel px-6 py-7">
@@ -93,16 +79,14 @@ export function About() {
 
         <div className="mt-16 max-w-3xl sm:mt-20">
           <h3 className="mb-4 type-h3">{t(aboutPage.audience.title)}</h3>
-          {aboutPage.audience.body.map((paragraph, i) => (
-            <p key={i} className="mb-4 type-body text-pretty text-muted">
-              {t(paragraph)}
-            </p>
-          ))}
+          <p className="mb-4 type-body text-pretty text-muted">
+            {t(aboutPage.audience.body)}
+          </p>
           <Link
-            href={aboutPage.cta.primary.href}
+            href={aboutPage.cta.href}
             className="btn-primary mt-4 inline-flex rounded-full px-7 py-3.5"
           >
-            {t(aboutPage.cta.primary.label)}
+            {t(aboutPage.cta.label)}
           </Link>
         </div>
       </section>

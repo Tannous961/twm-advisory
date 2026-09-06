@@ -11,7 +11,7 @@ export function Contact() {
   const { c } = useI18n();
   const t = useT();
   const bookingUrl = buildCalendlyUrl({ source: "contact" });
-  const email = t(contactPage.email);
+  const email = contactPage.email;
   const mailto = `mailto:${email}`;
 
   return (
@@ -48,14 +48,14 @@ export function Contact() {
             <p className="type-lead mb-6 text-muted sm:mb-7">
               {t(contactPage.leadBody)}
             </p>
+            <p className="type-body mb-3 text-muted-2">
+              {t(contactPage.formTitle)}
+            </p>
             <p className="type-body mb-4 text-muted-2">
               {t(contactPage.fieldsNote)}
             </p>
             <p className="type-body mb-4 text-muted-2">
-              {t(contactPage.outcome)}
-            </p>
-            <p className="type-body mb-4 text-muted-2">
-              {t(contactPage.prep)}
+              {t(contactPage.formBody)}
             </p>
             <p className="type-body mb-8 text-muted-2 sm:mb-9">
               {t(contactPage.note)}
@@ -97,8 +97,10 @@ export function Contact() {
               {t(contactPage.noAutoSend)}
             </p>
             <div className="mx-auto mt-12 max-w-2xl border-t border-white/9 pt-10 text-left">
-              <h3 className="mb-3 type-h3">{t(contactPage.altTitle)}</h3>
-              <p className="type-body text-muted">{t(contactPage.altBody)}</p>
+              <h3 className="mb-3 type-h3">{t(contactPage.followUpTitle)}</h3>
+              <p className="type-body text-muted">
+                {t(contactPage.followUpBody)}
+              </p>
             </div>
           </div>
         </div>
