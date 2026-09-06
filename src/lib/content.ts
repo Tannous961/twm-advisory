@@ -21,7 +21,7 @@ export const content = {
     who: { fr: "Pour qui", en: "Who it's for" },
     about: { fr: "À propos", en: "About" },
     faq: { fr: "FAQ", en: "FAQ" },
-    signal: { fr: "Signal", en: "Signal" },
+    cadre: { fr: "Cadre", en: "Cadre" },
     contact: { fr: "Contact", en: "Contact" },
     cta: { fr: "Évaluer votre potentiel", en: "Assess your potential" },
     menu: { fr: "Menu", en: "Menu" },
@@ -150,8 +150,8 @@ export const content = {
         en: "A short questionnaire to prepare the first conversation and suggest an initial direction.",
       },
     },
-    signal: {
-      title: { fr: "Signal", en: "Signal" },
+    cadre: {
+      title: { fr: "Cadre", en: "Cadre" },
       lead: {
         fr: "La performance, au-delà des promesses.",
         en: "Performance, beyond promises.",
@@ -1087,8 +1087,8 @@ export const content = {
       en: "Initial 30-minute conversation, with no commitment.",
     },
   },
-  signal: {
-    section: { fr: "Signal", en: "Signal" },
+  cadre: {
+    section: { fr: "Cadre", en: "Cadre" },
     insightLabel: { fr: "Point principal", en: "Key point" },
     verdictLabel: { fr: "Conclusion", en: "Conclusion" },
     readCta: { fr: "Lire l'article", en: "Read the article" },

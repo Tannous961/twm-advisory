@@ -8,7 +8,7 @@ const product = [
   { href: "/methode", key: "approach" as const },
   { href: "/impact", key: "impact" as const },
   { href: "/technology", key: "architecture" as const },
-  { href: "/signal", key: "signal" as const },
+  { href: "/cadre", key: "cadre" as const },
   { href: "/partenaires", key: "partners" as const },
 ];
 

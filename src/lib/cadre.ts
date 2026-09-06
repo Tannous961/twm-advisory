@@ -1,7 +1,7 @@
 import type { IntentId } from "@/lib/intake";
 import type { Lang } from "@/lib/content";
 
-export type SignalPost = {
+export type CadrePost = {
   slug: string;
   date: string;
   intent: IntentId;
@@ -12,7 +12,7 @@ export type SignalPost = {
   body: Record<Lang, string[]>;
 };
 
-export const signalPosts: SignalPost[] = [
+export const cadrePosts: CadrePost[] = [
   {
     slug: "temps-libere-et-marge",
     date: "2026-09-06",
@@ -111,10 +111,10 @@ export const signalPosts: SignalPost[] = [
   },
 ];
 
-export function getSignalPost(slug: string): SignalPost | undefined {
-  return signalPosts.find((p) => p.slug === slug);
+export function getCadrePost(slug: string): CadrePost | undefined {
+  return cadrePosts.find((p) => p.slug === slug);
 }
 
-export function getAllSignalSlugs(): string[] {
-  return signalPosts.map((p) => p.slug);
+export function getAllCadreSlugs(): string[] {
+  return cadrePosts.map((p) => p.slug);
 }

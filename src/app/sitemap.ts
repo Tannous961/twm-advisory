@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
+import { getAllCadreSlugs, getCadrePost } from "@/lib/cadre";
 import { getAllImpactSlugs } from "@/lib/editorial";
-import { getAllSignalSlugs, getSignalPost } from "@/lib/signal";
 import { siteConfig, sitemapEntries } from "@/lib/seo";
 
 function languageAlternates(path: string) {
@@ -34,14 +34,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: languageAlternates(`/impact/${slug}`),
   }));
 
-  const posts = getAllSignalSlugs().map((slug) => {
-    const post = getSignalPost(slug)!;
+  const posts = getAllCadreSlugs().map((slug) => {
+    const post = getCadrePost(slug)!;
     return {
-      url: `${siteConfig.url}/signal/${slug}`,
+      url: `${siteConfig.url}/cadre/${slug}`,
       lastModified: new Date(post.date),
       changeFrequency: "monthly" as const,
       priority: 0.65,
-      alternates: languageAlternates(`/signal/${slug}`),
+      alternates: languageAlternates(`/cadre/${slug}`),
     };
   });
 

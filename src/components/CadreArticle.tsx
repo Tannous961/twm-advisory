@@ -2,40 +2,40 @@
 
 import Link from "next/link";
 import { useEffect } from "react";
-import { signalPosts, type SignalPost } from "@/lib/signal";
+import { cadrePosts, type CadrePost } from "@/lib/cadre";
 import { track } from "@/lib/analytics";
 import { useI18n, useT } from "@/lib/i18n";
 import { Reveal } from "./Reveal";
-import { SignalCover } from "./SignalCover";
+import { CadreCover } from "./CadreCover";
 
-export function SignalArticle({ post }: { post: SignalPost }) {
+export function CadreArticle({ post }: { post: CadrePost }) {
   const { c, lang } = useI18n();
   const t = useT();
   const postIndex = Math.max(
     0,
-    signalPosts.findIndex((item) => item.slug === post.slug),
+    cadrePosts.findIndex((item) => item.slug === post.slug),
   );
 
   useEffect(() => {
-    track("signal_article_view", { slug: post.slug, lang });
+    track("cadre_article_view", { slug: post.slug, lang });
   }, [post.slug, lang]);
 
   return (
     <article className="content-wrap section-pad pt-10 sm:pt-14">
       <Reveal>
         <Link
-          href="/signal"
+          href="/cadre"
           className="mb-8 inline-flex type-label tracking-[0.14em] text-muted-3 transition-colors hover:text-accent"
         >
-          ← {t(c.signal.back)}
+          ← {t(c.cadre.back)}
         </Link>
 
         <p className="mb-4 type-label tracking-[0.14em] text-muted-3">
-          {post.date} · {post.readingMinutes} {t(c.signal.minutes)}
+          {post.date} · {post.readingMinutes} {t(c.cadre.minutes)}
         </p>
 
         <div className="mb-8">
-          <SignalCover intent={post.intent} index={postIndex} />
+          <CadreCover intent={post.intent} index={postIndex} />
         </div>
 
         <h1 className="mb-8 max-w-3xl type-h1">
@@ -45,7 +45,7 @@ export function SignalArticle({ post }: { post: SignalPost }) {
         <div className="mb-10 grid gap-4 lg:grid-cols-2">
           <div className="glass-card rounded-3xl p-6 sm:p-7">
             <p className="mb-3 type-caption text-muted-3">
-              {t(c.signal.insightLabel)}
+              {t(c.cadre.insightLabel)}
             </p>
             <p className="type-h3 text-fg">
               {post.insight[lang]}
@@ -53,7 +53,7 @@ export function SignalArticle({ post }: { post: SignalPost }) {
           </div>
           <div className="glass-card rounded-3xl border-accent/25 p-6 sm:p-7">
             <p className="mb-3 type-caption text-accent">
-              {t(c.signal.verdictLabel)}
+              {t(c.cadre.verdictLabel)}
             </p>
             <p className="type-h3 text-accent-soft">
               {post.verdict[lang]}
@@ -89,19 +89,19 @@ export function SignalArticle({ post }: { post: SignalPost }) {
           />
           <div className="relative">
             <p className="mb-5 type-body text-muted">
-              {t(c.signal.briefingNote)}
+              {t(c.cadre.briefingNote)}
             </p>
             <Link
               href={`/demarrer?intent=${post.intent}`}
               className="btn-primary inline-flex rounded-full px-8 py-4"
               onClick={() =>
                 track("cta_click", {
-                  location: "signal_article",
+                  location: "cadre_article",
                   intent: post.intent,
                 })
               }
             >
-              {t(c.signal.briefingCta)}
+              {t(c.cadre.briefingCta)}
             </Link>
           </div>
         </div>

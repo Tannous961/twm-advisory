@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { content } from "./content";
 import { faqItems } from "./editorial";
-import type { SignalPost } from "./signal";
+import type { CadrePost } from "./cadre";
 
 export const siteConfig = {
   name: "TWM Advisory",
@@ -62,7 +62,7 @@ export type PageSeoKey =
   | "methode"
   | "technology"
   | "impact"
-  | "signal"
+  | "cadre"
   | "partenaires"
   | "a-propos"
   | "faq"
@@ -151,15 +151,15 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
       "marge facturation",
     ],
   },
-  signal: {
-    path: "/signal",
-    title: "Signal — la performance au-delà des promesses",
-    titleEn: "Signal — performance beyond promises",
+  cadre: {
+    path: "/cadre",
+    title: "Cadre — la performance au-delà des promesses",
+    titleEn: "Cadre — performance beyond promises",
     description:
       "Notes pour les dirigeants qui doivent arbitrer les coûts, la capacité et la transformation.",
     descriptionEn:
       "Notes for leaders who must decide on costs, capacity and transformation.",
-    keywords: ["Signal TWM", "gain-share", "temps libéré marge"],
+    keywords: ["Cadre TWM", "gain-share", "temps libéré marge"],
   },
   partenaires: {
     path: "/partenaires",
@@ -321,8 +321,8 @@ export function buildPageMetadata(key: PageSeoKey): Metadata {
   };
 }
 
-export function buildSignalMetadata(post: SignalPost): Metadata {
-  const path = `/signal/${post.slug}`;
+export function buildCadreMetadata(post: CadrePost): Metadata {
+  const path = `/cadre/${post.slug}`;
   const url = `${siteConfig.url}${path}`;
   const title = post.title.fr;
   const description = `${post.insight.fr} ${post.verdict.fr}`.trim();
@@ -332,7 +332,7 @@ export function buildSignalMetadata(post: SignalPost): Metadata {
     description,
     keywords: [
       ...keywords,
-      "Signal TWM",
+      "Cadre TWM",
       "performance opérationnelle",
       post.intent.replace("_", " "),
     ],
@@ -652,8 +652,8 @@ export function buildPageJsonLd(
   };
 }
 
-export function buildSignalJsonLd(post: SignalPost) {
-  const url = `${siteConfig.url}/signal/${post.slug}`;
+export function buildCadreJsonLd(post: CadrePost) {
+  const url = `${siteConfig.url}/cadre/${post.slug}`;
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -674,7 +674,7 @@ export function buildSignalJsonLd(post: SignalPost) {
         },
         mainEntityOfPage: url,
         inLanguage: "fr-FR",
-        articleSection: "Signal",
+        articleSection: "Cadre",
         keywords: [
           post.verdict.fr,
           "Operating Performance Partner",
@@ -688,8 +688,8 @@ export function buildSignalJsonLd(post: SignalPost) {
       },
       breadcrumbItems([
         { name: "Accueil", path: "/" },
-        { name: "Signal", path: "/signal" },
-        { name: post.title.fr, path: `/signal/${post.slug}` },
+        { name: "Cadre", path: "/cadre" },
+        { name: post.title.fr, path: `/cadre/${post.slug}` },
       ]),
     ],
   };

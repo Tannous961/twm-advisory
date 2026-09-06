@@ -10,7 +10,7 @@ const primaryLinks = [
   { href: "/performance", key: "offers" as const },
   { href: "/methode", key: "approach" as const },
   { href: "/impact", key: "impact" as const },
-  { href: "/signal", key: "signal" as const },
+  { href: "/cadre", key: "cadre" as const },
 ];
 
 const menuLinks = [
