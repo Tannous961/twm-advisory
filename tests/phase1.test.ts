@@ -7,6 +7,7 @@ import {
 import { detectSupportedVideo } from "../src/lib/security/video-validation";
 import { isProfessionalEmail } from "../src/lib/security/professional-email";
 import { getNeedProfile } from "../src/lib/intake";
+import { buildCalendlyUrl, getCalendlyBaseUrl } from "../src/lib/calendly";
 import { enforceRateLimit } from "../src/lib/security/request-protection";
 import { withRetry } from "../src/lib/operations";
 
@@ -168,5 +169,33 @@ describe("need profile", () => {
     assert.equal(getNeedProfile(74), "frame");
     assert.equal(getNeedProfile(75), "execute");
     assert.equal(getNeedProfile(100), "execute");
+  });
+});
+
+describe("calendly booking url", () => {
+  it("prefills name and email and keeps a stable default base", () => {
+    const previous = process.env.NEXT_PUBLIC_CALENDLY_URL;
+    delete process.env.NEXT_PUBLIC_CALENDLY_URL;
+
+    assert.equal(getCalendlyBaseUrl(), "https://calendly.com/tannous-twm");
+
+    const url = new URL(
+      buildCalendlyUrl({
+        name: "Tannous",
+        email: "lead@cabinet.fr",
+        source: "intake_done",
+      }),
+    );
+
+    assert.equal(url.origin + url.pathname, "https://calendly.com/tannous-twm");
+    assert.equal(url.searchParams.get("name"), "Tannous");
+    assert.equal(url.searchParams.get("email"), "lead@cabinet.fr");
+    assert.equal(url.searchParams.get("utm_source"), "intake_done");
+
+    if (previous === undefined) {
+      delete process.env.NEXT_PUBLIC_CALENDLY_URL;
+    } else {
+      process.env.NEXT_PUBLIC_CALENDLY_URL = previous;
+    }
   });
 });

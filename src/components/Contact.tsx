@@ -3,11 +3,13 @@
 import Link from "next/link";
 import { Reveal } from "./Reveal";
 import { track } from "@/lib/analytics";
+import { buildCalendlyUrl } from "@/lib/calendly";
 import { useI18n, useT } from "@/lib/i18n";
 
 export function Contact() {
   const { c } = useI18n();
   const t = useT();
+  const bookingUrl = buildCalendlyUrl({ source: "contact" });
 
   return (
     <Reveal>
@@ -52,7 +54,7 @@ export function Contact() {
             <p className="type-lead mb-8 text-muted sm:mb-9">
               {t(c.contact.lead)}
             </p>
-            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 href="/demarrer"
                 className="btn-primary rounded-full px-8 py-4"
@@ -61,14 +63,28 @@ export function Contact() {
                 {t(c.contact.cta)}
               </Link>
               <a
-                href="mailto:tannous@twm.expert"
+                href={bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-secondary rounded-full px-8 py-4"
-                onClick={() => track("cta_click", { location: "contact_email" })}
+                onClick={() =>
+                  track("booking_click", { location: "contact" })
+                }
               >
-                {t(c.contact.secondary)}
+                {t(c.contact.book)}
               </a>
             </div>
             <p className="type-label mt-5 tracking-[0.08em] text-[#4c5468]">
+              <a
+                href="mailto:tannous@twm.expert"
+                className="underline-offset-4 hover:underline"
+                onClick={() =>
+                  track("cta_click", { location: "contact_email" })
+                }
+              >
+                {t(c.contact.secondary)}
+              </a>
+              {" · "}
               {t(c.contact.note)}
             </p>
           </div>

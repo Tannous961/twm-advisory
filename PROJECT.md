@@ -238,11 +238,11 @@ flowchart LR
 
 ## 12. Gaps connus / prochaines pistes
 
-- **Calendrier** : créneau toujours manuel (proposé par email)
+- **Calendrier** : Calendly (`NEXT_PUBLIC_CALENDLY_URL`) sur `/demarrer` (done), email de confirmation et `/contact`
 - **OpenRouter / Resend / Supabase** : clés à renseigner en prod sur Vercel
 - **Mentions légales** : SIREN / RCS intégrés (adresse volontairement omise)
 - **Admin** : lecture leads via Supabase Studio (pas de dashboard custom)
-- **Anti-spam** : pas encore de rate limiting sur les APIs
+- **Webhook booking** : pas encore de sync Calendly → statut lead `booked`
 
 ---
 
