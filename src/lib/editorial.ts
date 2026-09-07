@@ -31,12 +31,18 @@ export interface Cta {
   href: string;
 }
 
+export interface EditorialImage {
+  src: string;
+  alt: L;
+}
+
 export interface EditorialSection {
   id: string;
   index: string;
   label: L;
   title: L;
   body: L;
+  image?: EditorialImage;
   items?: L[];
   cards?: Card[];
   steps?: Step[];
@@ -129,6 +135,13 @@ export const homeEditorial = {
         fr: "Nous ne nous limitons pas à la vision comptable. Nous rapprochons données financières, outils, processus, flux commerciaux et travail réellement effectué pour localiser coûts, pertes de capacité et opportunités de croissance. Nous travaillons avec le niveau d'accès nécessaire au périmètre défini, dans un cadre de confidentialité, de sécurité et de gouvernance convenu avec la direction.",
         en: "We do not stop at the accounting view. We connect financial data, tools, processes, commercial flows and work actually done to locate costs, capacity loss and growth opportunities. We work with the access level required for the agreed scope, under confidentiality, security and governance terms set with leadership.",
       },
+      image: {
+        src: "/uploads/section-diagnostic-ops.webp",
+        alt: {
+          fr: "Analyse opérationnelle et financière sur écrans de pilotage",
+          en: "Operational and financial analysis on steering screens",
+        },
+      },
     },
     {
       id: "valeur",
@@ -142,6 +155,13 @@ export const homeEditorial = {
         fr: "Dépenses mal catégorisées, processus hérités, opportunités non suivies, écarts entre stratégie et exécution : le diagnostic établit un potentiel économique avant de décider ce qui mérite d'être exécuté.",
         en: "Misclassified spend, inherited processes, untracked opportunities, gaps between strategy and execution: the diagnosis establishes economic potential before deciding what deserves to be executed.",
       },
+      image: {
+        src: "/uploads/section-valeur-capacity.webp",
+        alt: {
+          fr: "Entrepôt industriel à capacité sous-exploitée",
+          en: "Industrial warehouse with underused capacity",
+        },
+      },
     },
     {
       id: "leviers",
@@ -154,6 +174,13 @@ export const homeEditorial = {
       body: {
         fr: "Ces domaines ne sont pas quatre offres indépendantes. Ce sont des moyens mobilisés selon la priorité de performance que vous confiez.",
         en: "These domains are not four separate offerings. They are means mobilized according to the performance priority you entrust to us.",
+      },
+      image: {
+        src: "/uploads/section-leviers-strategy.webp",
+        alt: {
+          fr: "Salle de stratégie avec leviers d'intervention",
+          en: "Strategy room with intervention levers",
+        },
       },
       cards: [
         {
@@ -209,6 +236,13 @@ export const homeEditorial = {
         fr: "La mission ne s'arrête pas à la livraison d'un outil. Elle comprend l'usage, la qualité obtenue et la contribution économique, avec vos responsables métier.",
         en: "The engagement does not stop at delivering a tool. It includes usage, quality achieved and economic contribution, with your business owners.",
       },
+      image: {
+        src: "/uploads/section-adoption-teams.webp",
+        alt: {
+          fr: "Équipes adoptant de nouveaux outils et processus",
+          en: "Teams adopting new tools and processes",
+        },
+      },
       cta: {
         label: { fr: "Comprendre la méthode", en: "Understand the method" },
         href: "/methode",
@@ -226,6 +260,13 @@ export const homeEditorial = {
         fr: "Capacité, économies, marge et trésorerie sont suivies séparément, avec une lecture partagée avec la finance. Un gain n'est annoncé qu'après qualification.",
         en: "Capacity, savings, margin and cash are tracked separately, with a shared reading with finance. A gain is claimed only after it is qualified.",
       },
+      image: {
+        src: "/uploads/section-mesure-finance.webp",
+        alt: {
+          fr: "Mesure des effets économiques avec la direction financière",
+          en: "Measuring economic effects with finance leadership",
+        },
+      },
       cta: {
         label: { fr: "Voir des mécanismes illustratifs", en: "See illustrative mechanisms" },
         href: "/impact",
@@ -242,6 +283,13 @@ export const homeEditorial = {
       body: {
         fr: "Notre rémunération peut associer un forfait de cadrage, un socle d'exécution et une part liée aux résultats lorsque les gains sont objectivement mesurables. Il n'existe pas de formule universelle : le protocole est défini avant exécution.",
         en: "Our fees can combine a scoping fixed fee, an execution base and a share tied to results when gains are objectively measurable. There is no universal formula: the protocol is defined before execution.",
+      },
+      image: {
+        src: "/uploads/section-alignement-mandate.webp",
+        alt: {
+          fr: "Alignement de mandat entre dirigeants",
+          en: "Mandate alignment between executives",
+        },
       },
       cta: {
         label: { fr: "Lire les réponses sur la rémunération", en: "Read fee answers" },
