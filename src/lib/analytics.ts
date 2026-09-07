@@ -21,7 +21,7 @@ export type AnalyticsEvent =
   | "intake_error"
   | "booking_click"
   | "partner_form_submitted"
-  | "signal_article_view"
+  | "cadre_article_view"
   | "consent_update";
 
 export type AnalyticsParams = {

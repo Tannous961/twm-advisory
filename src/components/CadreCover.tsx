@@ -13,7 +13,7 @@ const coverConfig: Record<
   training: { code: "JUDGE", axis: "05—05", rings: 5 },
 };
 
-export function SignalCover({
+export function CadreCover({
   intent,
   index,
   compact = false,
@@ -26,18 +26,18 @@ export function SignalCover({
 
   return (
     <div
-      className={`signal-cover relative isolate overflow-hidden border border-white/8 bg-panel ${
+      className={`cadre-cover relative isolate overflow-hidden border border-white/8 bg-panel ${
         compact
           ? "aspect-[16/9] rounded-2xl"
           : "aspect-[16/7] rounded-[2rem]"
       }`}
       aria-hidden
     >
-      <div className="absolute inset-0 signal-cover-grid" />
+      <div className="absolute inset-0 cadre-cover-grid" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_30%,rgb(var(--accent-rgb)/0.25),transparent_35%)]" />
 
       <div className="absolute top-5 left-5 type-caption text-muted-3 sm:top-7 sm:left-7">
-        TWM / SIGNAL
+        TWM / CADRE
       </div>
       <div className="type-caption absolute top-5 right-5 tracking-[0.18em] text-accent sm:top-7 sm:right-7">
         {config.axis}
@@ -48,7 +48,7 @@ export function SignalCover({
           {config.code}
         </p>
         <p className="type-caption mt-2 tracking-[0.2em] text-muted-3">
-          signal {String(index + 1).padStart(2, "0")}
+          cadre {String(index + 1).padStart(2, "0")}
         </p>
       </div>
 

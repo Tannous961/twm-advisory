@@ -91,6 +91,18 @@ export function Partnerships() {
           <p className="max-w-2xl type-body text-muted">
             {t(p.whyBody)}
           </p>
+          <p className="mt-6 max-w-2xl type-body text-muted">
+            {t({
+              fr: "Vous voulez structurer le réseau de partenaires de votre entreprise ?",
+              en: "Want to structure your company's partner network?",
+            })}{" "}
+            <Link href="/partner-performance" className="text-accent underline-offset-4 hover:underline">
+              {t({
+                fr: "Voir Partner Performance",
+                en: "See Partner Performance",
+              })}
+            </Link>
+          </p>
         </section>
       </Reveal>
 

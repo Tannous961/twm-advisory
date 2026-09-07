@@ -2,6 +2,7 @@
 
 import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
+import { faqItems } from "@/lib/editorial";
 import { useI18n, useT } from "@/lib/i18n";
 
 export function FAQ() {
@@ -23,7 +24,7 @@ export function FAQ() {
           {t(c.faq.title)}
         </h2>
         <div className="flex flex-col border-t border-white/9">
-          {c.faq.items.map((item, i) => (
+          {faqItems.map((item, i) => (
             <details key={i} className="group border-b border-white/9">
               <summary className="type-lead flex cursor-pointer list-none items-center justify-between gap-4 py-7 text-fg [&::-webkit-details-marker]:hidden">
                 <span className="transition-colors group-open:text-accent-soft">

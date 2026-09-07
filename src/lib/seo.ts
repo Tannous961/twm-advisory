@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { content } from "./content";
-import type { SignalPost } from "./signal";
+import { faqItems } from "./editorial";
+import type { CadrePost } from "./cadre";
 
 export const siteConfig = {
   name: "TWM Advisory",
@@ -39,33 +40,31 @@ const descriptionEn = content.meta.description.en;
 /** High-intent + GEO keywords (FR market). */
 export const keywords = [
   "TWM Advisory",
-  "conseil IA",
-  "consultant IA",
-  "audit IA entreprise",
-  "audit maturité IA",
-  "déploiement agents IA",
-  "agents IA en production",
-  "IA agentique",
-  "direction IA à temps partagé",
-  "fractional CAIO",
-  "Chief AI Officer externalisé",
-  "stratégie IA",
-  "gouvernance IA",
-  "AI Act entreprise",
-  "formation IA dirigeants",
-  "IA cabinet avocat",
-  "IA expert-comptable",
-  "confidentialité données IA",
-  "opérateur embarqué IA",
+  "Operating Performance Partner",
+  "performance opérationnelle",
+  "réduction des coûts",
+  "capacité opérationnelle",
+  "protection de la marge",
+  "diagnostic économique",
+  "gain-share",
+  "Performance Scan",
+  "Performance OS",
+  "amélioration de la performance",
+  "cabinet conseil performance",
+  "exécution opérationnelle",
+  "mesure des gains",
+  "Tannous Mekari",
 ];
 
 export type PageSeoKey =
   | "home"
-  | "approche"
-  | "offres"
-  | "signal"
+  | "performance"
+  | "partner-performance"
+  | "methode"
+  | "technology"
+  | "impact"
+  | "cadre"
   | "partenaires"
-  | "architecture"
   | "a-propos"
   | "faq"
   | "demarrer"
@@ -95,45 +94,89 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
     priority: 1,
     changeFrequency: "weekly",
   },
-  approche: {
-    path: "/approche",
-    title: "Approche — du diagnostic à la mise en production",
-    titleEn: "Approach — from assessment to production",
+  performance: {
+    path: "/performance",
+    title: "Operating Performance — mandat d'exécution mesurable",
+    titleEn: "Operating Performance — measurable execution mandate",
     description:
-      "La méthode TWM Advisory couvre l'identification des cas d'usage, la conception, le déploiement, la formation et la mesure des résultats.",
+      "Réduire les coûts, les reprises et les pertes de capacité — et activer le commerce lorsque le levier est commercial.",
     descriptionEn:
-      "The TWM Advisory method covers use case identification, design, deployment, training and outcome measurement.",
+      "Cut costs, rework and capacity loss — and activate commerce when the lever is commercial.",
     keywords: [
-      "approche conseil IA",
-      "opérateur embarqué IA",
-      "méthode déploiement agents IA",
+      "Operating Performance",
+      "Performance Scan",
+      "réduction coûts entreprise",
+      "gain-share conseil",
     ],
   },
-  offres: {
-    path: "/offres",
-    title: "Services IA — diagnostic, déploiement, évaluation et formation",
-    titleEn: "AI services — assessment, deployment, review and training",
+  "partner-performance": {
+    path: "/partner-performance",
+    title: "Partner Performance — réseau de partenaires en système de croissance",
+    titleEn: "Partner Performance — turn a partner network into a growth system",
     description:
-      "Services TWM Advisory : diagnostic des usages, déploiement d'agents IA, évaluation de systèmes, stratégie, gouvernance et formation.",
+      "Structurer partenaires, leads, co-selling, referrals et gouvernance du réseau pour générer des opportunités qualifiées et réduire le coût d'acquisition.",
     descriptionEn:
-      "TWM Advisory services: AI use assessment, agent deployment, system review, strategy, governance and training.",
+      "Structure partners, leads, co-selling, referrals and network governance to generate qualified opportunities and reduce acquisition cost.",
     keywords: [
-      "audit IA entreprise",
-      "déploiement agents IA",
-      "évaluation systèmes IA",
-      "direction IA temps partagé",
-      "formation IA dirigeants",
+      "Partner Performance",
+      "réseau partenaires",
+      "co-selling",
+      "architecture de leads",
     ],
   },
-  signal: {
-    path: "/signal",
-    title: "Signal — analyses sur l'IA en entreprise",
-    titleEn: "Signal — analysis of AI in organizations",
+  methode: {
+    path: "/methode",
+    title: "Méthode — du résultat recherché à la mesure",
+    titleEn: "Method — from the outcome sought to measurement",
     description:
-      "Articles courts de TWM Advisory sur le déploiement, l'évaluation, la gouvernance et l'usage responsable de l'IA en entreprise.",
+      "Cinq étapes pour relier une priorité de performance à un résultat économique vérifiable.",
     descriptionEn:
-      "Concise TWM Advisory articles on AI deployment, assessment, governance and responsible use in organizations.",
-    keywords: ["blog IA entreprise", "insights agents IA", "Signal TWM"],
+      "Five steps to connect a performance priority to a verifiable economic outcome.",
+    keywords: [
+      "méthode performance opérationnelle",
+      "référence économique",
+      "mesure des gains",
+    ],
+  },
+  technology: {
+    path: "/technology",
+    title: "Technology — contexte, pilotage et product builders",
+    titleEn: "Technology — context, steering and product builders",
+    description:
+      "Couche de contexte et de pilotage TWM, et capacité à faire de vos équipes des product builders de leur métier — pas un SaaS vendu.",
+    descriptionEn:
+      "TWM's context and steering layer, and the ability to turn your teams into product builders of their craft — not a SaaS product we sell.",
+    keywords: [
+      "Performance OS",
+      "product builders",
+      "automatisation performance",
+      "pilotage opérationnel",
+    ],
+  },
+  impact: {
+    path: "/impact",
+    title: "Impact — leviers de performance illustratifs",
+    titleEn: "Impact — illustrative performance levers",
+    description:
+      "Situations illustratives où une amélioration opérationnelle peut produire une valeur économique. Preuves à établir sur vos données.",
+    descriptionEn:
+      "Illustrative situations where an operational improvement can create economic value. Evidence to establish on your data.",
+    keywords: [
+      "leviers de performance",
+      "réduction dépenses outils",
+      "capacité experts",
+      "marge facturation",
+    ],
+  },
+  cadre: {
+    path: "/cadre",
+    title: "Cadre — la performance au-delà des promesses",
+    titleEn: "Cadre — performance beyond promises",
+    description:
+      "Notes pour les dirigeants qui doivent arbitrer les coûts, la capacité et la transformation.",
+    descriptionEn:
+      "Notes for leaders who must decide on costs, capacity and transformation.",
+    keywords: ["Cadre TWM", "gain-share", "temps libéré marge"],
   },
   partenaires: {
     path: "/partenaires",
@@ -144,24 +187,8 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
     descriptionEn:
       "TWM Advisory's collaboration framework for introducers, integrators, industry networks and delivery partners.",
     keywords: [
-      "partenariat conseil IA",
-      "apporteur affaires IA",
-      "réalisation conjointe agents IA",
-    ],
-  },
-  architecture: {
-    path: "/architecture",
-    title: "Organisation IA — assistants et automatisations internes",
-    titleEn: "AI operations — internal assistants and automations",
-    description:
-      "Présentation des assistants et automatisations utilisés par TWM Advisory, de leurs fonctions et des validations qui restent sous responsabilité humaine.",
-    descriptionEn:
-      "An overview of the assistants and automations used by TWM Advisory, their functions and the approvals that remain under human responsibility.",
-    keywords: [
-      "agents IA en production",
-      "organisation agentique",
-      "IA agentique entreprise",
-      "multi-agents IA",
+      "partenariat conseil performance",
+      "apporteur affaires",
     ],
   },
   "a-propos": {
@@ -169,52 +196,51 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
     title: "À propos — Tannous Mekari, fondateur de TWM Advisory",
     titleEn: "About — Tannous Mekari, founder of TWM Advisory",
     description:
-      "Tannous Mekari, président de TWM ADVISORY. 17 années d'expérience en e-commerce, développement d'activités et direction opérationnelle.",
+      "Tannous Mekari, président de TWM ADVISORY. Operating Performance Partner : stratégie, opérations et exécution.",
     descriptionEn:
-      "Tannous Mekari, president of TWM ADVISORY. 17 years of experience in e-commerce, business development and operational leadership.",
+      "Tannous Mekari, president of TWM ADVISORY. Operating Performance Partner: strategy, operations and execution.",
     keywords: [
       "Tannous Mekari",
       "TWM ADVISORY",
-      "consultant IA France",
-      "fractional CAIO France",
+      "Operating Performance Partner",
     ],
   },
   faq: {
     path: "/faq",
-    title: "FAQ — questions dirigeants avant un projet IA",
-    titleEn: "FAQ — executive questions before an AI project",
+    title: "FAQ — questions avant une décision de performance",
+    titleEn: "FAQ — questions before a performance decision",
     description:
-      "Questions fréquentes sur les services TWM Advisory, la confidentialité des données, les budgets, le déploiement et la supervision humaine.",
+      "Questions fréquentes sur le mandat de performance, le gain-share, la mesure des gains et Performance OS.",
     descriptionEn:
-      "Common questions about TWM Advisory services, data confidentiality, budgets, deployment and human oversight.",
+      "Common questions on the performance mandate, gain-share, gain measurement and Performance OS.",
     keywords: [
-      "FAQ conseil IA",
-      "confidentialité IA entreprise",
-      "questions déploiement agents IA",
+      "FAQ performance",
+      "gain-share",
+      "Operating Performance Partner",
     ],
   },
   demarrer: {
     path: "/demarrer",
-    title: "Décrire votre besoin — questionnaire initial",
-    titleEn: "Describe your needs — initial questionnaire",
+    title: "Évaluer votre potentiel — questionnaire initial",
+    titleEn: "Assess your potential — initial questionnaire",
     description:
-      "Questionnaire initial TWM Advisory : objectifs, taille de l'organisation, délai, contraintes de données et description du besoin.",
+      "Questionnaire initial TWM Advisory pour préparer un Performance Scan : priorité économique, contraintes et orientation.",
     descriptionEn:
-      "TWM Advisory's initial questionnaire covers objectives, organization size, timeline, data constraints and a description of your needs.",
+      "TWM Advisory initial questionnaire to prepare a Performance Scan: economic priority, constraints and direction.",
     keywords: [
-      "questionnaire projet IA",
-      "diagnostic IA entreprise",
-      "prendre rendez-vous consultant IA",
+      "Performance Scan",
+      "évaluer potentiel performance",
+      "diagnostic économique",
     ],
   },
   contact: {
     path: "/contact",
-    title: "Contact — tannous@twm.expert",
-    titleEn: "Contact — tannous@twm.expert",
+    title: "Contact — priorité économique",
+    titleEn: "Contact — economic priority",
     description:
-      "Contactez TWM Advisory en décrivant votre besoin ou en écrivant à tannous@twm.expert. Premier échange de 30 minutes, sans engagement.",
+      "Premier échange de 30 minutes pour comprendre votre priorité économique et décider si un Performance Scan est pertinent.",
     descriptionEn:
-      "Contact TWM Advisory by describing your needs or emailing tannous@twm.expert. Initial 30-minute conversation, with no commitment.",
+      "Initial 30-minute conversation to understand your economic priority and decide whether a Performance Scan is relevant.",
     keywords: ["contact TWM Advisory", "tannous@twm.expert"],
   },
   "mentions-legales": {
@@ -312,8 +338,8 @@ export function buildPageMetadata(key: PageSeoKey): Metadata {
   };
 }
 
-export function buildSignalMetadata(post: SignalPost): Metadata {
-  const path = `/signal/${post.slug}`;
+export function buildCadreMetadata(post: CadrePost): Metadata {
+  const path = `/cadre/${post.slug}`;
   const url = `${siteConfig.url}${path}`;
   const title = post.title.fr;
   const description = `${post.insight.fr} ${post.verdict.fr}`.trim();
@@ -323,8 +349,8 @@ export function buildSignalMetadata(post: SignalPost): Metadata {
     description,
     keywords: [
       ...keywords,
-      "Signal TWM",
-      "insight IA",
+      "Cadre TWM",
+      "performance opérationnelle",
       post.intent.replace("_", " "),
     ],
     authors: [{ name: siteConfig.founderName }],
@@ -387,7 +413,7 @@ export function buildMetadata(): Metadata {
     publisher: siteConfig.legalName,
     category: "Business",
     classification:
-      "Conseil IA, audit IA, déploiement d'agents IA en production",
+      "Operating Performance Partner — performance opérationnelle, coûts, capacité, marge",
     referrer: "origin-when-cross-origin",
     formatDetection: {
       email: false,
@@ -412,7 +438,7 @@ export function buildMetadata(): Metadata {
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: "TWM Advisory — Conseil, produits & agents IA en production",
+          alt: "TWM Advisory — Operating Performance Partner",
           type: "image/png",
         },
       ],
@@ -463,7 +489,7 @@ function breadcrumbItems(
 }
 
 export function buildJsonLd() {
-  const faqEntities = content.faq.items.map((item) => ({
+  const faqEntities = faqItems.map((item) => ({
     "@type": "Question",
     name: item.q.fr,
     acceptedAnswer: {
@@ -479,7 +505,7 @@ export function buildJsonLd() {
     legalName: siteConfig.legalName,
     url: siteConfig.url,
     description: content.meta.description.fr,
-    slogan: "Conseil et déploiement de solutions IA.",
+    slogan: content.meta.title.fr,
     foundingDate: "2026-06-04",
     taxID: siteConfig.siren,
     vatID: siteConfig.vatId,
@@ -494,25 +520,23 @@ export function buildJsonLd() {
       name: code,
     })),
     knowsAbout: [
-      "Audit IA entreprise",
-      "Déploiement d'agents IA",
-      "Agents IA en production",
-      "IA agentique",
-      "Direction IA à temps partagé",
-      "Fractional CAIO",
-      "Gouvernance IA",
-      "AI Act",
-      "Confidentialité des données",
-      "Formation IA dirigeants",
-      "IA pour cabinets d'avocats",
-      "IA pour experts-comptables",
+      "Operating Performance Partner",
+      "Performance opérationnelle",
+      "Réduction des coûts évitables",
+      "Capacité opérationnelle",
+      "Protection de la marge",
+      "Diagnostic économique",
+      "Gain-share",
+      "Performance OS",
+      "Automatisation et IA appliquée",
+      "Mesure avec la finance",
     ],
     serviceType: [
-      "Diagnostic des usages de l'IA",
-      "Conception et déploiement d'agents IA",
-      "Évaluation des systèmes IA existants",
-      "Stratégie et gouvernance de l'IA",
-      "Formation & sensibilisation",
+      "Performance Scan",
+      "Mandat de performance",
+      "Exécution opérationnelle",
+      "Mesure des gains avec la finance",
+      "Cadre Performance OS",
     ],
     email: siteConfig.email,
     contactPoint: {
@@ -530,7 +554,7 @@ export function buildJsonLd() {
     "@type": "Person",
     "@id": `${siteConfig.url}/#person`,
     name: siteConfig.founderName,
-    jobTitle: "Président — conseil et déploiement de solutions IA",
+    jobTitle: "Fondateur — Operating Performance Partner",
     worksFor: { "@id": `${siteConfig.url}/#organization` },
     description: content.about.p1.fr,
     knowsLanguage: ["fr", "en", "ar"],
@@ -550,7 +574,7 @@ export function buildJsonLd() {
     publisher: { "@id": `${siteConfig.url}/#organization` },
     potentialAction: {
       "@type": "CommunicateAction",
-      name: "Décrire votre besoin",
+      name: "Évaluer votre potentiel",
       target: `${siteConfig.url}/demarrer`,
     },
   };
@@ -571,14 +595,27 @@ export function buildJsonLd() {
     dateModified: new Date().toISOString().slice(0, 10),
   };
 
-  const services = content.offers.items.map((offer, i) => ({
+  const services = [
+    {
+      title: "Réduire les coûts évitables",
+      body: "Établir les dépenses évitables, leur coût de sortie et les conditions de réduction.",
+    },
+    {
+      title: "Renforcer la capacité",
+      body: "Accélérer la préparation, fiabiliser les flux et définir l'usage de la capacité libérée.",
+    },
+    {
+      title: "Protéger la marge",
+      body: "Relier le travail réalisé à la facturation et contrôler les écarts prix / coûts de service.",
+    },
+  ].map((service, i) => ({
     "@type": "Service",
     "@id": `${siteConfig.url}/#service-${i + 1}`,
-    name: offer.title.fr,
-    description: `${offer.body.fr} ${offer.deliverable.fr}`,
+    name: service.title,
+    description: service.body,
     provider: { "@id": `${siteConfig.url}/#organization` },
     areaServed: siteConfig.areaServed,
-    url: `${siteConfig.url}/offres`,
+    url: `${siteConfig.url}/performance`,
   }));
 
   const faqPage = {
@@ -632,8 +669,8 @@ export function buildPageJsonLd(
   };
 }
 
-export function buildSignalJsonLd(post: SignalPost) {
-  const url = `${siteConfig.url}/signal/${post.slug}`;
+export function buildCadreJsonLd(post: CadrePost) {
+  const url = `${siteConfig.url}/cadre/${post.slug}`;
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -654,11 +691,11 @@ export function buildSignalJsonLd(post: SignalPost) {
         },
         mainEntityOfPage: url,
         inLanguage: "fr-FR",
-        articleSection: "Signal",
+        articleSection: "Cadre",
         keywords: [
           post.verdict.fr,
-          "IA entreprise",
-          "agents IA",
+          "Operating Performance Partner",
+          "performance opérationnelle",
           "TWM Advisory",
         ],
         speakable: {
@@ -668,8 +705,8 @@ export function buildSignalJsonLd(post: SignalPost) {
       },
       breadcrumbItems([
         { name: "Accueil", path: "/" },
-        { name: "Signal", path: "/signal" },
-        { name: post.title.fr, path: `/signal/${post.slug}` },
+        { name: "Cadre", path: "/cadre" },
+        { name: post.title.fr, path: `/cadre/${post.slug}` },
       ]),
     ],
   };

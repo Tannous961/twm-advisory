@@ -81,7 +81,7 @@ export function Hero() {
               {t(c.hero.ctaPrimary)}
             </Link>
             <Link
-              href="/offres"
+              href="/#leviers"
               className="btn-secondary rounded-full border-white/20 bg-black/20 px-8 py-4 text-center text-fg backdrop-blur-md sm:py-4.5"
             >
               {t(c.hero.ctaSecondary)}

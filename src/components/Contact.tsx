@@ -4,12 +4,15 @@ import Link from "next/link";
 import { Reveal } from "./Reveal";
 import { track } from "@/lib/analytics";
 import { buildCalendlyUrl } from "@/lib/calendly";
+import { contactPage } from "@/lib/editorial";
 import { useI18n, useT } from "@/lib/i18n";
 
 export function Contact() {
   const { c } = useI18n();
   const t = useT();
   const bookingUrl = buildCalendlyUrl({ source: "contact" });
+  const email = contactPage.email;
+  const mailto = `mailto:${email}`;
 
   return (
     <Reveal>
@@ -38,21 +41,24 @@ export function Contact() {
               }}
             />
           </div>
-          <div className="relative">
-            <h2
-              id="contact-title"
-              className="type-h2 mb-4 sm:mb-5"
-            >
-              {t(c.contact.title)}
-              {c.contact.titleEm.fr || c.contact.titleEm.en ? (
-                <>
-                  {" "}
-                  <em className="text-accent italic">{t(c.contact.titleEm)}</em>
-                </>
-              ) : null}
+          <div className="relative mx-auto max-w-3xl">
+            <h2 id="contact-title" className="type-h2 mb-4 sm:mb-5">
+              {t(contactPage.leadTitle)}
             </h2>
-            <p className="type-lead mb-8 text-muted sm:mb-9">
-              {t(c.contact.lead)}
+            <p className="type-lead mb-6 text-muted sm:mb-7">
+              {t(contactPage.leadBody)}
+            </p>
+            <p className="type-body mb-3 text-muted-2">
+              {t(contactPage.formTitle)}
+            </p>
+            <p className="type-body mb-4 text-muted-2">
+              {t(contactPage.fieldsNote)}
+            </p>
+            <p className="type-body mb-4 text-muted-2">
+              {t(contactPage.formBody)}
+            </p>
+            <p className="type-body mb-8 text-muted-2 sm:mb-9">
+              {t(contactPage.note)}
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
               <Link
@@ -76,17 +82,26 @@ export function Contact() {
             </div>
             <p className="type-label mt-5 tracking-[0.08em] text-[#4c5468]">
               <a
-                href="mailto:tannous@twm.expert"
+                href={mailto}
                 className="underline-offset-4 hover:underline"
                 onClick={() =>
                   track("cta_click", { location: "contact_email" })
                 }
               >
-                {t(c.contact.secondary)}
+                {email}
               </a>
               {" · "}
               {t(c.contact.note)}
             </p>
+            <p className="type-caption mt-4 text-muted-3">
+              {t(contactPage.noAutoSend)}
+            </p>
+            <div className="mx-auto mt-12 max-w-2xl border-t border-white/9 pt-10 text-left">
+              <h3 className="mb-3 type-h3">{t(contactPage.followUpTitle)}</h3>
+              <p className="type-body text-muted">
+                {t(contactPage.followUpBody)}
+              </p>
+            </div>
           </div>
         </div>
       </section>

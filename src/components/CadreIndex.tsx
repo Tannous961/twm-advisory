@@ -1,12 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { signalPosts } from "@/lib/signal";
+import { cadrePosts } from "@/lib/cadre";
 import { useI18n, useT } from "@/lib/i18n";
 import { Reveal } from "./Reveal";
-import { SignalCover } from "./SignalCover";
+import { CadreCover } from "./CadreCover";
 
-export function SignalIndex() {
+export function CadreIndex() {
   const { c, lang } = useI18n();
   const t = useT();
 
@@ -14,20 +14,20 @@ export function SignalIndex() {
     <Reveal>
       <section className="content-wrap section-pad">
         <ol className="grid gap-5 md:grid-cols-2">
-          {signalPosts.map((post, i) => (
+          {cadrePosts.map((post, i) => (
             <li
               key={post.slug}
               className={i === 0 ? "md:col-span-2" : ""}
             >
               <Link
-                href={`/signal/${post.slug}`}
+                href={`/cadre/${post.slug}`}
                 className={`glass-card group grid h-full gap-6 rounded-3xl p-4 transition duration-300 hover:-translate-y-1 hover:border-accent/30 sm:p-5 ${
                   i === 0
                     ? "lg:grid-cols-[minmax(0,1.25fr)_minmax(18rem,.75fr)] lg:items-center"
                     : ""
                 }`}
               >
-                <SignalCover intent={post.intent} index={i} compact={i !== 0} />
+                <CadreCover intent={post.intent} index={i} compact={i !== 0} />
 
                 <div className="flex min-w-0 flex-col px-3 pb-3 sm:px-4 sm:pb-4">
                   <div className="mb-4 flex flex-wrap items-center gap-3 type-label tracking-[0.12em] text-muted-3">
@@ -36,7 +36,7 @@ export function SignalIndex() {
                     </span>
                     <span>{post.date}</span>
                     <span>
-                      {post.readingMinutes} {t(c.signal.minutes)}
+                      {post.readingMinutes} {t(c.cadre.minutes)}
                     </span>
                   </div>
                   <h2 className="type-h3 leading-snug group-hover:text-accent">
@@ -46,7 +46,7 @@ export function SignalIndex() {
                     {post.insight[lang]}
                   </p>
                   <p className="mt-6 border-t border-white/8 pt-4 type-label tracking-[0.1em] text-accent">
-                    {t(c.signal.readCta)} →
+                    {t(c.cadre.readCta)} →
                   </p>
                 </div>
               </Link>
