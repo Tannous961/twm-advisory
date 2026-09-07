@@ -5,9 +5,18 @@ import {
   EditorialBlock,
   EditorialCta,
 } from "@/components/EditorialPrimitives";
+import type { PerformanceGlyphName } from "@/components/PerformanceGlyph";
 import { Reveal } from "@/components/Reveal";
 import { methodePage as copy } from "@/lib/editorial";
 import { useT } from "@/lib/i18n";
+
+const stepGlyphs: PerformanceGlyphName[] = [
+  "diagnostic",
+  "value",
+  "execute",
+  "adoption",
+  "measure",
+];
 
 export function MethodePage() {
   const t = useT();
@@ -29,6 +38,7 @@ export function MethodePage() {
             en: `${String(index + 1).padStart(2, "0")} / ${step.title.en}`,
           }}
           body={step.body}
+          glyph={stepGlyphs[index]}
         >
           <BulletList items={[...step.bullets]} />
         </EditorialBlock>

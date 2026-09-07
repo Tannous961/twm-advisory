@@ -5,9 +5,15 @@ import {
   EditorialBlock,
   EditorialCta,
 } from "@/components/EditorialPrimitives";
+import {
+  PerformanceGlyph,
+  type PerformanceGlyphName,
+} from "@/components/PerformanceGlyph";
 import { Reveal } from "@/components/Reveal";
 import { technologyPage as copy } from "@/lib/editorial";
 import { useT } from "@/lib/i18n";
+
+const pillarGlyphs: PerformanceGlyphName[] = ["observe", "execute", "steer"];
 
 export function TechnologyPage() {
   const t = useT();
@@ -16,8 +22,16 @@ export function TechnologyPage() {
     <>
       <Reveal>
         <section className="content-wrap section-pad">
-          <h2 className="type-h2 max-w-3xl">{t(copy.leadTitle)}</h2>
-          <p className="type-lead mt-6 max-w-2xl text-muted">{t(copy.leadBody)}</p>
+          <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
+            <div>
+              <h2 className="type-h2 max-w-3xl">{t(copy.leadTitle)}</h2>
+              <p className="type-lead mt-6 max-w-2xl text-muted">{t(copy.leadBody)}</p>
+            </div>
+            <PerformanceGlyph
+              name="software"
+              className="hidden size-40 lg:block xl:size-48"
+            />
+          </div>
         </section>
       </Reveal>
 
@@ -27,8 +41,15 @@ export function TechnologyPage() {
 
       <EditorialBlock title={copy.dataTitle}>
         <div className="mt-12 grid gap-8 lg:grid-cols-3">
-          {copy.pillars.map((pillar) => (
-            <div key={pillar.title.fr} className="border-t border-[color:var(--line)] pt-6">
+          {copy.pillars.map((pillar, index) => (
+            <div
+              key={pillar.title.fr}
+              className="group border-t border-[color:var(--line)] pt-6"
+            >
+              <PerformanceGlyph
+                name={pillarGlyphs[index]}
+                className="mb-6 size-20 sm:size-24"
+              />
               <h3 className="font-display text-xl text-fg">{t(pillar.title)}</h3>
               <p className="type-body mt-3 text-muted">{t(pillar.body)}</p>
             </div>

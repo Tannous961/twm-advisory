@@ -1,6 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import {
+  PerformanceGlyph,
+  type PerformanceGlyphName,
+} from "@/components/PerformanceGlyph";
 import { Reveal } from "@/components/Reveal";
 import { useT } from "@/lib/i18n";
 import type { L } from "@/lib/editorial";
@@ -8,17 +12,27 @@ import type { L } from "@/lib/editorial";
 export function EditorialBlock({
   title,
   body,
+  glyph,
   children,
 }: {
   title: L;
   body?: L;
+  glyph?: PerformanceGlyphName;
   children?: React.ReactNode;
 }) {
   const t = useT();
   return (
     <Reveal>
       <section className="content-wrap section-pad border-t border-[color:var(--line)]">
-        <h2 className="type-h2 max-w-3xl">{t(title)}</h2>
+        <div className={glyph ? "flex items-start justify-between gap-8" : undefined}>
+          <h2 className="type-h2 max-w-3xl">{t(title)}</h2>
+          {glyph ? (
+            <PerformanceGlyph
+              name={glyph}
+              className="-mt-4 size-24 shrink-0 sm:size-32"
+            />
+          ) : null}
+        </div>
         {body ? <p className="type-lead mt-6 max-w-2xl text-muted">{t(body)}</p> : null}
         {children}
       </section>

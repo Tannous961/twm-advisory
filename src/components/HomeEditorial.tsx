@@ -6,6 +6,26 @@ import { useI18n, useT } from "@/lib/i18n";
 import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
 import { SectionVisual } from "./SectionVisual";
+import {
+  PerformanceGlyph,
+  type PerformanceGlyphName,
+} from "./PerformanceGlyph";
+
+const sectionGlyphs: Record<string, PerformanceGlyphName> = {
+  diagnostic: "diagnostic",
+  valeur: "value",
+  leviers: "levers",
+  adoption: "adoption",
+  mesure: "measure",
+  alignement: "alignment",
+};
+
+const leverGlyphs: Record<string, PerformanceGlyphName> = {
+  partner: "partner",
+  operating: "operating",
+  commerce: "commerce",
+  software: "software",
+};
 
 export function HomeEditorialSections() {
   const t = useT();
@@ -28,7 +48,13 @@ export function HomeEditorialSections() {
 
         const copy = (
           <div className={section.image ? "lg:py-2" : undefined}>
-            <SectionLabel index={section.index} label={t(section.label)} />
+            <div className="mb-7 flex items-start justify-between gap-6">
+              <SectionLabel index={section.index} label={t(section.label)} />
+              <PerformanceGlyph
+                name={sectionGlyphs[section.id]}
+                className="-mt-4 size-24 shrink-0 sm:size-28"
+              />
+            </div>
             <h2 id={`${section.id}-title`} className="type-h2 max-w-3xl">
               {t(section.title)}
             </h2>
@@ -79,6 +105,10 @@ export function HomeEditorialSections() {
                   {section.cards.map((card) => {
                     const inner = (
                       <>
+                        <PerformanceGlyph
+                          name={leverGlyphs[card.id]}
+                          className="mb-6 size-20 sm:size-24"
+                        />
                         <h3 className="font-display text-xl text-fg">{t(card.title)}</h3>
                         <p className="type-body mt-3 text-muted">{t(card.body)}</p>
                         {card.href ? (
@@ -92,7 +122,7 @@ export function HomeEditorialSections() {
                       <Link
                         key={card.id}
                         href={card.href}
-                        className="border-t border-[color:var(--line)] pt-6 transition-colors hover:border-accent/40"
+                        className="group border-t border-[color:var(--line)] pt-6 transition-colors hover:border-accent/40"
                       >
                         {inner}
                       </Link>
