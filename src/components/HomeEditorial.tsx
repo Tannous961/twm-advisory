@@ -6,42 +6,6 @@ import { useI18n, useT } from "@/lib/i18n";
 import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
 
-export function HomeStartingPoint() {
-  const t = useT();
-  const s = homeEditorial.startingPoint;
-
-  return (
-    <Reveal>
-      <section className="content-wrap section-pad" aria-labelledby="starting-title">
-        <SectionLabel index="00" label={t(s.label)} />
-        <h2 id="starting-title" className="type-h2 max-w-3xl">
-          {t(s.title)}
-        </h2>
-        <div className="mt-12 grid gap-8 border-y border-[color:var(--line)] py-10 sm:grid-cols-3 sm:gap-0 sm:divide-x sm:divide-[color:var(--line)]">
-          {s.pillars.map((pillar, i) => (
-            <div key={pillar.id} className="sm:px-8 first:sm:pl-0 last:sm:pr-0">
-              <p className="type-label text-accent">{String(i + 1).padStart(2, "0")}</p>
-              <h3 className="mt-3 font-display text-2xl text-fg">{t(pillar.title)}</h3>
-              <p className="type-body mt-3 text-muted">{t(pillar.body)}</p>
-            </div>
-          ))}
-        </div>
-        <p className="type-lead mt-10 max-w-2xl text-muted">{t(s.footer)}</p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          {s.methodChips.map((chip) => (
-            <span
-              key={chip.fr}
-              className="rounded-full border border-[color:var(--line)] px-4 py-2 type-label text-muted-2"
-            >
-              {t(chip)}
-            </span>
-          ))}
-        </div>
-      </section>
-    </Reveal>
-  );
-}
-
 export function HomeEditorialSections() {
   const t = useT();
   const { lang } = useI18n();
@@ -53,6 +17,7 @@ export function HomeEditorialSections() {
       {sections.map((section) => (
         <Reveal key={section.id}>
           <section
+            id={section.id}
             className="content-wrap section-pad"
             aria-labelledby={`${section.id}-title`}
           >
@@ -63,16 +28,40 @@ export function HomeEditorialSections() {
             <p className="type-lead mt-6 max-w-2xl text-muted">{t(section.body)}</p>
 
             {section.cards ? (
-              <div className="mt-12 grid gap-6 lg:grid-cols-3">
-                {section.cards.map((card) => (
-                  <div
-                    key={card.id}
-                    className="border-t border-[color:var(--line)] pt-6"
-                  >
-                    <h3 className="font-display text-xl text-fg">{t(card.title)}</h3>
-                    <p className="type-body mt-3 text-muted">{t(card.body)}</p>
-                  </div>
-                ))}
+              <div
+                className={`mt-12 grid gap-6 ${
+                  section.cards.length > 3 ? "lg:grid-cols-2" : "lg:grid-cols-3"
+                }`}
+              >
+                {section.cards.map((card) => {
+                  const inner = (
+                    <>
+                      <h3 className="font-display text-xl text-fg">{t(card.title)}</h3>
+                      <p className="type-body mt-3 text-muted">{t(card.body)}</p>
+                      {card.href ? (
+                        <span className="mt-4 inline-block type-label text-accent">
+                          {t({ fr: "Explorer", en: "Explore" })} ↗
+                        </span>
+                      ) : null}
+                    </>
+                  );
+                  return card.href ? (
+                    <Link
+                      key={card.id}
+                      href={card.href}
+                      className="border-t border-[color:var(--line)] pt-6 transition-colors hover:border-accent/40"
+                    >
+                      {inner}
+                    </Link>
+                  ) : (
+                    <div
+                      key={card.id}
+                      className="border-t border-[color:var(--line)] pt-6"
+                    >
+                      {inner}
+                    </div>
+                  );
+                })}
               </div>
             ) : null}
 

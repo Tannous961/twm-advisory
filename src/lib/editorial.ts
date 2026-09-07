@@ -16,6 +16,7 @@ export interface Card {
   id: string;
   title: L;
   body: L;
+  href?: string;
 }
 
 export interface Step {
@@ -90,169 +91,124 @@ export const homeEditorial = {
       en: "Operating Performance Partner",
     } as L,
     title: {
-      fr: "La performance se décide.",
-      en: "Performance is decided.",
+      fr: "Vous ne nous confiez pas un projet.",
+      en: "You are not handing us a project.",
     } as L,
     titleEm: {
-      fr: "Et se réalise.",
-      en: "And delivered.",
+      fr: "Vous nous confiez une priorité de performance.",
+      en: "You are entrusting us with a performance priority.",
     } as L,
-    lead: [
-      {
-        fr: "Améliorer votre marge.",
-        en: "Improve your margin.",
-      },
-      {
-        fr: "Maîtriser vos coûts.",
-        en: "Control your costs.",
-      },
-      {
-        fr: "Donner de la capacité à vos équipes.",
-        en: "Free capacity for your teams.",
-      },
-    ] as L[],
     body: {
-      fr: "TWM Advisory identifie les leviers économiques, conduit leur mise en œuvre et mesure les résultats avec votre direction financière.",
-      en: "TWM Advisory identifies economic levers, drives implementation and measures results with your finance leadership.",
+      fr: "TWM intervient lorsque la direction veut comprendre où la valeur se perd, décider quoi changer et faire exécuter les changements avec ses équipes.",
+      en: "TWM steps in when leadership wants to understand where value is lost, decide what to change, and have those changes executed with their teams.",
     } as L,
     ctaPrimary: {
-      fr: "Évaluer votre potentiel",
-      en: "Assess your potential",
+      fr: "Soumettre une priorité de performance",
+      en: "Submit a performance priority",
     } as L,
     ctaSecondary: {
-      fr: "Voir les leviers d'impact",
-      en: "See the impact levers",
+      fr: "Voir les leviers d'intervention",
+      en: "See intervention domains",
     } as L,
     note: {
-      fr: "Premier échange de 30 minutes, sans engagement.",
-      en: "Initial 30-minute conversation, with no commitment.",
+      fr: "TWM entre dans l'entreprise par le résultat recherché, puis mobilise les moyens nécessaires pour le produire.",
+      en: "TWM enters the company through the outcome sought, then mobilizes the means needed to produce it.",
     } as L,
-  },
-
-  startingPoint: {
-    label: {
-      fr: "Le point de départ",
-      en: "The starting point",
-    } as L,
-    title: {
-      fr: "Votre compte de résultat.",
-      en: "Your P&L.",
-    } as L,
-    pillars: [
-      {
-        id: "couts",
-        title: { fr: "Coûts", en: "Costs" },
-        body: {
-          fr: "Réduire les dépenses évitables",
-          en: "Cut avoidable spend",
-        },
-      },
-      {
-        id: "operations",
-        title: { fr: "Opérations", en: "Operations" },
-        body: {
-          fr: "Améliorer la capacité utile",
-          en: "Improve useful capacity",
-        },
-      },
-      {
-        id: "revenus",
-        title: { fr: "Revenus", en: "Revenue" },
-        body: {
-          fr: "Préserver la marge acquise",
-          en: "Protect earned margin",
-        },
-      },
-    ] as Pillar[],
-    footer: {
-      fr: "Un périmètre clair. Une mesure partagée. Des résultats vérifiables.",
-      en: "A clear scope. Shared measurement. Verifiable results.",
-    } as L,
-    methodChips: [
-      { fr: "Diagnostic économique", en: "Economic diagnosis" },
-      { fr: "Exécution opérationnelle", en: "Operational execution" },
-      { fr: "Mesure avec la finance", en: "Measured with finance" },
-    ] as L[],
   },
 
   sections: [
     {
-      id: "priorite",
+      id: "diagnostic",
       index: "01",
-      label: { fr: "La priorité", en: "The priority" },
+      label: { fr: "Le diagnostic", en: "Diagnosis" },
       title: {
-        fr: "Partir de la valeur à créer.",
-        en: "Start from the value to create.",
+        fr: "Nous comprenons le fonctionnement réel de l'entreprise.",
+        en: "We understand how the company actually works.",
       },
       body: {
-        fr: "Une dépense qui se répète. Un processus qui ralentit la facturation. Des experts absorbés par l'administratif. Nous partons de ces situations pour établir un potentiel économique, puis décider ce qui mérite d'être exécuté.",
-        en: "A recurring expense. A process that slows billing. Experts absorbed by admin work. We start from these situations to establish economic potential, then decide what deserves to be executed.",
-      },
-      cards: [
-        {
-          id: "couts-maitrises",
-          title: { fr: "Coûts maîtrisés", en: "Controlled costs" },
-          body: {
-            fr: "Rationaliser les outils, les prestations et les opérations redondantes. Mesurer les dépenses réellement évitées.",
-            en: "Rationalize tools, services and redundant operations. Measure spend actually avoided.",
-          },
-        },
-        {
-          id: "capacite-retrouvee",
-          title: { fr: "Capacité retrouvée", en: "Capacity recovered" },
-          body: {
-            fr: "Réduire les reprises et les tâches de préparation. Relier le temps libéré à une utilisation concrète.",
-            en: "Reduce rework and preparation tasks. Tie freed time to concrete use.",
-          },
-        },
-        {
-          id: "marge-protegee",
-          title: { fr: "Marge protégée", en: "Protected margin" },
-          body: {
-            fr: "Identifier les prestations non facturées, les remises mal contrôlées et les coûts de traitement qui érodent la rentabilité.",
-            en: "Identify unbilled work, poorly controlled discounts and processing costs that erode profitability.",
-          },
-        },
-      ] as Card[],
-      cta: {
-        label: { fr: "Découvrir TWM Performance", en: "Discover TWM Performance" },
-        href: "/performance",
+        fr: "Nous ne nous limitons pas à la vision comptable. Nous rapprochons données financières, outils, processus, flux commerciaux et travail réellement effectué pour localiser coûts, pertes de capacité et opportunités de croissance. Nous travaillons avec le niveau d'accès nécessaire au périmètre défini, dans un cadre de confidentialité, de sécurité et de gouvernance convenu avec la direction.",
+        en: "We do not stop at the accounting view. We connect financial data, tools, processes, commercial flows and work actually done to locate costs, capacity loss and growth opportunities. We work with the access level required for the agreed scope, under confidentiality, security and governance terms set with leadership.",
       },
     },
     {
-      id: "engagement",
+      id: "valeur",
       index: "02",
-      label: { fr: "L'engagement", en: "The commitment" },
+      label: { fr: "La valeur", en: "Value" },
       title: {
-        fr: "Du diagnostic à l'impact mesuré.",
-        en: "From diagnosis to measured impact.",
+        fr: "Nous identifions où la valeur est perdue ou sous-exploitée.",
+        en: "We identify where value is lost or underused.",
       },
       body: {
-        fr: "Nous cadrons un premier périmètre, établissons une référence et mettons les actions en œuvre avec vos équipes. Chaque extension se décide sur les résultats observés.",
-        en: "We frame an initial scope, establish a baseline and implement actions with your teams. Each expansion is decided on observed results.",
+        fr: "Dépenses mal catégorisées, processus hérités, opportunités non suivies, écarts entre stratégie et exécution : le diagnostic établit un potentiel économique avant de décider ce qui mérite d'être exécuté.",
+        en: "Misclassified spend, inherited processes, untracked opportunities, gaps between strategy and execution: the diagnosis establishes economic potential before deciding what deserves to be executed.",
       },
-      steps: [
+    },
+    {
+      id: "leviers",
+      index: "03",
+      label: { fr: "Les leviers", en: "The levers" },
+      title: {
+        fr: "Nous activons les leviers qui comptent pour votre entreprise.",
+        en: "We activate the levers that matter for your company.",
+      },
+      body: {
+        fr: "Ces domaines ne sont pas quatre offres indépendantes. Ce sont des moyens mobilisés selon la priorité de performance que vous confiez.",
+        en: "These domains are not four separate offerings. They are means mobilized according to the performance priority you entrust to us.",
+      },
+      cards: [
         {
-          id: "identifier",
-          label: { fr: "Identifier", en: "Identify" },
+          id: "partner",
+          title: { fr: "Partner Performance", en: "Partner Performance" },
+          body: {
+            fr: "Structurer les partenaires, les leads, le co-selling, les referrals et la gouvernance du réseau.",
+            en: "Structure partners, leads, co-selling, referrals and network governance.",
+          },
+          href: "/partner-performance",
         },
         {
-          id: "chiffrer",
-          label: { fr: "Chiffrer", en: "Quantify" },
+          id: "operating",
+          title: { fr: "Operating Performance", en: "Operating Performance" },
+          body: {
+            fr: "Réduire les coûts, les reprises, les tâches inutiles et les pertes de capacité.",
+            en: "Cut costs, rework, non-value tasks and capacity loss.",
+          },
+          href: "/performance",
         },
         {
-          id: "executer",
-          label: { fr: "Exécuter", en: "Execute" },
+          id: "commerce",
+          title: { fr: "Commerce Performance", en: "Commerce Performance" },
+          body: {
+            fr: "Améliorer l'e-commerce, l'omnicanal, les parcours clients et l'architecture commerciale.",
+            en: "Improve e-commerce, omnichannel, customer journeys and commercial architecture.",
+          },
+          href: "/performance#commerce",
         },
         {
-          id: "mesurer",
-          label: { fr: "Mesurer", en: "Measure" },
+          id: "software",
+          title: {
+            fr: "AI & Software Enablement",
+            en: "AI & Software Enablement",
+          },
+          body: {
+            fr: "Donner aux équipes les moyens de produire des outils, d'automatiser certains flux et d'augmenter leur capacité.",
+            en: "Give teams the means to build tools, automate selected flows and expand capacity.",
+          },
+          href: "/technology",
         },
-        {
-          id: "ancrer",
-          label: { fr: "Ancrer", en: "Embed" },
-        },
-      ] as Step[],
+      ] as Card[],
+    },
+    {
+      id: "adoption",
+      index: "04",
+      label: { fr: "L'adoption", en: "Adoption" },
+      title: {
+        fr: "Nous faisons travailler les équipes avec les nouveaux outils et processus.",
+        en: "We help teams work with the new tools and processes.",
+      },
+      body: {
+        fr: "La mission ne s'arrête pas à la livraison d'un outil. Elle comprend l'usage, la qualité obtenue et la contribution économique, avec vos responsables métier.",
+        en: "The engagement does not stop at delivering a tool. It includes usage, quality achieved and economic contribution, with your business owners.",
+      },
       cta: {
         label: { fr: "Comprendre la méthode", en: "Understand the method" },
         href: "/methode",
@@ -260,124 +216,36 @@ export const homeEditorial = {
     },
     {
       id: "mesure",
-      index: "03",
+      index: "05",
       label: { fr: "La mesure", en: "Measurement" },
       title: {
-        fr: "Des gains qualifiés, avant d'être annoncés.",
-        en: "Qualified gains, before they are announced.",
+        fr: "Nous mesurons les effets économiques.",
+        en: "We measure the economic effects.",
       },
       body: {
-        fr: "Une heure libérée, une facture réduite et un encaissement accéléré n'ont pas le même effet économique. Nous suivons séparément la capacité, les économies, la marge et la trésorerie.",
-        en: "A freed hour, a reduced invoice and faster cash collection do not have the same economic effect. We track capacity, savings, margin and cash separately.",
-      },
-      cards: [
-        {
-          id: "alignement",
-          title: {
-            fr: "Un alignement explicite",
-            en: "An explicit alignment",
-          },
-          body: {
-            fr: "Selon le périmètre, notre rémunération associe un socle fixe et une part liée aux gains validés. Les règles de calcul sont convenues avant l'exécution.",
-            en: "Depending on scope, our fees combine a fixed base and a share linked to validated gains. Calculation rules are agreed before execution.",
-          },
-        },
-      ] as Card[],
-      cta: {
-        label: {
-          fr: "Lire le cadre de rémunération",
-          en: "Read the fee framework",
-        },
-        href: "/faq",
-      },
-    },
-    {
-      id: "moyens",
-      index: "04",
-      label: { fr: "Les moyens", en: "The means" },
-      title: {
-        fr: "La technologie au service de l'économie.",
-        en: "Technology in service of economics.",
-      },
-      body: {
-        fr: "Processus, software, automatisation, IA et accompagnement des équipes : nous retenons les moyens adaptés au problème, aux données et aux contraintes de votre organisation.",
-        en: "Process, software, automation, AI and team support: we select means suited to the problem, the data and your organization's constraints.",
+        fr: "Capacité, économies, marge et trésorerie sont suivies séparément, avec une lecture partagée avec la finance. Un gain n'est annoncé qu'après qualification.",
+        en: "Capacity, savings, margin and cash are tracked separately, with a shared reading with finance. A gain is claimed only after it is qualified.",
       },
       cta: {
-        label: { fr: "Explorer Performance OS", en: "Explore Performance OS" },
-        href: "/technology",
-      },
-    },
-    {
-      id: "terrain",
-      index: "05",
-      label: { fr: "Le terrain", en: "The field" },
-      title: {
-        fr: "Une expérience de direction et d'opérations.",
-        en: "Leadership and operations experience.",
-      },
-      body: {
-        fr: "Fondé par Tannous Mekari, TWM Advisory relie stratégie, opérations et mise en œuvre. Votre interlocuteur pilote la mission et mobilise des spécialistes lorsque le périmètre l'exige.",
-        en: "Founded by Tannous Mekari, TWM Advisory connects strategy, operations and delivery. Your counterpart leads the engagement and brings in specialists when scope requires it.",
-      },
-      cta: {
-        label: { fr: "Rencontrer TWM", en: "Meet TWM" },
-        href: "/a-propos",
-      },
-    },
-    {
-      id: "leviers",
-      index: "06",
-      label: { fr: "Les leviers", en: "The levers" },
-      title: {
-        fr: "Des situations que vos équipes connaissent.",
-        en: "Situations your teams already know.",
-      },
-      body: {
-        fr: "Exemples illustratifs de mécanismes d'amélioration. Leur potentiel doit être établi sur vos données.",
-        en: "Illustrative improvement mechanisms. Their potential must be established on your data.",
-      },
-      cards: [
-        {
-          id: "depenses-outils",
-          title: {
-            fr: "Rationaliser les dépenses d'outils",
-            en: "Rationalize tool spend",
-          },
-          body: {
-            fr: "Des abonnements se cumulent, avec des usages partiels et des fonctions qui se recouvrent.",
-            en: "Subscriptions stack up, with partial usage and overlapping features.",
-          },
-        },
-        {
-          id: "operations-expertes",
-          title: {
-            fr: "Redonner de la capacité aux experts",
-            en: "Give capacity back to experts",
-          },
-          body: {
-            fr: "La préparation de dossiers, les synthèses et les reprises absorbent une part importante du temps expert.",
-            en: "File preparation, summaries and rework absorb a large share of expert time.",
-          },
-        },
-        {
-          id: "facturation-marge",
-          title: {
-            fr: "Réduire les prestations non facturées",
-            en: "Reduce unbilled work",
-          },
-          body: {
-            fr: "Le travail réalisé n'est pas toujours rapproché des engagements et des éléments facturables.",
-            en: "Work delivered is not always reconciled with commitments and billable items.",
-          },
-        },
-      ] as Card[],
-      cta: {
-        label: {
-          fr: "Voir tous les leviers d'impact",
-          en: "See all impact levers",
-        },
+        label: { fr: "Voir des mécanismes illustratifs", en: "See illustrative mechanisms" },
         href: "/impact",
+      },
+    },
+    {
+      id: "alignement",
+      index: "06",
+      label: { fr: "L'alignement", en: "Alignment" },
+      title: {
+        fr: "Nous partageons éventuellement une partie du résultat.",
+        en: "We may share part of the outcome.",
+      },
+      body: {
+        fr: "Notre rémunération peut associer un forfait de cadrage, un socle d'exécution et une part liée aux résultats lorsque les gains sont objectivement mesurables. Il n'existe pas de formule universelle : le protocole est défini avant exécution.",
+        en: "Our fees can combine a scoping fixed fee, an execution base and a share tied to results when gains are objectively measurable. There is no universal formula: the protocol is defined before execution.",
+      },
+      cta: {
+        label: { fr: "Lire les réponses sur la rémunération", en: "Read fee answers" },
+        href: "/faq",
       },
     },
   ] as EditorialSection[],
@@ -395,8 +263,8 @@ export const homeEditorial = {
           en: "Do you need an AI project to get started?",
         },
         a: {
-          fr: "Non. Une dépense à réduire, un processus trop lent ou une capacité insuffisante constituent des points de départ. Les moyens sont choisis après analyse.",
-          en: "No. Spend to cut, a process that is too slow, or insufficient capacity are valid starting points. Means are chosen after analysis.",
+          fr: "Non. Une priorité de performance — coûts, capacité, partenaires, commerce ou outils — suffit. Les moyens sont choisis après analyse.",
+          en: "No. A performance priority — costs, capacity, partners, commerce or tools — is enough. Means are chosen after analysis.",
         },
       },
       {
@@ -405,18 +273,18 @@ export const homeEditorial = {
           en: "How does gain-share work?",
         },
         a: {
-          fr: "Une part de la rémunération peut être liée aux gains éligibles, réalisés et validés selon un protocole convenu avant exécution. Le taux, les coûts déduits, la période, les exclusions et le règlement des écarts sont contractuels.",
-          en: "Part of the fee can be tied to eligible gains that are realized and validated under a protocol agreed before execution. Rate, deducted costs, period, exclusions and variance handling are contractual.",
+          fr: "Une part de la rémunération peut être liée aux gains éligibles, réalisés et validés selon un protocole convenu avant exécution. Les règles sont contractuelles ; aucun taux universel n'est affiché.",
+          en: "Part of the fee can be tied to eligible gains that are realized and validated under a protocol agreed before execution. Rules are contractual; no universal rate is published.",
         },
       },
       {
         q: {
-          fr: "Le temps gagné est-il compté comme une économie ?",
-          en: "Is time saved counted as a saving?",
+          fr: "Quelle est la différence avec un projet classique ?",
+          en: "How is this different from a classic project?",
         },
         a: {
-          fr: "Pas automatiquement. Le temps libéré est d'abord une capacité. Il devient un gain économique lorsqu'une dépense est réellement évitée ou qu'une activité supplémentaire génère une contribution démontrable.",
-          en: "Not automatically. Freed time is first capacity. It becomes an economic gain when spend is actually avoided or additional activity generates a demonstrable contribution.",
+          fr: "Vous ne nous confiez pas un cahier des charges figé. Vous confiez une priorité de performance : nous diagnostiquons, décidons avec vous et exécutons les changements avec vos équipes.",
+          en: "You are not handing us a fixed brief. You entrust a performance priority: we diagnose, decide with you and execute changes with your teams.",
         },
       },
     ] as FaqItem[],
@@ -433,16 +301,16 @@ export const homeEditorial = {
 
 export const performancePage = {
   leadTitle: {
-    fr: "Un mandat de performance. De la décision à l'exécution.",
-    en: "A performance mandate. From decision to execution.",
+    fr: "Operating Performance — de la décision à l'exécution.",
+    en: "Operating Performance — from decision to execution.",
   } as L,
   leadBody: {
-    fr: "Nous partons d'un enjeu économique précis pour construire et mettre en œuvre un programme d'amélioration mesurable.",
-    en: "We start from a precise economic issue to design and implement a measurable improvement program.",
+    fr: "Dans le mandat de performance, ce domaine traite les coûts évitables, les reprises, les pertes de capacité et, lorsque pertinent, l'architecture commerciale (e-commerce, omnicanal, parcours).",
+    en: "Within the performance mandate, this domain addresses avoidable costs, rework, capacity loss and, when relevant, commercial architecture (e-commerce, omnichannel, journeys).",
   } as L,
   leversTitle: {
-    fr: "Trois leviers, un même niveau d'exigence.",
-    en: "Three levers, one standard of rigor.",
+    fr: "Trois axes opérationnels, un même niveau d'exigence.",
+    en: "Three operating axes, one standard of rigor.",
   } as L,
   levers: [
     {
@@ -528,8 +396,16 @@ export const performancePage = {
     en: "A shared priority and the means to act.",
   } as L,
   fitBody: {
-    fr: "L'accompagnement est pertinent lorsqu'un dirigeant porte l'objectif, qu'un responsable opérationnel peut faire évoluer le processus et qu'une base de mesure peut être établie. Aucun niveau de gain n'est garanti avant diagnostic. Les décisions de gestion restent celles de votre organisation. Nous construisons un programme dont les hypothèses et les résultats peuvent être discutés ouvertement.",
-    en: "The engagement fits when a leader owns the objective, an operations owner can change the process, and a measurement base can be established. No gain level is guaranteed before diagnosis. Management decisions remain yours. We build a program whose assumptions and results can be discussed openly.",
+    fr: "L'accompagnement est pertinent lorsqu'un dirigeant ou un actionnaire peut prendre des décisions transversales, qu'un responsable opérationnel peut faire évoluer le processus et qu'une base de mesure peut être établie. Aucun niveau de gain n'est garanti avant diagnostic.",
+    en: "The engagement fits when a leader or shareholder can take cross-cutting decisions, an operations owner can change the process, and a measurement base can be established. No gain level is guaranteed before diagnosis.",
+  } as L,
+  commerceTitle: {
+    fr: "Commerce Performance, lorsque le levier est commercial.",
+    en: "Commerce Performance when the lever is commercial.",
+  } as L,
+  commerceBody: {
+    fr: "E-commerce, omnicanal, parcours clients et architecture commerciale font partie des moyens mobilisables. Ils s'inscrivent dans le même mandat : un résultat économique recherché, puis les changements d'exécution nécessaires.",
+    en: "E-commerce, omnichannel, customer journeys and commercial architecture are means we can mobilize. They sit in the same mandate: an economic outcome sought, then the execution changes required.",
   } as L,
   ctaImpact: { fr: "Explorer les cas d'usage", en: "Explore use cases" } as L,
   ctaFaq: {
@@ -537,8 +413,8 @@ export const performancePage = {
     en: "Read gain-share answers",
   } as L,
   ctaContact: {
-    fr: "Cadrer un premier périmètre",
-    en: "Frame an initial scope",
+    fr: "Soumettre une priorité de performance",
+    en: "Submit a performance priority",
   } as L,
 } as const;
 
@@ -548,12 +424,12 @@ export const performancePage = {
 
 export const methodePage = {
   leadTitle: {
-    fr: "Rendre la performance vérifiable.",
-    en: "Make performance verifiable.",
+    fr: "Du résultat recherché aux moyens, puis à la mesure.",
+    en: "From the outcome sought to the means, then to measurement.",
   } as L,
   leadBody: {
-    fr: "Cinq étapes pour relier un problème opérationnel à un résultat économique, avec une décision explicite à chaque passage.",
-    en: "Five steps to connect an operational problem to an economic outcome, with an explicit decision at each gate.",
+    fr: "Cinq étapes pour relier une priorité de performance à un résultat économique vérifiable, avec une décision explicite à chaque passage.",
+    en: "Five steps to connect a performance priority to a verifiable economic outcome, with an explicit decision at each gate.",
   } as L,
   steps: [
     {
@@ -705,8 +581,8 @@ export const methodePage = {
     },
   ] as { title: L; body: L }[],
   ctaLabel: {
-    fr: "Discuter de votre premier chantier",
-    en: "Discuss your first workstream",
+    fr: "Soumettre une priorité de performance",
+    en: "Submit a performance priority",
   } as L,
 } as const;
 
@@ -720,16 +596,24 @@ export const technologyPage = {
     en: "The means to deliver. The frame to keep control.",
   } as L,
   leadBody: {
-    fr: "Performance OS désigne le cadre de pilotage et d'exécution proposé par TWM : données, processus, outils et contrôles réunis autour d'un objectif économique.",
-    en: "Performance OS is TWM's steering and execution frame: data, process, tools and controls gathered around an economic objective.",
+    fr: "TWM apporte une couche de contexte et de pilotage qui relie les données, les décisions, les processus et les résultats. Ce n'est pas un logiciel vendu : c'est une capacité interne qui nous permet de travailler plus profondément et plus vite pour nos clients.",
+    en: "TWM brings a context and steering layer that connects data, decisions, processes and results. It is not software we sell: it is an internal capability that lets us work deeper and faster for clients.",
   } as L,
   architectureTitle: {
     fr: "Une architecture adaptée à votre situation.",
     en: "An architecture adapted to your situation.",
   } as L,
   architectureBody: {
-    fr: "Performance OS n'est pas un abonnement logiciel standard. C'est une façon d'organiser une mission et ses moyens de réalisation, en s'appuyant autant que possible sur vos outils existants. Les composants retenus dépendent du périmètre : connexions de données, automatisations, assistants IA, interfaces métier ou tableaux de suivi. Leur disponibilité, leur coût et leur niveau de contrôle sont précisés dans la proposition.",
-    en: "Performance OS is not a standard software subscription. It is a way to organize an engagement and its delivery means, relying as much as possible on your existing tools. Components depend on scope: data connections, automations, AI assistants, business interfaces or tracking boards. Availability, cost and control level are specified in the proposal.",
+    fr: "Performance OS désigne la façon d'organiser une mission et ses moyens de réalisation, en s'appuyant autant que possible sur vos outils existants. Les composants retenus dépendent du périmètre : connexions de données, automatisations, assistants IA, interfaces métier ou tableaux de suivi. Leur disponibilité, leur coût et leur niveau de contrôle sont précisés dans la proposition.",
+    en: "Performance OS is how we organize an engagement and its delivery means, relying as much as possible on your existing tools. Components depend on scope: data connections, automations, AI assistants, business interfaces or tracking boards. Availability, cost and control level are specified in the proposal.",
+  } as L,
+  contextTitle: {
+    fr: "Une couche de contexte, pas un produit à abonner.",
+    en: "A context layer, not a product to subscribe to.",
+  } as L,
+  contextBody: {
+    fr: "Cette capacité nous permet de comprendre ce qui se passe réellement dans l'organisation, de repérer les dépenses mal catégorisées, les processus hérités, les opportunités non suivies et les écarts entre la stratégie et l'exécution. Les outils, la data et l'IA servent ce travail — ils ne le remplacent pas.",
+    en: "This capability lets us understand what is really happening in the organization, spot misclassified spend, inherited processes, untracked opportunities and gaps between strategy and execution. Tools, data and AI serve that work — they do not replace it.",
   } as L,
   dataTitle: {
     fr: "De la donnée à la décision.",
@@ -758,13 +642,21 @@ export const technologyPage = {
       },
     },
   ] as { title: L; body: L }[],
+  buildersTitle: {
+    fr: "Faire de vos équipes des product builders de leur propre métier.",
+    en: "Turn your teams into product builders of their own craft.",
+  } as L,
+  buildersBody: {
+    fr: "TWM aide les équipes à transformer leur connaissance métier en outils, automatisations et logiciels internes contrôlés. L'objectif n'est pas de remplacer les experts par des agents autonomes, mais de donner aux experts les moyens de construire de meilleurs systèmes de travail.",
+    en: "TWM helps teams turn domain knowledge into tools, automations and controlled internal software. The goal is not to replace experts with autonomous agents, but to give experts the means to build better work systems.",
+  } as L,
   meansTitle: {
     fr: "Un moyen sélectionné sur sa pertinence.",
     en: "A means selected for relevance.",
   } as L,
   meansBody: {
-    fr: "L'IA peut assister l'analyse, la recherche, la préparation et le traitement de documents. Son usage se décide en fonction du besoin, de la fiabilité attendue et des données concernées. Une règle simple, une intégration classique ou une évolution de processus peuvent être plus pertinentes. Le choix se fait sur le coût total, la qualité, l'exploitabilité et la possibilité de maintenir la solution.",
-    en: "AI can assist analysis, research, preparation and document processing. Its use is decided by need, expected reliability and the data involved. A simple rule, a classic integration or a process change can be more relevant. The choice rests on total cost, quality, operability and maintainability.",
+    fr: "L'IA peut assister l'analyse, la recherche, la préparation et le traitement de documents. Son usage se décide en fonction du besoin, de la fiabilité attendue et des données concernées. Une règle simple, une intégration classique ou une évolution de processus peuvent être plus pertinentes.",
+    en: "AI can assist analysis, research, preparation and document processing. Its use is decided by need, expected reliability and the data involved. A simple rule, a classic integration or a process change can be more relevant.",
   } as L,
   controlsTitle: {
     fr: "Des exigences traduites en décisions concrètes.",
@@ -825,8 +717,8 @@ export const aboutPage = {
     en: "A leadership approach. An execution discipline.",
   } as L,
   leadBody: {
-    fr: "TWM Advisory accompagne les organisations qui veulent transformer une priorité économique en changement opérationnel concret.",
-    en: "TWM Advisory supports organizations that want to turn an economic priority into concrete operational change.",
+    fr: "TWM Advisory accompagne les dirigeants et les actionnaires dans l'amélioration de la performance opérationnelle et commerciale de leur entreprise. Nous analysons le fonctionnement réel, identifions où la valeur est perdue ou sous-exploitée, puis activons les bons leviers.",
+    en: "TWM Advisory helps leaders and shareholders improve their company's operating and commercial performance. We analyze how work really runs, identify where value is lost or underused, then activate the right levers.",
   } as L,
   founder: {
     title: { fr: "Tannous Mekari", en: "Tannous Mekari" } as L,
@@ -877,17 +769,20 @@ export const aboutPage = {
   ] as Card[],
   audience: {
     title: {
-      fr: "Les organisations où le temps expert et la qualité comptent.",
-      en: "Organizations where expert time and quality matter.",
+      fr: "TWM travaille particulièrement bien avec les entreprises où la direction peut décider vite.",
+      en: "TWM works especially well with companies where leadership can decide quickly.",
     } as L,
     body: {
-      fr: "Directions de PME, entreprises de services, cabinets de conseil, professions du chiffre et du droit : le point commun est une activité où la capacité, la fiabilité et la marge dépendent directement des opérations. Le périmètre et les contrôles tiennent compte des obligations propres à chaque métier. Les décisions professionnelles qui exigent un jugement expert restent validées par les personnes habilitées.",
-      en: "SME leadership teams, service businesses, consulting firms, accounting and legal professions: the common thread is activity where capacity, reliability and margin depend directly on operations. Scope and controls account for each profession's obligations. Professional decisions that require expert judgment remain validated by authorized people.",
+      fr: "Entreprises owner-led ou familiales, PME et organisations de services où un dirigeant ou un actionnaire peut prendre des décisions transversales et faire évoluer rapidement l'organisation. Le périmètre et les contrôles tiennent compte des obligations propres à chaque métier.",
+      en: "Owner-led or family businesses, SMEs and service organizations where a leader or shareholder can take cross-cutting decisions and move the organization quickly. Scope and controls account for each profession's obligations.",
     } as L,
   },
   cta: {
-    label: { fr: "Échanger avec TWM", en: "Talk with TWM" },
-    href: "/contact",
+    label: {
+      fr: "Soumettre une priorité de performance",
+      en: "Submit a performance priority",
+    },
+    href: "/demarrer",
   } as Cta,
 } as const;
 
@@ -1161,6 +1056,92 @@ export const contactPage = {
 } as const;
 
 // ---------------------------------------------------------------------------
+// /partner-performance — client engagement domain (not TWM partner recruitment)
+// ---------------------------------------------------------------------------
+
+export const partnerPerformancePage = {
+  leadTitle: {
+    fr: "Partner Performance — Transformer un réseau de partenaires en système de croissance.",
+    en: "Partner Performance — Turn a partner network into a growth system.",
+  } as L,
+  leadBody: {
+    fr: "Un partenariat ne crée pas de valeur parce qu'il existe. Il crée de la valeur lorsqu'il génère des opportunités qualifiées, accélère les ventes, réduit les coûts d'acquisition et produit une relation durable entre les organisations.",
+    en: "A partnership does not create value because it exists. It creates value when it generates qualified opportunities, accelerates sales, reduces acquisition costs and builds a durable relationship between organizations.",
+  } as L,
+  capabilitiesTitle: {
+    fr: "Ce que TWM apporte",
+    en: "What TWM brings",
+  } as L,
+  capabilities: [
+    {
+      title: { fr: "Méthodologie", en: "Methodology" },
+      body: {
+        fr: "Une méthode pour structurer partenaires, co-selling, referrals et gouvernance du réseau autour d'objectifs de croissance mesurables.",
+        en: "A method to structure partners, co-selling, referrals and network governance around measurable growth objectives.",
+      },
+    },
+    {
+      title: { fr: "Gouvernance", en: "Governance" },
+      body: {
+        fr: "Rôles, règles de collaboration, priorités et arbitrages clairs entre votre organisation et vos partenaires.",
+        en: "Clear roles, collaboration rules, priorities and decision rights between your organization and your partners.",
+      },
+    },
+    {
+      title: { fr: "Architecture de leads", en: "Lead architecture" },
+      body: {
+        fr: "Qualification, routage, attribution et suivi des opportunités pour que chaque lead trouve le bon propriétaire.",
+        en: "Qualification, routing, attribution and tracking so each opportunity reaches the right owner.",
+      },
+    },
+    {
+      title: { fr: "Workflows", en: "Workflows" },
+      body: {
+        fr: "Parcours de co-selling, de recommandation et de handoff qui réduisent les frictions entre équipes et partenaires.",
+        en: "Co-selling, referral and handoff flows that reduce friction between teams and partners.",
+      },
+    },
+    {
+      title: { fr: "Outils de pilotage", en: "Steering tools" },
+      body: {
+        fr: "Indicateurs, tableaux de bord et rituels de revue pour piloter la performance du réseau, pas seulement son existence.",
+        en: "Metrics, dashboards and review rituals to steer network performance — not merely its existence.",
+      },
+    },
+    {
+      title: { fr: "Réseau", en: "Network" },
+      body: {
+        fr: "Activation et extension du réseau utile à votre croissance, dans le périmètre défini avec votre direction.",
+        en: "Activation and extension of the network that serves your growth, within the scope agreed with your leadership.",
+      },
+    },
+    {
+      title: { fr: "Capacité d'activation", en: "Activation capacity" },
+      body: {
+        fr: "La capacité à faire démarrer, exécuter et suivre les initiatives partenaires jusqu'à un effet économique observable.",
+        en: "The capacity to launch, execute and follow partner initiatives through to an observable economic effect.",
+      },
+    },
+  ] as { title: L; body: L }[],
+  noteTitle: {
+    fr: "Un domaine d'engagement client.",
+    en: "A client engagement domain.",
+  } as L,
+  noteBody: {
+    fr: "Partner Performance est une offre pour les organisations qui veulent faire performer leur propre réseau de partenaires. Ce n'est pas la page pour rejoindre le réseau TWM — pour cela, voir /partenaires.",
+    en: "Partner Performance is an offer for organizations that want their own partner network to perform. It is not the page to join the TWM network — for that, see /partenaires.",
+  } as L,
+  ctaLabel: {
+    fr: "Soumettre une priorité de performance",
+    en: "Submit a performance priority",
+  } as L,
+  secondaryCtaLabel: {
+    fr: "Rejoindre le réseau TWM",
+    en: "Join the TWM network",
+  } as L,
+} as const;
+
+// ---------------------------------------------------------------------------
 // FAQ — full list (14 items from editorial brief)
 // ---------------------------------------------------------------------------
 
@@ -1171,8 +1152,8 @@ export const faqItems: FaqItem[] = [
       en: "What is an Operating Performance Partner?",
     },
     a: {
-      fr: "Un partenaire qui part d'un objectif économique, participe à sa mise en œuvre et mesure les effets avec votre organisation. TWM relie diagnostic, exécution et suivi au sein d'un périmètre de mission défini.",
-      en: "A partner that starts from an economic objective, takes part in implementation and measures effects with your organization. TWM connects diagnosis, execution and follow-up within a defined engagement scope.",
+      fr: "Un partenaire qui part d'une priorité de performance, participe à sa mise en œuvre et mesure les effets avec votre organisation. Vous ne confiez pas un cahier des charges figé : vous confiez un résultat à produire.",
+      en: "A partner that starts from a performance priority, takes part in delivery and measures effects with your organization. You are not handing over a fixed brief: you entrust an outcome to produce.",
     },
   },
   {
@@ -1181,8 +1162,28 @@ export const faqItems: FaqItem[] = [
       en: "Do you need an AI project to get started?",
     },
     a: {
-      fr: "Non. Une dépense à réduire, un processus trop lent ou une capacité insuffisante constituent des points de départ. Les moyens sont choisis après analyse.",
-      en: "No. Spend to cut, a process that is too slow, or insufficient capacity are valid starting points. Means are chosen after analysis.",
+      fr: "Non. Une priorité de performance — coûts, capacité, partenaires, commerce ou outils — suffit. Les moyens sont choisis après analyse.",
+      en: "No. A performance priority — costs, capacity, partners, commerce or tools — is enough. Means are chosen after analysis.",
+    },
+  },
+  {
+    q: {
+      fr: "Quels leviers activez-vous ?",
+      en: "Which levers do you activate?",
+    },
+    a: {
+      fr: "Partner Performance, Operating Performance, Commerce Performance et AI & Software Enablement. Ce ne sont pas quatre offres indépendantes : ce sont des domaines mobilisés selon la priorité confiée.",
+      en: "Partner Performance, Operating Performance, Commerce Performance and AI & Software Enablement. These are not four separate offerings: they are domains mobilized according to the priority entrusted.",
+    },
+  },
+  {
+    q: {
+      fr: "De quel accès avez-vous besoin ?",
+      en: "What access do you need?",
+    },
+    a: {
+      fr: "Nous travaillons avec le niveau d'accès nécessaire au périmètre défini, dans un cadre de confidentialité, de sécurité et de gouvernance convenu avec la direction. Aucun accès « board + toute la data » n'est exigé a priori.",
+      en: "We work with the access level required for the agreed scope, under confidentiality, security and governance terms set with leadership. No 'board + all data' access is required up front.",
     },
   },
   {
@@ -1191,8 +1192,8 @@ export const faqItems: FaqItem[] = [
       en: "What results can you guarantee?",
     },
     a: {
-      fr: "Aucun niveau de gain ne peut être promis avant diagnostic. La proposition fixe un périmètre, des objectifs et des règles de mesure. Les résultats dépendent notamment de la qualité des données, des décisions prises et de l'adoption.",
-      en: "No gain level can be promised before diagnosis. The proposal sets a scope, objectives and measurement rules. Results depend in particular on data quality, decisions taken and adoption.",
+      fr: "Aucun niveau de gain ne peut être promis avant diagnostic. La proposition fixe un périmètre, des objectifs et des règles de mesure.",
+      en: "No gain level can be promised before diagnosis. The proposal sets scope, objectives and measurement rules.",
     },
   },
   {
@@ -1201,8 +1202,8 @@ export const faqItems: FaqItem[] = [
       en: "How does gain-share work?",
     },
     a: {
-      fr: "Une part de la rémunération peut être liée aux gains éligibles, réalisés et validés selon un protocole convenu avant exécution. Le taux, les coûts déduits, la période, les exclusions et le règlement des écarts sont contractuels.",
-      en: "Part of the fee can be tied to eligible gains that are realized and validated under a protocol agreed before execution. Rate, deducted costs, period, exclusions and variance handling are contractual.",
+      fr: "La rémunération peut associer un forfait de cadrage, un socle d'exécution et une part liée aux résultats lorsque les gains sont objectivement mesurables. Les règles sont contractuelles ; aucun taux universel n'est affiché.",
+      en: "Fees can combine a scoping fixed fee, an execution base and a share tied to results when gains are objectively measurable. Rules are contractual; no universal rate is published.",
     },
   },
   {
@@ -1211,8 +1212,8 @@ export const faqItems: FaqItem[] = [
       en: "Are you paid only on success?",
     },
     a: {
-      fr: "Le modèle proposé comprend un diagnostic au forfait et un socle fixe pour l'exécution. Une part variable peut s'y ajouter lorsque la mesure et l'attribution sont suffisamment robustes. Les honoraires fixes restent dus selon les conditions convenues.",
-      en: "The proposed model includes a fixed-fee diagnosis and a fixed base for execution. A variable share can be added when measurement and attribution are robust enough. Fixed fees remain due under the agreed terms.",
+      fr: "Non. Un diagnostic au forfait et un socle fixe pour l'exécution restent dus selon le contrat. Une part variable peut s'y ajouter lorsque la mesure et l'attribution sont robustes.",
+      en: "No. A fixed-fee diagnosis and a fixed execution base remain due under the contract. A variable share can be added when measurement and attribution are robust.",
     },
   },
   {
@@ -1227,12 +1228,12 @@ export const faqItems: FaqItem[] = [
   },
   {
     q: {
-      fr: "EBITDA, marge et trésorerie : mesurez-vous la même chose ?",
-      en: "EBITDA, margin and cash: do you measure the same thing?",
+      fr: "Quelle est la différence entre Partner Performance et /partenaires ?",
+      en: "What is the difference between Partner Performance and /partenaires?",
     },
     a: {
-      fr: "Non. Les effets sur le résultat opérationnel, la capacité et les encaissements sont suivis séparément. Le périmètre de l'indicateur EBITDA et les retraitements retenus sont convenus avec la finance ; il n'est pas assimilé automatiquement au résultat d'exploitation.",
-      en: "No. Effects on operating result, capacity and collections are tracked separately. The EBITDA indicator scope and agreed adjustments are set with finance; it is not automatically treated as operating profit.",
+      fr: "Partner Performance est une offre client pour faire performer votre propre réseau de partenaires. La page /partenaires sert à rejoindre le réseau TWM (recrutement / collaboration avec TWM).",
+      en: "Partner Performance is a client offer to make your own partner network perform. The /partenaires page is for joining the TWM network (recruitment / collaborating with TWM).",
     },
   },
   {
@@ -1241,28 +1242,8 @@ export const faqItems: FaqItem[] = [
       en: "Who validates the gains?",
     },
     a: {
-      fr: "Les responsables désignés chez le client, avec la finance, sur la base des données et des règles convenues. TWM documente les calculs. Une procédure de revue et de désaccord est prévue dans la proposition.",
-      en: "Designated client owners, with finance, based on the data and agreed rules. TWM documents the calculations. A review and disagreement process is set out in the proposal.",
-    },
-  },
-  {
-    q: {
-      fr: "Que se passe-t-il si les gains ne se réalisent pas ?",
-      en: "What happens if the gains are not realized?",
-    },
-    a: {
-      fr: "Les écarts sont analysés et le chantier est corrigé, redimensionné ou arrêté selon les règles convenues. Une part variable fondée sur des gains réalisés ne se déclenche pas sur une simple projection. Les honoraires fixes suivent le contrat.",
-      en: "Variances are analyzed and the workstream is corrected, resized or stopped under the agreed rules. A variable share based on realized gains does not trigger on a projection alone. Fixed fees follow the contract.",
-    },
-  },
-  {
-    q: {
-      fr: "De quelles données avez-vous besoin ?",
-      en: "What data do you need?",
-    },
-    a: {
-      fr: "D'abord d'un contexte métier. Les données détaillées ne sont demandées qu'après cadrage : volumes, dépenses, temps, qualité ou facturation selon le périmètre. Les accès et la confidentialité sont définis avant partage.",
-      en: "First, a business context. Detailed data is requested only after framing: volumes, spend, time, quality or billing depending on scope. Access and confidentiality are defined before sharing.",
+      fr: "Les responsables désignés chez le client, avec la finance, sur la base des données et des règles convenues. TWM documente les calculs.",
+      en: "Designated client owners, with finance, based on the data and agreed rules. TWM documents the calculations.",
     },
   },
   {
@@ -1271,28 +1252,8 @@ export const faqItems: FaqItem[] = [
       en: "Do we need to replace our tools?",
     },
     a: {
-      fr: "Pas nécessairement. Nous privilégions l'évolution des processus et l'utilisation des outils existants lorsque cela est pertinent. Toute nouvelle solution est évaluée avec son coût total et ses conditions de reprise.",
-      en: "Not necessarily. We favor process evolution and use of existing tools when relevant. Any new solution is assessed with its total cost and take-back conditions.",
-    },
-  },
-  {
-    q: {
-      fr: "Combien de temps dure une mission ?",
-      en: "How long does an engagement last?",
-    },
-    a: {
-      fr: "La durée dépend du périmètre, des données et des validations nécessaires. Nous proposons un premier diagnostic délimité, puis des jalons d'exécution et de mesure. Aucun délai standard n'est annoncé sans qualification.",
-      en: "Duration depends on scope, data and required validations. We propose a bounded initial diagnosis, then execution and measurement milestones. No standard timeline is announced without qualification.",
-    },
-  },
-  {
-    q: {
-      fr: "Qui conserve la responsabilité des décisions ?",
-      en: "Who retains responsibility for decisions?",
-    },
-    a: {
-      fr: "Votre direction et vos responsables habilités. Les responsabilités de pilotage, de validation, d'exploitation et de maintenance sont précisées dans la mission.",
-      en: "Your leadership and authorized owners. Steering, validation, operations and maintenance responsibilities are specified in the engagement.",
+      fr: "Pas nécessairement. Nous privilégions l'évolution des processus et l'utilisation des outils existants lorsque cela est pertinent. Toute nouvelle solution est évaluée avec son coût total.",
+      en: "Not necessarily. We favor process evolution and existing tools when relevant. Any new solution is assessed with its total cost.",
     },
   },
   {
@@ -1301,8 +1262,28 @@ export const faqItems: FaqItem[] = [
       en: "Is Performance OS a software platform?",
     },
     a: {
-      fr: "Le nom désigne le cadre de pilotage et d'exécution proposé par TWM. Les composants sont définis pour chaque mission. Il ne suppose pas l'achat d'une plateforme propriétaire standard.",
-      en: "The name designates TWM's proposed steering and execution frame. Components are defined per engagement. It does not imply purchasing a standard proprietary platform.",
+      fr: "Le nom désigne le cadre de pilotage et d'exécution proposé par TWM — une capacité de contexte et de pilotage, pas un abonnement logiciel standard.",
+      en: "The name refers to TWM's steering and execution frame — a context and steering capability, not a standard software subscription.",
+    },
+  },
+  {
+    q: {
+      fr: "Qui conserve la responsabilité des décisions ?",
+      en: "Who keeps decision responsibility?",
+    },
+    a: {
+      fr: "Votre direction et vos responsables habilités. Les responsabilités de pilotage, de validation, d'exploitation et de maintenance sont précisées dans la mission.",
+      en: "Your leadership and authorized owners. Ownership of steering, validation, operations and maintenance is specified in the engagement.",
+    },
+  },
+  {
+    q: {
+      fr: "Combien de temps dure une mission ?",
+      en: "How long does an engagement last?",
+    },
+    a: {
+      fr: "La durée dépend du périmètre, des données et des validations. Nous proposons un premier diagnostic délimité, puis des jalons d'exécution et de mesure. Aucun délai standard n'est annoncé sans qualification.",
+      en: "Duration depends on scope, data and validations. We propose a bounded first diagnosis, then execution and measurement milestones. No standard timeline is announced without qualification.",
     },
   },
 ];

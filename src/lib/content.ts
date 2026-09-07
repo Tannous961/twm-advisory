@@ -7,8 +7,8 @@ export const content = {
       en: "TWM Advisory — Operating Performance Partner",
     },
     description: {
-      fr: "TWM Advisory identifie les leviers économiques, conduit leur mise en œuvre et mesure les résultats avec votre direction financière. Coûts, capacité, marge.",
-      en: "TWM Advisory identifies economic levers, drives implementation and measures results with your finance leadership. Costs, capacity, margin.",
+      fr: "TWM Advisory accompagne les dirigeants et les actionnaires dans l'amélioration de la performance opérationnelle et commerciale. Mandat de performance mesurable — opérations, partenariats, commerce, software ou IA.",
+      en: "TWM Advisory helps leaders and shareholders improve operating and commercial performance. A measurable performance mandate — operations, partnerships, commerce, software or AI.",
     },
   },
   nav: {
@@ -18,12 +18,19 @@ export const content = {
     architecture: { fr: "Technology", en: "Technology" },
     impact: { fr: "Impact", en: "Impact" },
     partners: { fr: "Partenaires", en: "Partners" },
+    partnerPerformance: {
+      fr: "Partner Performance",
+      en: "Partner Performance",
+    },
     who: { fr: "Pour qui", en: "Who it's for" },
     about: { fr: "À propos", en: "About" },
     faq: { fr: "FAQ", en: "FAQ" },
     cadre: { fr: "Cadre", en: "Cadre" },
     contact: { fr: "Contact", en: "Contact" },
-    cta: { fr: "Évaluer votre potentiel", en: "Assess your potential" },
+    cta: {
+      fr: "Soumettre une priorité de performance",
+      en: "Submit a performance priority",
+    },
     menu: { fr: "Menu", en: "Menu" },
     close: { fr: "Fermer", en: "Close" },
     skipToContent: { fr: "Aller au contenu", en: "Skip to content" },
@@ -95,24 +102,31 @@ export const content = {
       },
     },
     performance: {
-      title: { fr: "TWM Performance", en: "TWM Performance" },
+      title: { fr: "Operating Performance", en: "Operating Performance" },
       lead: {
-        fr: "Un mandat de performance. De la décision à l'exécution.",
-        en: "A performance mandate. From decision to execution.",
+        fr: "Réduire les coûts, les reprises et les pertes de capacité — un mandat d'exécution mesurable.",
+        en: "Cut costs, rework and capacity loss — a measurable execution mandate.",
       },
     },
     methode: {
       title: { fr: "Méthode", en: "Method" },
       lead: {
-        fr: "Rendre la performance vérifiable.",
-        en: "Make performance verifiable.",
+        fr: "Du résultat recherché aux moyens, puis à la mesure.",
+        en: "From the outcome sought to the means, then to measurement.",
       },
     },
     technology: {
       title: { fr: "Technology / Performance OS", en: "Technology / Performance OS" },
       lead: {
-        fr: "Les moyens de réaliser. Le cadre pour garder le contrôle.",
-        en: "The means to deliver. The frame to keep control.",
+        fr: "Une couche de contexte et de pilotage. Des équipes capables de construire leurs outils.",
+        en: "A context and steering layer. Teams able to build their own tools.",
+      },
+    },
+    partnerPerformance: {
+      title: { fr: "Partner Performance", en: "Partner Performance" },
+      lead: {
+        fr: "Transformer un réseau de partenaires en système de croissance.",
+        en: "Turn a partner network into a growth system.",
       },
     },
     impact: {
@@ -139,12 +153,15 @@ export const content = {
     contact: {
       title: { fr: "Contact", en: "Contact" },
       lead: {
-        fr: "Commençons par votre priorité économique.",
-        en: "Let's start with your economic priority.",
+        fr: "Commençons par votre priorité de performance.",
+        en: "Let's start with your performance priority.",
       },
     },
     intake: {
-      title: { fr: "Évaluer votre potentiel", en: "Assess your potential" },
+      title: {
+        fr: "Soumettre une priorité de performance",
+        en: "Submit a performance priority",
+      },
       lead: {
         fr: "Un questionnaire court pour préparer le premier échange et proposer une orientation initiale.",
         en: "A short questionnaire to prepare the first conversation and suggest an initial direction.",
@@ -195,16 +212,16 @@ export const content = {
     },
     faqTeaser: { fr: "Consulter la FAQ", en: "Read the FAQ" },
     ctaBandTitle: {
-      fr: "Où votre performance",
-      en: "Where is your performance",
+      fr: "Quelle priorité de performance",
+      en: "Which performance priority",
     },
     ctaBandTitleEm: {
-      fr: "se perd-elle aujourd'hui ?",
-      en: "being lost today?",
+      fr: "voulez-vous confier ?",
+      en: "will you entrust?",
     },
     ctaBandBody: {
-      fr: "Partagez une priorité économique et les contraintes qui l'entourent. Nous déterminerons ensemble si un diagnostic ciblé est pertinent.",
-      en: "Share an economic priority and the constraints around it. Together we will determine whether a focused diagnosis is relevant.",
+      fr: "TWM entre dans l'entreprise par le résultat recherché, puis mobilise les moyens nécessaires pour le produire.",
+      en: "TWM enters the company through the outcome sought, then mobilizes the means needed to produce it.",
     },
     ctaBandNote: {
       fr: "Premier échange de 30 minutes, sans engagement.",
@@ -235,22 +252,28 @@ export const content = {
       en: "Operating Performance Partner",
     },
     titleBefore: {
-      fr: "La performance se décide.",
-      en: "Performance is decided.",
+      fr: "Vous ne nous confiez pas un projet.",
+      en: "You are not handing us a project.",
     },
     titleEm: {
-      fr: "Et se réalise.",
-      en: "And delivered.",
+      fr: "Vous nous confiez une priorité de performance.",
+      en: "You are entrusting us with a performance priority.",
     },
     lead: {
-      fr: "Améliorer votre marge. Maîtriser vos coûts. Donner de la capacité à vos équipes. TWM Advisory identifie les leviers économiques, conduit leur mise en œuvre et mesure les résultats avec votre direction financière.",
-      en: "Improve margin. Control costs. Free capacity for your teams. TWM Advisory identifies economic levers, drives implementation and measures results with your finance leadership.",
+      fr: "TWM intervient lorsque la direction veut comprendre où la valeur se perd, décider quoi changer et faire exécuter les changements avec ses équipes.",
+      en: "TWM steps in when leadership wants to understand where value is lost, decide what to change, and have those changes executed with their teams.",
     },
-    ctaPrimary: { fr: "Évaluer votre potentiel", en: "Assess your potential" },
-    ctaSecondary: { fr: "Voir les leviers d'impact", en: "See impact levers" },
+    ctaPrimary: {
+      fr: "Soumettre une priorité de performance",
+      en: "Submit a performance priority",
+    },
+    ctaSecondary: {
+      fr: "Voir les leviers d'intervention",
+      en: "See intervention domains",
+    },
     note: {
-      fr: "Premier échange de 30 minutes, sans engagement.",
-      en: "Initial 30-minute conversation, with no commitment.",
+      fr: "TWM entre dans l'entreprise par le résultat recherché, puis mobilise les moyens nécessaires pour le produire.",
+      en: "TWM enters the company through the outcome sought, then mobilizes the means needed to produce it.",
     },
     floatTitle: { fr: "Accompagnement opérationnel", en: "Operational support" },
     floatBody: {
@@ -521,6 +544,10 @@ export const content = {
       {
         fr: "Un dirigeant porte l'objectif économique et un responsable opérationnel peut faire évoluer le processus.",
         en: "A leader owns the economic objective and an operations owner can change the process.",
+      },
+      {
+        fr: "Entreprises owner-led ou familiales où la direction ou l'actionnaire peut prendre des décisions transversales et faire évoluer rapidement l'organisation.",
+        en: "Owner-led or family businesses where leadership or shareholders can take cross-cutting decisions and move the organization quickly.",
       },
       {
         fr: "Directions de PME, entreprises de services, cabinets de conseil, professions du chiffre et du droit.",

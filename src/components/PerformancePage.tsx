@@ -34,6 +34,10 @@ export function PerformancePage() {
         <EditorialCta href="/impact" label={copy.ctaImpact} />
       </EditorialBlock>
 
+      <div id="commerce">
+        <EditorialBlock title={copy.commerceTitle} body={copy.commerceBody} />
+      </div>
+
       <EditorialBlock title={copy.scanTitle} body={copy.scanBody}>
         <BulletList items={[...copy.scanBullets]} />
       </EditorialBlock>

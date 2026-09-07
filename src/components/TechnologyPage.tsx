@@ -21,6 +21,8 @@ export function TechnologyPage() {
         </section>
       </Reveal>
 
+      <EditorialBlock title={copy.contextTitle} body={copy.contextBody} />
+
       <EditorialBlock title={copy.architectureTitle} body={copy.architectureBody} />
 
       <EditorialBlock title={copy.dataTitle}>
@@ -33,6 +35,8 @@ export function TechnologyPage() {
           ))}
         </div>
       </EditorialBlock>
+
+      <EditorialBlock title={copy.buildersTitle} body={copy.buildersBody} />
 
       <EditorialBlock title={copy.meansTitle} body={copy.meansBody} />
 

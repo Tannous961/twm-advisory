@@ -16,6 +16,7 @@ const primaryLinks = [
 const menuLinks = [
   ...primaryLinks,
   { href: "/technology", key: "architecture" as const },
+  { href: "/partner-performance", key: "partnerPerformance" as const },
   { href: "/partenaires", key: "partners" as const },
   { href: "/a-propos", key: "about" as const },
   { href: "/faq", key: "faq" as const },

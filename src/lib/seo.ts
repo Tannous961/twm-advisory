@@ -59,6 +59,7 @@ export const keywords = [
 export type PageSeoKey =
   | "home"
   | "performance"
+  | "partner-performance"
   | "methode"
   | "technology"
   | "impact"
@@ -95,27 +96,42 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
   },
   performance: {
     path: "/performance",
-    title: "TWM Performance — mandat de performance",
-    titleEn: "TWM Performance — performance mandate",
+    title: "Operating Performance — mandat d'exécution mesurable",
+    titleEn: "Operating Performance — measurable execution mandate",
     description:
-      "Un mandat de performance : diagnostic économique, exécution opérationnelle et mesure des gains avec la finance.",
+      "Réduire les coûts, les reprises et les pertes de capacité — et activer le commerce lorsque le levier est commercial.",
     descriptionEn:
-      "A performance mandate: economic diagnosis, operational execution and gain measurement with finance.",
+      "Cut costs, rework and capacity loss — and activate commerce when the lever is commercial.",
     keywords: [
-      "TWM Performance",
+      "Operating Performance",
       "Performance Scan",
       "réduction coûts entreprise",
       "gain-share conseil",
     ],
   },
+  "partner-performance": {
+    path: "/partner-performance",
+    title: "Partner Performance — réseau de partenaires en système de croissance",
+    titleEn: "Partner Performance — turn a partner network into a growth system",
+    description:
+      "Structurer partenaires, leads, co-selling, referrals et gouvernance du réseau pour générer des opportunités qualifiées et réduire le coût d'acquisition.",
+    descriptionEn:
+      "Structure partners, leads, co-selling, referrals and network governance to generate qualified opportunities and reduce acquisition cost.",
+    keywords: [
+      "Partner Performance",
+      "réseau partenaires",
+      "co-selling",
+      "architecture de leads",
+    ],
+  },
   methode: {
     path: "/methode",
-    title: "Méthode — rendre la performance vérifiable",
-    titleEn: "Method — make performance verifiable",
+    title: "Méthode — du résultat recherché à la mesure",
+    titleEn: "Method — from the outcome sought to measurement",
     description:
-      "Cinq étapes pour relier un problème opérationnel à un résultat économique, avec une décision explicite à chaque passage.",
+      "Cinq étapes pour relier une priorité de performance à un résultat économique vérifiable.",
     descriptionEn:
-      "Five steps to connect an operational problem to an economic outcome, with an explicit decision at each gate.",
+      "Five steps to connect a performance priority to a verifiable economic outcome.",
     keywords: [
       "méthode performance opérationnelle",
       "référence économique",
@@ -124,14 +140,15 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
   },
   technology: {
     path: "/technology",
-    title: "Performance OS — moyens d'exécution et contrôle",
-    titleEn: "Performance OS — delivery means and control",
+    title: "Technology — contexte, pilotage et product builders",
+    titleEn: "Technology — context, steering and product builders",
     description:
-      "Performance OS : cadre de pilotage et d'exécution TWM — données, processus, outils et contrôles autour d'un objectif économique.",
+      "Couche de contexte et de pilotage TWM, et capacité à faire de vos équipes des product builders de leur métier — pas un SaaS vendu.",
     descriptionEn:
-      "Performance OS: TWM's steering and execution frame — data, process, tools and controls around an economic objective.",
+      "TWM's context and steering layer, and the ability to turn your teams into product builders of their craft — not a SaaS product we sell.",
     keywords: [
       "Performance OS",
+      "product builders",
       "automatisation performance",
       "pilotage opérationnel",
     ],

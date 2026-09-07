@@ -1,9 +1,6 @@
 import { CtaBand } from "@/components/CtaBand";
 import { Hero } from "@/components/Hero";
-import {
-  HomeEditorialSections,
-  HomeStartingPoint,
-} from "@/components/HomeEditorial";
+import { HomeEditorialSections } from "@/components/HomeEditorial";
 import { JsonLd } from "@/components/JsonLd";
 import { buildPageJsonLd, buildPageMetadata } from "@/lib/seo";
 
@@ -14,7 +11,6 @@ export default function HomePage() {
     <>
       <JsonLd data={buildPageJsonLd("home")} />
       <Hero />
-      <HomeStartingPoint />
       <HomeEditorialSections />
       <CtaBand />
     </>
