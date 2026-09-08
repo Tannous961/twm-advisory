@@ -24,6 +24,13 @@ const pageImages: Partial<
       en: "Partner network structured as a growth system",
     },
   },
+  commercePerformance: {
+    src: "/uploads/section-valeur-capacity.webp",
+    alt: {
+      fr: "Parcours commercial et capacité de conversion",
+      en: "Commercial journey and conversion capacity",
+    },
+  },
   technology: {
     src: "/uploads/page-technology-builders.webp",
     alt: {

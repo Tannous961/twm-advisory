@@ -60,6 +60,7 @@ export type PageSeoKey =
   | "home"
   | "performance"
   | "partner-performance"
+  | "commerce-performance"
   | "methode"
   | "technology"
   | "impact"
@@ -99,9 +100,9 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
     title: "Operating Performance — mandat d'exécution mesurable",
     titleEn: "Operating Performance — measurable execution mandate",
     description:
-      "Réduire les coûts, les reprises et les pertes de capacité — et activer le commerce lorsque le levier est commercial.",
+      "Réduire les coûts, les reprises, les tâches inutiles et les pertes de capacité — avec diagnostic chiffré, exécution et mesure des gains.",
     descriptionEn:
-      "Cut costs, rework and capacity loss — and activate commerce when the lever is commercial.",
+      "Cut costs, rework, non-value tasks and capacity loss — with quantified diagnosis, execution and gain measurement.",
     keywords: [
       "Operating Performance",
       "Performance Scan",
@@ -124,6 +125,22 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
       "architecture de leads",
     ],
   },
+  "commerce-performance": {
+    path: "/commerce-performance",
+    title: "Commerce Performance — e-commerce, omnicanal et parcours clients",
+    titleEn: "Commerce Performance — e-commerce, omnichannel and customer journeys",
+    description:
+      "Améliorer l'e-commerce, l'omnicanal, les parcours clients et l'architecture commerciale pour la conversion, le panier et le coût de servir.",
+    descriptionEn:
+      "Improve e-commerce, omnichannel, customer journeys and commercial architecture for conversion, basket and cost to serve.",
+    keywords: [
+      "Commerce Performance",
+      "e-commerce performance",
+      "omnicanal",
+      "parcours clients",
+      "architecture commerciale",
+    ],
+  },
   methode: {
     path: "/methode",
     title: "Méthode — du résultat recherché à la mesure",
@@ -140,13 +157,14 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
   },
   technology: {
     path: "/technology",
-    title: "Technology — contexte, pilotage et product builders",
-    titleEn: "Technology — context, steering and product builders",
+    title: "AI & Software Enablement — outils, automatisation et capacité",
+    titleEn: "AI & Software Enablement — tools, automation and capacity",
     description:
-      "Couche de contexte et de pilotage TWM, et capacité à faire de vos équipes des product builders de leur métier — pas un SaaS vendu.",
+      "Donner aux équipes les moyens de produire des outils, d'automatiser certains flux et d'augmenter leur capacité — sous contrôle métier.",
     descriptionEn:
-      "TWM's context and steering layer, and the ability to turn your teams into product builders of their craft — not a SaaS product we sell.",
+      "Give teams the means to build tools, automate selected flows and expand capacity — under business control.",
     keywords: [
+      "AI & Software Enablement",
       "Performance OS",
       "product builders",
       "automatisation performance",

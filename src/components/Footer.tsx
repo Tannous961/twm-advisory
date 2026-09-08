@@ -6,6 +6,7 @@ import { useI18n, useT } from "@/lib/i18n";
 const product = [
   { href: "/performance", key: "offers" as const },
   { href: "/partner-performance", key: "partnerPerformance" as const },
+  { href: "/commerce-performance", key: "commercePerformance" as const },
   { href: "/methode", key: "approach" as const },
   { href: "/impact", key: "impact" as const },
   { href: "/technology", key: "architecture" as const },

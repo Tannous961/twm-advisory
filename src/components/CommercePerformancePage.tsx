@@ -4,7 +4,6 @@ import Link from "next/link";
 import {
   BulletList,
   EditorialBlock,
-  EditorialCta,
 } from "@/components/EditorialPrimitives";
 import { LeverCapabilities } from "@/components/LeverCapabilities";
 import {
@@ -12,20 +11,19 @@ import {
   type PerformanceGlyphName,
 } from "@/components/PerformanceGlyph";
 import { Reveal } from "@/components/Reveal";
-import { partnerPerformancePage as copy } from "@/lib/editorial";
+import { commercePerformancePage as copy } from "@/lib/editorial";
 import { useT } from "@/lib/i18n";
 
 const capabilityGlyphs: PerformanceGlyphName[] = [
-  "partner",
-  "governance",
+  "diagnostic",
   "commerce",
+  "value",
+  "alignment",
   "workflow",
   "measure",
-  "levers",
-  "activation",
 ];
 
-export function PartnerPerformancePage() {
+export function CommercePerformancePage() {
   const t = useT();
 
   return (
@@ -38,7 +36,7 @@ export function PartnerPerformancePage() {
               <p className="type-lead mt-6 max-w-2xl text-muted">{t(copy.leadBody)}</p>
             </div>
             <PerformanceGlyph
-              name="partner"
+              name="commerce"
               className="hidden size-40 lg:block xl:size-48"
             />
           </div>
@@ -58,7 +56,7 @@ export function PartnerPerformancePage() {
           <Link href="/demarrer" className="btn-primary inline-flex rounded-full px-7 py-3.5">
             {t(copy.ctaLabel)}
           </Link>
-          <Link href="/partenaires" className="btn-secondary inline-flex rounded-full px-7 py-3.5">
+          <Link href="/performance" className="btn-secondary inline-flex rounded-full px-7 py-3.5">
             {t(copy.secondaryCtaLabel)}
           </Link>
         </div>

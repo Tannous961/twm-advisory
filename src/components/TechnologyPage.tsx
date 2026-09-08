@@ -5,6 +5,7 @@ import {
   EditorialBlock,
   EditorialCta,
 } from "@/components/EditorialPrimitives";
+import { LeverCapabilities } from "@/components/LeverCapabilities";
 import {
   PerformanceGlyph,
   type PerformanceGlyphName,
@@ -12,6 +13,15 @@ import {
 import { Reveal } from "@/components/Reveal";
 import { technologyPage as copy } from "@/lib/editorial";
 import { useT } from "@/lib/i18n";
+
+const valueGlyphs: PerformanceGlyphName[] = [
+  "software",
+  "workflow",
+  "observe",
+  "activation",
+  "steer",
+  "governance",
+];
 
 const pillarGlyphs: PerformanceGlyphName[] = ["observe", "execute", "steer"];
 
@@ -34,6 +44,14 @@ export function TechnologyPage() {
           </div>
         </section>
       </Reveal>
+
+      <EditorialBlock title={copy.valueTitle} body={copy.valueBody}>
+        <LeverCapabilities items={copy.capabilities} glyphs={valueGlyphs} />
+      </EditorialBlock>
+
+      <EditorialBlock title={copy.outcomesTitle}>
+        <BulletList items={[...copy.outcomes]} />
+      </EditorialBlock>
 
       <EditorialBlock title={copy.contextTitle} body={copy.contextBody} />
 
