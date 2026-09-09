@@ -260,20 +260,20 @@ export const content = {
       en: "You are entrusting us with a performance priority.",
     },
     lead: {
-      fr: "TWM intervient lorsque la direction veut comprendre où la valeur se perd, décider quoi changer et faire exécuter les changements avec ses équipes.",
-      en: "TWM steps in when leadership wants to understand where value is lost, decide what to change, and have those changes executed with their teams.",
+      fr: "Avec Tannous Mekari comme interlocuteur, TWM transforme votre priorité en décisions, en actions et en résultats mesurables.",
+      en: "With Tannous Mekari as your counterpart, TWM turns your priority into decisions, action and measurable results.",
     },
     ctaPrimary: {
       fr: "Soumettre une priorité de performance",
       en: "Submit a performance priority",
     },
     ctaSecondary: {
-      fr: "Voir les leviers d'intervention",
-      en: "See intervention domains",
+      fr: "Voir le parcours",
+      en: "See the journey",
     },
     note: {
-      fr: "TWM entre dans l'entreprise par le résultat recherché, puis mobilise les moyens nécessaires pour le produire.",
-      en: "TWM enters the company through the outcome sought, then mobilizes the means needed to produce it.",
+      fr: "Écouter → Diagnostiquer → Décider → Exécuter → Mesurer",
+      en: "Listen → Diagnose → Decide → Deliver → Measure",
     },
     floatTitle: { fr: "Accompagnement opérationnel", en: "Operational support" },
     floatBody: {

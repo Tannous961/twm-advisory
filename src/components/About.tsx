@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
-import { aboutPage } from "@/lib/editorial";
+import { aboutPage, homeExperience } from "@/lib/editorial";
 import { useI18n, useT } from "@/lib/i18n";
 
 export function About() {
@@ -55,6 +55,9 @@ export function About() {
             <p className="mb-4 type-body text-pretty text-muted">
               {t(aboutPage.founder.body)}
             </p>
+            <blockquote className="mt-8 border-l-2 border-accent pl-6 font-display text-2xl leading-snug text-fg">
+              « {t(homeExperience.founder.quote)} »
+            </blockquote>
           </div>
         </div>
 

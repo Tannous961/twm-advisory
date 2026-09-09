@@ -343,6 +343,141 @@ export const homeEditorial = {
   },
 } as const;
 
+export const homeExperience = {
+  founder: {
+    eyebrow: { fr: "Votre interlocuteur", en: "Your counterpart" } as L,
+    title: {
+      fr: "Je m'appelle Tannous Mekari.",
+      en: "My name is Tannous Mekari.",
+    } as L,
+    body: {
+      fr: "J'ai fondé TWM Advisory après 17 ans en direction, opérations, e-commerce et développement d'activités. Je reste votre interlocuteur du premier échange à la mesure des résultats.",
+      en: "I founded TWM Advisory after 17 years in leadership, operations, e-commerce and business development. I remain your counterpart from our first conversation through to measuring results.",
+    } as L,
+    quote: {
+      fr: "Mon rôle : comprendre votre réalité, conduire les décisions avec vous et faire avancer l'exécution avec vos équipes.",
+      en: "My role: understand your reality, make decisions with you and move delivery forward with your teams.",
+    } as L,
+    support: {
+      fr: "Lorsque le mandat l'exige, je réunis les spécialistes utiles. Vous gardez un interlocuteur unique.",
+      en: "When the engagement requires it, I bring together the right specialists. You keep one accountable counterpart.",
+    } as L,
+    cta: { fr: "Découvrir mon parcours", en: "Discover my background" } as L,
+  },
+  journey: {
+    eyebrow: { fr: "Votre parcours", en: "Your journey" } as L,
+    title: {
+      fr: "Une priorité. Cinq passages clairs.",
+      en: "One priority. Five clear stages.",
+    } as L,
+    body: {
+      fr: "À chaque étape : une action de TWM, un résultat concret pour vous.",
+      en: "At every stage: one TWM action, one concrete outcome for you.",
+    } as L,
+    actionLabel: { fr: "Notre action", en: "Our action" } as L,
+    outcomeLabel: { fr: "Votre résultat", en: "Your outcome" } as L,
+    steps: [
+      {
+        title: { fr: "Écouter", en: "Listen" },
+        action: {
+          fr: "Comprendre votre priorité.",
+          en: "Understand your priority.",
+        },
+        outcome: {
+          fr: "Un problème clairement formulé.",
+          en: "A clearly stated problem.",
+        },
+      },
+      {
+        title: { fr: "Diagnostiquer", en: "Diagnose" },
+        action: {
+          fr: "Localiser les pertes de valeur.",
+          en: "Locate value loss.",
+        },
+        outcome: {
+          fr: "Un potentiel qualifié et chiffré.",
+          en: "A qualified, quantified potential.",
+        },
+      },
+      {
+        title: { fr: "Décider", en: "Decide" },
+        action: {
+          fr: "Choisir les leviers utiles.",
+          en: "Choose the right levers.",
+        },
+        outcome: {
+          fr: "Un plan d'action partagé.",
+          en: "A shared action plan.",
+        },
+      },
+      {
+        title: { fr: "Exécuter", en: "Deliver" },
+        action: {
+          fr: "Déployer avec vos équipes.",
+          en: "Deploy with your teams.",
+        },
+        outcome: {
+          fr: "Des changements réellement adoptés.",
+          en: "Changes that are actually adopted.",
+        },
+      },
+      {
+        title: { fr: "Mesurer", en: "Measure" },
+        action: {
+          fr: "Suivre les effets économiques.",
+          en: "Track economic effects.",
+        },
+        outcome: {
+          fr: "Des résultats vérifiables.",
+          en: "Verifiable results.",
+        },
+      },
+    ] as { title: L; action: L; outcome: L }[],
+    cta: { fr: "Voir la méthode", en: "See the method" } as L,
+  },
+  levers: {
+    eyebrow: { fr: "Les moyens", en: "The means" } as L,
+    title: {
+      fr: "Les bons leviers, pas une solution imposée.",
+      en: "The right levers, not a prescribed solution.",
+    } as L,
+    body: {
+      fr: "TWM choisit les moyens après le diagnostic.",
+      en: "TWM selects the means after diagnosis.",
+    } as L,
+  },
+  commitments: {
+    eyebrow: { fr: "Notre engagement", en: "Our commitment" } as L,
+    title: {
+      fr: "Ce qui ne change pas.",
+      en: "What never changes.",
+    } as L,
+    items: [
+      {
+        title: { fr: "Un interlocuteur", en: "One counterpart" },
+        body: {
+          fr: "Tannous pilote la relation et les arbitrages.",
+          en: "Tannous leads the relationship and key decisions.",
+        },
+      },
+      {
+        title: { fr: "Avec vos équipes", en: "With your teams" },
+        body: {
+          fr: "Nous construisons dans votre réalité opérationnelle.",
+          en: "We build within your operational reality.",
+        },
+      },
+      {
+        title: { fr: "Des preuves", en: "Evidence" },
+        body: {
+          fr: "Nous mesurons avant d'annoncer un résultat.",
+          en: "We measure before claiming a result.",
+        },
+      },
+    ] as { title: L; body: L }[],
+  },
+} as const;
+
 // ---------------------------------------------------------------------------
 // /performance — shapes aligned with PerformancePage.tsx
 // ---------------------------------------------------------------------------
@@ -765,14 +900,14 @@ export const aboutPage = {
     en: "A leadership approach. An execution discipline.",
   } as L,
   leadBody: {
-    fr: "TWM Advisory accompagne les dirigeants et les actionnaires dans l'amélioration de la performance opérationnelle et commerciale de leur entreprise. Nous analysons le fonctionnement réel, identifions où la valeur est perdue ou sous-exploitée, puis activons les bons leviers.",
-    en: "TWM Advisory helps leaders and shareholders improve their company's operating and commercial performance. We analyze how work really runs, identify where value is lost or underused, then activate the right levers.",
+    fr: "TWM Advisory accompagne les dirigeants de la priorité de performance jusqu'au résultat mesuré.",
+    en: "TWM Advisory supports leaders from performance priority to measured result.",
   } as L,
   founder: {
     title: { fr: "Tannous Mekari", en: "Tannous Mekari" } as L,
     body: {
-      fr: "Le parcours de Tannous Mekari associe 17 années d'expérience en e-commerce, développement d'activités et direction opérationnelle. Il travaille en français, en anglais et en arabe. Cette expérience nourrit une conviction : une transformation se juge dans le fonctionnement de l'entreprise, la qualité du service et ses effets économiques. Le fondateur reste votre interlocuteur pour la relation client, les validations et les arbitrages de la mission. Des spécialistes peuvent être mobilisés lorsque le périmètre requiert une expertise complémentaire.",
-      en: "Tannous Mekari's path combines 17 years in e-commerce, business development and operational leadership. He works in French, English and Arabic. That experience feeds a conviction: a transformation is judged in how the business runs, service quality and economic effects. The founder remains your counterpart for the client relationship, validations and mission arbitrations. Specialists can be brought in when the scope requires complementary expertise.",
+      fr: "J'ai fondé TWM après 17 ans en e-commerce, développement d'activités et direction opérationnelle. Je travaille en français, anglais et arabe. Je reste votre interlocuteur pour la relation, les validations et les arbitrages.",
+      en: "I founded TWM after 17 years in e-commerce, business development and operational leadership. I work in French, English and Arabic. I remain your counterpart for the relationship, validations and key decisions.",
     } as L,
   },
   partner: {
@@ -781,8 +916,8 @@ export const aboutPage = {
       en: "A partner committed to delivery.",
     } as L,
     body: {
-      fr: "Nous rapprochons le diagnostic, les choix de moyens et la mise en œuvre. Notre rôle est de rendre une amélioration possible, de la conduire avec vos équipes et de documenter ce qu'elle produit. Un Operating Performance Partner travaille avec la direction sur un objectif économique et reste impliqué dans son exécution. Le terme décrit notre mode d'intervention ; il ne désigne ni une prise de participation ni un mandat de gestion.",
-      en: "We connect diagnosis, choice of means and implementation. Our role is to make an improvement possible, lead it with your teams and document what it produces. An Operating Performance Partner works with leadership on an economic objective and stays involved in execution. The term describes our mode of engagement; it does not mean an equity stake or a management mandate.",
+      fr: "Je conduis le diagnostic et l'exécution avec vos équipes. Lorsque le mandat l'exige, je réunis les spécialistes utiles autour d'un objectif économique commun.",
+      en: "I lead diagnosis and delivery with your teams. When the engagement requires it, I bring together the right specialists around a shared economic objective.",
     } as L,
   },
   valuesTitle: {

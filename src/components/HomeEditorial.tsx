@@ -1,24 +1,15 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import { homeEditorial } from "@/lib/editorial";
-import { useI18n, useT } from "@/lib/i18n";
+import { homeEditorial, homeExperience } from "@/lib/editorial";
+import { useT } from "@/lib/i18n";
 import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
-import { SectionVisual } from "./SectionVisual";
 import {
   PerformanceGlyph,
   type PerformanceGlyphName,
 } from "./PerformanceGlyph";
-
-const sectionGlyphs: Record<string, PerformanceGlyphName> = {
-  diagnostic: "diagnostic",
-  valeur: "value",
-  leviers: "levers",
-  adoption: "adoption",
-  mesure: "measure",
-  alignement: "alignment",
-};
 
 const leverGlyphs: Record<string, PerformanceGlyphName> = {
   partner: "partner",
@@ -29,148 +20,193 @@ const leverGlyphs: Record<string, PerformanceGlyphName> = {
 
 export function HomeEditorialSections() {
   const t = useT();
-  const { lang } = useI18n();
-  const sections = homeEditorial.sections;
+  const founder = homeExperience.founder;
+  const journey = homeExperience.journey;
+  const levers = homeExperience.levers;
+  const commitments = homeExperience.commitments;
+  const leverCards = homeEditorial.sections.find(
+    (section) => section.id === "leviers",
+  )?.cards;
   const faq = homeEditorial.faq;
 
   return (
     <>
-      {sections.map((section, index) => {
-        const imageOnRight = index % 2 === 0;
-        const visual = section.image ? (
-          <SectionVisual
-            src={section.image.src}
-            alt={t(section.image.alt)}
-            priority={index === 0}
-            className="lg:min-h-[22rem]"
-          />
-        ) : null;
-
-        const copy = (
-          <div className={section.image ? "lg:py-2" : undefined}>
-            <div className="mb-7 flex items-start justify-between gap-6">
-              <SectionLabel index={section.index} label={t(section.label)} />
-              <PerformanceGlyph
-                name={sectionGlyphs[section.id]}
-                className="-mt-4 size-24 shrink-0 sm:size-28"
+      <Reveal>
+        <section
+          className="content-wrap section-pad"
+          aria-labelledby="founder-title"
+        >
+          <div className="grid items-center gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16">
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[2rem] border border-[color:var(--line)]">
+              <Image
+                src="/uploads/WhatsApp Image 2026-07-29 at 15.14.56 (2).jpeg"
+                alt={t({
+                  fr: "Tannous Mekari, fondateur de TWM Advisory",
+                  en: "Tannous Mekari, founder of TWM Advisory",
+                })}
+                fill
+                sizes="(max-width: 768px) 90vw, 390px"
+                className="object-cover object-[50%_22%] saturate-[.9]"
               />
+              <div
+                className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent"
+                aria-hidden
+              />
+              <p className="type-label absolute bottom-6 left-6 text-white/80">
+                Tannous Mekari · TWM Advisory
+              </p>
             </div>
-            <h2 id={`${section.id}-title`} className="type-h2 max-w-3xl">
-              {t(section.title)}
-            </h2>
-            <p className="type-lead mt-6 max-w-2xl text-muted">{t(section.body)}</p>
 
-            {section.cta ? (
+            <div>
+              <SectionLabel index="01" label={t(founder.eyebrow)} />
+              <h2 id="founder-title" className="type-h2 max-w-2xl">
+                {t(founder.title)}
+              </h2>
+              <p className="type-lead mt-6 max-w-2xl text-muted">
+                {t(founder.body)}
+              </p>
+              <blockquote className="mt-8 border-l-2 border-accent pl-6 font-display text-2xl leading-snug text-fg sm:text-3xl">
+                « {t(founder.quote)} »
+              </blockquote>
+              <p className="type-body mt-6 max-w-xl text-muted-2">
+                {t(founder.support)}
+              </p>
               <Link
-                href={section.cta.href}
+                href="/a-propos"
                 className="btn-secondary mt-8 inline-flex rounded-full px-7 py-3.5"
               >
-                {t(section.cta.label)} ↗
+                {t(founder.cta)} ↗
               </Link>
-            ) : null}
+            </div>
           </div>
-        );
+        </section>
+      </Reveal>
 
-        return (
-          <Reveal key={section.id}>
-            <section
-              id={section.id}
-              className="content-wrap section-pad"
-              aria-labelledby={`${section.id}-title`}
+      <Reveal>
+        <section
+          id="parcours"
+          className="content-wrap section-pad border-t border-[color:var(--line)]"
+          aria-labelledby="journey-title"
+        >
+          <SectionLabel index="02" label={t(journey.eyebrow)} />
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <h2 id="journey-title" className="type-h2 max-w-3xl">
+                {t(journey.title)}
+              </h2>
+              <p className="type-lead mt-4 text-muted">{t(journey.body)}</p>
+            </div>
+            <Link
+              href="/methode"
+              className="type-label text-accent hover:text-accent-soft"
             >
-              {section.image ? (
-                <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
-                  {imageOnRight ? (
-                    <>
-                      {copy}
-                      {visual}
-                    </>
-                  ) : (
-                    <>
-                      {visual}
-                      {copy}
-                    </>
-                  )}
+              {t(journey.cta)} →
+            </Link>
+          </div>
+
+          <ol className="mt-12 grid overflow-hidden rounded-[2rem] border border-[color:var(--line)] md:grid-cols-5">
+            {journey.steps.map((step, index) => (
+              <li
+                key={step.title.fr}
+                className="relative bg-panel p-6 even:bg-panel-2 md:min-h-72 md:border-l md:border-[color:var(--line)] md:first:border-l-0"
+              >
+                <div className="mb-8 flex items-center justify-between">
+                  <span className="type-label text-accent">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  {index < journey.steps.length - 1 ? (
+                    <span className="hidden text-accent/50 md:block">→</span>
+                  ) : null}
                 </div>
-              ) : (
-                copy
-              )}
-
-              {section.cards ? (
-                <div
-                  className={`mt-12 grid gap-6 ${
-                    section.cards.length > 3 ? "lg:grid-cols-2" : "lg:grid-cols-3"
-                  }`}
-                >
-                  {section.cards.map((card) => {
-                    const inner = (
-                      <>
-                        <PerformanceGlyph
-                          name={leverGlyphs[card.id]}
-                          className="mb-6 size-20 sm:size-24"
-                        />
-                        <h3 className="font-display text-xl text-fg">{t(card.title)}</h3>
-                        <p className="type-body mt-3 text-muted">{t(card.body)}</p>
-                        {card.href ? (
-                          <span className="mt-4 inline-block type-label text-accent">
-                            {t({ fr: "Explorer", en: "Explore" })} ↗
-                          </span>
-                        ) : null}
-                      </>
-                    );
-                    return card.href ? (
-                      <Link
-                        key={card.id}
-                        href={card.href}
-                        className="group border-t border-[color:var(--line)] pt-6 transition-colors hover:border-accent/40"
-                      >
-                        {inner}
-                      </Link>
-                    ) : (
-                      <div
-                        key={card.id}
-                        className="border-t border-[color:var(--line)] pt-6"
-                      >
-                        {inner}
-                      </div>
-                    );
-                  })}
+                <h3 className="font-display text-2xl text-fg">{t(step.title)}</h3>
+                <div className="mt-6">
+                  <p className="type-caption text-muted-3">
+                    {t(journey.actionLabel)}
+                  </p>
+                  <p className="mt-1 text-sm leading-relaxed text-muted">
+                    {t(step.action)}
+                  </p>
                 </div>
-              ) : null}
+                <div className="mt-5 border-t border-[color:var(--line)] pt-5">
+                  <p className="type-caption text-accent">
+                    {t(journey.outcomeLabel)}
+                  </p>
+                  <p className="mt-1 text-sm leading-relaxed text-fg">
+                    {t(step.outcome)}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      </Reveal>
 
-              {section.steps ? (
-                <ol className="mt-12 flex flex-wrap gap-3">
-                  {section.steps.map((step, i) => (
-                    <li
-                      key={step.id}
-                      className="rounded-full border border-accent/30 bg-accent/5 px-5 py-2.5 type-label text-accent"
-                    >
-                      {String(i + 1).padStart(2, "0")} · {t(step.label)}
-                    </li>
-                  ))}
-                </ol>
-              ) : null}
+      <Reveal>
+        <section
+          id="leviers"
+          className="content-wrap section-pad border-t border-[color:var(--line)]"
+          aria-labelledby="levers-title"
+        >
+          <SectionLabel index="03" label={t(levers.eyebrow)} />
+          <h2 id="levers-title" className="type-h2 max-w-3xl">
+            {t(levers.title)}
+          </h2>
+          <p className="type-lead mt-4 text-muted">{t(levers.body)}</p>
+          <div className="mt-10 grid gap-px overflow-hidden rounded-[2rem] border border-[color:var(--line)] bg-[color:var(--line)] sm:grid-cols-2 lg:grid-cols-4">
+            {leverCards?.map((card) => (
+              <Link
+                key={card.id}
+                href={card.href ?? "/performance"}
+                className="group bg-panel p-6 transition-colors hover:bg-panel-2"
+              >
+                <PerformanceGlyph
+                  name={leverGlyphs[card.id]}
+                  className="mb-5 size-16"
+                />
+                <h3 className="font-display text-xl text-fg">
+                  {t(card.title)}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted">
+                  {t(card.body)}
+                </p>
+                <span className="mt-5 inline-block text-accent">→</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      </Reveal>
 
-              {section.items ? (
-                <ul className="mt-10 grid gap-4 lg:grid-cols-3">
-                  {section.items.map((item) => (
-                    <li
-                      key={item.fr}
-                      className="border border-[color:var(--line)] bg-panel/30 p-5 type-body text-muted"
-                    >
-                      {t(item)}
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
-            </section>
-          </Reveal>
-        );
-      })}
+      <Reveal>
+        <section
+          className="content-wrap section-pad border-t border-[color:var(--line)]"
+          aria-labelledby="commitments-title"
+        >
+          <SectionLabel index="04" label={t(commitments.eyebrow)} />
+          <h2 id="commitments-title" className="type-h2">
+            {t(commitments.title)}
+          </h2>
+          <div className="mt-10 grid gap-8 md:grid-cols-3">
+            {commitments.items.map((item, index) => (
+              <div
+                key={item.title.fr}
+                className="border-t border-accent/40 pt-6"
+              >
+                <span className="type-label text-accent">
+                  0{index + 1}
+                </span>
+                <h3 className="mt-4 font-display text-2xl text-fg">
+                  {t(item.title)}
+                </h3>
+                <p className="type-body mt-3 text-muted">{t(item.body)}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </Reveal>
 
       <Reveal>
         <section className="content-wrap section-pad" aria-labelledby="home-faq-title">
-          <SectionLabel index="07" label={t(faq.label)} />
+          <SectionLabel index="05" label={t(faq.label)} />
           <div className="flex flex-wrap items-end justify-between gap-4">
             <h2 id="home-faq-title" className="type-h2">
               {t(faq.title)}
@@ -186,11 +222,11 @@ export function HomeEditorialSections() {
               <details key={item.q.fr} className="group py-5">
                 <summary className="cursor-pointer list-none font-display text-lg text-fg marker:content-none [&::-webkit-details-marker]:hidden">
                   <span className="flex items-center justify-between gap-4">
-                    {item.q[lang]}
+                    {t(item.q)}
                     <span className="text-accent transition group-open:rotate-45">+</span>
                   </span>
                 </summary>
-                <p className="type-body mt-4 max-w-3xl text-muted">{item.a[lang]}</p>
+                <p className="type-body mt-4 max-w-3xl text-muted">{t(item.a)}</p>
               </details>
             ))}
           </div>

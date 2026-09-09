@@ -59,9 +59,9 @@ export function CtaBand() {
                 {t(c.hero.ctaPrimary)}
               </Link>
               <Link
-                href="/#leviers"
+                href="/#parcours"
                 className="btn-secondary inline-block rounded-full border-white/20 bg-black/20 px-8 py-4 text-fg backdrop-blur-md sm:py-4.5"
-                onClick={() => track("cta_click", { location: "cta_band_levers" })}
+                onClick={() => track("cta_click", { location: "cta_band_journey" })}
               >
                 {t(c.hero.ctaSecondary)}
               </Link>
