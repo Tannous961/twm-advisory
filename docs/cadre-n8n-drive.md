@@ -2,6 +2,9 @@
 
 Ce flux reçoit le brouillon produit par l’agent Cadre et le dépose dans Google Drive pour relecture humaine.
 
+**Setup détaillé (recommandé) :** [`cadre-n8n-setup.md`](./cadre-n8n-setup.md)  
+**Fichier d’import n8n :** [`n8n/cadre-draft-to-drive.json`](./n8n/cadre-draft-to-drive.json)
+
 ## Secrets requis
 
 Dans GitHub Actions / environnement d’exécution :
@@ -15,6 +18,20 @@ Dans n8n :
 
 - Identifiants Google Drive OAuth
 - Le même secret webhook côté n8n
+
+## Créer les 2 secrets en 30 secondes
+
+```bash
+# 1) Secret partagé
+openssl rand -hex 32
+
+# 2) URL = webhook n8n production, ex:
+# https://ton-n8n.domaine.com/webhook/cadre-draft
+```
+
+Puis GitHub → Settings → Secrets → Actions :
+- `N8N_WEBHOOK_SECRET` = sortie openssl
+- `N8N_WEBHOOK_URL` = URL Production du nœud Webhook
 
 ## Payload envoyé au webhook
 
@@ -34,6 +51,8 @@ Body (extrait) :
   "folderName": "TWM / Cadre / Brouillons / 2026-09-09-slug",
   "post": { "slug": "...", "title": { "fr": "...", "en": "..." } },
   "reviewMarkdown": "# Revue Cadre ...",
+  "frDocument": "# ...",
+  "enDocument": "# ...",
   "topic": { "pillar": "economic_performance", "score": 11 },
   "sources": [{ "title": "...", "url": "https://..." }]
 }
