@@ -7,10 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "tsx --test tests/*.test.ts"
+    "test": "tsx --test tests/*.test.ts",
+    "cadre:run": "tsx scripts/cadre/run.ts",
+    "cadre:publish": "tsx scripts/cadre/publish.ts",
+    "cadre:validate": "tsx scripts/cadre/validate-cli.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.112.2",
+    "googleapis": "^178.1.1",
     "next": "16.2.12",
     "openai": "^7.4.0",
     "react": "19.2.4",
@@ -20,7 +24,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
+    "@types/node": "^20.19.43",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",

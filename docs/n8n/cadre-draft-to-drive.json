@@ -1,0 +1,292 @@
+{
+  "name": "Cadre Draft to Drive",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "cadre-draft",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "webhook-cadre",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 300],
+      "webhookId": "cadre-draft"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.headers['x-twm-webhook-secret'] || $json.headers['X-TWM-Webhook-Secret']}}",
+              "operation": "equal",
+              "value2": "REPLACE_WITH_N8N_WEBHOOK_SECRET"
+            }
+          ]
+        }
+      },
+      "id": "if-secret",
+      "name": "Secret OK?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [260, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "folderName",
+              "name": "folderName",
+              "value": "={{$json.body?.folderName || $json.folderName || ('draft-' + ($json.body?.post?.slug || $json.post?.slug || 'unknown'))}}",
+              "type": "string"
+            },
+            {
+              "id": "slug",
+              "name": "slug",
+              "value": "={{$json.body?.post?.slug || $json.post?.slug || 'unknown'}}",
+              "type": "string"
+            },
+            {
+              "id": "frDocument",
+              "name": "frDocument",
+              "value": "={{$json.body?.frDocument || $json.frDocument || ''}}",
+              "type": "string"
+            },
+            {
+              "id": "enDocument",
+              "name": "enDocument",
+              "value": "={{$json.body?.enDocument || $json.enDocument || ''}}",
+              "type": "string"
+            },
+            {
+              "id": "reviewMarkdown",
+              "name": "reviewMarkdown",
+              "value": "={{$json.body?.reviewMarkdown || $json.reviewMarkdown || ''}}",
+              "type": "string"
+            },
+            {
+              "id": "sourcesJson",
+              "name": "sourcesJson",
+              "value": "={{JSON.stringify($json.body?.sources || $json.sources || [])}}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "normalize-fields",
+      "name": "Normalize fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [520, 220]
+    },
+    {
+      "parameters": {
+        "name": "Unauthorized",
+        "message": "Invalid X-TWM-Webhook-Secret",
+        "options": {}
+      },
+      "id": "stop-unauthorized",
+      "name": "Stop Unauthorized",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [520, 420]
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "resource": "folder",
+        "name": "={{$json.folderName}}",
+        "driveId": "My Drive",
+        "folderId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "REPLACE_WITH_BROUILLONS_FOLDER_ID"
+        },
+        "options": {}
+      },
+      "id": "drive-create-folder",
+      "name": "Create folder",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [780, 220],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "REPLACE_WITH_GOOGLE_DRIVE_CREDENTIAL_ID",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "createFromText",
+        "name": "={{$('Normalize fields').item.json.slug}}-FR.md",
+        "content": "={{$('Normalize fields').item.json.frDocument}}",
+        "driveId": "My Drive",
+        "folderId": "={{$json.id}}",
+        "options": {}
+      },
+      "id": "drive-fr",
+      "name": "Create FR.md",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [1040, 60],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "REPLACE_WITH_GOOGLE_DRIVE_CREDENTIAL_ID",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "createFromText",
+        "name": "={{$('Normalize fields').item.json.slug}}-EN.md",
+        "content": "={{$('Normalize fields').item.json.enDocument}}",
+        "driveId": "My Drive",
+        "folderId": "={{$('Create folder').item.json.id}}",
+        "options": {}
+      },
+      "id": "drive-en",
+      "name": "Create EN.md",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [1040, 220],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "REPLACE_WITH_GOOGLE_DRIVE_CREDENTIAL_ID",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "createFromText",
+        "name": "={{$('Normalize fields').item.json.slug}}-review.md",
+        "content": "={{$('Normalize fields').item.json.reviewMarkdown}}",
+        "driveId": "My Drive",
+        "folderId": "={{$('Create folder').item.json.id}}",
+        "options": {}
+      },
+      "id": "drive-review",
+      "name": "Create review.md",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [1040, 380],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "REPLACE_WITH_GOOGLE_DRIVE_CREDENTIAL_ID",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "createFromText",
+        "name": "={{$('Normalize fields').item.json.slug}}-sources.json",
+        "content": "={{$('Normalize fields').item.json.sourcesJson}}",
+        "driveId": "My Drive",
+        "folderId": "={{$('Create folder').item.json.id}}",
+        "options": {}
+      },
+      "id": "drive-sources",
+      "name": "Create sources.json",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [1040, 540],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "REPLACE_WITH_GOOGLE_DRIVE_CREDENTIAL_ID",
+          "name": "Google Drive account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Secret OK?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Secret OK?": {
+      "main": [
+        [
+          {
+            "node": "Normalize fields",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop Unauthorized",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize fields": {
+      "main": [
+        [
+          {
+            "node": "Create folder",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create folder": {
+      "main": [
+        [
+          {
+            "node": "Create FR.md",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create EN.md",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create review.md",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create sources.json",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1",
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": [
+    {
+      "name": "cadre"
+    },
+    {
+      "name": "twm"
+    }
+  ]
+}

@@ -34,6 +34,12 @@ yarn-error.log*
 .env*
 !.env.example
 
+# Cadre editorial drafts / research traces (published posts live in content/cadre/)
+content/cadre-drafts/**
+!content/cadre-drafts/.gitkeep
+content/cadre-sources/**
+!content/cadre-sources/.gitkeep
+
 # vercel
 .vercel
 

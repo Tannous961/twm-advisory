@@ -363,6 +363,7 @@ export function buildCadreMetadata(post: CadrePost): Metadata {
       title,
       description,
       publishedTime: post.date,
+      modifiedTime: post.updatedAt ?? post.date,
       authors: [siteConfig.founderName],
       images: [
         {
@@ -680,7 +681,7 @@ export function buildCadreJsonLd(post: CadrePost) {
         headline: post.title.fr,
         description: post.insight.fr,
         datePublished: post.date,
-        dateModified: post.date,
+        dateModified: post.updatedAt ?? post.date,
         author: {
           "@type": "Person",
           "@id": `${siteConfig.url}/#person`,

@@ -1,0 +1,36 @@
+{
+  "slug": "temps-libere-et-marge",
+  "date": "2026-09-06",
+  "updatedAt": "2026-09-06",
+  "status": "published",
+  "author": "Tannous Mekari",
+  "intent": "strategy",
+  "readingMinutes": 5,
+  "title": {
+    "fr": "Le temps libéré n'est pas encore de la marge.",
+    "en": "Freed time is not yet margin."
+  },
+  "insight": {
+    "fr": "La bonne question vient après le gain de temps : que devient cette capacité ?",
+    "en": "The real question comes after the time gain: what becomes of that capacity?"
+  },
+  "verdict": {
+    "fr": "Nommer l'usage de la capacité libérée avant de déployer, sinon la technologie améliore le confort sans changer la marge.",
+    "en": "Name how freed capacity will be used before deploying — otherwise technology improves comfort without changing margin."
+  },
+  "body": {
+    "fr": [
+      "Mesurer un changement réel. Une tâche plus rapide est un résultat opérationnel utile. Pour l'établir, il faut comparer des volumes et des niveaux de qualité équivalents. Les reprises, les contrôles supplémentaires et le traitement des exceptions font partie du temps réel.",
+      "Distinguer trois situations. La capacité peut rester disponible, absorber davantage d'activité ou permettre d'éviter une dépense. Ces situations ne produisent pas le même effet économique. Une réduction de temps multipliée par un coût horaire représente une valorisation théorique, pas une économie comptable acquise.",
+      "Décider de l'usage avant de déployer. Le dossier économique doit nommer le responsable de la capacité libérée et préciser son utilisation : réduire un recours externe, absorber une hausse de volume ou développer une activité rentable. Sans cette décision, la technologie peut améliorer le confort sans changer la marge.",
+      "Ce qu'un dirigeant peut demander. Quel volume a été observé ? La qualité est-elle comparable ? Quels coûts nouveaux ont été introduits ? Quelle utilisation du temps a été constatée ? La finance reconnaît-elle l'effet économique ? Ces questions donnent plus de valeur à la revue qu'un total d'heures théoriques."
+    ],
+    "en": [
+      "Measure a real change. A faster task is a useful operational result. To establish it, compare equivalent volumes and quality levels. Rework, extra checks and exception handling are part of real time.",
+      "Distinguish three situations. Capacity may stay idle, absorb more activity, or avoid a spend. These do not produce the same economic effect. Time saved multiplied by an hourly cost is a theoretical valuation, not an earned accounting saving.",
+      "Decide usage before deploying. The business case should name the owner of freed capacity and how it will be used: reduce external spend, absorb volume growth, or develop profitable activity. Without that decision, technology can improve comfort without changing margin.",
+      "What a leader can ask. What volume was observed? Is quality comparable? What new costs were introduced? How was freed time actually used? Does finance recognize the economic effect? These questions are more valuable than a total of theoretical hours."
+    ]
+  },
+  "sources": []
+}

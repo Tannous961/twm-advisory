@@ -2,19 +2,21 @@
 
 import Link from "next/link";
 import { useEffect } from "react";
-import { cadrePosts, type CadrePost } from "@/lib/cadre";
+import type { CadrePost } from "@/lib/cadre-schema";
 import { track } from "@/lib/analytics";
 import { useI18n, useT } from "@/lib/i18n";
 import { Reveal } from "./Reveal";
 import { CadreCover } from "./CadreCover";
 
-export function CadreArticle({ post }: { post: CadrePost }) {
+export function CadreArticle({
+  post,
+  index = 0,
+}: {
+  post: CadrePost;
+  index?: number;
+}) {
   const { c, lang } = useI18n();
   const t = useT();
-  const postIndex = Math.max(
-    0,
-    cadrePosts.findIndex((item) => item.slug === post.slug),
-  );
 
   useEffect(() => {
     track("cadre_article_view", { slug: post.slug, lang });
@@ -35,29 +37,23 @@ export function CadreArticle({ post }: { post: CadrePost }) {
         </p>
 
         <div className="mb-8">
-          <CadreCover intent={post.intent} index={postIndex} />
+          <CadreCover intent={post.intent} index={index} />
         </div>
 
-        <h1 className="mb-8 max-w-3xl type-h1">
-          {post.title[lang]}
-        </h1>
+        <h1 className="mb-8 max-w-3xl type-h1">{post.title[lang]}</h1>
 
         <div className="mb-10 grid gap-4 lg:grid-cols-2">
           <div className="glass-card rounded-3xl p-6 sm:p-7">
             <p className="mb-3 type-caption text-muted-3">
               {t(c.cadre.insightLabel)}
             </p>
-            <p className="type-h3 text-fg">
-              {post.insight[lang]}
-            </p>
+            <p className="type-h3 text-fg">{post.insight[lang]}</p>
           </div>
           <div className="glass-card rounded-3xl border-accent/25 p-6 sm:p-7">
             <p className="mb-3 type-caption text-accent">
               {t(c.cadre.verdictLabel)}
             </p>
-            <p className="type-h3 text-accent-soft">
-              {post.verdict[lang]}
-            </p>
+            <p className="type-h3 text-accent-soft">{post.verdict[lang]}</p>
           </div>
         </div>
 
@@ -78,6 +74,29 @@ export function CadreArticle({ post }: { post: CadrePost }) {
             );
           })}
         </div>
+
+        {post.sources.length > 0 ? (
+          <div className="mx-auto mb-14 max-w-2xl border-t border-white/8 pt-8">
+            <p className="mb-4 type-label tracking-[0.14em] text-muted-3">
+              Sources
+            </p>
+            <ul className="space-y-2">
+              {post.sources.map((source) => (
+                <li key={source.url} className="type-body text-muted">
+                  <a
+                    href={source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent underline-offset-4 hover:underline"
+                  >
+                    {source.title}
+                  </a>
+                  {source.publisher ? ` — ${source.publisher}` : null}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
 
         <div className="relative overflow-hidden rounded-[2rem] border border-[color:var(--line)] bg-panel px-6 py-10 text-center sm:px-10 sm:py-12">
           <div
