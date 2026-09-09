@@ -179,3 +179,105 @@ describe("cadre draft validation", () => {
     assert.ok(result.errors.some((e) => e.includes("generic")));
   });
 });
+
+describe("cadre drive delivery packaging", () => {
+  it("builds FR/EN/review/sources/draft files", async () => {
+    const { buildDeliverPayload } = await import("../scripts/cadre/deliver-n8n");
+    const {
+      buildDriveFiles,
+      draftFolderName,
+    } = await import("../scripts/cadre/deliver-drive");
+
+    const post = parseCadrePost({
+      slug: "test-drive-packaging",
+      date: "2026-09-09",
+      status: "review",
+      intent: "strategy",
+      readingMinutes: 4,
+      title: {
+        fr: "Packaging Drive pour revue humaine Cadre.",
+        en: "Drive packaging for human Cadre review.",
+      },
+      insight: {
+        fr: "Le dossier doit contenir FR, EN et les sources avant validation.",
+        en: "The folder must contain FR, EN and sources before validation.",
+      },
+      verdict: {
+        fr: "Uploader le pack complet, pas seulement le JSON brut.",
+        en: "Upload the full pack, not only the raw JSON.",
+      },
+      body: {
+        fr: ["Paragraphe un.", "Paragraphe deux.", "Paragraphe trois."],
+        en: ["Paragraph one.", "Paragraph two.", "Paragraph three."],
+      },
+      sources: [
+        {
+          title: "Example source",
+          url: "https://example.com/source",
+        },
+      ],
+    });
+
+    const payload = buildDeliverPayload({
+      post,
+      reviewMarkdown: "# Revue\n\nNotes.\n",
+      topic: {
+        score: 9,
+        pillar: "economic_performance",
+        intent: "strategy",
+        title: "Drive packaging",
+        rationale: "test",
+        sources: [
+          {
+            id: "s1",
+            title: "Example source",
+            url: "https://example.com/source",
+            snippet: "snippet",
+            publisher: "example.com",
+            query: "q",
+            pillar: "economic_performance",
+            intent: "strategy",
+            collectedAt: new Date().toISOString(),
+          },
+        ],
+      },
+    });
+
+    assert.equal(draftFolderName(payload), "2026-09-09-test-drive-packaging");
+    const files = buildDriveFiles(payload);
+    assert.deepEqual(
+      files.map((f) => f.name),
+      ["FR.md", "EN.md", "review.md", "sources.json", "draft.json"],
+    );
+    assert.match(files[0].content, /Packaging Drive/);
+    assert.match(files[1].content, /Drive packaging/);
+  });
+
+  it("prefers Drive over n8n when both are configured", async () => {
+    const { resolveDeliveryChannel } = await import("../scripts/cadre/deliver");
+    const previous = {
+      folder: process.env.GOOGLE_DRIVE_FOLDER_ID,
+      json: process.env.GOOGLE_SERVICE_ACCOUNT_JSON,
+      n8n: process.env.N8N_WEBHOOK_URL,
+    };
+
+    process.env.GOOGLE_DRIVE_FOLDER_ID = "folder-id";
+    process.env.GOOGLE_SERVICE_ACCOUNT_JSON = '{"type":"service_account"}';
+    process.env.N8N_WEBHOOK_URL = "https://example.com/webhook";
+    assert.equal(resolveDeliveryChannel(), "drive");
+
+    delete process.env.GOOGLE_DRIVE_FOLDER_ID;
+    delete process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
+    assert.equal(resolveDeliveryChannel(), "n8n");
+
+    delete process.env.N8N_WEBHOOK_URL;
+    assert.equal(resolveDeliveryChannel(), null);
+
+    if (previous.folder === undefined) delete process.env.GOOGLE_DRIVE_FOLDER_ID;
+    else process.env.GOOGLE_DRIVE_FOLDER_ID = previous.folder;
+    if (previous.json === undefined) delete process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
+    else process.env.GOOGLE_SERVICE_ACCOUNT_JSON = previous.json;
+    if (previous.n8n === undefined) delete process.env.N8N_WEBHOOK_URL;
+    else process.env.N8N_WEBHOOK_URL = previous.n8n;
+  });
+});

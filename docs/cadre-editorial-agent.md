@@ -1,6 +1,6 @@
 # Agent éditorial Cadre
 
-Pipeline 3×/semaine (lun / mer / ven) pour préparer un article Cadre bilingue, sourcé, dans la voix de Tannous, puis le déposer via n8n sur Google Drive pour validation humaine.
+Pipeline 3×/semaine (lun / mer / ven) pour préparer un article Cadre bilingue, sourcé, dans la voix de Tannous, puis le déposer sur **Google Drive** (Service Account) pour validation humaine.
 
 ## Commandes
 
@@ -8,10 +8,10 @@ Pipeline 3×/semaine (lun / mer / ven) pour préparer un article Cadre bilingue,
 # Fixture locale (sans clés recherche / LLM)
 npm run cadre:run -- --dry-run
 
-# Collecte + draft + dépôt n8n
+# Collecte + draft + dépôt Drive
 npm run cadre:run
 
-# Collecte + draft sans n8n
+# Collecte + draft sans upload
 npm run cadre:run -- --skip-deliver
 
 # Publier un draft validé vers content/cadre/
@@ -58,7 +58,9 @@ Si aucun sujet ne dépasse le seuil de score, **aucun article n’est forcé**.
 
 - `OPENROUTER_API_KEY` (ou `OPENAI_API_KEY`)
 - `TAVILY_API_KEY` (ou `WEB_SEARCH_API_KEY` / `BRAVE_SEARCH_API_KEY`)
-- `N8N_WEBHOOK_URL`
-- `N8N_WEBHOOK_SECRET`
+- `GOOGLE_DRIVE_FOLDER_ID`
+- `GOOGLE_SERVICE_ACCOUNT_JSON_BASE64` (recommandé) ou `GOOGLE_SERVICE_ACCOUNT_JSON`
 
-Voir aussi [cadre-n8n-drive.md](./cadre-n8n-drive.md).
+Setup Drive : [cadre-drive-setup.md](./cadre-drive-setup.md)
+
+Fallback optionnel n8n : [cadre-n8n-drive.md](./cadre-n8n-drive.md)

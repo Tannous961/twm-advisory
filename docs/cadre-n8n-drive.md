@@ -1,8 +1,11 @@
-# n8n — dépôt Cadre → Google Drive
+# n8n — dépôt Cadre → Google Drive (fallback)
+
+> **Préféré aujourd’hui :** livraison directe via Service Account — voir [`cadre-drive-setup.md`](./cadre-drive-setup.md).  
+> Ce document reste utile si tu veux garder n8n comme relais.
 
 Ce flux reçoit le brouillon produit par l’agent Cadre et le dépose dans Google Drive pour relecture humaine.
 
-**Setup détaillé (recommandé) :** [`cadre-n8n-setup.md`](./cadre-n8n-setup.md)  
+**Setup détaillé :** [`cadre-n8n-setup.md`](./cadre-n8n-setup.md)  
 **Fichier d’import n8n :** [`n8n/cadre-draft-to-drive.json`](./n8n/cadre-draft-to-drive.json)
 
 ## Secrets requis

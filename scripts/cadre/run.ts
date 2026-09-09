@@ -5,9 +5,9 @@ import { draftCadreArticle, writeDraftArtifacts } from "./draft";
 import { validateCadreDraft } from "./validate";
 import {
   buildDeliverPayload,
-  deliverToN8n,
   writeLocalDeliveryReceipt,
 } from "./deliver-n8n";
+import { deliverDraft } from "./deliver";
 import type { CadrePost } from "../../src/lib/cadre-schema";
 import type { RankedTopic } from "./rank";
 
@@ -87,7 +87,11 @@ async function main() {
     return;
   }
 
-  const delivery = await deliverToN8n(payload);
+  const delivery = await deliverDraft(payload);
+  if (delivery.channel === "drive") {
+    console.log(`[cadre] delivered to Drive: ${delivery.drive.folderUrl}`);
+    return;
+  }
   console.log(`[cadre] delivered to n8n (${delivery.status})`);
 }
 
