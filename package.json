@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "tsx --test tests/*.test.ts"
+    "test": "tsx --test tests/*.test.ts",
+    "cadre:run": "tsx scripts/cadre/run.ts",
+    "cadre:publish": "tsx scripts/cadre/publish.ts",
+    "cadre:validate": "tsx scripts/cadre/validate-cli.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.112.2",

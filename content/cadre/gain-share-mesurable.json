@@ -1,0 +1,36 @@
+{
+  "slug": "gain-share-mesurable",
+  "date": "2026-09-04",
+  "updatedAt": "2026-09-04",
+  "status": "published",
+  "author": "Tannous Mekari",
+  "intent": "use_case",
+  "readingMinutes": 5,
+  "title": {
+    "fr": "Un gain-share crédible commence par la mesure.",
+    "en": "Credible gain-share starts with measurement."
+  },
+  "insight": {
+    "fr": "Partager les gains suppose d'abord de s'entendre sur ce qui constitue un gain.",
+    "en": "Sharing gains first requires agreeing on what counts as a gain."
+  },
+  "verdict": {
+    "fr": "Le modèle de rémunération doit suivre la qualité de la mesure — pas l'inverse.",
+    "en": "The fee model should follow measurement quality — not the other way around."
+  },
+  "body": {
+    "fr": [
+      "Commencer par la référence. Le protocole décrit la situation de départ, la période retenue, les sources et les ajustements. Une baisse de dépense peut venir d'un recul d'activité ; une hausse de revenu, d'une variation de prix déjà décidée. La comparaison doit tenir compte des facteurs convenus.",
+      "Définir une assiette lisible. Il faut préciser les coûts déduits, l'attribution, les exclusions et le traitement des coûts récurrents. Le fixe et le variable doivent être identifiables. Éviter toute circularité : l'assiette du variable est définie avant ce variable, puis la valeur nette conservée par le client le déduit.",
+      "Prévoir la validation et le désaccord. Une revue commune examine pièces et calculs à une fréquence définie. Le contrat fixe les responsables, les délais de contestation et la procédure de résolution. Le gain-share aligne mieux les intérêts lorsqu'il réduit les ambiguïtés.",
+      "Accepter les limites de l'attribution. Certains changements sont trop imbriqués pour attribuer un gain de façon robuste. Un forfait par jalons peut alors être plus lisible. Le choix du modèle doit suivre la qualité de la mesure."
+    ],
+    "en": [
+      "Start with the baseline. The protocol describes the starting point, period, sources and adjustments. A spend drop may come from lower activity; a revenue rise from a price change already decided. Comparison must account for agreed factors.",
+      "Define a readable base. Specify deducted costs, attribution, exclusions and treatment of recurring costs. Fixed and variable fees must be identifiable. Avoid circularity: the variable base is set before that variable, then the net value kept by the client deducts it.",
+      "Plan validation and disagreement. A joint review examines evidence and calculations on a defined cadence. The contract sets owners, challenge windows and resolution steps. Gain-share aligns interests better when it reduces ambiguity.",
+      "Accept attribution limits. Some changes are too entangled for robust attribution. A milestone fee can then be clearer. Model choice should follow measurement quality."
+    ]
+  },
+  "sources": []
+}

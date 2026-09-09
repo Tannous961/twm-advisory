@@ -38,7 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const post = getCadrePost(slug)!;
     return {
       url: `${siteConfig.url}/cadre/${slug}`,
-      lastModified: new Date(post.date),
+      lastModified: new Date(post.updatedAt ?? post.date),
       changeFrequency: "monthly" as const,
       priority: 0.65,
       alternates: languageAlternates(`/cadre/${slug}`),
