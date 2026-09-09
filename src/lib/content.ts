@@ -15,12 +15,19 @@ export const content = {
     home: { fr: "Accueil", en: "Home" },
     approach: { fr: "Méthode", en: "Method" },
     offers: { fr: "Performance", en: "Performance" },
-    architecture: { fr: "Technology", en: "Technology" },
+    architecture: {
+      fr: "AI & Software",
+      en: "AI & Software",
+    },
     impact: { fr: "Impact", en: "Impact" },
     partners: { fr: "Partenaires", en: "Partners" },
     partnerPerformance: {
       fr: "Partner Performance",
       en: "Partner Performance",
+    },
+    commercePerformance: {
+      fr: "Commerce Performance",
+      en: "Commerce Performance",
     },
     who: { fr: "Pour qui", en: "Who it's for" },
     about: { fr: "À propos", en: "About" },
@@ -95,10 +102,13 @@ export const content = {
       },
     },
     architecture: {
-      title: { fr: "Technology / Performance OS", en: "Technology / Performance OS" },
+      title: {
+        fr: "AI & Software Enablement",
+        en: "AI & Software Enablement",
+      },
       lead: {
-        fr: "Les moyens de réaliser. Le cadre pour garder le contrôle.",
-        en: "The means to deliver. The frame to keep control.",
+        fr: "Donner aux équipes les moyens de produire des outils, d'automatiser et d'augmenter leur capacité.",
+        en: "Give teams the means to build tools, automate and expand their capacity.",
       },
     },
     performance: {
@@ -116,10 +126,13 @@ export const content = {
       },
     },
     technology: {
-      title: { fr: "Technology / Performance OS", en: "Technology / Performance OS" },
+      title: {
+        fr: "AI & Software Enablement",
+        en: "AI & Software Enablement",
+      },
       lead: {
-        fr: "Une couche de contexte et de pilotage. Des équipes capables de construire leurs outils.",
-        en: "A context and steering layer. Teams able to build their own tools.",
+        fr: "Donner aux équipes les moyens de produire des outils, d'automatiser et d'augmenter leur capacité.",
+        en: "Give teams the means to build tools, automate and expand their capacity.",
       },
     },
     partnerPerformance: {
@@ -127,6 +140,13 @@ export const content = {
       lead: {
         fr: "Transformer un réseau de partenaires en système de croissance.",
         en: "Turn a partner network into a growth system.",
+      },
+    },
+    commercePerformance: {
+      title: { fr: "Commerce Performance", en: "Commerce Performance" },
+      lead: {
+        fr: "Améliorer l'e-commerce, l'omnicanal, les parcours clients et l'architecture commerciale.",
+        en: "Improve e-commerce, omnichannel, customer journeys and commercial architecture.",
       },
     },
     impact: {

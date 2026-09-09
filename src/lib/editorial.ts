@@ -208,7 +208,7 @@ export const homeEditorial = {
             fr: "Améliorer l'e-commerce, l'omnicanal, les parcours clients et l'architecture commerciale.",
             en: "Improve e-commerce, omnichannel, customer journeys and commercial architecture.",
           },
-          href: "/performance#commerce",
+          href: "/commerce-performance",
         },
         {
           id: "software",
@@ -488,9 +488,83 @@ export const performancePage = {
     en: "Operating Performance — from decision to execution.",
   } as L,
   leadBody: {
-    fr: "Dans le mandat de performance, ce domaine traite les coûts évitables, les reprises, les pertes de capacité et, lorsque pertinent, l'architecture commerciale (e-commerce, omnicanal, parcours).",
-    en: "Within the performance mandate, this domain addresses avoidable costs, rework, capacity loss and, when relevant, commercial architecture (e-commerce, omnichannel, journeys).",
+    fr: "Ce levier traite les coûts évitables, les reprises, les tâches sans valeur et les pertes de capacité. L'objectif n'est pas un rapport : c'est une amélioration exécutée, mesurée avec votre direction financière.",
+    en: "This lever addresses avoidable costs, rework, non-value tasks and capacity loss. The goal is not a report: it is an improvement executed and measured with your finance leadership.",
   } as L,
+  valueTitle: {
+    fr: "Ce que TWM apporte",
+    en: "What TWM brings",
+  } as L,
+  valueBody: {
+    fr: "Nous transformons une priorité opérationnelle en chantier piloté : diagnostic chiffré, choix des moyens, exécution avec vos équipes et mesure des effets économiques.",
+    en: "We turn an operating priority into a steered workstream: quantified diagnosis, choice of means, execution with your teams and measurement of economic effects.",
+  } as L,
+  capabilities: [
+    {
+      title: { fr: "Cartographie des pertes", en: "Loss mapping" },
+      body: {
+        fr: "Identifier où la valeur fuite réellement : outils sous-utilisés, reprises, ressaisies, délais, double travail et coûts cachés dans les flux.",
+        en: "Find where value actually leaks: underused tools, rework, re-keying, delays, duplicated work and hidden costs in the flows.",
+      },
+    },
+    {
+      title: { fr: "Réduction des coûts évitables", en: "Avoidable cost reduction" },
+      body: {
+        fr: "Établir les dépenses évitables, leur coût de sortie et les conditions de réduction — sans casser la qualité de service.",
+        en: "Establish avoidable spend, exit cost and reduction conditions — without breaking service quality.",
+      },
+    },
+    {
+      title: { fr: "Libération de capacité", en: "Capacity release" },
+      body: {
+        fr: "Accélérer la préparation, fiabiliser les flux et supprimer les tâches inutiles. Définir comment la capacité libérée sera réinvestie.",
+        en: "Speed preparation, stabilize flows and remove useless tasks. Define how freed capacity will be reinvested.",
+      },
+    },
+    {
+      title: { fr: "Protection de la marge", en: "Margin protection" },
+      body: {
+        fr: "Relier le travail réalisé à la facturation, limiter les erreurs et contrôler les écarts entre engagements, prix et coûts de service.",
+        en: "Connect work delivered to billing, limit errors and control gaps between commitments, price and cost to serve.",
+      },
+    },
+    {
+      title: { fr: "Exécution terrain", en: "Field execution" },
+      body: {
+        fr: "Piloter le chantier avec le sponsor, les responsables opérationnels et la finance jusqu'à un usage réel et un effet observable.",
+        en: "Steer the workstream with the sponsor, operations owners and finance through to real usage and an observable effect.",
+      },
+    },
+    {
+      title: { fr: "Mesure financière", en: "Financial measurement" },
+      body: {
+        fr: "Référence économique, gains nets, écarts et rituels de revue pour que le résultat soit vérifiable — pas seulement annoncé.",
+        en: "Economic baseline, net gains, variances and review rituals so the result is verifiable — not merely announced.",
+      },
+    },
+  ] as { title: L; body: L }[],
+  outcomesTitle: {
+    fr: "La valeur ajoutée attendue",
+    en: "Expected value added",
+  } as L,
+  outcomes: [
+    {
+      fr: "Coûts évitables réduits avec une base de mesure partagée avec la finance.",
+      en: "Avoidable costs cut with a measurement base shared with finance.",
+    },
+    {
+      fr: "Capacité libérée et réinvestie selon une décision explicite — pas seulement du confort.",
+      en: "Capacity freed and reinvested under an explicit decision — not mere comfort.",
+    },
+    {
+      fr: "Marge mieux protégée grâce à moins d'erreurs, de reprises et d'écarts de facturation.",
+      en: "Margin better protected through fewer errors, less rework and fewer billing gaps.",
+    },
+    {
+      fr: "Un premier chantier exécuté avec ownership clair, usage vérifié et effets documentés.",
+      en: "A first workstream executed with clear ownership, verified usage and documented effects.",
+    },
+  ] as L[],
   leversTitle: {
     fr: "Trois axes opérationnels, un même niveau d'exigence.",
     en: "Three operating axes, one standard of rigor.",
@@ -582,13 +656,17 @@ export const performancePage = {
     fr: "L'accompagnement est pertinent lorsqu'un dirigeant ou un actionnaire peut prendre des décisions transversales, qu'un responsable opérationnel peut faire évoluer le processus et qu'une base de mesure peut être établie. Aucun niveau de gain n'est garanti avant diagnostic.",
     en: "The engagement fits when a leader or shareholder can take cross-cutting decisions, an operations owner can change the process, and a measurement base can be established. No gain level is guaranteed before diagnosis.",
   } as L,
-  commerceTitle: {
-    fr: "Commerce Performance, lorsque le levier est commercial.",
-    en: "Commerce Performance when the lever is commercial.",
+  relatedTitle: {
+    fr: "Le levier commercial a sa propre page.",
+    en: "The commercial lever has its own page.",
   } as L,
-  commerceBody: {
-    fr: "E-commerce, omnicanal, parcours clients et architecture commerciale font partie des moyens mobilisables. Ils s'inscrivent dans le même mandat : un résultat économique recherché, puis les changements d'exécution nécessaires.",
-    en: "E-commerce, omnichannel, customer journeys and commercial architecture are means we can mobilize. They sit in the same mandate: an economic outcome sought, then the execution changes required.",
+  relatedBody: {
+    fr: "E-commerce, omnicanal, parcours clients et architecture commerciale sont traités dans Commerce Performance — même mandat de résultat, moyens adaptés au commerce.",
+    en: "E-commerce, omnichannel, customer journeys and commercial architecture are covered in Commerce Performance — same outcome mandate, means adapted to commerce.",
+  } as L,
+  relatedCta: {
+    fr: "Explorer Commerce Performance",
+    en: "Explore Commerce Performance",
   } as L,
   ctaImpact: { fr: "Explorer les cas d'usage", en: "Explore use cases" } as L,
   ctaFaq: {
@@ -775,13 +853,87 @@ export const methodePage = {
 
 export const technologyPage = {
   leadTitle: {
-    fr: "Les moyens de réaliser. Le cadre pour garder le contrôle.",
-    en: "The means to deliver. The frame to keep control.",
+    fr: "AI & Software Enablement — des outils qui augmentent la capacité réelle.",
+    en: "AI & Software Enablement — tools that expand real capacity.",
   } as L,
   leadBody: {
-    fr: "TWM apporte une couche de contexte et de pilotage qui relie les données, les décisions, les processus et les résultats. Ce n'est pas un logiciel vendu : c'est une capacité interne qui nous permet de travailler plus profondément et plus vite pour nos clients.",
-    en: "TWM brings a context and steering layer that connects data, decisions, processes and results. It is not software we sell: it is an internal capability that lets us work deeper and faster for clients.",
+    fr: "Donner aux équipes les moyens de produire des outils, d'automatiser certains flux et d'augmenter leur capacité. L'IA et le software ne sont pas une fin : ce sont des moyens sélectionnés pour un résultat économique.",
+    en: "Give teams the means to build tools, automate selected flows and expand capacity. AI and software are not an end: they are means selected for an economic outcome.",
   } as L,
+  valueTitle: {
+    fr: "Ce que TWM apporte",
+    en: "What TWM brings",
+  } as L,
+  valueBody: {
+    fr: "Nous ne vendons pas un logiciel. Nous construisons, avec vos équipes, la capacité de réaliser : contexte, automatisations, assistants et pilotage — sous contrôle métier et humain.",
+    en: "We do not sell software. We build, with your teams, the capacity to deliver: context, automations, assistants and steering — under business and human control.",
+  } as L,
+  capabilities: [
+    {
+      title: { fr: "Couche de contexte", en: "Context layer" },
+      body: {
+        fr: "Relier données, décisions, processus et résultats pour comprendre ce qui se passe réellement — et où la valeur est perdue ou sous-exploitée.",
+        en: "Connect data, decisions, processes and results to understand what is really happening — and where value is lost or underused.",
+      },
+    },
+    {
+      title: { fr: "Automatisation ciblée", en: "Targeted automation" },
+      body: {
+        fr: "Automatiser les flux qui libèrent de la capacité ou réduisent les erreurs — pas automatiser pour automatiser.",
+        en: "Automate flows that free capacity or cut errors — not automation for its own sake.",
+      },
+    },
+    {
+      title: { fr: "Assistants IA utiles", en: "Useful AI assistants" },
+      body: {
+        fr: "Assister l'analyse, la recherche, la préparation et le traitement documentaire lorsque la fiabilité et les données le permettent.",
+        en: "Assist analysis, research, preparation and document processing when reliability and data allow.",
+      },
+    },
+    {
+      title: { fr: "Product builders métier", en: "Business product builders" },
+      body: {
+        fr: "Transformer la connaissance métier de vos équipes en outils et logiciels internes contrôlés, sans remplacer les experts.",
+        en: "Turn your teams' domain knowledge into controlled internal tools and software, without replacing experts.",
+      },
+    },
+    {
+      title: { fr: "Pilotage opérationnel", en: "Operational steering" },
+      body: {
+        fr: "Tableaux, registres et rituels qui relient activité, qualité et gains — pour rendre visibles les écarts et les décisions.",
+        en: "Boards, registers and rituals that connect activity, quality and gains — to make variances and decisions visible.",
+      },
+    },
+    {
+      title: { fr: "Contrôle et réversibilité", en: "Control and reversibility" },
+      body: {
+        fr: "Accès, données, validations humaines, traçabilité et conditions de reprise cadrés avec vos responsables — pas une boîte noire.",
+        en: "Access, data, human approvals, traceability and take-back conditions framed with your owners — not a black box.",
+      },
+    },
+  ] as { title: L; body: L }[],
+  outcomesTitle: {
+    fr: "La valeur ajoutée attendue",
+    en: "Expected value added",
+  } as L,
+  outcomes: [
+    {
+      fr: "Équipes capables de produire leurs propres outils métier, sous contrôle.",
+      en: "Teams able to build their own business tools, under control.",
+    },
+    {
+      fr: "Flux sélectionnés automatisés pour libérer de la capacité ou réduire les erreurs.",
+      en: "Selected flows automated to free capacity or cut errors.",
+    },
+    {
+      fr: "Décisions plus rapides grâce à une couche de contexte reliée aux données réelles.",
+      en: "Faster decisions thanks to a context layer connected to real data.",
+    },
+    {
+      fr: "Pilotage visible de l'activité, de la qualité et des gains — sans boîte noire.",
+      en: "Visible steering of activity, quality and gains — without a black box.",
+    },
+  ] as L[],
   architectureTitle: {
     fr: "Une architecture adaptée à votre situation.",
     en: "An architecture adapted to your situation.",
@@ -1255,6 +1407,10 @@ export const partnerPerformancePage = {
     fr: "Ce que TWM apporte",
     en: "What TWM brings",
   } as L,
+  capabilitiesBody: {
+    fr: "Nous structurons le réseau, les leads, le co-selling et la gouvernance pour que chaque partenariat produise un effet économique observable — pas seulement une liste de logos.",
+    en: "We structure the network, leads, co-selling and governance so each partnership produces an observable economic effect — not merely a logo list.",
+  } as L,
   capabilities: [
     {
       title: { fr: "Méthodologie", en: "Methodology" },
@@ -1306,6 +1462,28 @@ export const partnerPerformancePage = {
       },
     },
   ] as { title: L; body: L }[],
+  outcomesTitle: {
+    fr: "La valeur ajoutée attendue",
+    en: "Expected value added",
+  } as L,
+  outcomes: [
+    {
+      fr: "Plus d'opportunités qualifiées issues du réseau, avec un propriétaire et un suivi clairs.",
+      en: "More qualified opportunities from the network, with a clear owner and follow-up.",
+    },
+    {
+      fr: "Réduction du coût d'acquisition lorsque le co-selling et les referrals remplacent des canaux plus chers.",
+      en: "Lower acquisition cost when co-selling and referrals replace more expensive channels.",
+    },
+    {
+      fr: "Cycle de vente accéléré grâce à des handoffs et des règles de collaboration sans friction.",
+      en: "Faster sales cycle through frictionless handoffs and collaboration rules.",
+    },
+    {
+      fr: "Gouvernance du réseau qui permet d'arbitrer, prioriser et arrêter ce qui ne performe pas.",
+      en: "Network governance that lets you decide, prioritize and stop what does not perform.",
+    },
+  ] as L[],
   noteTitle: {
     fr: "Un domaine d'engagement client.",
     en: "A client engagement domain.",
@@ -1321,6 +1499,111 @@ export const partnerPerformancePage = {
   secondaryCtaLabel: {
     fr: "Rejoindre le réseau TWM",
     en: "Join the TWM network",
+  } as L,
+} as const;
+
+// ---------------------------------------------------------------------------
+// /commerce-performance — commercial architecture lever
+// ---------------------------------------------------------------------------
+
+export const commercePerformancePage = {
+  leadTitle: {
+    fr: "Commerce Performance — convertir le parcours en résultat économique.",
+    en: "Commerce Performance — turn the journey into an economic result.",
+  } as L,
+  leadBody: {
+    fr: "E-commerce, omnicanal, parcours clients et architecture commerciale ne créent de la valeur que s'ils améliorent la conversion, le panier, la rétention ou le coût de servir. Nous traitons le commerce comme un levier d'exécution, pas comme un projet digital isolé.",
+    en: "E-commerce, omnichannel, customer journeys and commercial architecture only create value if they improve conversion, basket, retention or cost to serve. We treat commerce as an execution lever, not an isolated digital project.",
+  } as L,
+  capabilitiesTitle: {
+    fr: "Ce que TWM apporte",
+    en: "What TWM brings",
+  } as L,
+  capabilitiesBody: {
+    fr: "Nous diagnostiquons où le parcours perd de la valeur, priorisons les changements d'architecture et d'exécution, puis mesurons l'effet sur le chiffre d'affaires, la marge et le coût de servir.",
+    en: "We diagnose where the journey loses value, prioritize architecture and execution changes, then measure the effect on revenue, margin and cost to serve.",
+  } as L,
+  capabilities: [
+    {
+      title: { fr: "Diagnostic parcours", en: "Journey diagnosis" },
+      body: {
+        fr: "Cartographier les frictions d'acquisition, de conversion et de service : points de chute, ruptures omnicanales et coûts cachés du parcours.",
+        en: "Map acquisition, conversion and service friction: drop-off points, omnichannel breaks and hidden journey costs.",
+      },
+    },
+    {
+      title: { fr: "Architecture commerciale", en: "Commercial architecture" },
+      body: {
+        fr: "Clarifier le rôle du site, des canaux, du CRM, du catalogue et des règles de pricing pour qu'ils servent un même objectif économique.",
+        en: "Clarify the role of site, channels, CRM, catalog and pricing rules so they serve one economic objective.",
+      },
+    },
+    {
+      title: { fr: "E-commerce & conversion", en: "E-commerce & conversion" },
+      body: {
+        fr: "Améliorer les parcours d'achat, la pertinence de l'offre et les mécaniques qui font progresser le panier moyen et le taux de conversion.",
+        en: "Improve purchase journeys, offer relevance and mechanics that lift average basket and conversion rate.",
+      },
+    },
+    {
+      title: { fr: "Omnicanal cohérent", en: "Coherent omnichannel" },
+      body: {
+        fr: "Aligner stock, promesse, service et données entre canaux pour éviter les ruptures qui coûtent cher en confiance et en marge.",
+        en: "Align stock, promise, service and data across channels to avoid breaks that cost trust and margin.",
+      },
+    },
+    {
+      title: { fr: "Opérations commerciales", en: "Commercial operations" },
+      body: {
+        fr: "Réduire les reprises manuelles, les erreurs de commande et les délais qui dégradent l'expérience et le coût de servir.",
+        en: "Cut manual rework, order errors and delays that degrade experience and cost to serve.",
+      },
+    },
+    {
+      title: { fr: "Mesure de la valeur", en: "Value measurement" },
+      body: {
+        fr: "Définir référence, indicateurs (conversion, panier, rétention, coût de servir) et rituels de revue avec commerce et finance.",
+        en: "Define baseline, indicators (conversion, basket, retention, cost to serve) and review rituals with commerce and finance.",
+      },
+    },
+  ] as { title: L; body: L }[],
+  outcomesTitle: {
+    fr: "La valeur ajoutée attendue",
+    en: "Expected value added",
+  } as L,
+  outcomes: [
+    {
+      fr: "Parcours plus fluides qui réduisent l'abandon et accélèrent la décision d'achat.",
+      en: "Smoother journeys that cut abandonment and speed the purchase decision.",
+    },
+    {
+      fr: "Meilleure conversion et/ou panier moyen lorsque l'offre, le pricing et le parcours sont alignés.",
+      en: "Better conversion and/or average basket when offer, pricing and journey are aligned.",
+    },
+    {
+      fr: "Coût de servir maîtrisé grâce à moins de reprises, d'erreurs et de frictions omnicanales.",
+      en: "Cost to serve under control through less rework, fewer errors and fewer omnichannel frictions.",
+    },
+    {
+      fr: "Décisions commerciales fondées sur une référence chiffrée, pas sur une intuition d'outil.",
+      en: "Commercial decisions based on a quantified baseline, not on a tool intuition.",
+    },
+  ] as L[],
+  noteTitle: {
+    fr: "Un levier du mandat de performance.",
+    en: "A lever within the performance mandate.",
+  } as L,
+  noteBody: {
+    fr: "Commerce Performance s'inscrit dans le même cadre que les autres leviers : une priorité économique, des moyens choisis après diagnostic, une exécution avec vos équipes et une mesure des effets. Ce n'est pas une refonte digitale pour elle-même.",
+    en: "Commerce Performance sits in the same frame as the other levers: an economic priority, means chosen after diagnosis, execution with your teams and measurement of effects. It is not a digital rebuild for its own sake.",
+  } as L,
+  ctaLabel: {
+    fr: "Soumettre une priorité de performance",
+    en: "Submit a performance priority",
+  } as L,
+  secondaryCtaLabel: {
+    fr: "Voir Operating Performance",
+    en: "See Operating Performance",
   } as L,
 } as const;
 

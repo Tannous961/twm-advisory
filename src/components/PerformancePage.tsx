@@ -6,6 +6,7 @@ import {
   EditorialBlock,
   EditorialCta,
 } from "@/components/EditorialPrimitives";
+import { LeverCapabilities } from "@/components/LeverCapabilities";
 import {
   PerformanceGlyph,
   type PerformanceGlyphName,
@@ -13,6 +14,15 @@ import {
 import { Reveal } from "@/components/Reveal";
 import { performancePage as copy } from "@/lib/editorial";
 import { useT } from "@/lib/i18n";
+
+const valueGlyphs: PerformanceGlyphName[] = [
+  "diagnostic",
+  "value",
+  "capacity",
+  "measure",
+  "execute",
+  "steer",
+];
 
 const leverGlyphs: PerformanceGlyphName[] = ["value", "workflow", "capacity"];
 
@@ -36,6 +46,14 @@ export function PerformancePage() {
         </section>
       </Reveal>
 
+      <EditorialBlock title={copy.valueTitle} body={copy.valueBody}>
+        <LeverCapabilities items={copy.capabilities} glyphs={valueGlyphs} />
+      </EditorialBlock>
+
+      <EditorialBlock title={copy.outcomesTitle}>
+        <BulletList items={[...copy.outcomes]} />
+      </EditorialBlock>
+
       <EditorialBlock title={copy.leversTitle}>
         <div className="mt-12 grid gap-8 lg:grid-cols-3">
           {copy.levers.map((lever, index) => (
@@ -55,10 +73,6 @@ export function PerformancePage() {
         <EditorialCta href="/impact" label={copy.ctaImpact} />
       </EditorialBlock>
 
-      <div id="commerce">
-        <EditorialBlock title={copy.commerceTitle} body={copy.commerceBody} />
-      </div>
-
       <EditorialBlock title={copy.scanTitle} body={copy.scanBody}>
         <BulletList items={[...copy.scanBullets]} />
       </EditorialBlock>
@@ -70,6 +84,17 @@ export function PerformancePage() {
         <div className="mt-8">
           <Link href="/faq" className="btn-secondary inline-flex rounded-full px-7 py-3.5">
             {t(copy.ctaFaq)}
+          </Link>
+        </div>
+      </EditorialBlock>
+
+      <EditorialBlock title={copy.relatedTitle} body={copy.relatedBody}>
+        <div className="mt-8">
+          <Link
+            href="/commerce-performance"
+            className="btn-secondary inline-flex rounded-full px-7 py-3.5"
+          >
+            {t(copy.relatedCta)}
           </Link>
         </div>
       </EditorialBlock>
