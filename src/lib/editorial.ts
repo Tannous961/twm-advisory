@@ -304,38 +304,6 @@ export const homeEditorial = {
       fr: "Avant de commencer.",
       en: "Before you start.",
     } as L,
-    items: [
-      {
-        q: {
-          fr: "Faut-il avoir un projet IA pour démarrer ?",
-          en: "Do you need an AI project to get started?",
-        },
-        a: {
-          fr: "Non. Une priorité de performance, coûts, capacité, partenaires, commerce ou outils, suffit. Les moyens sont choisis après analyse.",
-          en: "No. A performance priority, costs, capacity, partners, commerce or tools, is enough. Means are chosen after analysis.",
-        },
-      },
-      {
-        q: {
-          fr: "Comment fonctionne le gain-share ?",
-          en: "How does gain-share work?",
-        },
-        a: {
-          fr: "Une part de la rémunération peut être liée aux gains éligibles, réalisés et validés selon un protocole convenu avant exécution. Les règles sont contractuelles ; aucun taux universel n'est affiché.",
-          en: "Part of the fee can be tied to eligible gains that are realized and validated under a protocol agreed before execution. Rules are contractual; no universal rate is published.",
-        },
-      },
-      {
-        q: {
-          fr: "Quelle est la différence avec un projet classique ?",
-          en: "How is this different from a classic project?",
-        },
-        a: {
-          fr: "Vous confiez une priorité de performance. Nous diagnostiquons, décidons avec vous, puis exécutons les changements avec vos équipes.",
-          en: "You are not handing us a fixed brief. You entrust a performance priority: we diagnose, decide with you and execute changes with your teams.",
-        },
-      },
-    ] as FaqItem[],
     allLink: {
       label: { fr: "Toutes les réponses", en: "All answers" },
       href: "/faq",

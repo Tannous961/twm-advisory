@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useI18n, useT } from "@/lib/i18n";
+import { useI18n, useLocalePath, useT } from "@/lib/i18n";
 
 const product = [
   { href: "/performance", key: "offers" as const },
@@ -23,6 +23,7 @@ const company = [
 export function Footer() {
   const { c } = useI18n();
   const t = useT();
+  const localePath = useLocalePath();
 
   return (
     <footer className="relative mt-8 border-t border-[color:var(--line)]">
@@ -37,7 +38,7 @@ export function Footer() {
       <div className="content-wrap relative grid gap-10 py-14 sm:py-16 lg:grid-cols-[1.4fr_1fr_1fr] lg:gap-12">
         <div>
           <Link
-            href="/"
+            href={localePath("/")}
             className="flex items-center gap-2.5 whitespace-nowrap !text-fg"
             aria-label={t(c.nav.homeAria)}
           >
@@ -71,7 +72,7 @@ export function Footer() {
           <ul className="flex flex-col gap-3 type-body-sm text-muted-2">
             {product.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="transition-colors hover:text-fg">
+                <Link href={localePath(item.href)} className="transition-colors hover:text-fg">
                   {t(c.nav[item.key])}
                 </Link>
               </li>
@@ -86,7 +87,7 @@ export function Footer() {
           <ul className="flex flex-col gap-3 type-body-sm text-muted-2">
             {company.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="transition-colors hover:text-fg">
+                <Link href={localePath(item.href)} className="transition-colors hover:text-fg">
                   {t(c.nav[item.key])}
                 </Link>
               </li>
@@ -115,6 +116,12 @@ export function Footer() {
             className="transition-colors hover:text-fg"
           >
             llms.txt
+          </a>
+          <a
+            href="/llms-full.txt"
+            className="transition-colors hover:text-fg"
+          >
+            llms-full.txt
           </a>
         </nav>
       </div>

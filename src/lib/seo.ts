@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import type { CadrePost } from "./cadre";
 import { content } from "./content";
 import { faqItems } from "./editorial";
-import type { CadrePost } from "./cadre";
+import { hasEnPillar, type Locale, withLocale } from "./locale";
 
 export const siteConfig = {
   name: "TWM Advisory",
@@ -31,6 +32,9 @@ export const siteConfig = {
     "BH",
   ],
 } as const;
+
+/** Stable freshness signal for JSON-LD (not build time). */
+export const siteRevisedAt = "2026-09-14";
 
 const title = content.meta.title.fr;
 const description = content.meta.description.fr;
@@ -279,50 +283,62 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
 
 const ogImage = "/opengraph-image";
 
-function languageAlternates(path: string) {
+function languageAlternates(frPath: string, locale: Locale = "fr") {
+  const languages: Record<string, string> = {
+    "fr-FR": frPath,
+    "x-default": frPath,
+  };
+  if (hasEnPillar(frPath)) {
+    languages["en-US"] = withLocale(frPath, "en");
+  }
   return {
-    canonical: path,
-    languages: {
-      "fr-FR": path,
-      "en-US": `${path === "/" ? "/" : path}?lang=en`,
-      "x-default": path,
-    },
-  } as const;
+    canonical: withLocale(frPath, locale),
+    languages,
+  };
 }
 
-export function buildPageMetadata(key: PageSeoKey): Metadata {
+export function buildPageMetadata(
+  key: PageSeoKey,
+  locale: Locale = "fr",
+): Metadata {
   const page = pageSeo[key];
+  const isEn = locale === "en";
+  const title = isEn ? page.titleEn : page.title;
+  const description = isEn ? page.descriptionEn : page.description;
+  const localizedPath = withLocale(page.path, locale);
   const pageKeywords = Array.from(new Set([...keywords, ...(page.keywords ?? [])]));
   const absoluteUrl =
-    page.path === "/" ? siteConfig.url : `${siteConfig.url}${page.path}`;
+    localizedPath === "/"
+      ? siteConfig.url
+      : `${siteConfig.url}${localizedPath}`;
 
   return {
-    title: key === "home" ? { absolute: page.title } : page.title,
-    description: page.description,
+    title: key === "home" ? { absolute: title } : title,
+    description,
     keywords: pageKeywords,
-    alternates: languageAlternates(page.path),
+    alternates: languageAlternates(page.path, locale),
     openGraph: {
       type: "website",
-      locale: siteConfig.locale,
-      alternateLocale: [siteConfig.alternateLocale],
+      locale: isEn ? siteConfig.alternateLocale : siteConfig.locale,
+      alternateLocale: [isEn ? siteConfig.locale : siteConfig.alternateLocale],
       url: absoluteUrl,
       siteName: siteConfig.name,
-      title: page.title,
-      description: page.description,
+      title,
+      description,
       images: [
         {
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: page.title,
+          alt: title,
           type: "image/png",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: page.title,
-      description: page.description,
+      title,
+      description,
       images: [ogImage],
       ...(siteConfig.twitterHandle
         ? { creator: siteConfig.twitterHandle, site: siteConfig.twitterHandle }
@@ -341,9 +357,7 @@ export function buildPageMetadata(key: PageSeoKey): Metadata {
     },
     other: {
       "geo.region": "FR",
-      "content-language": "fr",
-      "en:title": page.titleEn,
-      "en:description": page.descriptionEn,
+      "content-language": isEn ? "en" : "fr",
     },
   };
 }
@@ -432,7 +446,10 @@ export function buildMetadata(): Metadata {
     },
     alternates: {
       types: {
-        "text/plain": [{ url: "/llms.txt", title: "llms.txt" }],
+        "text/plain": [
+          { url: "/llms.txt", title: "llms.txt" },
+          { url: "/llms-full.txt", title: "llms-full.txt" },
+        ],
       },
     },
     openGraph: {
@@ -568,6 +585,7 @@ export function buildJsonLd() {
     email: siteConfig.email,
     image: `${siteConfig.url}/uploads/WhatsApp%20Image%202026-07-29%20at%2015.14.56%20(2).jpeg`,
     knowsAbout: organization.knowsAbout,
+    ...(siteConfig.linkedin ? { sameAs: [siteConfig.linkedin] } : {}),
     hasOccupation: {
       "@type": "Occupation",
       name: "Forward Deployed Engineer",
@@ -612,7 +630,7 @@ export function buildJsonLd() {
       url: `${siteConfig.url}/opengraph-image`,
     },
     inLanguage: "fr-FR",
-    dateModified: new Date().toISOString().slice(0, 10),
+    dateModified: siteRevisedAt,
   };
 
   const services = [
@@ -668,55 +686,73 @@ export function buildJsonLd() {
 export function buildPageJsonLd(
   key: PageSeoKey,
   extraCrumbs: { name: string; path: string }[] = [],
+  locale: Locale = "fr",
 ) {
   const page = pageSeo[key];
+  const isEn = locale === "en";
+  const title = isEn ? page.titleEn : page.title;
+  const description = isEn ? page.descriptionEn : page.description;
+  const localizedPath = withLocale(page.path, locale);
+  const homeLabel = isEn ? "Home" : "Accueil";
+  const pageLabel = title.split(" · ")[0];
   const crumbs = [
-    { name: "Accueil", path: "/" },
-    ...(key === "home" ? [] : [{ name: page.title.split(" · ")[0], path: page.path }]),
+    { name: homeLabel, path: withLocale("/", locale) },
+    ...(key === "home"
+      ? []
+      : [{ name: pageLabel, path: localizedPath }]),
     ...extraCrumbs,
   ];
+
+  const pageUrl =
+    localizedPath === "/"
+      ? siteConfig.url
+      : `${siteConfig.url}${localizedPath}`;
 
   const graph: Record<string, unknown>[] = [
     {
       "@type": "WebPage",
-      "@id": `${siteConfig.url}${page.path === "/" ? "" : page.path}#webpage`,
-      url: page.path === "/" ? siteConfig.url : `${siteConfig.url}${page.path}`,
-      name: page.title,
-      description: page.description,
+      "@id": `${pageUrl}#webpage`,
+      url: pageUrl,
+      name: title,
+      description,
       isPartOf: { "@id": `${siteConfig.url}/#website` },
       about: { "@id": `${siteConfig.url}/#organization` },
-      inLanguage: ["fr-FR", "en-US"],
-      dateModified: new Date().toISOString().slice(0, 10),
+      inLanguage: isEn ? "en-US" : "fr-FR",
+      dateModified: siteRevisedAt,
     },
     breadcrumbItems(crumbs),
   ];
 
   if (key === "faq") {
+    const faqPath = withLocale("/faq", locale);
     graph.push({
       "@type": "FAQPage",
-      "@id": `${siteConfig.url}/faq#faq`,
-      url: `${siteConfig.url}/faq`,
+      "@id": `${siteConfig.url}${faqPath}#faq`,
+      url: `${siteConfig.url}${faqPath}`,
       isPartOf: { "@id": `${siteConfig.url}/#website` },
+      inLanguage: isEn ? "en-US" : "fr-FR",
       mainEntity: faqItems.map((item) => ({
         "@type": "Question",
-        name: item.q.fr,
+        name: isEn ? item.q.en : item.q.fr,
         acceptedAnswer: {
           "@type": "Answer",
-          text: item.a.fr,
+          text: isEn ? item.a.en : item.a.fr,
         },
       })),
     });
   }
 
   if (key === "a-propos") {
+    const aboutPath = withLocale("/a-propos", locale);
     graph.push({
       "@type": "ProfilePage",
-      "@id": `${siteConfig.url}/a-propos#profile`,
-      url: `${siteConfig.url}/a-propos`,
-      name: page.title,
-      description: page.description,
+      "@id": `${siteConfig.url}${aboutPath}#profile`,
+      url: `${siteConfig.url}${aboutPath}`,
+      name: title,
+      description,
       mainEntity: { "@id": `${siteConfig.url}/#person` },
       isPartOf: { "@id": `${siteConfig.url}/#website` },
+      inLanguage: isEn ? "en-US" : "fr-FR",
     });
   }
 
@@ -770,17 +806,141 @@ export function buildCadreJsonLd(post: CadrePost) {
   };
 }
 
+
+export function buildImpactMetadata(item: {
+  slug: string;
+  title: { fr: string; en: string };
+  situation: { fr: string; en: string };
+}): Metadata {
+  const path = `/impact/${item.slug}`;
+  const url = `${siteConfig.url}${path}`;
+  const title = item.title.fr;
+  const description = item.situation.fr;
+  return {
+    title,
+    description,
+    keywords: [...keywords, "impact performance", item.title.fr],
+    alternates: languageAlternates(path),
+    openGraph: {
+      type: "article",
+      locale: siteConfig.locale,
+      url,
+      siteName: siteConfig.name,
+      title,
+      description,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: title,
+          type: "image/png",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
+  };
+}
+
+export function buildImpactJsonLd(item: {
+  slug: string;
+  title: { fr: string; en: string };
+  situation: { fr: string; en: string };
+  intervention: { fr: string; en: string };
+  measure: { fr: string; en: string };
+}) {
+  const path = `/impact/${item.slug}`;
+  const url = `${siteConfig.url}${path}`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${url}#webpage`,
+        url,
+        name: item.title.fr,
+        description: item.situation.fr,
+        isPartOf: { "@id": `${siteConfig.url}/#website` },
+        about: { "@id": `${siteConfig.url}/#organization` },
+        inLanguage: "fr-FR",
+        dateModified: siteRevisedAt,
+      },
+      {
+        "@type": "Service",
+        "@id": `${url}#service`,
+        name: item.title.fr,
+        description: `${item.situation.fr} ${item.intervention.fr} ${item.measure.fr}`.trim(),
+        provider: { "@id": `${siteConfig.url}/#organization` },
+        areaServed: siteConfig.areaServed,
+        url,
+      },
+      breadcrumbItems([
+        { name: "Accueil", path: "/" },
+        { name: "Impact", path: "/impact" },
+        { name: item.title.fr, path },
+      ]),
+    ],
+  };
+}
+
 export function sitemapEntries(): {
   path: string;
   priority: number;
   changeFrequency: "weekly" | "monthly" | "yearly";
+  languages?: Record<string, string>;
 }[] {
-  return (Object.keys(pageSeo) as PageSeoKey[]).map((key) => {
+  const entries: {
+    path: string;
+    priority: number;
+    changeFrequency: "weekly" | "monthly" | "yearly";
+    languages?: Record<string, string>;
+  }[] = [];
+
+  for (const key of Object.keys(pageSeo) as PageSeoKey[]) {
     const p = pageSeo[key];
-    return {
+    const priority = p.priority ?? (key === "home" ? 1 : 0.7);
+    const changeFrequency = p.changeFrequency ?? "monthly";
+    const languages = hasEnPillar(p.path)
+      ? {
+          "fr-FR": p.path === "/" ? siteConfig.url : `${siteConfig.url}${p.path}`,
+          "en-US": `${siteConfig.url}${withLocale(p.path, "en")}`,
+          "x-default":
+            p.path === "/" ? siteConfig.url : `${siteConfig.url}${p.path}`,
+        }
+      : undefined;
+
+    entries.push({
       path: p.path,
-      priority: p.priority ?? (key === "home" ? 1 : 0.7),
-      changeFrequency: p.changeFrequency ?? "monthly",
-    };
-  });
+      priority,
+      changeFrequency,
+      languages,
+    });
+
+    if (hasEnPillar(p.path)) {
+      entries.push({
+        path: withLocale(p.path, "en"),
+        priority: Math.max(0.5, priority - 0.05),
+        changeFrequency,
+        languages,
+      });
+    }
+  }
+
+  return entries;
 }

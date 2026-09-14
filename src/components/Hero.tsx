@@ -3,11 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { track } from "@/lib/analytics";
-import { useT, useI18n } from "@/lib/i18n";
+import { useI18n, useLocalePath, useT } from "@/lib/i18n";
 
 export function Hero() {
   const { c } = useI18n();
   const t = useT();
+  const localePath = useLocalePath();
 
   return (
     <section
@@ -74,7 +75,7 @@ export function Hero() {
             style={{ animationDelay: "0.3s" }}
           >
             <Link
-              href="/demarrer"
+              href={localePath("/demarrer")}
               className="btn-primary rounded-full px-8 py-4 text-center sm:py-4.5"
               onClick={() => track("cta_click", { location: "hero" })}
             >

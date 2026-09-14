@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { homeEditorial, homeExperience } from "@/lib/editorial";
+import { faqItems, homeEditorial, homeExperience } from "@/lib/editorial";
 import { useT } from "@/lib/i18n";
 import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
@@ -28,6 +28,7 @@ export function HomeEditorialSections() {
     (section) => section.id === "leviers",
   )?.cards;
   const faq = homeEditorial.faq;
+  const faqPreview = faqItems.slice(0, 3);
 
   return (
     <>
@@ -223,7 +224,7 @@ export function HomeEditorialSections() {
             ) : null}
           </div>
           <div className="mt-10 divide-y divide-[color:var(--line)] border-y border-[color:var(--line)]">
-            {faq.items.map((item) => (
+            {faqPreview.map((item) => (
               <details key={item.q.fr} className="group py-5">
                 <summary className="cursor-pointer list-none font-display text-lg text-fg marker:content-none [&::-webkit-details-marker]:hidden">
                   <span className="flex items-center justify-between gap-4">

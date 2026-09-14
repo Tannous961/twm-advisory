@@ -68,10 +68,11 @@ export default async function RootLayout({
   const theme = getTheme(themeId);
   const forceSplash = hdrs.get("x-twm-force-splash") === "1";
   const splashDone = !forceSplash && jar.has(SPLASH_COOKIE);
+  const locale = hdrs.get("x-twm-locale") === "en" ? "en" : "fr";
 
   return (
     <html
-      lang="fr"
+      lang={locale}
       suppressHydrationWarning
       data-theme={themeId}
       data-twm-splash={splashDone ? "done" : "pending"}
@@ -80,7 +81,7 @@ export default async function RootLayout({
     >
       <body className="min-h-dvh bg-bg font-sans text-fg">
         <GoogleTagManagerNoscript />
-        <Providers>
+        <Providers initialLang={locale}>
           {/* Outside .page-shell so opacity:0 during pending doesn't hide the intro */}
           <SplashIntro />
           {children}
