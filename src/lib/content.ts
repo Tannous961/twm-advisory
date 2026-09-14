@@ -7,8 +7,8 @@ export const content = {
       en: "TWM Advisory — Operating Performance Partner",
     },
     description: {
-      fr: "TWM Advisory accompagne les dirigeants et les actionnaires dans l'amélioration de la performance opérationnelle et commerciale. Posture Forward Deployed Engineer — mandat de performance mesurable, exécuté avec vos équipes.",
-      en: "TWM Advisory helps leaders and shareholders improve operating and commercial performance. Forward Deployed Engineer posture — a measurable performance mandate, executed with your teams.",
+      fr: "Operating Performance Partner en posture Forward Deployed Engineer. TWM exécute avec vos équipes un mandat mesurable : coûts, capacité, marge — validé avec votre finance.",
+      en: "Operating Performance Partner with a Forward Deployed Engineer posture. TWM executes a measurable mandate with your teams: cost, capacity, margin — validated with your finance team.",
     },
   },
   nav: {
