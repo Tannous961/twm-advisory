@@ -1,10 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import { track } from "@/lib/analytics";
-import { useI18n, useT } from "@/lib/i18n";
+import { useI18n, useLocalePath, useT } from "@/lib/i18n";
+import {
+  stripLocalePath,
+  switchLocalePath,
+  type Locale,
+} from "@/lib/locale";
 
 const primaryLinks = [
   { href: "/performance", key: "offers" as const },
@@ -25,7 +30,10 @@ const menuLinks = [
 export function Header() {
   const { lang, setLang, c } = useI18n();
   const t = useT();
+  const localePath = useLocalePath();
   const pathname = usePathname();
+  const router = useRouter();
+  const basePath = stripLocalePath(pathname);
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const menuId = useId();
@@ -106,7 +114,7 @@ export function Header() {
         className="content-wrap flex items-center justify-between gap-3 py-3.5"
       >
         <Link
-          href="/"
+          href={localePath("/")}
           className="flex items-center gap-2.5 whitespace-nowrap !text-fg"
           aria-label={t(c.nav.homeAria)}
         >
@@ -128,11 +136,12 @@ export function Header() {
 
         <div className="hidden items-center gap-1 type-label tracking-[0.12em] text-muted-2 lg:flex">
           {primaryLinks.map((link) => {
-            const on = pathname === link.href;
+            const href = localePath(link.href);
+            const on = basePath === link.href;
             return (
               <Link
                 key={link.href}
-                href={link.href}
+                href={href}
                 aria-current={on ? "page" : undefined}
                 className={`rounded-full px-3.5 py-2 transition-colors ${
                   on ? "bg-white/6 text-fg" : "text-muted-2 hover:text-fg"
@@ -157,7 +166,13 @@ export function Header() {
                   key={code}
                   type="button"
                   onClick={() => {
-                    if (code !== lang) track("lang_switched", { lang: code });
+                    if (code === lang) return;
+                    track("lang_switched", { lang: code });
+                    const nextPath = switchLocalePath(pathname, code as Locale);
+                    if (nextPath) {
+                      router.push(nextPath);
+                      return;
+                    }
                     setLang(code);
                   }}
                   aria-pressed={on}
@@ -176,7 +191,7 @@ export function Header() {
 
           <div className="hidden lg:block">
             <Link
-              href="/demarrer"
+              href={localePath("/demarrer")}
               className="btn-primary rounded-full px-6 py-3"
               onClick={() => track("cta_click", { location: "header_desktop" })}
             >
@@ -219,11 +234,12 @@ export function Header() {
         >
           <div className="flex flex-col gap-1">
             {menuLinks.map((link) => {
-              const on = pathname === link.href;
+              const href = localePath(link.href);
+              const on = basePath === link.href;
               return (
                 <Link
                   key={link.href}
-                  href={link.href}
+                  href={href}
                   aria-current={on ? "page" : undefined}
                   className="rounded-xl border-b border-white/6 py-4 type-label tracking-[0.16em] text-muted-2"
                 >
@@ -232,7 +248,7 @@ export function Header() {
               );
             })}
             <Link
-              href="/demarrer"
+              href={localePath("/demarrer")}
               className="btn-primary mt-4 rounded-full px-6 py-4 text-center"
               onClick={() => track("cta_click", { location: "header_mobile" })}
             >

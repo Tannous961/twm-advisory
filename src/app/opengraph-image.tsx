@@ -1,8 +1,8 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "TWM Advisory — Conseil et déploiement de solutions IA";
-
+export const alt =
+  "TWM Advisory — Operating Performance Partner · Forward Deployed Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -80,22 +80,22 @@ export default function OpenGraphImage() {
               fontFamily: "monospace",
             }}
           >
-            CONSEIL · CONCEPTION · DÉPLOIEMENT
+            OPERATING PERFORMANCE PARTNER
           </div>
           <div
             style={{
               display: "flex",
               flexDirection: "column",
-              fontSize: 54,
+              fontSize: 52,
               lineHeight: 1.1,
               color: "#F2EFEA",
               fontFamily: "Georgia, serif",
-              maxWidth: 920,
+              maxWidth: 940,
             }}
           >
-            <span>Des solutions d&apos;IA conçues</span>
+            <span>La performance se décide.</span>
             <span style={{ color: "#E3AC6C", fontStyle: "italic" }}>
-              pour vos opérations.
+              Et se réalise — avec vos équipes.
             </span>
           </div>
           <div
@@ -107,7 +107,7 @@ export default function OpenGraphImage() {
               lineHeight: 1.4,
             }}
           >
-            Diagnostic. Déploiement. Mesure. Supervision humaine.
+            Coûts, capacité, marge. Mandat mesurable, exécuté sur le terrain.
           </div>
         </div>
 
@@ -124,8 +124,8 @@ export default function OpenGraphImage() {
             letterSpacing: "0.08em",
           }}
         >
-          <span>ACCOMPAGNEMENT OPÉRATIONNEL</span>
-          <span style={{ color: "#B87333" }}>TWM ADVISORY</span>
+          <span>FORWARD DEPLOYED ENGINEER</span>
+          <span style={{ color: "#B87333" }}>TWM.EXPERT</span>
         </div>
       </div>
     ),

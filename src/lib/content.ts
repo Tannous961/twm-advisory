@@ -3,12 +3,12 @@ export type Lang = "fr" | "en";
 export const content = {
   meta: {
     title: {
-      fr: "TWM Advisory — Operating Performance Partner",
-      en: "TWM Advisory — Operating Performance Partner",
+      fr: "TWM Advisory · Operating Performance Partner",
+      en: "TWM Advisory · Operating Performance Partner",
     },
     description: {
-      fr: "TWM Advisory accompagne les dirigeants et les actionnaires dans l'amélioration de la performance opérationnelle et commerciale. Mandat de performance mesurable — opérations, partenariats, commerce, software ou IA.",
-      en: "TWM Advisory helps leaders and shareholders improve operating and commercial performance. A measurable performance mandate — operations, partnerships, commerce, software or AI.",
+      fr: "Operating Performance Partner, en posture Forward Deployed Engineer. TWM exécute avec vos équipes un mandat mesurable sur les coûts, la capacité et la marge, validé avec votre finance.",
+      en: "Operating Performance Partner, with a Forward Deployed Engineer posture. TWM executes a measurable mandate with your teams on cost, capacity and margin, validated with your finance team.",
     },
   },
   nav: {
@@ -37,7 +37,7 @@ export const content = {
     langSwitcher: { fr: "Choisir la langue", en: "Choose language" },
     mainNav: { fr: "Navigation principale", en: "Main navigation" },
     footerNav: { fr: "Pied de page", en: "Footer" },
-    homeAria: { fr: "TWM Advisory — Accueil", en: "TWM Advisory — Home" },
+    homeAria: { fr: "TWM Advisory, Accueil", en: "TWM Advisory, Home" },
   },
   audience: {
     title: { fr: "Organisations accompagnées", en: "Organizations we support" },
@@ -83,8 +83,8 @@ export const content = {
     approach: {
       title: { fr: "Méthode", en: "Method" },
       lead: {
-        fr: "Rendre la performance vérifiable — cinq étapes du problème opérationnel au résultat économique.",
-        en: "Make performance verifiable — five steps from operational problem to economic result.",
+        fr: "Rendre la performance vérifiable, cinq étapes du problème opérationnel au résultat économique.",
+        en: "Make performance verifiable, five steps from operational problem to economic result.",
       },
     },
     offers: {
@@ -104,8 +104,8 @@ export const content = {
     performance: {
       title: { fr: "Operating Performance", en: "Operating Performance" },
       lead: {
-        fr: "Réduire les coûts, les reprises et les pertes de capacité — un mandat d'exécution mesurable.",
-        en: "Cut costs, rework and capacity loss — a measurable execution mandate.",
+        fr: "Réduire les coûts, les reprises et les pertes de capacité, un mandat d'exécution mesurable.",
+        en: "Cut costs, rework and capacity loss, a measurable execution mandate.",
       },
     },
     methode: {
@@ -139,8 +139,8 @@ export const content = {
     about: {
       title: { fr: "À propos", en: "About" },
       lead: {
-        fr: "Une approche de dirigeant. Une discipline d'exécution.",
-        en: "A leadership approach. An execution discipline.",
+        fr: "Une approche de dirigeant, une posture Forward Deployed.",
+        en: "A leadership approach, a Forward Deployed posture.",
       },
     },
     faq: {
@@ -260,8 +260,8 @@ export const content = {
       en: "You are entrusting us with a performance priority.",
     },
     lead: {
-      fr: "Avec Tannous Mekari comme interlocuteur, TWM transforme votre priorité en décisions, en actions et en résultats mesurables.",
-      en: "With Tannous Mekari as your counterpart, TWM turns your priority into decisions, action and measurable results.",
+      fr: "Tannous Mekari travaille avec vos équipes, sur place. Posture Forward Deployed Engineer : on part de votre priorité et on la mène jusqu'à des résultats mesurés.",
+      en: "Tannous Mekari works with your teams, on site. Forward Deployed Engineer posture: we start from your priority and carry it through to measured results.",
     },
     ctaPrimary: {
       fr: "Soumettre une priorité de performance",
@@ -272,8 +272,8 @@ export const content = {
       en: "See the journey",
     },
     note: {
-      fr: "Écouter → Diagnostiquer → Décider → Exécuter → Mesurer",
-      en: "Listen → Diagnose → Decide → Deliver → Measure",
+      fr: "Déployé chez vous. Écouter, diagnostiquer, décider, exécuter, mesurer.",
+      en: "Forward deployed. Listen, diagnose, decide, deliver, measure.",
     },
     floatTitle: { fr: "Accompagnement opérationnel", en: "Operational support" },
     floatBody: {
@@ -704,8 +704,8 @@ export const content = {
       other: { fr: "Autre", en: "Other" },
     },
     consent: {
-      fr: "J'accepte que ces informations soient utilisées pour évaluer un partenariat — pas pour un démarchage client non sollicité.",
-      en: "I agree these details are used to evaluate a partnership — not for unsolicited client outreach.",
+      fr: "J'accepte que ces informations soient utilisées pour évaluer un partenariat, pas pour un démarchage client non sollicité.",
+      en: "I agree these details are used to evaluate a partnership, not for unsolicited client outreach.",
     },
     consentPrivacy: {
       fr: "Politique de confidentialité",
@@ -915,16 +915,16 @@ export const content = {
   about: {
     section: { fr: "À propos", en: "About" },
     title: {
-      fr: "Une approche de dirigeant. Une discipline d'exécution.",
-      en: "A leader's approach. An execution discipline.",
+      fr: "Une approche de dirigeant, une posture Forward Deployed.",
+      en: "A leader's approach. A Forward Deployed posture.",
     },
     p1: {
       fr: "Le parcours de Tannous Mekari associe 17 années d'expérience en e-commerce, développement d'activités et direction opérationnelle. Il travaille en français, en anglais et en arabe. Cette expérience nourrit une conviction : une transformation se juge dans le fonctionnement de l'entreprise, la qualité du service et ses effets économiques.",
       en: "Tannous Mekari's path combines 17 years in e-commerce, business development and operational leadership. He works in French, English and Arabic. That experience feeds a conviction: a transformation is judged in how the company operates, service quality and economic effects.",
     },
     p2: {
-      fr: "Le fondateur reste votre interlocuteur pour la relation client, les validations et les arbitrages de la mission. Des spécialistes peuvent être mobilisés lorsque le périmètre requiert une expertise complémentaire. Un Operating Performance Partner travaille avec la direction sur un objectif économique et reste impliqué dans son exécution.",
-      en: "The founder remains your counterpart for the client relationship, validations and mission decisions. Specialists can be brought in when the scope needs complementary expertise. An Operating Performance Partner works with leadership on an economic objective and stays involved in execution.",
+      fr: "Le fondateur reste votre interlocuteur pour la relation client, les validations et les arbitrages. Posture Forward Deployed Engineer : présent avec vos équipes jusqu'à la livraison. Des spécialistes peuvent intervenir si le périmètre l'exige. Un Operating Performance Partner travaille avec la direction sur un objectif économique et reste dans l'exécution.",
+      en: "The founder remains your counterpart for the client relationship, validations and mission decisions. Forward Deployed Engineer posture: present with your teams through delivery. Specialists can join when the scope needs it. An Operating Performance Partner works with leadership on an economic objective and stays in the execution.",
     },
     p3: {
       fr: "Le terme décrit notre mode d'intervention ; il ne désigne ni une prise de participation ni un mandat de gestion. Directions de PME, entreprises de services, cabinets de conseil, professions du chiffre et du droit : le point commun est une activité où la capacité, la fiabilité et la marge dépendent directement des opérations.",
@@ -950,148 +950,8 @@ export const content = {
       fr: "Les questions qui précèdent une bonne décision.",
       en: "The questions that precede a good decision.",
     },
-    items: [
-      {
-        q: {
-          fr: "Qu'est-ce qu'un Operating Performance Partner ?",
-          en: "What is an Operating Performance Partner?",
-        },
-        a: {
-          fr: "Un partenaire qui part d'un objectif économique, participe à sa mise en œuvre et mesure les effets avec votre organisation. TWM relie diagnostic, exécution et suivi au sein d'un périmètre de mission défini.",
-          en: "A partner that starts from an economic objective, takes part in delivery and measures effects with your organization. TWM connects diagnosis, execution and follow-up within a defined engagement scope.",
-        },
-      },
-      {
-        q: {
-          fr: "Faut-il avoir un projet IA pour démarrer ?",
-          en: "Do you need an AI project to start?",
-        },
-        a: {
-          fr: "Non. Une dépense à réduire, un processus trop lent ou une capacité insuffisante constituent des points de départ. Les moyens sont choisis après analyse.",
-          en: "No. Spend to reduce, a slow process or insufficient capacity are valid starting points. Means are chosen after analysis.",
-        },
-      },
-      {
-        q: {
-          fr: "Quels résultats pouvez-vous garantir ?",
-          en: "What results can you guarantee?",
-        },
-        a: {
-          fr: "Aucun niveau de gain ne peut être promis avant diagnostic. La proposition fixe un périmètre, des objectifs et des règles de mesure. Les résultats dépendent notamment de la qualité des données, des décisions prises et de l'adoption.",
-          en: "No gain level can be promised before diagnosis. The proposal sets scope, objectives and measurement rules. Results depend on data quality, decisions taken and adoption.",
-        },
-      },
-      {
-        q: {
-          fr: "Comment fonctionne le gain-share ?",
-          en: "How does gain-share work?",
-        },
-        a: {
-          fr: "Une part de la rémunération peut être liée aux gains éligibles, réalisés et validés selon un protocole convenu avant exécution. Le taux, les coûts déduits, la période, les exclusions et le règlement des écarts sont contractuels.",
-          en: "Part of the fee may be tied to eligible gains that are realized and validated under a protocol agreed before execution. Rate, deducted costs, period, exclusions and variance handling are contractual.",
-        },
-      },
-      {
-        q: {
-          fr: "Êtes-vous rémunéré uniquement au succès ?",
-          en: "Are you paid only on success?",
-        },
-        a: {
-          fr: "Le modèle proposé comprend un diagnostic au forfait et un socle fixe pour l'exécution. Une part variable peut s'y ajouter lorsque la mesure et l'attribution sont suffisamment robustes. Les honoraires fixes restent dus selon les conditions convenues.",
-          en: "The proposed model includes a fixed-fee diagnosis and a fixed base for execution. A variable share may be added when measurement and attribution are robust enough. Fixed fees remain due under agreed terms.",
-        },
-      },
-      {
-        q: {
-          fr: "Le temps gagné est-il compté comme une économie ?",
-          en: "Is time saved counted as a saving?",
-        },
-        a: {
-          fr: "Pas automatiquement. Le temps libéré est d'abord une capacité. Il devient un gain économique lorsqu'une dépense est réellement évitée ou qu'une activité supplémentaire génère une contribution démontrable.",
-          en: "Not automatically. Freed time is first capacity. It becomes an economic gain when spend is actually avoided or additional activity generates demonstrable contribution.",
-        },
-      },
-      {
-        q: {
-          fr: "EBITDA, marge et trésorerie : mesurez-vous la même chose ?",
-          en: "EBITDA, margin and cash: do you measure the same thing?",
-        },
-        a: {
-          fr: "Non. Les effets sur le résultat opérationnel, la capacité et les encaissements sont suivis séparément. Le périmètre de l'indicateur EBITDA et les retraitements retenus sont convenus avec la finance ; il n'est pas assimilé automatiquement au résultat d'exploitation.",
-          en: "No. Effects on operating result, capacity and collections are tracked separately. EBITDA scope and adjustments are agreed with finance; it is not automatically equated with operating profit.",
-        },
-      },
-      {
-        q: {
-          fr: "Qui valide les gains ?",
-          en: "Who validates the gains?",
-        },
-        a: {
-          fr: "Les responsables désignés chez le client, avec la finance, sur la base des données et des règles convenues. TWM documente les calculs. Une procédure de revue et de désaccord est prévue dans la proposition.",
-          en: "Designated client owners, with finance, based on agreed data and rules. TWM documents the calculations. A review and disagreement procedure is set in the proposal.",
-        },
-      },
-      {
-        q: {
-          fr: "Que se passe-t-il si les gains ne se réalisent pas ?",
-          en: "What happens if gains are not realized?",
-        },
-        a: {
-          fr: "Les écarts sont analysés et le chantier est corrigé, redimensionné ou arrêté selon les règles convenues. Une part variable fondée sur des gains réalisés ne se déclenche pas sur une simple projection. Les honoraires fixes suivent le contrat.",
-          en: "Variances are analyzed and the workstream is corrected, resized or stopped under agreed rules. A variable share based on realized gains does not trigger on a projection alone. Fixed fees follow the contract.",
-        },
-      },
-      {
-        q: {
-          fr: "De quelles données avez-vous besoin ?",
-          en: "What data do you need?",
-        },
-        a: {
-          fr: "D'abord d'un contexte métier. Les données détaillées ne sont demandées qu'après cadrage : volumes, dépenses, temps, qualité ou facturation selon le périmètre. Les accès et la confidentialité sont définis avant partage.",
-          en: "First, business context. Detailed data is requested only after scoping: volumes, spend, time, quality or billing depending on scope. Access and confidentiality are defined before sharing.",
-        },
-      },
-      {
-        q: {
-          fr: "Faut-il remplacer nos outils ?",
-          en: "Do we need to replace our tools?",
-        },
-        a: {
-          fr: "Pas nécessairement. Nous privilégions l'évolution des processus et l'utilisation des outils existants lorsque cela est pertinent. Toute nouvelle solution est évaluée avec son coût total et ses conditions de reprise.",
-          en: "Not necessarily. We favor process evolution and existing tools when relevant. Any new solution is assessed with total cost and exit conditions.",
-        },
-      },
-      {
-        q: {
-          fr: "Combien de temps dure une mission ?",
-          en: "How long does an engagement last?",
-        },
-        a: {
-          fr: "La durée dépend du périmètre, des données et des validations nécessaires. Nous proposons un premier diagnostic délimité, puis des jalons d'exécution et de mesure. Aucun délai standard n'est annoncé sans qualification.",
-          en: "Duration depends on scope, data and required validations. We propose a bounded first diagnosis, then execution and measurement milestones. No standard timeline is announced without qualification.",
-        },
-      },
-      {
-        q: {
-          fr: "Qui conserve la responsabilité des décisions ?",
-          en: "Who keeps decision responsibility?",
-        },
-        a: {
-          fr: "Votre direction et vos responsables habilités. Les responsabilités de pilotage, de validation, d'exploitation et de maintenance sont précisées dans la mission.",
-          en: "Your leadership and authorized owners. Ownership of steering, validation, operations and maintenance is specified in the engagement.",
-        },
-      },
-      {
-        q: {
-          fr: "Performance OS est-il une plateforme logicielle ?",
-          en: "Is Performance OS a software platform?",
-        },
-        a: {
-          fr: "Le nom désigne le cadre de pilotage et d'exécution proposé par TWM. Les composants sont définis pour chaque mission. Il ne suppose pas l'achat d'une plateforme propriétaire standard.",
-          en: "The name refers to TWM's proposed steering and execution framework. Components are defined per engagement. It does not imply buying a standard proprietary platform.",
-        },
-      },
-    ],
+    // Canonical FAQ answers live in editorial.faqItems (UI + JSON-LD).
+    items: [] as { q: { fr: string; en: string }; a: { fr: string; en: string } }[],
   },
   contact: {
     title: {
@@ -1177,8 +1037,8 @@ export const content = {
       en: "Answer the three questions to refine your context.",
     },
     mapLogic: {
-      fr: "Votre situation détermine le service d'entrée. Vos réponses sur l'organisation, l'urgence et les données affinent la préparation du premier échange — elles ne changent pas le type de service proposé.",
-      en: "Your situation determines the entry service. Your answers on organization, urgency and data refine preparation for the first conversation — they do not change the type of service suggested.",
+      fr: "Votre situation détermine le service d'entrée. Vos réponses sur l'organisation, l'urgence et les données affinent la préparation du premier échange, elles ne changent pas le type de service proposé.",
+      en: "Your situation determines the entry service. Your answers on organization, urgency and data refine preparation for the first conversation, they do not change the type of service suggested.",
     },
     scoreLabel: { fr: "Profil du besoin", en: "Needs profile" },
     scoreHint: {
@@ -1261,8 +1121,8 @@ export const content = {
       en: "Refine your context",
     },
     probesBody: {
-      fr: "Ces trois réponses affinent la préparation de l'échange. Elles complètent la situation choisie — elles ne remplacent pas l'orientation initiale.",
-      en: "These three answers refine how we prepare the conversation. They complement your chosen situation — they do not replace the initial direction.",
+      fr: "Ces trois réponses affinent la préparation de l'échange. Elles complètent la situation choisie, elles ne remplacent pas l'orientation initiale.",
+      en: "These three answers refine how we prepare the conversation. They complement your chosen situation, they do not replace the initial direction.",
     },
     probes: {
       orgSize: {
@@ -1455,8 +1315,8 @@ export const content = {
       en: "Request received.",
     },
     doneBody: {
-      fr: "Votre briefing est prêt. Réservez un créneau de 30 minutes pour en parler — ou revenez plus tard via l'email de confirmation.",
-      en: "Your briefing is ready. Book a 30-minute slot to discuss it — or come back later via the confirmation email.",
+      fr: "Votre briefing est prêt. Réservez un créneau de 30 minutes pour en parler, ou revenez plus tard via l'email de confirmation.",
+      en: "Your briefing is ready. Book a 30-minute slot to discuss it, or come back later via the confirmation email.",
     },
     doneConfirmationSent: {
       fr: "Un email de confirmation vient de vous être envoyé.",
@@ -1504,22 +1364,22 @@ export const content = {
       {
         title: { fr: "Éditeur", en: "Publisher" },
         body: {
-          fr: "Le site www.twm.expert est édité par TWM ADVISORY, SAS (société par actions simplifiée). SIREN : 106 067 549 — SIRET : 106 067 549 00019 — TVA intracommunautaire : FR76 106 067 549 — RCS Lille Métropole — Code NAF/APE : 70.22Z (conseil pour les affaires et autres conseils de gestion). Contact : tannous@twm.expert.",
-          en: "The website www.twm.expert is published by TWM ADVISORY, a French SAS (simplified joint-stock company). SIREN: 106 067 549 — SIRET: 106 067 549 00019 — EU VAT: FR76 106 067 549 — RCS Lille Métropole — NAF/APE: 70.22Z (business and other management consultancy). Contact: tannous@twm.expert.",
+          fr: "Le site www.twm.expert est édité par TWM ADVISORY, SAS (société par actions simplifiée). SIREN : 106 067 549 — SIRET : 106 067 549 00019 — TVA intracommunautaire : FR76 106 067 549 — RCS Lille Métropole, Code NAF/APE : 70.22Z (conseil pour les affaires et autres conseils de gestion). Contact : tannous@twm.expert.",
+          en: "The website www.twm.expert is published by TWM ADVISORY, a French SAS (simplified joint-stock company). SIREN: 106 067 549 — SIRET: 106 067 549 00019 — EU VAT: FR76 106 067 549 — RCS Lille Métropole, NAF/APE: 70.22Z (business and other management consultancy). Contact: tannous@twm.expert.",
         },
       },
       {
         title: { fr: "Directeur de la publication", en: "Publication director" },
         body: {
-          fr: "Tannous Mekari, Président de TWM ADVISORY — tannous@twm.expert.",
-          en: "Tannous Mekari, President of TWM ADVISORY — tannous@twm.expert.",
+          fr: "Tannous Mekari, Président de TWM ADVISORY, tannous@twm.expert.",
+          en: "Tannous Mekari, President of TWM ADVISORY, tannous@twm.expert.",
         },
       },
       {
         title: { fr: "Hébergement", en: "Hosting" },
         body: {
-          fr: "Le site est hébergé par Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis — vercel.com.",
-          en: "The site is hosted by Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA — vercel.com.",
+          fr: "Le site est hébergé par Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis, vercel.com.",
+          en: "The site is hosted by Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA, vercel.com.",
         },
       },
       {
@@ -1592,8 +1452,8 @@ export const content = {
       {
         title: { fr: "Sécurité", en: "Security" },
         body: {
-          fr: "Les uploads vidéo transitent par le serveur et sont stockés dans un bucket privé. Les accès base de données côté app passent par une clé service role serveur — jamais exposée au navigateur.",
-          en: "Video uploads go through the server and are stored in a private bucket. App database access uses a server-only service role key — never exposed to the browser.",
+          fr: "Les uploads vidéo transitent par le serveur et sont stockés dans un bucket privé. Les accès base de données côté app passent par une clé service role serveur, jamais exposée au navigateur.",
+          en: "Video uploads go through the server and are stored in a private bucket. App database access uses a server-only service role key, never exposed to the browser.",
         },
       },
     ],

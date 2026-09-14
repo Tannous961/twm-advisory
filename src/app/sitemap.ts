@@ -3,15 +3,6 @@ import { getAllCadreSlugs, getCadrePost } from "@/lib/cadre";
 import { getAllImpactSlugs } from "@/lib/editorial";
 import { siteConfig, sitemapEntries } from "@/lib/seo";
 
-function languageAlternates(path: string) {
-  const fr = path === "/" ? siteConfig.url : `${siteConfig.url}${path}`;
-  const en =
-    path === "/"
-      ? `${siteConfig.url}/?lang=en`
-      : `${siteConfig.url}${path}?lang=en`;
-  return { languages: { fr, en } };
-}
-
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
@@ -23,7 +14,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified,
     changeFrequency: entry.changeFrequency,
     priority: entry.priority,
-    alternates: languageAlternates(entry.path),
+    ...(entry.languages
+      ? { alternates: { languages: entry.languages } }
+      : {}),
   }));
 
   const impact = getAllImpactSlugs().map((slug) => ({
@@ -31,7 +24,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified,
     changeFrequency: "monthly" as const,
     priority: 0.7,
-    alternates: languageAlternates(`/impact/${slug}`),
   }));
 
   const posts = getAllCadreSlugs().map((slug) => {
@@ -41,7 +33,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(post.date),
       changeFrequency: "monthly" as const,
       priority: 0.65,
-      alternates: languageAlternates(`/cadre/${slug}`),
     };
   });
 

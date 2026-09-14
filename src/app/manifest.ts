@@ -4,7 +4,8 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "TWM Advisory",
     short_name: "TWM",
-    description: "Conseil et déploiement de solutions IA.",
+    description:
+      "Operating Performance Partner, Forward Deployed Engineer. Mandat de performance mesurable, exécuté avec vos équipes.",
     start_url: "/",
     display: "standalone",
     background_color: "#070A11",

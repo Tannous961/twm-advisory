@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CtaBand } from "@/components/CtaBand";
 import { ImpactCaseView } from "@/components/ImpactPages";
+import { JsonLd } from "@/components/JsonLd";
 import { getAllImpactSlugs, getImpactCase } from "@/lib/editorial";
-import { siteConfig } from "@/lib/seo";
+import { buildImpactJsonLd, buildImpactMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -15,25 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const item = getImpactCase(slug);
   if (!item) return {};
-  const title = item.title.fr;
-  const description = item.situation.fr;
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: `/impact/${slug}`,
-      languages: {
-        "fr-FR": `/impact/${slug}`,
-        "en-US": `/impact/${slug}?lang=en`,
-        "x-default": `/impact/${slug}`,
-      },
-    },
-    openGraph: {
-      title,
-      description,
-      url: `${siteConfig.url}/impact/${slug}`,
-    },
-  };
+  return buildImpactMetadata(item);
 }
 
 export default async function Page({ params }: Props) {
@@ -43,6 +26,7 @@ export default async function Page({ params }: Props) {
 
   return (
     <>
+      <JsonLd data={buildImpactJsonLd(item)} />
       <ImpactCaseView item={item} />
       <CtaBand />
     </>

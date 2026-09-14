@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import type { CadrePost } from "./cadre";
 import { content } from "./content";
 import { faqItems } from "./editorial";
-import type { CadrePost } from "./cadre";
+import { hasEnPillar, type Locale, withLocale } from "./locale";
 
 export const siteConfig = {
   name: "TWM Advisory",
@@ -32,6 +33,9 @@ export const siteConfig = {
   ],
 } as const;
 
+/** Stable freshness signal for JSON-LD (not build time). */
+export const siteRevisedAt = "2026-09-14";
+
 const title = content.meta.title.fr;
 const description = content.meta.description.fr;
 const titleEn = content.meta.title.en;
@@ -41,6 +45,7 @@ const descriptionEn = content.meta.description.en;
 export const keywords = [
   "TWM Advisory",
   "Operating Performance Partner",
+  "Forward Deployed Engineer",
   "performance opérationnelle",
   "réduction des coûts",
   "capacité opérationnelle",
@@ -53,6 +58,9 @@ export const keywords = [
   "cabinet conseil performance",
   "exécution opérationnelle",
   "mesure des gains",
+  "opérateur embarqué",
+  "mandat de performance",
+  "Partner Performance",
   "Tannous Mekari",
 ];
 
@@ -90,62 +98,64 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
     titleEn: content.meta.title.en,
     description: content.meta.description.fr,
     descriptionEn: content.meta.description.en,
-    keywords,
     priority: 1,
     changeFrequency: "weekly",
   },
   performance: {
     path: "/performance",
-    title: "Operating Performance — mandat d'exécution mesurable",
-    titleEn: "Operating Performance — measurable execution mandate",
+    title: "Operating Performance · mandat d'exécution mesurable",
+    titleEn: "Operating Performance · measurable execution mandate",
     description:
-      "Réduire les coûts, les reprises et les pertes de capacité — et activer le commerce lorsque le levier est commercial.",
+      "Réduire les coûts, les reprises et les pertes de capacité. Exécution Forward Deployed avec vos équipes, mesure avec votre finance.",
     descriptionEn:
-      "Cut costs, rework and capacity loss — and activate commerce when the lever is commercial.",
+      "Cut costs, rework and capacity loss. Forward Deployed execution with your teams, measurement with your finance team.",
     keywords: [
       "Operating Performance",
       "Performance Scan",
+      "Forward Deployed Engineer",
       "réduction coûts entreprise",
       "gain-share conseil",
     ],
   },
   "partner-performance": {
     path: "/partner-performance",
-    title: "Partner Performance — réseau de partenaires en système de croissance",
-    titleEn: "Partner Performance — turn a partner network into a growth system",
+    title: "Partner Performance · réseau de partenaires en système de croissance",
+    titleEn: "Partner Performance · turn a partner network into a growth system",
     description:
-      "Structurer partenaires, leads, co-selling, referrals et gouvernance du réseau pour générer des opportunités qualifiées et réduire le coût d'acquisition.",
+      "Transformer un réseau de partenaires en système de croissance: leads, co-selling, referrals et gouvernance. Exécution Forward Deployed.",
     descriptionEn:
-      "Structure partners, leads, co-selling, referrals and network governance to generate qualified opportunities and reduce acquisition cost.",
+      "Turn a partner network into a growth system: leads, co-selling, referrals and governance. Forward Deployed execution.",
     keywords: [
       "Partner Performance",
       "réseau partenaires",
       "co-selling",
       "architecture de leads",
+      "Forward Deployed Engineer",
     ],
   },
   methode: {
     path: "/methode",
-    title: "Méthode — du résultat recherché à la mesure",
-    titleEn: "Method — from the outcome sought to measurement",
+    title: "Méthode · du résultat recherché à la mesure",
+    titleEn: "Method · from the outcome sought to measurement",
     description:
-      "Cinq étapes pour relier une priorité de performance à un résultat économique vérifiable.",
+      "Cinq étapes en posture Forward Deployed, de la priorité économique au résultat vérifié avec la finance.",
     descriptionEn:
-      "Five steps to connect a performance priority to a verifiable economic outcome.",
+      "Five steps in a Forward Deployed posture, from economic priority to a finance-verified outcome.",
     keywords: [
       "méthode performance opérationnelle",
+      "Forward Deployed",
       "référence économique",
       "mesure des gains",
     ],
   },
   technology: {
     path: "/technology",
-    title: "Technology — contexte, pilotage et product builders",
-    titleEn: "Technology — context, steering and product builders",
+    title: "Technology · contexte, pilotage et product builders",
+    titleEn: "Technology · context, steering and product builders",
     description:
-      "Couche de contexte et de pilotage TWM, et capacité à faire de vos équipes des product builders de leur métier — pas un SaaS vendu.",
+      "Couche de contexte et de pilotage TWM, et capacité à faire de vos équipes des product builders de leur métier. Ce n'est pas un SaaS que nous vendons.",
     descriptionEn:
-      "TWM's context and steering layer, and the ability to turn your teams into product builders of their craft — not a SaaS product we sell.",
+      "TWM's context and steering layer, and the ability to turn your teams into product builders of their craft. We do not sell a SaaS product.",
     keywords: [
       "Performance OS",
       "product builders",
@@ -155,8 +165,8 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
   },
   impact: {
     path: "/impact",
-    title: "Impact — leviers de performance illustratifs",
-    titleEn: "Impact — illustrative performance levers",
+    title: "Impact · leviers de performance illustratifs",
+    titleEn: "Impact · illustrative performance levers",
     description:
       "Situations illustratives où une amélioration opérationnelle peut produire une valeur économique. Preuves à établir sur vos données.",
     descriptionEn:
@@ -170,8 +180,8 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
   },
   cadre: {
     path: "/cadre",
-    title: "Cadre — la performance au-delà des promesses",
-    titleEn: "Cadre — performance beyond promises",
+    title: "Cadre · la performance au-delà des promesses",
+    titleEn: "Cadre · performance beyond promises",
     description:
       "Notes pour les dirigeants qui doivent arbitrer les coûts, la capacité et la transformation.",
     descriptionEn:
@@ -180,8 +190,8 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
   },
   partenaires: {
     path: "/partenaires",
-    title: "Partenaires — cadre de collaboration",
-    titleEn: "Partners — collaboration framework",
+    title: "Partenaires · cadre de collaboration",
+    titleEn: "Partners · collaboration framework",
     description:
       "Cadre de collaboration de TWM Advisory pour les apporteurs d'affaires, intégrateurs, réseaux métier et partenaires de réalisation.",
     descriptionEn:
@@ -193,50 +203,54 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
   },
   "a-propos": {
     path: "/a-propos",
-    title: "À propos — Tannous Mekari, fondateur de TWM Advisory",
-    titleEn: "About — Tannous Mekari, founder of TWM Advisory",
+    title: "À propos · Tannous Mekari, Forward Deployed Engineer",
+    titleEn: "About · Tannous Mekari, Forward Deployed Engineer",
     description:
-      "Tannous Mekari, président de TWM ADVISORY. Operating Performance Partner : stratégie, opérations et exécution.",
+      "Tannous Mekari, président de TWM ADVISORY. Forward Deployed Engineer et Operating Performance Partner. Embarqué avec vos équipes jusqu'au résultat mesuré.",
     descriptionEn:
-      "Tannous Mekari, president of TWM ADVISORY. Operating Performance Partner: strategy, operations and execution.",
+      "Tannous Mekari, president of TWM ADVISORY. Forward Deployed Engineer and Operating Performance Partner. Embedded with your teams through to measured results.",
     keywords: [
       "Tannous Mekari",
       "TWM ADVISORY",
       "Operating Performance Partner",
+      "Forward Deployed Engineer",
+      "opérateur embarqué",
     ],
   },
   faq: {
     path: "/faq",
-    title: "FAQ — questions avant une décision de performance",
-    titleEn: "FAQ — questions before a performance decision",
+    title: "FAQ · questions avant une décision de performance",
+    titleEn: "FAQ · questions before a performance decision",
     description:
-      "Questions fréquentes sur le mandat de performance, le gain-share, la mesure des gains et Performance OS.",
+      "FAQ sur le mandat Operating Performance Partner, la posture Forward Deployed Engineer, le gain-share et la mesure des gains.",
     descriptionEn:
-      "Common questions on the performance mandate, gain-share, gain measurement and Performance OS.",
+      "FAQ on the Operating Performance Partner mandate, Forward Deployed Engineer posture, gain-share and gain measurement.",
     keywords: [
       "FAQ performance",
       "gain-share",
       "Operating Performance Partner",
+      "Forward Deployed Engineer",
     ],
   },
   demarrer: {
     path: "/demarrer",
-    title: "Évaluer votre potentiel — questionnaire initial",
-    titleEn: "Assess your potential — initial questionnaire",
+    title: "Évaluer votre potentiel · questionnaire initial",
+    titleEn: "Assess your potential · initial questionnaire",
     description:
-      "Questionnaire initial TWM Advisory pour préparer un Performance Scan : priorité économique, contraintes et orientation.",
+      "Soumettez une priorité de performance. TWM prépare un Performance Scan et une première orientation de déploiement.",
     descriptionEn:
-      "TWM Advisory initial questionnaire to prepare a Performance Scan: economic priority, constraints and direction.",
+      "Submit a performance priority. TWM prepares a Performance Scan and a first deployment direction.",
     keywords: [
       "Performance Scan",
       "évaluer potentiel performance",
       "diagnostic économique",
+      "Forward Deployed Engineer",
     ],
   },
   contact: {
     path: "/contact",
-    title: "Contact — priorité économique",
-    titleEn: "Contact — economic priority",
+    title: "Contact · priorité économique",
+    titleEn: "Contact · economic priority",
     description:
       "Premier échange de 30 minutes pour comprendre votre priorité économique et décider si un Performance Scan est pertinent.",
     descriptionEn:
@@ -248,9 +262,9 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
     title: "Mentions légales",
     titleEn: "Legal notice",
     description:
-      "Mentions légales TWM ADVISORY — SAS, SIREN 106 067 549, RCS Lille Métropole. Éditeur du site www.twm.expert.",
+      "Mentions légales TWM ADVISORY · SAS, SIREN 106 067 549, RCS Lille Métropole. Éditeur du site www.twm.expert.",
     descriptionEn:
-      "Legal notice for TWM ADVISORY — SAS, SIREN 106 067 549, RCS Lille Métropole. Publisher of www.twm.expert.",
+      "Legal notice for TWM ADVISORY · SAS, SIREN 106 067 549, RCS Lille Métropole. Publisher of www.twm.expert.",
     changeFrequency: "yearly",
     priority: 0.3,
   },
@@ -269,50 +283,62 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
 
 const ogImage = "/opengraph-image";
 
-function languageAlternates(path: string) {
+function languageAlternates(frPath: string, locale: Locale = "fr") {
+  const languages: Record<string, string> = {
+    "fr-FR": frPath,
+    "x-default": frPath,
+  };
+  if (hasEnPillar(frPath)) {
+    languages["en-US"] = withLocale(frPath, "en");
+  }
   return {
-    canonical: path,
-    languages: {
-      "fr-FR": path,
-      "en-US": `${path === "/" ? "/" : path}?lang=en`,
-      "x-default": path,
-    },
-  } as const;
+    canonical: withLocale(frPath, locale),
+    languages,
+  };
 }
 
-export function buildPageMetadata(key: PageSeoKey): Metadata {
+export function buildPageMetadata(
+  key: PageSeoKey,
+  locale: Locale = "fr",
+): Metadata {
   const page = pageSeo[key];
-  const pageKeywords = [...keywords, ...(page.keywords ?? [])];
+  const isEn = locale === "en";
+  const title = isEn ? page.titleEn : page.title;
+  const description = isEn ? page.descriptionEn : page.description;
+  const localizedPath = withLocale(page.path, locale);
+  const pageKeywords = Array.from(new Set([...keywords, ...(page.keywords ?? [])]));
   const absoluteUrl =
-    page.path === "/" ? siteConfig.url : `${siteConfig.url}${page.path}`;
+    localizedPath === "/"
+      ? siteConfig.url
+      : `${siteConfig.url}${localizedPath}`;
 
   return {
-    title: key === "home" ? { absolute: page.title } : page.title,
-    description: page.description,
+    title: key === "home" ? { absolute: title } : title,
+    description,
     keywords: pageKeywords,
-    alternates: languageAlternates(page.path),
+    alternates: languageAlternates(page.path, locale),
     openGraph: {
       type: "website",
-      locale: siteConfig.locale,
-      alternateLocale: [siteConfig.alternateLocale],
+      locale: isEn ? siteConfig.alternateLocale : siteConfig.locale,
+      alternateLocale: [isEn ? siteConfig.locale : siteConfig.alternateLocale],
       url: absoluteUrl,
       siteName: siteConfig.name,
-      title: page.title,
-      description: page.description,
+      title,
+      description,
       images: [
         {
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: page.title,
+          alt: title,
           type: "image/png",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: page.title,
-      description: page.description,
+      title,
+      description,
       images: [ogImage],
       ...(siteConfig.twitterHandle
         ? { creator: siteConfig.twitterHandle, site: siteConfig.twitterHandle }
@@ -331,9 +357,7 @@ export function buildPageMetadata(key: PageSeoKey): Metadata {
     },
     other: {
       "geo.region": "FR",
-      "content-language": "fr",
-      "en:title": page.titleEn,
-      "en:description": page.descriptionEn,
+      "content-language": isEn ? "en" : "fr",
     },
   };
 }
@@ -413,7 +437,7 @@ export function buildMetadata(): Metadata {
     publisher: siteConfig.legalName,
     category: "Business",
     classification:
-      "Operating Performance Partner — performance opérationnelle, coûts, capacité, marge",
+      "Operating Performance Partner · Forward Deployed Engineer · performance opérationnelle, coûts, capacité, marge",
     referrer: "origin-when-cross-origin",
     formatDetection: {
       email: false,
@@ -422,7 +446,10 @@ export function buildMetadata(): Metadata {
     },
     alternates: {
       types: {
-        "text/plain": [{ url: "/llms.txt", title: "llms.txt" }],
+        "text/plain": [
+          { url: "/llms.txt", title: "llms.txt" },
+          { url: "/llms-full.txt", title: "llms-full.txt" },
+        ],
       },
     },
     openGraph: {
@@ -438,7 +465,7 @@ export function buildMetadata(): Metadata {
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: "TWM Advisory — Operating Performance Partner",
+          alt: "TWM Advisory · Operating Performance Partner · Forward Deployed Engineer",
           type: "image/png",
         },
       ],
@@ -489,15 +516,6 @@ function breadcrumbItems(
 }
 
 export function buildJsonLd() {
-  const faqEntities = faqItems.map((item) => ({
-    "@type": "Question",
-    name: item.q.fr,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.a.fr,
-    },
-  }));
-
   const organization = {
     "@type": ["Organization", "ProfessionalService"],
     "@id": `${siteConfig.url}/#organization`,
@@ -521,19 +539,24 @@ export function buildJsonLd() {
     })),
     knowsAbout: [
       "Operating Performance Partner",
+      "Forward Deployed Engineer",
       "Performance opérationnelle",
       "Réduction des coûts évitables",
       "Capacité opérationnelle",
       "Protection de la marge",
       "Diagnostic économique",
       "Gain-share",
+      "Partner Performance",
       "Performance OS",
       "Automatisation et IA appliquée",
       "Mesure avec la finance",
+      "Exécution embarquée avec les équipes",
     ],
     serviceType: [
       "Performance Scan",
       "Mandat de performance",
+      "Forward Deployed execution",
+      "Partner Performance",
       "Exécution opérationnelle",
       "Mesure des gains avec la finance",
       "Cadre Performance OS",
@@ -554,7 +577,7 @@ export function buildJsonLd() {
     "@type": "Person",
     "@id": `${siteConfig.url}/#person`,
     name: siteConfig.founderName,
-    jobTitle: "Fondateur — Operating Performance Partner",
+    jobTitle: "Fondateur · Forward Deployed Engineer · Operating Performance Partner",
     worksFor: { "@id": `${siteConfig.url}/#organization` },
     description: content.about.p1.fr,
     knowsLanguage: ["fr", "en", "ar"],
@@ -562,6 +585,21 @@ export function buildJsonLd() {
     email: siteConfig.email,
     image: `${siteConfig.url}/uploads/WhatsApp%20Image%202026-07-29%20at%2015.14.56%20(2).jpeg`,
     knowsAbout: organization.knowsAbout,
+    ...(siteConfig.linkedin ? { sameAs: [siteConfig.linkedin] } : {}),
+    hasOccupation: {
+      "@type": "Occupation",
+      name: "Forward Deployed Engineer",
+      occupationLocation: {
+        "@type": "Country",
+        name: "FR",
+      },
+      skills: [
+        "Operating performance",
+        "Embedded delivery",
+        "Economic diagnosis",
+        "Gain measurement",
+      ],
+    },
   };
 
   const website = {
@@ -592,21 +630,34 @@ export function buildJsonLd() {
       url: `${siteConfig.url}/opengraph-image`,
     },
     inLanguage: "fr-FR",
-    dateModified: new Date().toISOString().slice(0, 10),
+    dateModified: siteRevisedAt,
   };
 
   const services = [
     {
       title: "Réduire les coûts évitables",
       body: "Établir les dépenses évitables, leur coût de sortie et les conditions de réduction.",
+      url: "/performance",
     },
     {
       title: "Renforcer la capacité",
       body: "Accélérer la préparation, fiabiliser les flux et définir l'usage de la capacité libérée.",
+      url: "/performance",
     },
     {
       title: "Protéger la marge",
       body: "Relier le travail réalisé à la facturation et contrôler les écarts prix / coûts de service.",
+      url: "/performance",
+    },
+    {
+      title: "Partner Performance",
+      body: "Structurer partenaires, leads, co-selling et gouvernance pour transformer le réseau en système de croissance.",
+      url: "/partner-performance",
+    },
+    {
+      title: "Forward Deployed Engineer",
+      body: "Intervention embarquée avec les équipes clientes : diagnostic, exécution et mesure jusqu'au résultat économique.",
+      url: "/a-propos",
     },
   ].map((service, i) => ({
     "@type": "Service",
@@ -615,15 +666,9 @@ export function buildJsonLd() {
     description: service.body,
     provider: { "@id": `${siteConfig.url}/#organization` },
     areaServed: siteConfig.areaServed,
-    url: `${siteConfig.url}/performance`,
+    url: `${siteConfig.url}${service.url}`,
   }));
 
-  const faqPage = {
-    "@type": "FAQPage",
-    "@id": `${siteConfig.url}/faq#faq`,
-    url: `${siteConfig.url}/faq`,
-    mainEntity: faqEntities,
-  };
 
   return {
     "@context": "https://schema.org",
@@ -633,7 +678,6 @@ export function buildJsonLd() {
       website,
       webpage,
       breadcrumbItems([{ name: "Accueil", path: "/" }]),
-      faqPage,
       ...services,
     ],
   };
@@ -642,30 +686,79 @@ export function buildJsonLd() {
 export function buildPageJsonLd(
   key: PageSeoKey,
   extraCrumbs: { name: string; path: string }[] = [],
+  locale: Locale = "fr",
 ) {
   const page = pageSeo[key];
+  const isEn = locale === "en";
+  const title = isEn ? page.titleEn : page.title;
+  const description = isEn ? page.descriptionEn : page.description;
+  const localizedPath = withLocale(page.path, locale);
+  const homeLabel = isEn ? "Home" : "Accueil";
+  const pageLabel = title.split(" · ")[0];
   const crumbs = [
-    { name: "Accueil", path: "/" },
-    ...(key === "home" ? [] : [{ name: page.title.split(" — ")[0], path: page.path }]),
+    { name: homeLabel, path: withLocale("/", locale) },
+    ...(key === "home"
+      ? []
+      : [{ name: pageLabel, path: localizedPath }]),
     ...extraCrumbs,
   ];
 
+  const pageUrl =
+    localizedPath === "/"
+      ? siteConfig.url
+      : `${siteConfig.url}${localizedPath}`;
+
+  const graph: Record<string, unknown>[] = [
+    {
+      "@type": "WebPage",
+      "@id": `${pageUrl}#webpage`,
+      url: pageUrl,
+      name: title,
+      description,
+      isPartOf: { "@id": `${siteConfig.url}/#website` },
+      about: { "@id": `${siteConfig.url}/#organization` },
+      inLanguage: isEn ? "en-US" : "fr-FR",
+      dateModified: siteRevisedAt,
+    },
+    breadcrumbItems(crumbs),
+  ];
+
+  if (key === "faq") {
+    const faqPath = withLocale("/faq", locale);
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${siteConfig.url}${faqPath}#faq`,
+      url: `${siteConfig.url}${faqPath}`,
+      isPartOf: { "@id": `${siteConfig.url}/#website` },
+      inLanguage: isEn ? "en-US" : "fr-FR",
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: isEn ? item.q.en : item.q.fr,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: isEn ? item.a.en : item.a.fr,
+        },
+      })),
+    });
+  }
+
+  if (key === "a-propos") {
+    const aboutPath = withLocale("/a-propos", locale);
+    graph.push({
+      "@type": "ProfilePage",
+      "@id": `${siteConfig.url}${aboutPath}#profile`,
+      url: `${siteConfig.url}${aboutPath}`,
+      name: title,
+      description,
+      mainEntity: { "@id": `${siteConfig.url}/#person` },
+      isPartOf: { "@id": `${siteConfig.url}/#website` },
+      inLanguage: isEn ? "en-US" : "fr-FR",
+    });
+  }
+
   return {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "@id": `${siteConfig.url}${page.path === "/" ? "" : page.path}#webpage`,
-        url: page.path === "/" ? siteConfig.url : `${siteConfig.url}${page.path}`,
-        name: page.title,
-        description: page.description,
-        isPartOf: { "@id": `${siteConfig.url}/#website` },
-        about: { "@id": `${siteConfig.url}/#organization` },
-        inLanguage: ["fr-FR", "en-US"],
-        dateModified: new Date().toISOString().slice(0, 10),
-      },
-      breadcrumbItems(crumbs),
-    ],
+    "@graph": graph,
   };
 }
 
@@ -695,6 +788,7 @@ export function buildCadreJsonLd(post: CadrePost) {
         keywords: [
           post.verdict.fr,
           "Operating Performance Partner",
+          "Forward Deployed Engineer",
           "performance opérationnelle",
           "TWM Advisory",
         ],
@@ -712,17 +806,141 @@ export function buildCadreJsonLd(post: CadrePost) {
   };
 }
 
+
+export function buildImpactMetadata(item: {
+  slug: string;
+  title: { fr: string; en: string };
+  situation: { fr: string; en: string };
+}): Metadata {
+  const path = `/impact/${item.slug}`;
+  const url = `${siteConfig.url}${path}`;
+  const title = item.title.fr;
+  const description = item.situation.fr;
+  return {
+    title,
+    description,
+    keywords: [...keywords, "impact performance", item.title.fr],
+    alternates: languageAlternates(path),
+    openGraph: {
+      type: "article",
+      locale: siteConfig.locale,
+      url,
+      siteName: siteConfig.name,
+      title,
+      description,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: title,
+          type: "image/png",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
+  };
+}
+
+export function buildImpactJsonLd(item: {
+  slug: string;
+  title: { fr: string; en: string };
+  situation: { fr: string; en: string };
+  intervention: { fr: string; en: string };
+  measure: { fr: string; en: string };
+}) {
+  const path = `/impact/${item.slug}`;
+  const url = `${siteConfig.url}${path}`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${url}#webpage`,
+        url,
+        name: item.title.fr,
+        description: item.situation.fr,
+        isPartOf: { "@id": `${siteConfig.url}/#website` },
+        about: { "@id": `${siteConfig.url}/#organization` },
+        inLanguage: "fr-FR",
+        dateModified: siteRevisedAt,
+      },
+      {
+        "@type": "Service",
+        "@id": `${url}#service`,
+        name: item.title.fr,
+        description: `${item.situation.fr} ${item.intervention.fr} ${item.measure.fr}`.trim(),
+        provider: { "@id": `${siteConfig.url}/#organization` },
+        areaServed: siteConfig.areaServed,
+        url,
+      },
+      breadcrumbItems([
+        { name: "Accueil", path: "/" },
+        { name: "Impact", path: "/impact" },
+        { name: item.title.fr, path },
+      ]),
+    ],
+  };
+}
+
 export function sitemapEntries(): {
   path: string;
   priority: number;
   changeFrequency: "weekly" | "monthly" | "yearly";
+  languages?: Record<string, string>;
 }[] {
-  return (Object.keys(pageSeo) as PageSeoKey[]).map((key) => {
+  const entries: {
+    path: string;
+    priority: number;
+    changeFrequency: "weekly" | "monthly" | "yearly";
+    languages?: Record<string, string>;
+  }[] = [];
+
+  for (const key of Object.keys(pageSeo) as PageSeoKey[]) {
     const p = pageSeo[key];
-    return {
+    const priority = p.priority ?? (key === "home" ? 1 : 0.7);
+    const changeFrequency = p.changeFrequency ?? "monthly";
+    const languages = hasEnPillar(p.path)
+      ? {
+          "fr-FR": p.path === "/" ? siteConfig.url : `${siteConfig.url}${p.path}`,
+          "en-US": `${siteConfig.url}${withLocale(p.path, "en")}`,
+          "x-default":
+            p.path === "/" ? siteConfig.url : `${siteConfig.url}${p.path}`,
+        }
+      : undefined;
+
+    entries.push({
       path: p.path,
-      priority: p.priority ?? (key === "home" ? 1 : 0.7),
-      changeFrequency: p.changeFrequency ?? "monthly",
-    };
-  });
+      priority,
+      changeFrequency,
+      languages,
+    });
+
+    if (hasEnPillar(p.path)) {
+      entries.push({
+        path: withLocale(p.path, "en"),
+        priority: Math.max(0.5, priority - 0.05),
+        changeFrequency,
+        languages,
+      });
+    }
+  }
+
+  return entries;
 }
