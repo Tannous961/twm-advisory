@@ -7,8 +7,8 @@ export const content = {
       en: "TWM Advisory — Operating Performance Partner",
     },
     description: {
-      fr: "TWM Advisory accompagne les dirigeants et les actionnaires dans l'amélioration de la performance opérationnelle et commerciale. Mandat de performance mesurable — opérations, partenariats, commerce, software ou IA.",
-      en: "TWM Advisory helps leaders and shareholders improve operating and commercial performance. A measurable performance mandate — operations, partnerships, commerce, software or AI.",
+      fr: "TWM Advisory accompagne les dirigeants et les actionnaires dans l'amélioration de la performance opérationnelle et commerciale. Posture Forward Deployed Engineer — mandat de performance mesurable, exécuté avec vos équipes.",
+      en: "TWM Advisory helps leaders and shareholders improve operating and commercial performance. Forward Deployed Engineer posture — a measurable performance mandate, executed with your teams.",
     },
   },
   nav: {
@@ -139,8 +139,8 @@ export const content = {
     about: {
       title: { fr: "À propos", en: "About" },
       lead: {
-        fr: "Une approche de dirigeant. Une discipline d'exécution.",
-        en: "A leadership approach. An execution discipline.",
+        fr: "Une approche de dirigeant. Une posture Forward Deployed.",
+        en: "A leadership approach. A Forward Deployed posture.",
       },
     },
     faq: {
@@ -260,8 +260,8 @@ export const content = {
       en: "You are entrusting us with a performance priority.",
     },
     lead: {
-      fr: "Avec Tannous Mekari comme interlocuteur, TWM transforme votre priorité en décisions, en actions et en résultats mesurables.",
-      en: "With Tannous Mekari as your counterpart, TWM turns your priority into decisions, action and measurable results.",
+      fr: "Tannous Mekari s'embarque avec vos équipes — posture Forward Deployed Engineer — pour transformer votre priorité en décisions, actions et résultats mesurables.",
+      en: "Tannous Mekari embeds with your teams — Forward Deployed Engineer posture — to turn your priority into decisions, action and measurable results.",
     },
     ctaPrimary: {
       fr: "Soumettre une priorité de performance",
@@ -272,8 +272,8 @@ export const content = {
       en: "See the journey",
     },
     note: {
-      fr: "Écouter → Diagnostiquer → Décider → Exécuter → Mesurer",
-      en: "Listen → Diagnose → Decide → Deliver → Measure",
+      fr: "Déployé chez vous · Écouter → Diagnostiquer → Décider → Exécuter → Mesurer",
+      en: "Forward deployed · Listen → Diagnose → Decide → Deliver → Measure",
     },
     floatTitle: { fr: "Accompagnement opérationnel", en: "Operational support" },
     floatBody: {
@@ -915,16 +915,16 @@ export const content = {
   about: {
     section: { fr: "À propos", en: "About" },
     title: {
-      fr: "Une approche de dirigeant. Une discipline d'exécution.",
-      en: "A leader's approach. An execution discipline.",
+      fr: "Une approche de dirigeant. Une posture Forward Deployed.",
+      en: "A leader's approach. A Forward Deployed posture.",
     },
     p1: {
       fr: "Le parcours de Tannous Mekari associe 17 années d'expérience en e-commerce, développement d'activités et direction opérationnelle. Il travaille en français, en anglais et en arabe. Cette expérience nourrit une conviction : une transformation se juge dans le fonctionnement de l'entreprise, la qualité du service et ses effets économiques.",
       en: "Tannous Mekari's path combines 17 years in e-commerce, business development and operational leadership. He works in French, English and Arabic. That experience feeds a conviction: a transformation is judged in how the company operates, service quality and economic effects.",
     },
     p2: {
-      fr: "Le fondateur reste votre interlocuteur pour la relation client, les validations et les arbitrages de la mission. Des spécialistes peuvent être mobilisés lorsque le périmètre requiert une expertise complémentaire. Un Operating Performance Partner travaille avec la direction sur un objectif économique et reste impliqué dans son exécution.",
-      en: "The founder remains your counterpart for the client relationship, validations and mission decisions. Specialists can be brought in when the scope needs complementary expertise. An Operating Performance Partner works with leadership on an economic objective and stays involved in execution.",
+      fr: "Le fondateur reste votre interlocuteur pour la relation client, les validations et les arbitrages de la mission — en posture Forward Deployed Engineer, présent avec vos équipes jusqu'à la livraison. Des spécialistes peuvent être mobilisés lorsque le périmètre requiert une expertise complémentaire. Un Operating Performance Partner travaille avec la direction sur un objectif économique et reste impliqué dans son exécution.",
+      en: "The founder remains your counterpart for the client relationship, validations and mission decisions — in a Forward Deployed Engineer posture, present with your teams through delivery. Specialists can be brought in when the scope needs complementary expertise. An Operating Performance Partner works with leadership on an economic objective and stays involved in execution.",
     },
     p3: {
       fr: "Le terme décrit notre mode d'intervention ; il ne désigne ni une prise de participation ni un mandat de gestion. Directions de PME, entreprises de services, cabinets de conseil, professions du chiffre et du droit : le point commun est une activité où la capacité, la fiabilité et la marge dépendent directement des opérations.",
@@ -957,8 +957,8 @@ export const content = {
           en: "What is an Operating Performance Partner?",
         },
         a: {
-          fr: "Un partenaire qui part d'un objectif économique, participe à sa mise en œuvre et mesure les effets avec votre organisation. TWM relie diagnostic, exécution et suivi au sein d'un périmètre de mission défini.",
-          en: "A partner that starts from an economic objective, takes part in delivery and measures effects with your organization. TWM connects diagnosis, execution and follow-up within a defined engagement scope.",
+          fr: "Un partenaire qui part d'un objectif économique, s'embarque avec vos équipes (Forward Deployed Engineer), participe à sa mise en œuvre et mesure les effets avec votre organisation. TWM relie diagnostic, exécution et suivi au sein d'un périmètre de mission défini.",
+          en: "A partner that starts from an economic objective, embeds with your teams (Forward Deployed Engineer), takes part in delivery and measures effects with your organization. TWM connects diagnosis, execution and follow-up within a defined engagement scope.",
         },
       },
       {

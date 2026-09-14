@@ -39,6 +39,18 @@ export function About() {
                   sizes="(max-width: 768px) 90vw, 400px"
                   className="object-cover object-[50%_22%] saturate-[.88] contrast-[1.04]"
                 />
+                <div
+                  className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/85 via-black/40 to-transparent"
+                  aria-hidden
+                />
+                <div className="absolute bottom-5 left-5 right-5">
+                  <p className="type-label text-accent">
+                    {t(homeExperience.founder.posture)}
+                  </p>
+                  <p className="type-label mt-1 text-white/80">
+                    Forward Deployed Engineer
+                  </p>
+                </div>
               </div>
             </div>
           </div>

@@ -196,13 +196,14 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
     title: "À propos — Tannous Mekari, fondateur de TWM Advisory",
     titleEn: "About — Tannous Mekari, founder of TWM Advisory",
     description:
-      "Tannous Mekari, président de TWM ADVISORY. Operating Performance Partner : stratégie, opérations et exécution.",
+      "Tannous Mekari, président de TWM ADVISORY. Forward Deployed Engineer et Operating Performance Partner : stratégie, opérations et exécution terrain.",
     descriptionEn:
-      "Tannous Mekari, president of TWM ADVISORY. Operating Performance Partner: strategy, operations and execution.",
+      "Tannous Mekari, president of TWM ADVISORY. Forward Deployed Engineer and Operating Performance Partner: strategy, operations and on-the-ground execution.",
     keywords: [
       "Tannous Mekari",
       "TWM ADVISORY",
       "Operating Performance Partner",
+      "Forward Deployed Engineer",
     ],
   },
   faq: {
@@ -554,7 +555,7 @@ export function buildJsonLd() {
     "@type": "Person",
     "@id": `${siteConfig.url}/#person`,
     name: siteConfig.founderName,
-    jobTitle: "Fondateur — Operating Performance Partner",
+    jobTitle: "Fondateur — Forward Deployed Engineer · Operating Performance Partner",
     worksFor: { "@id": `${siteConfig.url}/#organization` },
     description: content.about.p1.fr,
     knowsLanguage: ["fr", "en", "ar"],

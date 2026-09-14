@@ -52,9 +52,14 @@ export function HomeEditorialSections() {
                 className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent"
                 aria-hidden
               />
-              <p className="type-label absolute bottom-6 left-6 text-white/80">
-                Tannous Mekari · TWM Advisory
-              </p>
+              <div className="absolute bottom-6 left-6 right-6">
+                <p className="type-label text-accent">
+                  {t(founder.posture)}
+                </p>
+                <p className="type-label mt-1 text-white/80">
+                  Tannous Mekari · Forward Deployed Engineer
+                </p>
+              </div>
             </div>
 
             <div>

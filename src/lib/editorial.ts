@@ -81,8 +81,8 @@ export const brand = {
     en: "Performance is decided. And delivered.",
   } as L,
   description: {
-    fr: "TWM Advisory identifie les leviers économiques, conduit leur mise en œuvre et mesure les résultats avec votre direction financière.",
-    en: "TWM Advisory identifies economic levers, drives implementation and measures results with your finance leadership.",
+    fr: "TWM Advisory identifie les leviers économiques, s'embarque avec vos équipes pour les exécuter et mesure les résultats avec votre direction financière.",
+    en: "TWM Advisory identifies economic levers, embeds with your teams to execute them and measures results with your finance leadership.",
   } as L,
 } as const;
 
@@ -105,8 +105,8 @@ export const homeEditorial = {
       en: "You are entrusting us with a performance priority.",
     } as L,
     body: {
-      fr: "TWM intervient lorsque la direction veut comprendre où la valeur se perd, décider quoi changer et faire exécuter les changements avec ses équipes.",
-      en: "TWM steps in when leadership wants to understand where value is lost, decide what to change, and have those changes executed with their teams.",
+      fr: "TWM intervient lorsque la direction veut comprendre où la valeur se perd, décider quoi changer et faire exécuter les changements — en posture Forward Deployed, avec ses équipes.",
+      en: "TWM steps in when leadership wants to understand where value is lost, decide what to change, and have those changes executed — in a Forward Deployed posture, with their teams.",
     } as L,
     ctaPrimary: {
       fr: "Soumettre une priorité de performance",
@@ -345,22 +345,29 @@ export const homeEditorial = {
 
 export const homeExperience = {
   founder: {
-    eyebrow: { fr: "Votre interlocuteur", en: "Your counterpart" } as L,
+    eyebrow: {
+      fr: "Forward Deployed Engineer",
+      en: "Forward Deployed Engineer",
+    } as L,
     title: {
       fr: "Je m'appelle Tannous Mekari.",
       en: "My name is Tannous Mekari.",
     } as L,
     body: {
-      fr: "J'ai fondé TWM Advisory après 17 ans en direction, opérations, e-commerce et développement d'activités. Je reste votre interlocuteur du premier échange à la mesure des résultats.",
-      en: "I founded TWM Advisory after 17 years in leadership, operations, e-commerce and business development. I remain your counterpart from our first conversation through to measuring results.",
+      fr: "J'ai fondé TWM Advisory après 17 ans en direction, opérations, e-commerce et développement d'activités. Je ne livre pas un rapport à distance : je m'embarque dans votre réalité opérationnelle jusqu'à la mesure des résultats.",
+      en: "I founded TWM Advisory after 17 years in leadership, operations, e-commerce and business development. I don't deliver a remote report: I embed in your operating reality through to measured results.",
     } as L,
     quote: {
-      fr: "Mon rôle : comprendre votre réalité, conduire les décisions avec vous et faire avancer l'exécution avec vos équipes.",
-      en: "My role: understand your reality, make decisions with you and move delivery forward with your teams.",
+      fr: "Mon rôle : être déployé chez vous — comprendre, décider avec vous, exécuter avec vos équipes.",
+      en: "My role: stay forward deployed — understand, decide with you, execute with your teams.",
     } as L,
     support: {
-      fr: "Lorsque le mandat l'exige, je réunis les spécialistes utiles. Vous gardez un interlocuteur unique.",
-      en: "When the engagement requires it, I bring together the right specialists. You keep one accountable counterpart.",
+      fr: "Lorsque le mandat l'exige, je réunis les spécialistes utiles. Vous gardez un interlocuteur unique, présent sur le terrain de l'exécution.",
+      en: "When the engagement requires it, I bring together the right specialists. You keep one accountable counterpart, present on the ground of delivery.",
+    } as L,
+    posture: {
+      fr: "Déployé chez vous",
+      en: "Forward deployed",
     } as L,
     cta: { fr: "Découvrir mon parcours", en: "Discover my background" } as L,
   },
@@ -413,8 +420,8 @@ export const homeExperience = {
       {
         title: { fr: "Exécuter", en: "Deliver" },
         action: {
-          fr: "Déployer avec vos équipes.",
-          en: "Deploy with your teams.",
+          fr: "Se déployer avec vos équipes.",
+          en: "Deploy forward with your teams.",
         },
         outcome: {
           fr: "Des changements réellement adoptés.",
@@ -456,15 +463,15 @@ export const homeExperience = {
       {
         title: { fr: "Un interlocuteur", en: "One counterpart" },
         body: {
-          fr: "Tannous pilote la relation et les arbitrages.",
-          en: "Tannous leads the relationship and key decisions.",
+          fr: "Tannous pilote la relation et les arbitrages — du premier diagnostic à la livraison.",
+          en: "Tannous leads the relationship and key decisions — from first diagnosis through delivery.",
         },
       },
       {
-        title: { fr: "Avec vos équipes", en: "With your teams" },
+        title: { fr: "Forward Deployed", en: "Forward Deployed" },
         body: {
-          fr: "Nous construisons dans votre réalité opérationnelle.",
-          en: "We build within your operational reality.",
+          fr: "Présent avec vos équipes, dans vos outils et vos contraintes — pas un livrable distant.",
+          en: "Present with your teams, in your tools and constraints — not a remote deliverable.",
         },
       },
       {
@@ -896,28 +903,28 @@ export const technologyPage = {
 export const aboutPage = {
   eyebrow: { fr: "À propos", en: "About" } as L,
   leadTitle: {
-    fr: "Une approche de dirigeant. Une discipline d'exécution.",
-    en: "A leadership approach. An execution discipline.",
+    fr: "Une approche de dirigeant. Une posture Forward Deployed.",
+    en: "A leadership approach. A Forward Deployed posture.",
   } as L,
   leadBody: {
-    fr: "TWM Advisory accompagne les dirigeants de la priorité de performance jusqu'au résultat mesuré.",
-    en: "TWM Advisory supports leaders from performance priority to measured result.",
+    fr: "TWM Advisory accompagne les dirigeants de la priorité de performance jusqu'au résultat mesuré — embarqué avec les équipes, pas à distance.",
+    en: "TWM Advisory supports leaders from performance priority to measured result — embedded with teams, not at a distance.",
   } as L,
   founder: {
     title: { fr: "Tannous Mekari", en: "Tannous Mekari" } as L,
     body: {
-      fr: "J'ai fondé TWM après 17 ans en e-commerce, développement d'activités et direction opérationnelle. Je travaille en français, anglais et arabe. Je reste votre interlocuteur pour la relation, les validations et les arbitrages.",
-      en: "I founded TWM after 17 years in e-commerce, business development and operational leadership. I work in French, English and Arabic. I remain your counterpart for the relationship, validations and key decisions.",
+      fr: "J'ai fondé TWM après 17 ans en e-commerce, développement d'activités et direction opérationnelle. Je travaille en français, anglais et arabe. Forward Deployed Engineer : je reste votre interlocuteur pour la relation, les validations et les arbitrages — sur le terrain de l'exécution.",
+      en: "I founded TWM after 17 years in e-commerce, business development and operational leadership. I work in French, English and Arabic. Forward Deployed Engineer: I remain your counterpart for the relationship, validations and key decisions — on the ground of delivery.",
     } as L,
   },
   partner: {
     title: {
-      fr: "Un partenaire engagé dans la réalisation.",
-      en: "A partner committed to delivery.",
+      fr: "Forward Deployed Engineer — un partenaire dans la réalisation.",
+      en: "Forward Deployed Engineer — a partner in delivery.",
     } as L,
     body: {
-      fr: "Je conduis le diagnostic et l'exécution avec vos équipes. Lorsque le mandat l'exige, je réunis les spécialistes utiles autour d'un objectif économique commun.",
-      en: "I lead diagnosis and delivery with your teams. When the engagement requires it, I bring together the right specialists around a shared economic objective.",
+      fr: "Je conduis le diagnostic et l'exécution avec vos équipes, dans vos contraintes réelles. Lorsque le mandat l'exige, je réunis les spécialistes utiles autour d'un objectif économique commun — sans diluer la responsabilité.",
+      en: "I lead diagnosis and delivery with your teams, inside your real constraints. When the engagement requires it, I bring together the right specialists around a shared economic objective — without diluting accountability.",
     } as L,
   },
   valuesTitle: {
@@ -1335,8 +1342,8 @@ export const faqItems: FaqItem[] = [
       en: "What is an Operating Performance Partner?",
     },
     a: {
-      fr: "Un partenaire qui part d'une priorité de performance, participe à sa mise en œuvre et mesure les effets avec votre organisation. Vous ne confiez pas un cahier des charges figé : vous confiez un résultat à produire.",
-      en: "A partner that starts from a performance priority, takes part in delivery and measures effects with your organization. You are not handing over a fixed brief: you entrust an outcome to produce.",
+      fr: "Un partenaire qui part d'une priorité de performance, s'embarque avec vos équipes (posture Forward Deployed Engineer), participe à la mise en œuvre et mesure les effets. Vous ne confiez pas un cahier des charges figé : vous confiez un résultat à produire.",
+      en: "A partner that starts from a performance priority, embeds with your teams (Forward Deployed Engineer posture), takes part in delivery and measures effects. You are not handing over a fixed brief: you entrust an outcome to produce.",
     },
   },
   {
