@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "TWM Advisory",
     short_name: "TWM",
     description:
-      "Operating Performance Partner — Forward Deployed Engineer. Mandat de performance mesurable, exécuté avec vos équipes.",
+      "Operating Performance Partner, Forward Deployed Engineer. Mandat de performance mesurable, exécuté avec vos équipes.",
     start_url: "/",
     display: "standalone",
     background_color: "#070A11",

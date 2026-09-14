@@ -3,12 +3,12 @@ export type Lang = "fr" | "en";
 export const content = {
   meta: {
     title: {
-      fr: "TWM Advisory — Operating Performance Partner",
-      en: "TWM Advisory — Operating Performance Partner",
+      fr: "TWM Advisory · Operating Performance Partner",
+      en: "TWM Advisory · Operating Performance Partner",
     },
     description: {
-      fr: "Operating Performance Partner en posture Forward Deployed Engineer. TWM exécute avec vos équipes un mandat mesurable : coûts, capacité, marge — validé avec votre finance.",
-      en: "Operating Performance Partner with a Forward Deployed Engineer posture. TWM executes a measurable mandate with your teams: cost, capacity, margin — validated with your finance team.",
+      fr: "Operating Performance Partner, en posture Forward Deployed Engineer. TWM exécute avec vos équipes un mandat mesurable sur les coûts, la capacité et la marge, validé avec votre finance.",
+      en: "Operating Performance Partner, with a Forward Deployed Engineer posture. TWM executes a measurable mandate with your teams on cost, capacity and margin, validated with your finance team.",
     },
   },
   nav: {
@@ -37,7 +37,7 @@ export const content = {
     langSwitcher: { fr: "Choisir la langue", en: "Choose language" },
     mainNav: { fr: "Navigation principale", en: "Main navigation" },
     footerNav: { fr: "Pied de page", en: "Footer" },
-    homeAria: { fr: "TWM Advisory — Accueil", en: "TWM Advisory — Home" },
+    homeAria: { fr: "TWM Advisory, Accueil", en: "TWM Advisory, Home" },
   },
   audience: {
     title: { fr: "Organisations accompagnées", en: "Organizations we support" },
@@ -83,8 +83,8 @@ export const content = {
     approach: {
       title: { fr: "Méthode", en: "Method" },
       lead: {
-        fr: "Rendre la performance vérifiable — cinq étapes du problème opérationnel au résultat économique.",
-        en: "Make performance verifiable — five steps from operational problem to economic result.",
+        fr: "Rendre la performance vérifiable, cinq étapes du problème opérationnel au résultat économique.",
+        en: "Make performance verifiable, five steps from operational problem to economic result.",
       },
     },
     offers: {
@@ -104,8 +104,8 @@ export const content = {
     performance: {
       title: { fr: "Operating Performance", en: "Operating Performance" },
       lead: {
-        fr: "Réduire les coûts, les reprises et les pertes de capacité — un mandat d'exécution mesurable.",
-        en: "Cut costs, rework and capacity loss — a measurable execution mandate.",
+        fr: "Réduire les coûts, les reprises et les pertes de capacité, un mandat d'exécution mesurable.",
+        en: "Cut costs, rework and capacity loss, a measurable execution mandate.",
       },
     },
     methode: {
@@ -139,8 +139,8 @@ export const content = {
     about: {
       title: { fr: "À propos", en: "About" },
       lead: {
-        fr: "Une approche de dirigeant. Une posture Forward Deployed.",
-        en: "A leadership approach. A Forward Deployed posture.",
+        fr: "Une approche de dirigeant, une posture Forward Deployed.",
+        en: "A leadership approach, a Forward Deployed posture.",
       },
     },
     faq: {
@@ -260,8 +260,8 @@ export const content = {
       en: "You are entrusting us with a performance priority.",
     },
     lead: {
-      fr: "Tannous Mekari s'embarque avec vos équipes — posture Forward Deployed Engineer — pour transformer votre priorité en décisions, actions et résultats mesurables.",
-      en: "Tannous Mekari embeds with your teams — Forward Deployed Engineer posture — to turn your priority into decisions, action and measurable results.",
+      fr: "Tannous Mekari travaille avec vos équipes, sur place. Posture Forward Deployed Engineer : on part de votre priorité et on la mène jusqu'à des résultats mesurés.",
+      en: "Tannous Mekari works with your teams, on site. Forward Deployed Engineer posture: we start from your priority and carry it through to measured results.",
     },
     ctaPrimary: {
       fr: "Soumettre une priorité de performance",
@@ -272,8 +272,8 @@ export const content = {
       en: "See the journey",
     },
     note: {
-      fr: "Déployé chez vous · Écouter → Diagnostiquer → Décider → Exécuter → Mesurer",
-      en: "Forward deployed · Listen → Diagnose → Decide → Deliver → Measure",
+      fr: "Déployé chez vous. Écouter, diagnostiquer, décider, exécuter, mesurer.",
+      en: "Forward deployed. Listen, diagnose, decide, deliver, measure.",
     },
     floatTitle: { fr: "Accompagnement opérationnel", en: "Operational support" },
     floatBody: {
@@ -704,8 +704,8 @@ export const content = {
       other: { fr: "Autre", en: "Other" },
     },
     consent: {
-      fr: "J'accepte que ces informations soient utilisées pour évaluer un partenariat — pas pour un démarchage client non sollicité.",
-      en: "I agree these details are used to evaluate a partnership — not for unsolicited client outreach.",
+      fr: "J'accepte que ces informations soient utilisées pour évaluer un partenariat, pas pour un démarchage client non sollicité.",
+      en: "I agree these details are used to evaluate a partnership, not for unsolicited client outreach.",
     },
     consentPrivacy: {
       fr: "Politique de confidentialité",
@@ -915,7 +915,7 @@ export const content = {
   about: {
     section: { fr: "À propos", en: "About" },
     title: {
-      fr: "Une approche de dirigeant. Une posture Forward Deployed.",
+      fr: "Une approche de dirigeant, une posture Forward Deployed.",
       en: "A leader's approach. A Forward Deployed posture.",
     },
     p1: {
@@ -923,8 +923,8 @@ export const content = {
       en: "Tannous Mekari's path combines 17 years in e-commerce, business development and operational leadership. He works in French, English and Arabic. That experience feeds a conviction: a transformation is judged in how the company operates, service quality and economic effects.",
     },
     p2: {
-      fr: "Le fondateur reste votre interlocuteur pour la relation client, les validations et les arbitrages de la mission — en posture Forward Deployed Engineer, présent avec vos équipes jusqu'à la livraison. Des spécialistes peuvent être mobilisés lorsque le périmètre requiert une expertise complémentaire. Un Operating Performance Partner travaille avec la direction sur un objectif économique et reste impliqué dans son exécution.",
-      en: "The founder remains your counterpart for the client relationship, validations and mission decisions — in a Forward Deployed Engineer posture, present with your teams through delivery. Specialists can be brought in when the scope needs complementary expertise. An Operating Performance Partner works with leadership on an economic objective and stays involved in execution.",
+      fr: "Le fondateur reste votre interlocuteur pour la relation client, les validations et les arbitrages. Posture Forward Deployed Engineer : présent avec vos équipes jusqu'à la livraison. Des spécialistes peuvent intervenir si le périmètre l'exige. Un Operating Performance Partner travaille avec la direction sur un objectif économique et reste dans l'exécution.",
+      en: "The founder remains your counterpart for the client relationship, validations and mission decisions. Forward Deployed Engineer posture: present with your teams through delivery. Specialists can join when the scope needs it. An Operating Performance Partner works with leadership on an economic objective and stays in the execution.",
     },
     p3: {
       fr: "Le terme décrit notre mode d'intervention ; il ne désigne ni une prise de participation ni un mandat de gestion. Directions de PME, entreprises de services, cabinets de conseil, professions du chiffre et du droit : le point commun est une activité où la capacité, la fiabilité et la marge dépendent directement des opérations.",
@@ -967,7 +967,7 @@ export const content = {
           en: "Do you need an AI project to start?",
         },
         a: {
-          fr: "Non. Une dépense à réduire, un processus trop lent ou une capacité insuffisante constituent des points de départ. Les moyens sont choisis après analyse.",
+          fr: "Non. Une dépense à réduire, un processus trop lent ou une capacité insuffisante suffisent comme point de départ. Les moyens sont choisis après analyse.",
           en: "No. Spend to reduce, a slow process or insufficient capacity are valid starting points. Means are chosen after analysis.",
         },
       },
@@ -997,8 +997,8 @@ export const content = {
           en: "Are you paid only on success?",
         },
         a: {
-          fr: "Le modèle proposé comprend un diagnostic au forfait et un socle fixe pour l'exécution. Une part variable peut s'y ajouter lorsque la mesure et l'attribution sont suffisamment robustes. Les honoraires fixes restent dus selon les conditions convenues.",
-          en: "The proposed model includes a fixed-fee diagnosis and a fixed base for execution. A variable share may be added when measurement and attribution are robust enough. Fixed fees remain due under agreed terms.",
+          fr: "Le modèle proposé comprend un diagnostic au forfait et un socle fixe pour l'exécution. Une part variable peut s'y ajouter lorsque la mesure et l'attribution tiennent vraiment. Les honoraires fixes restent dus selon les conditions convenues.",
+          en: "The proposed model includes a fixed-fee diagnosis and a fixed base for execution. A variable share may be added when measurement and attribution really hold. Fixed fees remain due under agreed terms.",
         },
       },
       {
@@ -1177,8 +1177,8 @@ export const content = {
       en: "Answer the three questions to refine your context.",
     },
     mapLogic: {
-      fr: "Votre situation détermine le service d'entrée. Vos réponses sur l'organisation, l'urgence et les données affinent la préparation du premier échange — elles ne changent pas le type de service proposé.",
-      en: "Your situation determines the entry service. Your answers on organization, urgency and data refine preparation for the first conversation — they do not change the type of service suggested.",
+      fr: "Votre situation détermine le service d'entrée. Vos réponses sur l'organisation, l'urgence et les données affinent la préparation du premier échange, elles ne changent pas le type de service proposé.",
+      en: "Your situation determines the entry service. Your answers on organization, urgency and data refine preparation for the first conversation, they do not change the type of service suggested.",
     },
     scoreLabel: { fr: "Profil du besoin", en: "Needs profile" },
     scoreHint: {
@@ -1261,8 +1261,8 @@ export const content = {
       en: "Refine your context",
     },
     probesBody: {
-      fr: "Ces trois réponses affinent la préparation de l'échange. Elles complètent la situation choisie — elles ne remplacent pas l'orientation initiale.",
-      en: "These three answers refine how we prepare the conversation. They complement your chosen situation — they do not replace the initial direction.",
+      fr: "Ces trois réponses affinent la préparation de l'échange. Elles complètent la situation choisie, elles ne remplacent pas l'orientation initiale.",
+      en: "These three answers refine how we prepare the conversation. They complement your chosen situation, they do not replace the initial direction.",
     },
     probes: {
       orgSize: {
@@ -1455,8 +1455,8 @@ export const content = {
       en: "Request received.",
     },
     doneBody: {
-      fr: "Votre briefing est prêt. Réservez un créneau de 30 minutes pour en parler — ou revenez plus tard via l'email de confirmation.",
-      en: "Your briefing is ready. Book a 30-minute slot to discuss it — or come back later via the confirmation email.",
+      fr: "Votre briefing est prêt. Réservez un créneau de 30 minutes pour en parler, ou revenez plus tard via l'email de confirmation.",
+      en: "Your briefing is ready. Book a 30-minute slot to discuss it, or come back later via the confirmation email.",
     },
     doneConfirmationSent: {
       fr: "Un email de confirmation vient de vous être envoyé.",
@@ -1504,22 +1504,22 @@ export const content = {
       {
         title: { fr: "Éditeur", en: "Publisher" },
         body: {
-          fr: "Le site www.twm.expert est édité par TWM ADVISORY, SAS (société par actions simplifiée). SIREN : 106 067 549 — SIRET : 106 067 549 00019 — TVA intracommunautaire : FR76 106 067 549 — RCS Lille Métropole — Code NAF/APE : 70.22Z (conseil pour les affaires et autres conseils de gestion). Contact : tannous@twm.expert.",
-          en: "The website www.twm.expert is published by TWM ADVISORY, a French SAS (simplified joint-stock company). SIREN: 106 067 549 — SIRET: 106 067 549 00019 — EU VAT: FR76 106 067 549 — RCS Lille Métropole — NAF/APE: 70.22Z (business and other management consultancy). Contact: tannous@twm.expert.",
+          fr: "Le site www.twm.expert est édité par TWM ADVISORY, SAS (société par actions simplifiée). SIREN : 106 067 549 — SIRET : 106 067 549 00019 — TVA intracommunautaire : FR76 106 067 549 — RCS Lille Métropole, Code NAF/APE : 70.22Z (conseil pour les affaires et autres conseils de gestion). Contact : tannous@twm.expert.",
+          en: "The website www.twm.expert is published by TWM ADVISORY, a French SAS (simplified joint-stock company). SIREN: 106 067 549 — SIRET: 106 067 549 00019 — EU VAT: FR76 106 067 549 — RCS Lille Métropole, NAF/APE: 70.22Z (business and other management consultancy). Contact: tannous@twm.expert.",
         },
       },
       {
         title: { fr: "Directeur de la publication", en: "Publication director" },
         body: {
-          fr: "Tannous Mekari, Président de TWM ADVISORY — tannous@twm.expert.",
-          en: "Tannous Mekari, President of TWM ADVISORY — tannous@twm.expert.",
+          fr: "Tannous Mekari, Président de TWM ADVISORY, tannous@twm.expert.",
+          en: "Tannous Mekari, President of TWM ADVISORY, tannous@twm.expert.",
         },
       },
       {
         title: { fr: "Hébergement", en: "Hosting" },
         body: {
-          fr: "Le site est hébergé par Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis — vercel.com.",
-          en: "The site is hosted by Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA — vercel.com.",
+          fr: "Le site est hébergé par Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis, vercel.com.",
+          en: "The site is hosted by Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA, vercel.com.",
         },
       },
       {
@@ -1592,8 +1592,8 @@ export const content = {
       {
         title: { fr: "Sécurité", en: "Security" },
         body: {
-          fr: "Les uploads vidéo transitent par le serveur et sont stockés dans un bucket privé. Les accès base de données côté app passent par une clé service role serveur — jamais exposée au navigateur.",
-          en: "Video uploads go through the server and are stored in a private bucket. App database access uses a server-only service role key — never exposed to the browser.",
+          fr: "Les uploads vidéo transitent par le serveur et sont stockés dans un bucket privé. Les accès base de données côté app passent par une clé service role serveur, jamais exposée au navigateur.",
+          en: "Video uploads go through the server and are stored in a private bucket. App database access uses a server-only service role key, never exposed to the browser.",
         },
       },
     ],

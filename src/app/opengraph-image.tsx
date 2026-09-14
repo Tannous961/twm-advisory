@@ -80,7 +80,7 @@ export default function OpenGraphImage() {
               fontFamily: "monospace",
             }}
           >
-            OPERATING PERFORMANCE PARTNER · FORWARD DEPLOYED
+            OPERATING PERFORMANCE PARTNER
           </div>
           <div
             style={{
@@ -107,7 +107,7 @@ export default function OpenGraphImage() {
               lineHeight: 1.4,
             }}
           >
-            Coûts · Capacité · Marge — mandat mesurable, exécuté sur le terrain.
+            Coûts, capacité, marge. Mandat mesurable, exécuté sur le terrain.
           </div>
         </div>
 

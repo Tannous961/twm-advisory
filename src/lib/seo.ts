@@ -99,12 +99,12 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
   },
   performance: {
     path: "/performance",
-    title: "Operating Performance — mandat d'exécution mesurable",
-    titleEn: "Operating Performance — measurable execution mandate",
+    title: "Operating Performance · mandat d'exécution mesurable",
+    titleEn: "Operating Performance · measurable execution mandate",
     description:
-      "Réduire les coûts, les reprises et les pertes de capacité — exécuté en posture Forward Deployed avec vos équipes, mesuré avec votre finance.",
+      "Réduire les coûts, les reprises et les pertes de capacité. Exécution Forward Deployed avec vos équipes, mesure avec votre finance.",
     descriptionEn:
-      "Cut costs, rework and capacity loss — executed in a Forward Deployed posture with your teams, measured with your finance team.",
+      "Cut costs, rework and capacity loss. Forward Deployed execution with your teams, measurement with your finance team.",
     keywords: [
       "Operating Performance",
       "Performance Scan",
@@ -115,12 +115,12 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
   },
   "partner-performance": {
     path: "/partner-performance",
-    title: "Partner Performance — réseau de partenaires en système de croissance",
-    titleEn: "Partner Performance — turn a partner network into a growth system",
+    title: "Partner Performance · réseau de partenaires en système de croissance",
+    titleEn: "Partner Performance · turn a partner network into a growth system",
     description:
-      "Transformer un réseau de partenaires en système de croissance : leads, co-selling, referrals et gouvernance — avec exécution Forward Deployed.",
+      "Transformer un réseau de partenaires en système de croissance: leads, co-selling, referrals et gouvernance. Exécution Forward Deployed.",
     descriptionEn:
-      "Turn a partner network into a growth system: leads, co-selling, referrals and governance — with Forward Deployed execution.",
+      "Turn a partner network into a growth system: leads, co-selling, referrals and governance. Forward Deployed execution.",
     keywords: [
       "Partner Performance",
       "réseau partenaires",
@@ -131,12 +131,12 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
   },
   methode: {
     path: "/methode",
-    title: "Méthode — du résultat recherché à la mesure",
-    titleEn: "Method — from the outcome sought to measurement",
+    title: "Méthode · du résultat recherché à la mesure",
+    titleEn: "Method · from the outcome sought to measurement",
     description:
-      "Cinq étapes Forward Deployed : de la priorité économique au résultat vérifié avec la finance.",
+      "Cinq étapes en posture Forward Deployed, de la priorité économique au résultat vérifié avec la finance.",
     descriptionEn:
-      "Five Forward Deployed steps: from economic priority to a finance-verified outcome.",
+      "Five steps in a Forward Deployed posture, from economic priority to a finance-verified outcome.",
     keywords: [
       "méthode performance opérationnelle",
       "Forward Deployed",
@@ -146,12 +146,12 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
   },
   technology: {
     path: "/technology",
-    title: "Technology — contexte, pilotage et product builders",
-    titleEn: "Technology — context, steering and product builders",
+    title: "Technology · contexte, pilotage et product builders",
+    titleEn: "Technology · context, steering and product builders",
     description:
-      "Couche de contexte et de pilotage TWM, et capacité à faire de vos équipes des product builders de leur métier — pas un SaaS vendu.",
+      "Couche de contexte et de pilotage TWM, et capacité à faire de vos équipes des product builders de leur métier. Ce n'est pas un SaaS que nous vendons.",
     descriptionEn:
-      "TWM's context and steering layer, and the ability to turn your teams into product builders of their craft — not a SaaS product we sell.",
+      "TWM's context and steering layer, and the ability to turn your teams into product builders of their craft. We do not sell a SaaS product.",
     keywords: [
       "Performance OS",
       "product builders",
@@ -161,8 +161,8 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
   },
   impact: {
     path: "/impact",
-    title: "Impact — leviers de performance illustratifs",
-    titleEn: "Impact — illustrative performance levers",
+    title: "Impact · leviers de performance illustratifs",
+    titleEn: "Impact · illustrative performance levers",
     description:
       "Situations illustratives où une amélioration opérationnelle peut produire une valeur économique. Preuves à établir sur vos données.",
     descriptionEn:
@@ -176,8 +176,8 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
   },
   cadre: {
     path: "/cadre",
-    title: "Cadre — la performance au-delà des promesses",
-    titleEn: "Cadre — performance beyond promises",
+    title: "Cadre · la performance au-delà des promesses",
+    titleEn: "Cadre · performance beyond promises",
     description:
       "Notes pour les dirigeants qui doivent arbitrer les coûts, la capacité et la transformation.",
     descriptionEn:
@@ -186,8 +186,8 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
   },
   partenaires: {
     path: "/partenaires",
-    title: "Partenaires — cadre de collaboration",
-    titleEn: "Partners — collaboration framework",
+    title: "Partenaires · cadre de collaboration",
+    titleEn: "Partners · collaboration framework",
     description:
       "Cadre de collaboration de TWM Advisory pour les apporteurs d'affaires, intégrateurs, réseaux métier et partenaires de réalisation.",
     descriptionEn:
@@ -199,12 +199,12 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
   },
   "a-propos": {
     path: "/a-propos",
-    title: "À propos — Tannous Mekari, Forward Deployed Engineer",
-    titleEn: "About — Tannous Mekari, Forward Deployed Engineer",
+    title: "À propos · Tannous Mekari, Forward Deployed Engineer",
+    titleEn: "About · Tannous Mekari, Forward Deployed Engineer",
     description:
-      "Tannous Mekari, président de TWM ADVISORY. Forward Deployed Engineer et Operating Performance Partner : embarqué avec vos équipes jusqu'au résultat mesuré.",
+      "Tannous Mekari, président de TWM ADVISORY. Forward Deployed Engineer et Operating Performance Partner. Embarqué avec vos équipes jusqu'au résultat mesuré.",
     descriptionEn:
-      "Tannous Mekari, president of TWM ADVISORY. Forward Deployed Engineer and Operating Performance Partner: embedded with your teams through to measured results.",
+      "Tannous Mekari, president of TWM ADVISORY. Forward Deployed Engineer and Operating Performance Partner. Embedded with your teams through to measured results.",
     keywords: [
       "Tannous Mekari",
       "TWM ADVISORY",
@@ -215,8 +215,8 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
   },
   faq: {
     path: "/faq",
-    title: "FAQ — questions avant une décision de performance",
-    titleEn: "FAQ — questions before a performance decision",
+    title: "FAQ · questions avant une décision de performance",
+    titleEn: "FAQ · questions before a performance decision",
     description:
       "FAQ sur le mandat Operating Performance Partner, la posture Forward Deployed Engineer, le gain-share et la mesure des gains.",
     descriptionEn:
@@ -230,12 +230,12 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
   },
   demarrer: {
     path: "/demarrer",
-    title: "Évaluer votre potentiel — questionnaire initial",
-    titleEn: "Assess your potential — initial questionnaire",
+    title: "Évaluer votre potentiel · questionnaire initial",
+    titleEn: "Assess your potential · initial questionnaire",
     description:
-      "Soumettez une priorité de performance. TWM prépare un Performance Scan et une orientation Forward Deployed.",
+      "Soumettez une priorité de performance. TWM prépare un Performance Scan et une première orientation de déploiement.",
     descriptionEn:
-      "Submit a performance priority. TWM prepares a Performance Scan and a Forward Deployed direction.",
+      "Submit a performance priority. TWM prepares a Performance Scan and a first deployment direction.",
     keywords: [
       "Performance Scan",
       "évaluer potentiel performance",
@@ -245,8 +245,8 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
   },
   contact: {
     path: "/contact",
-    title: "Contact — priorité économique",
-    titleEn: "Contact — economic priority",
+    title: "Contact · priorité économique",
+    titleEn: "Contact · economic priority",
     description:
       "Premier échange de 30 minutes pour comprendre votre priorité économique et décider si un Performance Scan est pertinent.",
     descriptionEn:
@@ -258,9 +258,9 @@ export const pageSeo: Record<PageSeoKey, PageSeo> = {
     title: "Mentions légales",
     titleEn: "Legal notice",
     description:
-      "Mentions légales TWM ADVISORY — SAS, SIREN 106 067 549, RCS Lille Métropole. Éditeur du site www.twm.expert.",
+      "Mentions légales TWM ADVISORY · SAS, SIREN 106 067 549, RCS Lille Métropole. Éditeur du site www.twm.expert.",
     descriptionEn:
-      "Legal notice for TWM ADVISORY — SAS, SIREN 106 067 549, RCS Lille Métropole. Publisher of www.twm.expert.",
+      "Legal notice for TWM ADVISORY · SAS, SIREN 106 067 549, RCS Lille Métropole. Publisher of www.twm.expert.",
     changeFrequency: "yearly",
     priority: 0.3,
   },
@@ -423,7 +423,7 @@ export function buildMetadata(): Metadata {
     publisher: siteConfig.legalName,
     category: "Business",
     classification:
-      "Operating Performance Partner · Forward Deployed Engineer — performance opérationnelle, coûts, capacité, marge",
+      "Operating Performance Partner · Forward Deployed Engineer · performance opérationnelle, coûts, capacité, marge",
     referrer: "origin-when-cross-origin",
     formatDetection: {
       email: false,
@@ -448,7 +448,7 @@ export function buildMetadata(): Metadata {
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: "TWM Advisory — Operating Performance Partner · Forward Deployed Engineer",
+          alt: "TWM Advisory · Operating Performance Partner · Forward Deployed Engineer",
           type: "image/png",
         },
       ],
@@ -560,7 +560,7 @@ export function buildJsonLd() {
     "@type": "Person",
     "@id": `${siteConfig.url}/#person`,
     name: siteConfig.founderName,
-    jobTitle: "Fondateur — Forward Deployed Engineer · Operating Performance Partner",
+    jobTitle: "Fondateur · Forward Deployed Engineer · Operating Performance Partner",
     worksFor: { "@id": `${siteConfig.url}/#organization` },
     description: content.about.p1.fr,
     knowsLanguage: ["fr", "en", "ar"],
@@ -672,7 +672,7 @@ export function buildPageJsonLd(
   const page = pageSeo[key];
   const crumbs = [
     { name: "Accueil", path: "/" },
-    ...(key === "home" ? [] : [{ name: page.title.split(" — ")[0], path: page.path }]),
+    ...(key === "home" ? [] : [{ name: page.title.split(" · ")[0], path: page.path }]),
     ...extraCrumbs,
   ];
 

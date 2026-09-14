@@ -87,7 +87,7 @@ export const brand = {
 } as const;
 
 // ---------------------------------------------------------------------------
-// Home editorial — shapes consumed by HomeEditorial.tsx
+// Home editorial, shapes consumed by HomeEditorial.tsx
 // ---------------------------------------------------------------------------
 
 export const homeEditorial = {
@@ -105,8 +105,8 @@ export const homeEditorial = {
       en: "You are entrusting us with a performance priority.",
     } as L,
     body: {
-      fr: "TWM intervient lorsque la direction veut comprendre où la valeur se perd, décider quoi changer et faire exécuter les changements — en posture Forward Deployed, avec ses équipes.",
-      en: "TWM steps in when leadership wants to understand where value is lost, decide what to change, and have those changes executed — in a Forward Deployed posture, with their teams.",
+      fr: "TWM intervient quand la direction veut voir où la valeur se perd, choisir quoi changer, et faire exécuter ces changements avec ses équipes. Posture Forward Deployed.",
+      en: "TWM steps in when leadership wants to see where value is lost, choose what to change, and have those changes executed with their teams. Forward Deployed posture.",
     } as L,
     ctaPrimary: {
       fr: "Soumettre une priorité de performance",
@@ -311,8 +311,8 @@ export const homeEditorial = {
           en: "Do you need an AI project to get started?",
         },
         a: {
-          fr: "Non. Une priorité de performance — coûts, capacité, partenaires, commerce ou outils — suffit. Les moyens sont choisis après analyse.",
-          en: "No. A performance priority — costs, capacity, partners, commerce or tools — is enough. Means are chosen after analysis.",
+          fr: "Non. Une priorité de performance, coûts, capacité, partenaires, commerce ou outils, suffit. Les moyens sont choisis après analyse.",
+          en: "No. A performance priority, costs, capacity, partners, commerce or tools, is enough. Means are chosen after analysis.",
         },
       },
       {
@@ -331,7 +331,7 @@ export const homeEditorial = {
           en: "How is this different from a classic project?",
         },
         a: {
-          fr: "Vous ne nous confiez pas un cahier des charges figé. Vous confiez une priorité de performance : nous diagnostiquons, décidons avec vous et exécutons les changements avec vos équipes.",
+          fr: "Vous confiez une priorité de performance. Nous diagnostiquons, décidons avec vous, puis exécutons les changements avec vos équipes.",
           en: "You are not handing us a fixed brief. You entrust a performance priority: we diagnose, decide with you and execute changes with your teams.",
         },
       },
@@ -354,16 +354,16 @@ export const homeExperience = {
       en: "My name is Tannous Mekari.",
     } as L,
     body: {
-      fr: "J'ai fondé TWM Advisory après 17 ans en direction, opérations, e-commerce et développement d'activités. Je ne livre pas un rapport à distance : je m'embarque dans votre réalité opérationnelle jusqu'à la mesure des résultats.",
-      en: "I founded TWM Advisory after 17 years in leadership, operations, e-commerce and business development. I don't deliver a remote report: I embed in your operating reality through to measured results.",
+      fr: "J'ai fondé TWM Advisory après 17 ans en direction, opérations, e-commerce et développement d'activités. Je reste dans votre opérationnel jusqu'à la mesure des résultats. Pas de rapport lâché à distance.",
+      en: "I founded TWM Advisory after 17 years in leadership, operations, e-commerce and business development. I stay in your operations through to measured results. No report dropped from afar.",
     } as L,
     quote: {
-      fr: "Mon rôle : être déployé chez vous — comprendre, décider avec vous, exécuter avec vos équipes.",
-      en: "My role: stay forward deployed — understand, decide with you, execute with your teams.",
+      fr: "Mon rôle : être déployé chez vous. Comprendre. Décider avec vous. Exécuter avec vos équipes.",
+      en: "My role: stay forward deployed. Understand. Decide with you. Execute with your teams.",
     } as L,
     support: {
-      fr: "Lorsque le mandat l'exige, je réunis les spécialistes utiles. Vous gardez un interlocuteur unique, présent sur le terrain de l'exécution.",
-      en: "When the engagement requires it, I bring together the right specialists. You keep one accountable counterpart, present on the ground of delivery.",
+      fr: "Quand le mandat l'exige, je fais venir les spécialistes utiles. Vous gardez un seul interlocuteur, présent sur le terrain.",
+      en: "When the engagement requires it, I bring in the right specialists. You keep one counterpart, present on the ground.",
     } as L,
     posture: {
       fr: "Déployé chez vous",
@@ -445,8 +445,8 @@ export const homeExperience = {
   levers: {
     eyebrow: { fr: "Les moyens", en: "The means" } as L,
     title: {
-      fr: "Les bons leviers, pas une solution imposée.",
-      en: "The right levers, not a prescribed solution.",
+      fr: "Les leviers utiles pour votre cas, choisis après diagnostic.",
+      en: "The levers that fit your case, chosen after diagnosis.",
     } as L,
     body: {
       fr: "TWM choisit les moyens après le diagnostic.",
@@ -463,15 +463,15 @@ export const homeExperience = {
       {
         title: { fr: "Un interlocuteur", en: "One counterpart" },
         body: {
-          fr: "Tannous pilote la relation et les arbitrages — du premier diagnostic à la livraison.",
-          en: "Tannous leads the relationship and key decisions — from first diagnosis through delivery.",
+          fr: "Tannous pilote la relation et les arbitrages, du premier diagnostic à la livraison.",
+          en: "Tannous leads the relationship and key decisions, from first diagnosis through delivery.",
         },
       },
       {
         title: { fr: "Forward Deployed", en: "Forward Deployed" },
         body: {
-          fr: "Présent avec vos équipes, dans vos outils et vos contraintes — pas un livrable distant.",
-          en: "Present with your teams, in your tools and constraints — not a remote deliverable.",
+          fr: "Présent avec vos équipes, dans vos outils et vos contraintes. On construit sur place.",
+          en: "Present with your teams, in your tools and constraints. We build on site.",
         },
       },
       {
@@ -486,13 +486,13 @@ export const homeExperience = {
 } as const;
 
 // ---------------------------------------------------------------------------
-// /performance — shapes aligned with PerformancePage.tsx
+// /performance, shapes aligned with PerformancePage.tsx
 // ---------------------------------------------------------------------------
 
 export const performancePage = {
   leadTitle: {
-    fr: "Operating Performance — de la décision à l'exécution.",
-    en: "Operating Performance — from decision to execution.",
+    fr: "Operating Performance · de la décision à l'exécution.",
+    en: "Operating Performance · from decision to execution.",
   } as L,
   leadBody: {
     fr: "Dans le mandat de performance, ce domaine traite les coûts évitables, les reprises, les pertes de capacité et, lorsque pertinent, l'architecture commerciale (e-commerce, omnicanal, parcours).",
@@ -560,8 +560,8 @@ export const performancePage = {
     en: "A fixed base. A results share when measurement allows.",
   } as L,
   feesBody: {
-    fr: "Le diagnostic est facturé au forfait. Pour l'exécution, le modèle peut associer des honoraires fixes et une rémunération variable calculée sur les gains éligibles, réalisés et validés conjointement. Le taux, l'assiette, la période de mesure, les exclusions et les modalités de validation sont définis dans la proposition. Les coûts techniques et les frais de tiers sont explicités. Il n'existe pas de taux universel applicable à toutes les missions. Lorsque l'attribution des gains n'est pas suffisamment robuste, un forfait ou une rémunération par jalons est préférable. Un potentiel identifié ne déclenche pas, à lui seul, une rémunération au résultat.",
-    en: "Diagnosis is billed as a fixed fee. For execution, the model can combine fixed fees and variable compensation on eligible gains that are realized and jointly validated. Rate, base, measurement period, exclusions and validation terms are defined in the proposal. Technical costs and third-party fees are spelled out. There is no universal rate for every engagement. When attribution is not robust enough, a fixed fee or milestone-based compensation is preferable. An identified potential alone does not trigger results-based fees.",
+    fr: "Le diagnostic est facturé au forfait. Pour l'exécution, le modèle peut associer des honoraires fixes et une rémunération variable calculée sur les gains éligibles, réalisés et validés conjointement. Le taux, l'assiette, la période de mesure, les exclusions et les modalités de validation sont définis dans la proposition. Les coûts techniques et les frais de tiers sont explicités. Il n'existe pas de taux universel applicable à toutes les missions. Lorsque l'attribution des gains n'est pas assez solide, un forfait ou une rémunération par jalons est préférable. Un potentiel identifié ne déclenche pas, à lui seul, une rémunération au résultat.",
+    en: "Diagnosis is billed as a fixed fee. For execution, the model can combine fixed fees and variable compensation on eligible gains that are realized and jointly validated. Rate, base, measurement period, exclusions and validation terms are defined in the proposal. Technical costs and third-party fees are spelled out. There is no universal rate for every engagement. When attribution is not solid enough, a fixed fee or milestone-based compensation is preferable. An identified potential alone does not trigger results-based fees.",
   } as L,
   feesBullets: [
     {
@@ -609,7 +609,7 @@ export const performancePage = {
 } as const;
 
 // ---------------------------------------------------------------------------
-// /methode — shapes aligned with MethodePage.tsx
+// /methode, shapes aligned with MethodePage.tsx
 // ---------------------------------------------------------------------------
 
 export const methodePage = {
@@ -777,7 +777,7 @@ export const methodePage = {
 } as const;
 
 // ---------------------------------------------------------------------------
-// /technology — shapes aligned with TechnologyPage.tsx
+// /technology, shapes aligned with TechnologyPage.tsx
 // ---------------------------------------------------------------------------
 
 export const technologyPage = {
@@ -786,7 +786,7 @@ export const technologyPage = {
     en: "The means to deliver. The frame to keep control.",
   } as L,
   leadBody: {
-    fr: "TWM apporte une couche de contexte et de pilotage qui relie les données, les décisions, les processus et les résultats. Ce n'est pas un logiciel vendu : c'est une capacité interne qui nous permet de travailler plus profondément et plus vite pour nos clients.",
+    fr: "TWM apporte une couche de contexte et de pilotage qui relie données, décisions, processus et résultats. Ce n'est pas un logiciel vendu. C'est une capacité interne pour travailler plus vite et plus juste pour nos clients.",
     en: "TWM brings a context and steering layer that connects data, decisions, processes and results. It is not software we sell: it is an internal capability that lets us work deeper and faster for clients.",
   } as L,
   architectureTitle: {
@@ -798,12 +798,12 @@ export const technologyPage = {
     en: "Performance OS is how we organize an engagement and its delivery means, relying as much as possible on your existing tools. Components depend on scope: data connections, automations, AI assistants, business interfaces or tracking boards. Availability, cost and control level are specified in the proposal.",
   } as L,
   contextTitle: {
-    fr: "Une couche de contexte, pas un produit à abonner.",
-    en: "A context layer, not a product to subscribe to.",
+    fr: "Une couche de contexte. Ce n'est pas un abonnement logiciel.",
+    en: "A context layer. Not a software subscription.",
   } as L,
   contextBody: {
-    fr: "Cette capacité nous permet de comprendre ce qui se passe réellement dans l'organisation, de repérer les dépenses mal catégorisées, les processus hérités, les opportunités non suivies et les écarts entre la stratégie et l'exécution. Les outils, la data et l'IA servent ce travail — ils ne le remplacent pas.",
-    en: "This capability lets us understand what is really happening in the organization, spot misclassified spend, inherited processes, untracked opportunities and gaps between strategy and execution. Tools, data and AI serve that work — they do not replace it.",
+    fr: "Cette capacité nous permet de comprendre ce qui se passe réellement dans l'organisation, de repérer les dépenses mal catégorisées, les processus hérités, les opportunités non suivies et les écarts entre la stratégie et l'exécution. Les outils, la data et l'IA servent ce travail, ils ne le remplacent pas.",
+    en: "This capability lets us understand what is really happening in the organization, spot misclassified spend, inherited processes, untracked opportunities and gaps between strategy and execution. Tools, data and AI serve that work, they do not replace it.",
   } as L,
   dataTitle: {
     fr: "De la donnée à la décision.",
@@ -887,7 +887,7 @@ export const technologyPage = {
     en: "Practices tested inside TWM.",
   } as L,
   practiceBody: {
-    fr: "TWM utilise des assistants et automatisations internes pour la recherche, la préparation de documents et le suivi de certaines tâches. Les décisions, validations et relations clients restent sous responsabilité humaine. Cette pratique nourrit les choix d'exécution. Elle ne constitue pas, à elle seule, une preuve de gains économiques chez un client.",
+    fr: "TWM utilise des assistants et automatisations internes pour la recherche, la préparation de documents et le suivi de certaines tâches. Les décisions, validations et relations clients restent sous responsabilité humaine. Cette pratique nourrit les choix d'exécution. Elle n'est pas, à elle seule, une preuve de gains économiques chez un client.",
     en: "TWM uses internal assistants and automations for research, document preparation and tracking some tasks. Decisions, approvals and client relationships remain under human responsibility. This practice informs delivery choices. It is not, by itself, proof of economic gains at a client.",
   } as L,
   ctaLabel: {
@@ -897,34 +897,34 @@ export const technologyPage = {
 } as const;
 
 // ---------------------------------------------------------------------------
-// /a-propos — shapes consumed by About.tsx
+// /a-propos, shapes consumed by About.tsx
 // ---------------------------------------------------------------------------
 
 export const aboutPage = {
   eyebrow: { fr: "À propos", en: "About" } as L,
   leadTitle: {
-    fr: "Une approche de dirigeant. Une posture Forward Deployed.",
-    en: "A leadership approach. A Forward Deployed posture.",
+    fr: "Une approche de dirigeant, une posture Forward Deployed.",
+    en: "A leadership approach, a Forward Deployed posture.",
   } as L,
   leadBody: {
-    fr: "TWM Advisory accompagne les dirigeants de la priorité de performance jusqu'au résultat mesuré — embarqué avec les équipes, pas à distance.",
-    en: "TWM Advisory supports leaders from performance priority to measured result — embedded with teams, not at a distance.",
+    fr: "TWM Advisory accompagne les dirigeants de la priorité de performance jusqu'au résultat mesuré, embarqué avec les équipes.",
+    en: "TWM Advisory supports leaders from performance priority to measured result, embedded with teams.",
   } as L,
   founder: {
     title: { fr: "Tannous Mekari", en: "Tannous Mekari" } as L,
     body: {
-      fr: "J'ai fondé TWM après 17 ans en e-commerce, développement d'activités et direction opérationnelle. Je travaille en français, anglais et arabe. Forward Deployed Engineer : je reste votre interlocuteur pour la relation, les validations et les arbitrages — sur le terrain de l'exécution.",
-      en: "I founded TWM after 17 years in e-commerce, business development and operational leadership. I work in French, English and Arabic. Forward Deployed Engineer: I remain your counterpart for the relationship, validations and key decisions — on the ground of delivery.",
+      fr: "J'ai fondé TWM après 17 ans en e-commerce, développement d'activités et direction opérationnelle. Je travaille en français, anglais et arabe. Forward Deployed Engineer : je reste votre interlocuteur pour la relation, les validations et les arbitrages, sur le terrain.",
+      en: "I founded TWM after 17 years in e-commerce, business development and operational leadership. I work in French, English and Arabic. Forward Deployed Engineer: I remain your counterpart for the relationship, validations and key decisions, on the ground.",
     } as L,
   },
   partner: {
     title: {
-      fr: "Forward Deployed Engineer — un partenaire dans la réalisation.",
-      en: "Forward Deployed Engineer — a partner in delivery.",
+      fr: "Forward Deployed Engineer : un partenaire dans la réalisation.",
+      en: "Forward Deployed Engineer: a partner in delivery.",
     } as L,
     body: {
-      fr: "Je conduis le diagnostic et l'exécution avec vos équipes, dans vos contraintes réelles. Lorsque le mandat l'exige, je réunis les spécialistes utiles autour d'un objectif économique commun — sans diluer la responsabilité.",
-      en: "I lead diagnosis and delivery with your teams, inside your real constraints. When the engagement requires it, I bring together the right specialists around a shared economic objective — without diluting accountability.",
+      fr: "Je conduis le diagnostic et l'exécution avec vos équipes, dans vos contraintes réelles. Quand le mandat l'exige, je fais venir les spécialistes utiles autour d'un objectif économique commun. La responsabilité reste claire.",
+      en: "I lead diagnosis and delivery with your teams, inside your real constraints. When the engagement requires it, I bring in the right specialists around a shared economic objective. Accountability stays clear.",
     } as L,
   },
   valuesTitle: {
@@ -977,7 +977,7 @@ export const aboutPage = {
 } as const;
 
 // ---------------------------------------------------------------------------
-// /impact — six illustrative cases
+// /impact, six illustrative cases
 // ---------------------------------------------------------------------------
 
 export const impactCases: ImpactCase[] = [
@@ -1202,7 +1202,7 @@ export function getAllImpactSlugs(): string[] {
 }
 
 // ---------------------------------------------------------------------------
-// /contact — shapes consumed by Contact.tsx
+// /contact, shapes consumed by Contact.tsx
 // ---------------------------------------------------------------------------
 
 export const contactPage = {
@@ -1246,13 +1246,13 @@ export const contactPage = {
 } as const;
 
 // ---------------------------------------------------------------------------
-// /partner-performance — client engagement domain (not TWM partner recruitment)
+// /partner-performance, client engagement domain (not TWM partner recruitment)
 // ---------------------------------------------------------------------------
 
 export const partnerPerformancePage = {
   leadTitle: {
-    fr: "Partner Performance — Transformer un réseau de partenaires en système de croissance.",
-    en: "Partner Performance — Turn a partner network into a growth system.",
+    fr: "Partner Performance, Transformer un réseau de partenaires en système de croissance.",
+    en: "Partner Performance, Turn a partner network into a growth system.",
   } as L,
   leadBody: {
     fr: "Un partenariat ne crée pas de valeur parce qu'il existe. Il crée de la valeur lorsqu'il génère des opportunités qualifiées, accélère les ventes, réduit les coûts d'acquisition et produit une relation durable entre les organisations.",
@@ -1295,7 +1295,7 @@ export const partnerPerformancePage = {
       title: { fr: "Outils de pilotage", en: "Steering tools" },
       body: {
         fr: "Indicateurs, tableaux de bord et rituels de revue pour piloter la performance du réseau, pas seulement son existence.",
-        en: "Metrics, dashboards and review rituals to steer network performance — not merely its existence.",
+        en: "Metrics, dashboards and review rituals to steer network performance, not merely its existence.",
       },
     },
     {
@@ -1318,8 +1318,8 @@ export const partnerPerformancePage = {
     en: "A client engagement domain.",
   } as L,
   noteBody: {
-    fr: "Partner Performance est une offre pour les organisations qui veulent faire performer leur propre réseau de partenaires. Ce n'est pas la page pour rejoindre le réseau TWM — pour cela, voir /partenaires.",
-    en: "Partner Performance is an offer for organizations that want their own partner network to perform. It is not the page to join the TWM network — for that, see /partenaires.",
+    fr: "Partner Performance est une offre pour les organisations qui veulent faire performer leur propre réseau de partenaires. Ce n'est pas la page pour rejoindre le réseau TWM, pour cela, voir /partenaires.",
+    en: "Partner Performance is an offer for organizations that want their own partner network to perform. It is not the page to join the TWM network, for that, see /partenaires.",
   } as L,
   ctaLabel: {
     fr: "Soumettre une priorité de performance",
@@ -1332,7 +1332,7 @@ export const partnerPerformancePage = {
 } as const;
 
 // ---------------------------------------------------------------------------
-// FAQ — full list (14 items from editorial brief)
+// FAQ, full list (14 items from editorial brief)
 // ---------------------------------------------------------------------------
 
 export const faqItems: FaqItem[] = [
@@ -1342,8 +1342,8 @@ export const faqItems: FaqItem[] = [
       en: "What is an Operating Performance Partner?",
     },
     a: {
-      fr: "Un partenaire qui part d'une priorité de performance, s'embarque avec vos équipes (posture Forward Deployed Engineer), participe à la mise en œuvre et mesure les effets. Vous ne confiez pas un cahier des charges figé : vous confiez un résultat à produire.",
-      en: "A partner that starts from a performance priority, embeds with your teams (Forward Deployed Engineer posture), takes part in delivery and measures effects. You are not handing over a fixed brief: you entrust an outcome to produce.",
+      fr: "Un partenaire qui part d'une priorité de performance, s'embarque avec vos équipes (posture Forward Deployed Engineer), participe à la mise en œuvre et mesure les effets. Vous confiez un résultat à produire, pas un cahier des charges figé.",
+      en: "A partner that starts from a performance priority, embeds with your teams (Forward Deployed Engineer posture), takes part in delivery and measures effects. You entrust an outcome to produce, not a fixed brief.",
     },
   },
   {
@@ -1352,8 +1352,8 @@ export const faqItems: FaqItem[] = [
       en: "Do you need an AI project to get started?",
     },
     a: {
-      fr: "Non. Une priorité de performance — coûts, capacité, partenaires, commerce ou outils — suffit. Les moyens sont choisis après analyse.",
-      en: "No. A performance priority — costs, capacity, partners, commerce or tools — is enough. Means are chosen after analysis.",
+      fr: "Non. Une priorité de performance, coûts, capacité, partenaires, commerce ou outils, suffit. Les moyens sont choisis après analyse.",
+      en: "No. A performance priority, costs, capacity, partners, commerce or tools, is enough. Means are chosen after analysis.",
     },
   },
   {
@@ -1402,7 +1402,7 @@ export const faqItems: FaqItem[] = [
       en: "Are you paid only on success?",
     },
     a: {
-      fr: "Non. Un diagnostic au forfait et un socle fixe pour l'exécution restent dus selon le contrat. Une part variable peut s'y ajouter lorsque la mesure et l'attribution sont robustes.",
+      fr: "Non. Un diagnostic au forfait et un socle fixe pour l'exécution restent dus selon le contrat. Une part variable peut s'y ajouter lorsque la mesure et l'attribution tiennent.",
       en: "No. A fixed-fee diagnosis and a fixed execution base remain due under the contract. A variable share can be added when measurement and attribution are robust.",
     },
   },
@@ -1452,8 +1452,8 @@ export const faqItems: FaqItem[] = [
       en: "Is Performance OS a software platform?",
     },
     a: {
-      fr: "Le nom désigne le cadre de pilotage et d'exécution proposé par TWM — une capacité de contexte et de pilotage, pas un abonnement logiciel standard.",
-      en: "The name refers to TWM's steering and execution frame — a context and steering capability, not a standard software subscription.",
+      fr: "Le nom désigne le cadre de pilotage et d'exécution proposé par TWM: une capacité de contexte et de pilotage. Ce n'est pas un abonnement logiciel standard.",
+      en: "The name refers to TWM's steering and execution frame: a context and steering capability. It is not a standard software subscription.",
     },
   },
   {
