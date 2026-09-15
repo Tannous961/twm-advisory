@@ -14,6 +14,40 @@ export type CadrePost = {
 
 export const cadrePosts: CadrePost[] = [
   {
+    slug: "agent-en-prod-pas-encore-preuve",
+    date: "2026-09-15",
+    intent: "has_agents",
+    readingMinutes: 5,
+    title: {
+      fr: "Un agent en production n'est pas encore une preuve.",
+      en: "An agent in production is not yet proof.",
+    },
+    insight: {
+      fr: "Le fait qu'un agent tourne dit peu sur la qualité du travail livré, le coût de supervision et l'effet économique.",
+      en: "That an agent is running says little about output quality, supervision cost, or economic effect.",
+    },
+    verdict: {
+      fr: "Avant d'étendre, fixer trois mesures : taux de reprise humaine, qualité sur un échantillon comparable, et coût total par unité traitée.",
+      en: "Before scaling, set three measures: human takeover rate, quality on a comparable sample, and total cost per unit processed.",
+    },
+    body: {
+      fr: [
+        "Séparer disponibilité et résultat. Un agent accessible, un volume traité, une démo réussie : ce sont des signes d'installation. Ils ne disent pas si le travail tient la qualité exigée, ni si la reprise humaine consomme le gain attendu.",
+        "Observer la reprise. Noter la part de dossiers repris, le motif (erreur, doute, exception) et le temps passé. Un taux de reprise élevé peut être acceptable au démarrage ; il doit baisser ou être justifié. Sinon le dispositif déplace le travail au lieu de le réduire.",
+        "Comparer à un échantillon de référence. Prendre des cas déjà traités à la main, avec le même niveau d'exigence. Mesurer écarts, omissions et corrections. Sans cette base, la « réussite » reste une impression d'équipe.",
+        "Compter le coût complet. Inclure licences, intégration, temps des experts qui corrigent, et incidents. Le coût par unité traitée, une fois la reprise incluse, est plus utile qu'un volume brut. Si ce coût ne s'améliore pas, l'extension n'a pas de dossier.",
+        "Décider avec une porte de sortie. Définir à l'avance les seuils qui autorisent l'élargissement, et ceux qui imposent l'arrêt ou le recentrage. Un agent en production mérite ce cadre autant qu'un chantier métier classique.",
+      ],
+      en: [
+        "Separate uptime from outcome. An available agent, volume processed, a successful demo: these are signs of installation. They do not say whether the work meets the required quality, or whether human takeover consumes the expected gain.",
+        "Watch takeovers. Record the share of cases taken back, the reason (error, doubt, exception), and time spent. A high takeover rate can be fine at the start; it should fall or be justified. Otherwise the setup moves work around instead of reducing it.",
+        "Compare to a reference sample. Take cases already handled by hand, at the same quality bar. Measure gaps, omissions and corrections. Without that baseline, success stays a team impression.",
+        "Count full cost. Include licences, integration, expert time spent correcting, and incidents. Cost per unit processed, once takeover is included, is more useful than raw volume. If that cost does not improve, expansion has no case.",
+        "Decide with an exit door. Set in advance the thresholds that allow scaling, and those that force a stop or a narrower scope. An agent in production deserves that frame as much as a classic business workstream.",
+      ],
+    },
+  },
+  {
     slug: "temps-libere-et-marge",
     date: "2026-09-06",
     intent: "strategy",
