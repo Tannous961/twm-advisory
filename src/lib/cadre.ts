@@ -41,7 +41,7 @@ export const cadrePosts: CadrePost[] = [
       en: [
         "Separate uptime from outcome. An available agent, volume processed, a successful demo: these are signs of installation. They do not say whether the work meets the required quality, or whether human takeover consumes the expected gain.",
         "Watch takeovers. Record the share of cases taken back, the reason (error, doubt, exception), and time spent. A high takeover rate can be fine at the start; it should fall or be justified. Otherwise the setup moves work around instead of reducing it.",
-        "Compare to a reference sample. Take cases already handled by hand, at the same quality bar. Measure gaps, omissions and corrections. Without that baseline, "success" stays a team impression.",
+        "Compare to a reference sample. Take cases already handled by hand, at the same quality bar. Measure gaps, omissions and corrections. Without that baseline, success stays a team impression.",
         "Count full cost. Include licences, integration, expert time spent correcting, and incidents. Cost per unit processed, once takeover is included, is more useful than raw volume. If that cost does not improve, expansion has no case.",
         "Decide with an exit door. Set in advance the thresholds that allow scaling, and those that force a stop or a narrower scope. An agent in production deserves that frame as much as a classic business workstream.",
       ],
