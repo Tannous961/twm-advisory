@@ -29,10 +29,18 @@ Ouvre [http://localhost:3000](http://localhost:3000).
 
 | Route | Rôle |
 |-------|------|
+| `/cadre` | Contenu éditorial Cadre |
 | `/demarrer` | Briefing client (jeu + score + signal) |
 | `/offres` | Parcours 5 offres |
-| `/signal` | Contenu éditorial |
 | `/partenaires` | Socle BD / partenariats |
+
+## Agent éditorial Cadre
+
+Voir [`docs/cadre-editorial-agent.md`](docs/cadre-editorial-agent.md) et [`docs/cadre-n8n-drive.md`](docs/cadre-n8n-drive.md).
+
+```bash
+npm run cadre:run -- --dry-run
+```
 
 ## SEO
 

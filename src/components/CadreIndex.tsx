@@ -1,12 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { cadrePosts } from "@/lib/cadre";
+import type { CadrePost } from "@/lib/cadre-schema";
 import { useI18n, useT } from "@/lib/i18n";
 import { Reveal } from "./Reveal";
 import { CadreCover } from "./CadreCover";
 
-export function CadreIndex() {
+export function CadreIndex({ posts }: { posts: CadrePost[] }) {
   const { c, lang } = useI18n();
   const t = useT();
 
@@ -14,11 +14,8 @@ export function CadreIndex() {
     <Reveal>
       <section className="content-wrap section-pad">
         <ol className="grid gap-5 md:grid-cols-2">
-          {cadrePosts.map((post, i) => (
-            <li
-              key={post.slug}
-              className={i === 0 ? "md:col-span-2" : ""}
-            >
+          {posts.map((post, i) => (
+            <li key={post.slug} className={i === 0 ? "md:col-span-2" : ""}>
               <Link
                 href={`/cadre/${post.slug}`}
                 className={`glass-card group grid h-full gap-6 rounded-3xl p-4 transition duration-300 hover:-translate-y-1 hover:border-accent/30 sm:p-5 ${
