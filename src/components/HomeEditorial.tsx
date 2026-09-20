@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { faqItems, homeEditorial, homeExperience } from "@/lib/editorial";
-import { useT } from "@/lib/i18n";
+import { useLocalePath, useT } from "@/lib/i18n";
 import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
 import {
@@ -20,6 +20,7 @@ const leverGlyphs: Record<string, PerformanceGlyphName> = {
 
 export function HomeEditorialSections() {
   const t = useT();
+  const localePath = useLocalePath();
   const founder = homeExperience.founder;
   const journey = homeExperience.journey;
   const levers = homeExperience.levers;
@@ -57,7 +58,7 @@ export function HomeEditorialSections() {
                 <p className="type-label text-accent">
                   {t(founder.posture)}
                 </p>
-                <p className="type-label mt-1 text-white/80">
+                <p className="type-label mt-1 text-muted">
                   Tannous Mekari · Forward Deployed Engineer
                 </p>
               </div>
@@ -78,7 +79,7 @@ export function HomeEditorialSections() {
                 {t(founder.support)}
               </p>
               <Link
-                href="/a-propos"
+                href={localePath("/a-propos")}
                 className="btn-secondary mt-8 inline-flex rounded-full px-7 py-3.5"
               >
                 {t(founder.cta)} ↗
@@ -103,7 +104,7 @@ export function HomeEditorialSections() {
               <p className="type-lead mt-4 text-muted">{t(journey.body)}</p>
             </div>
             <Link
-              href="/methode"
+              href={localePath("/methode")}
               className="type-label text-accent hover:text-accent-soft"
             >
               {t(journey.cta)} →
@@ -162,7 +163,7 @@ export function HomeEditorialSections() {
             {leverCards?.map((card) => (
               <Link
                 key={card.id}
-                href={card.href ?? "/performance"}
+                href={localePath(card.href ?? "/performance")}
                 className="group bg-panel p-6 transition-colors hover:bg-panel-2"
               >
                 <PerformanceGlyph
@@ -218,7 +219,7 @@ export function HomeEditorialSections() {
               {t(faq.title)}
             </h2>
             {faq.allLink ? (
-              <Link href={faq.allLink.href} className="type-label text-muted-2 hover:text-fg">
+              <Link href={localePath(faq.allLink.href)} className="type-label text-muted-2 hover:text-fg">
                 {t(faq.allLink.label)} ↗
               </Link>
             ) : null}

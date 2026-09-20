@@ -3,12 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { track } from "@/lib/analytics";
-import { useI18n, useT } from "@/lib/i18n";
+import { useI18n, useLocalePath, useT } from "@/lib/i18n";
 import { Reveal } from "./Reveal";
 
 export function CtaBand() {
   const { c } = useI18n();
   const t = useT();
+  const localePath = useLocalePath();
 
   return (
     <Reveal>
@@ -30,7 +31,7 @@ export function CtaBand() {
             aria-hidden
             style={{
               background:
-                "linear-gradient(90deg, rgba(7,10,17,0.88) 0%, rgba(7,10,17,0.72) 45%, rgba(7,10,17,0.55) 100%), radial-gradient(ellipse at 30% 0%, rgb(var(--accent-rgb) / 0.18), transparent 55%)",
+                "linear-gradient(90deg, color-mix(in srgb, var(--bg) 88%, transparent) 0%, color-mix(in srgb, var(--bg) 72%, transparent) 45%, color-mix(in srgb, var(--bg) 55%, transparent) 100%), radial-gradient(ellipse at 30% 0%, rgb(var(--accent-rgb) / 0.18), transparent 55%)",
             }}
           />
           <div className="relative mx-auto max-w-2xl">
@@ -47,26 +48,26 @@ export function CtaBand() {
                 {t(c.home.ctaBandTitleEm)}
               </em>
             </h2>
-            <p className="type-lead mx-auto mt-6 max-w-xl text-pretty text-white/75">
+            <p className="type-lead mx-auto mt-6 max-w-xl text-pretty text-muted">
               {t(c.home.ctaBandBody)}
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
               <Link
-                href="/demarrer"
+                href={localePath("/demarrer")}
                 className="btn-primary inline-block rounded-full px-8 py-4 sm:py-4.5"
                 onClick={() => track("cta_click", { location: "cta_band" })}
               >
                 {t(c.hero.ctaPrimary)}
               </Link>
               <Link
-                href="/#parcours"
-                className="btn-secondary inline-block rounded-full border-white/20 bg-black/20 px-8 py-4 text-fg backdrop-blur-md sm:py-4.5"
+                href={`${localePath("/")}#parcours`}
+                className="btn-secondary inline-block rounded-full border-[color:rgb(var(--accent-rgb)/0.35)] bg-[color-mix(in_srgb,var(--bg)_70%,transparent)] px-8 py-4 text-fg backdrop-blur-md sm:py-4.5"
                 onClick={() => track("cta_click", { location: "cta_band_journey" })}
               >
                 {t(c.hero.ctaSecondary)}
               </Link>
             </div>
-            <p className="type-label mt-6 tracking-[0.1em] text-white/50">
+            <p className="type-label mt-6 tracking-[0.1em] text-muted-3">
               {t(c.home.ctaBandNote)}
             </p>
           </div>

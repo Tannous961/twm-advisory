@@ -13,7 +13,7 @@ import {
   type OrgSize,
   type Urgency,
 } from "@/lib/intake";
-import { useI18n, useT } from "@/lib/i18n";
+import { useI18n, useLocalePath, useT } from "@/lib/i18n";
 import { isProfessionalEmail } from "@/lib/security/professional-email";
 import { OperatorPortrait } from "../OperatorPortrait";
 import { Turnstile } from "../Turnstile";
@@ -45,6 +45,7 @@ function isIntentId(value: string | null): value is IntentId {
 export function IntakeGame() {
   const { c, lang } = useI18n();
   const t = useT();
+  const localePath = useLocalePath();
   const i = c.intake;
   const searchParams = useSearchParams();
   const requestedIntent = searchParams.get("intent");
@@ -608,7 +609,7 @@ export function IntakeGame() {
                 <span>
                   {t(i.consent)}{" "}
                   <Link
-                    href="/confidentialite"
+                    href={localePath("/confidentialite")}
                     className="text-accent underline-offset-2 hover:underline"
                     onClick={(e) => e.stopPropagation()}
                   >
@@ -661,19 +662,7 @@ export function IntakeGame() {
               <p className="mb-8 max-w-xl type-lead text-muted">
                 {t(i.doneBody)}
               </p>
-              <p className="mb-6 max-w-xl type-body text-muted">
-                {confirmationSent
-                  ? t(i.doneConfirmationSent)
-                  : t(i.doneConfirmationPending)}
-              </p>
-              <div className="glass-card mb-8 max-w-md rounded-3xl p-6">
-                <p className="type-label tracking-[0.1em] text-accent">
-                  {t(i.entryLabel)} ·{" "}
-                  {offerLabels[doneOffer as keyof typeof offerLabels] ??
-                    doneOffer}
-                </p>
-              </div>
-              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <a
                   href={buildCalendlyUrl({
                     name,
@@ -682,7 +671,7 @@ export function IntakeGame() {
                   })}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary inline-flex rounded-full px-7 py-3.5 text-center text-sm"
+                  className="btn-primary inline-flex rounded-full px-8 py-4 text-center text-base"
                   onClick={() =>
                     track("booking_click", { location: "intake_done" })
                   }
@@ -690,12 +679,24 @@ export function IntakeGame() {
                   {t(i.doneBook)}
                 </a>
                 <Link
-                  href="/"
-                  className="btn-secondary inline-flex rounded-full px-7 py-3.5 text-center text-sm"
+                  href={localePath("/")}
+                  className="btn-secondary inline-flex rounded-full px-8 py-4 text-center text-base"
                 >
                   {t(i.doneHome)}
                 </Link>
               </div>
+              <div className="glass-card mb-6 max-w-md rounded-3xl p-6">
+                <p className="type-label tracking-[0.1em] text-accent">
+                  {t(i.entryLabel)} ·{" "}
+                  {offerLabels[doneOffer as keyof typeof offerLabels] ??
+                    doneOffer}
+                </p>
+              </div>
+              <p className="max-w-xl type-body-sm text-muted-2">
+                {confirmationSent
+                  ? t(i.doneConfirmationSent)
+                  : t(i.doneConfirmationPending)}
+              </p>
             </div>
           ) : null}
         </div>
@@ -743,7 +744,7 @@ function ProbeCards({
             className={`type-body cursor-pointer rounded-2xl border px-5 py-4 text-left transition hover:border-accent/40 ${
               selected === opt.key
                 ? "border-accent/50 bg-accent/10 text-fg"
-                : "border-white/10 bg-panel text-muted"
+                : "border-[color:var(--line)] bg-panel text-muted"
             }`}
           >
             {opt.label}
