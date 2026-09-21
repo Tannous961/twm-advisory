@@ -91,7 +91,7 @@
   --color-paper: var(--paper);
   --color-paper-ink: var(--paper-ink);
   --color-paper-muted: var(--paper-muted);
-  --font-display: var(--font-literata);
+  --font-display: var(--font-bricolage);
   --font-sans: var(--font-public);
   --font-mono: var(--font-jetbrains);
   --font-size-caption: var(--text-caption);
@@ -145,7 +145,7 @@ body {
   padding: 0.7rem 1.1rem;
   font-family: var(--font-jetbrains), ui-monospace, monospace;
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: transform var(--dur-fast) var(--ease-out);
@@ -242,34 +242,34 @@ body {
 /* ——— Typography utilities ——— */
 
 .type-display {
-  font-family: var(--font-literata), Georgia, serif;
+  font-family: var(--font-bricolage), system-ui, sans-serif;
   font-size: var(--text-display);
   line-height: var(--leading-display);
   letter-spacing: var(--tracking-display);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .type-h1 {
-  font-family: var(--font-literata), Georgia, serif;
+  font-family: var(--font-bricolage), system-ui, sans-serif;
   font-size: var(--text-h1);
   line-height: var(--leading-h1);
   letter-spacing: var(--tracking-heading);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .type-h2 {
-  font-family: var(--font-literata), Georgia, serif;
+  font-family: var(--font-bricolage), system-ui, sans-serif;
   font-size: var(--text-h2);
   line-height: var(--leading-h2);
   letter-spacing: var(--tracking-heading);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .type-h3 {
-  font-family: var(--font-literata), Georgia, serif;
+  font-family: var(--font-bricolage), system-ui, sans-serif;
   font-size: var(--text-h3);
   line-height: var(--leading-h3);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .type-lead {
@@ -302,7 +302,7 @@ body {
 }
 
 .type-stat {
-  font-family: var(--font-literata), Georgia, serif;
+  font-family: var(--font-bricolage), system-ui, sans-serif;
   font-size: var(--text-stat);
   line-height: 1;
 }
@@ -345,12 +345,59 @@ a:hover {
   transform: translateY(-1px);
 }
 
+/* Extreme Modern Slab — rectangular copper control */
+.btn-slab {
+  display: inline-flex;
+  cursor: pointer;
+  background: var(--accent);
+  color: var(--ink) !important;
+  font-weight: 600;
+  font-size: var(--text-body);
+  border: 1px solid var(--accent);
+  border-radius: 0.35rem;
+  letter-spacing: 0.02em;
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+
+.btn-slab:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent-soft);
+  color: var(--ink) !important;
+  transform: translateY(-1px);
+}
+
+.btn-slab:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 3px;
+}
+
+.mandate-slab {
+  position: relative;
+  padding: 1.75rem 1.5rem;
+  border-radius: 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--line));
+  background: color-mix(in srgb, var(--bg) 55%, transparent);
+  backdrop-filter: blur(18px) saturate(1.2);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--accent) 12%, transparent),
+    0 24px 80px rgb(0 0 0 / 0.35);
+}
+
+@media (min-width: 640px) {
+  .mandate-slab {
+    padding: 2.25rem 2rem;
+  }
+}
+
 .btn-secondary {
   display: inline-block;
   cursor: pointer;
   background: transparent;
   color: var(--fg) !important;
-  font-weight: 500;
+  font-weight: 600;
   font-size: var(--text-body);
   border: 1px solid rgb(var(--accent-rgb) / 0.35);
   border-radius: 999px;
@@ -637,7 +684,7 @@ html[data-twm-splash="done"] .animate-rise {
 
 .splash-wordmark {
   margin: 0;
-  font-family: var(--font-literata), Georgia, serif;
+  font-family: var(--font-bricolage), system-ui, sans-serif;
   font-size: clamp(1.75rem, 4.8vw, 2.375rem);
   letter-spacing: -0.02em;
   line-height: 1;

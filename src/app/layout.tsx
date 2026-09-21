@@ -1,7 +1,7 @@
 import type { CSSProperties, ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import { cookies, headers } from "next/headers";
-import { JetBrains_Mono, Literata, Public_Sans } from "next/font/google";
+import { Bricolage_Grotesque, JetBrains_Mono, Public_Sans } from "next/font/google";
 import { GoogleTagManagerNoscript } from "@/components/analytics/GoogleTagManager";
 import { Providers } from "@/components/Providers";
 import { SplashIntro } from "@/components/SplashIntro";
@@ -17,16 +17,15 @@ import "./globals.css";
 
 const SPLASH_COOKIE = "twm-splash-seen";
 
-/** Mandate display — institutional, not Playfair/Inter defaults. */
-const literata = Literata({
-  variable: "--font-literata",
+/** Extreme Modern Slab — sharp display, not editorial serif defaults. */
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
   subsets: ["latin"],
-  style: ["normal", "italic"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-/** Desk body copy. */
+/** Body copy. */
 const publicSans = Public_Sans({
   variable: "--font-public",
   subsets: ["latin"],
@@ -34,7 +33,7 @@ const publicSans = Public_Sans({
   display: "swap",
 });
 
-/** Ops floor labels / ticks. */
+/** Ops labels. */
 const jetbrains = JetBrains_Mono({
   variable: "--font-jetbrains",
   subsets: ["latin"],
@@ -79,7 +78,7 @@ export default async function RootLayout({
       suppressHydrationWarning
       data-theme={themeId}
       data-twm-splash={splashDone ? "done" : "pending"}
-      className={`${literata.variable} ${publicSans.variable} ${jetbrains.variable} h-full antialiased`}
+      className={`${bricolage.variable} ${publicSans.variable} ${jetbrains.variable} h-full antialiased`}
       style={theme.vars as CSSProperties}
     >
       <body className="min-h-dvh bg-bg font-sans text-fg">
