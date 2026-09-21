@@ -138,7 +138,7 @@ export function VideoSignal({ onBlob, labels }: Props) {
   const seconds = Math.min(90, Math.floor(elapsed / 1000));
 
   return (
-    <div className="overflow-hidden rounded-3xl border border-white/10 bg-panel">
+    <div className="overflow-hidden rounded-[0.85rem] border border-[color:var(--line)] bg-panel">
       <div className="relative aspect-video bg-black">
         {previewUrl ? (
           <video
@@ -159,7 +159,7 @@ export function VideoSignal({ onBlob, labels }: Props) {
         )}
         {recording ? (
           <span
-            className="type-label absolute top-3 left-3 inline-flex items-center gap-2 rounded-full bg-black/55 px-3 py-1.5 text-fg"
+            className="type-label absolute top-3 left-3 inline-flex items-center gap-2 rounded-[0.35rem] bg-black/55 px-3 py-1.5 text-fg"
             role="status"
             aria-live="polite"
           >
@@ -174,17 +174,25 @@ export function VideoSignal({ onBlob, labels }: Props) {
             {error}
           </p>
         ) : previewUrl ? (
-          <button type="button" className="btn-secondary rounded-full px-5 py-2.5 text-sm" onClick={retake}>
+          <button
+            type="button"
+            className="btn-secondary rounded-[0.35rem] px-5 py-2.5 text-sm"
+            onClick={retake}
+          >
             {labels.retake}
           </button>
         ) : recording ? (
-          <button type="button" className="btn-primary rounded-full px-5 py-2.5 text-sm" onClick={stop}>
+          <button
+            type="button"
+            className="btn-slab px-5 py-2.5 text-sm"
+            onClick={stop}
+          >
             {labels.stop}
           </button>
         ) : (
           <button
             type="button"
-            className="btn-primary rounded-full px-5 py-2.5 text-sm"
+            className="btn-slab px-5 py-2.5 text-sm disabled:opacity-50"
             onClick={start}
             disabled={!ready}
             aria-disabled={!ready}

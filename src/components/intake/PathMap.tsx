@@ -30,10 +30,10 @@ export function PathMap({
           return (
             <li
               key={offer}
-              className={`flex items-center justify-between gap-3 rounded-2xl border px-3 py-2.5 ${
+              className={`flex items-center justify-between gap-3 rounded-[0.35rem] border px-3 py-2.5 ${
                 isEntry
                   ? "border-accent/45 bg-accent/10"
-                  : "border-white/8 bg-panel/40"
+                  : "border-[color:var(--line)] bg-panel/40"
               }`}
             >
               <span
@@ -44,7 +44,7 @@ export function PathMap({
                 {labels[offer]}
               </span>
               {isEntry ? (
-                <span className="shrink-0 rounded-full bg-accent px-2 py-0.5 type-caption text-ink">
+                <span className="shrink-0 rounded-[0.2rem] bg-accent px-2 py-0.5 type-caption text-ink">
                   {recommendedLabel}
                 </span>
               ) : null}

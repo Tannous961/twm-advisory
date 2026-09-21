@@ -79,7 +79,7 @@ export function IntakeContextPanel({
 
   return (
     <div
-      className={`glass-card rounded-3xl ${compact ? "p-4" : "p-5 lg:sticky lg:top-24"}`}
+      className={`rounded-[0.85rem] border border-[color:var(--line)] bg-panel/90 ${compact ? "p-4" : "p-5 lg:sticky lg:top-24"}`}
     >
       <p className="mb-4 type-label tracking-[0.12em] text-accent">
         {contextTitle}
@@ -113,17 +113,17 @@ export function IntakeContextPanel({
               </p>
               <ul className="flex flex-wrap gap-2">
                 {orgSize && orgSizeLabel ? (
-                  <li className="rounded-full border border-white/10 bg-panel px-3 py-1 type-caption text-muted">
+                  <li className="rounded-[0.35rem] border border-[color:var(--line)] bg-bg/60 px-3 py-1 type-caption text-muted">
                     {orgSizeLabel}
                   </li>
                 ) : null}
                 {urgency && urgencyLabel ? (
-                  <li className="rounded-full border border-white/10 bg-panel px-3 py-1 type-caption text-muted">
+                  <li className="rounded-[0.35rem] border border-[color:var(--line)] bg-bg/60 px-3 py-1 type-caption text-muted">
                     {urgencyLabel}
                   </li>
                 ) : null}
                 {dataConstraint && dataConstraintLabel ? (
-                  <li className="rounded-full border border-white/10 bg-panel px-3 py-1 type-caption text-muted">
+                  <li className="rounded-[0.35rem] border border-[color:var(--line)] bg-bg/60 px-3 py-1 type-caption text-muted">
                     {dataConstraintLabel}
                   </li>
                 ) : null}
