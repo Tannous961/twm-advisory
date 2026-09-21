@@ -1,0 +1,126 @@
+{
+  "title": "Choose the visual world",
+  "question": "Redesign home + /demarrer for TWM Advisory. Keep copper and Forward Deployed posture. The roll assigned Open Calibre.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Open Calibre",
+      "kicker": "THE ROLL",
+      "lineage": "Swiss open-heart watch movement — precision made visible",
+      "thesis": "The performance mandate as an open mechanical movement: copper bridges, sapphire clarity, one decisive winding action to book.",
+      "palette": ["#0B0D10", "#E8E4DC", "#C47A3A", "#8A9099", "#F4F1EA"],
+      "materials": ["brushed steel", "sapphire crystal", "rose-copper bridges", "enamel dial white"],
+      "viewport": "Full-bleed dark steel field; giant open-calibre diagram left; TWM claim and copper primary CTA right; no eyebrow pill.",
+      "risk": "Can feel jewelry-luxury if the mechanism stays decorative instead of proving the operating method.",
+      "raised": [
+        {"from": "silk canopy", "raise": "Copper owns large contiguous fields (bridges/sectors), not sprinkle accents."},
+        {"from": "pickling calendar", "raise": "Maturity stages (diagnose → decide → deliver → measure) read as sequential gear train, not icon cards."},
+        {"from": "elbow console", "raise": "The layout grid is structural metal frames, not nested glass cards."},
+        {"from": "cracktro queue", "raise": "No enclosure boxes; hierarchy is scale and depth of the mechanism, not borders."},
+        {"from": "op-art textile", "raise": "Continuous surface: one movement across the viewport without visible section seams."},
+        {"from": "night six-pack", "raise": "Cross-check reading order: claim → proof needles → book action, with amber only for caution states."}
+      ],
+      "comp": ".impeccable/mocks/decision/assigned.webp",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-night-flight-six-pack-hero.webp"
+    },
+    {
+      "id": "model-pick",
+      "label": "Brass Mandate",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Engraved institutional nameplate / boardroom plaque",
+      "thesis": "The priority is a brass mandate plate: weight, permanence, one copper seal to submit.",
+      "palette": ["#12100E", "#D8C4A0", "#B87333", "#F2EFEA"],
+      "materials": ["brushed brass", "matte ebony", "engraved serif"],
+      "viewport": "Centered heavy brass plate with TWM wordmark cut in; short mandate line; single copper CTA under the seal.",
+      "risk": "Also the direction most DG advisory sites drift toward — familiar and effective.",
+      "comp": ".impeccable/mocks/decision/model-pick.webp"
+    },
+    {
+      "id": "challenger-sixpack",
+      "label": "Night Six-Pack",
+      "verdict": "competitive",
+      "lineage": "Aircraft night instrument panel",
+      "thesis": "Outside is ink; six calm gauges prove the mandate; booking is the cross-check complete.",
+      "palette": ["#050608", "#E8EEEA", "#B87333", "#C4F0A8", "#D4A017"],
+      "materials": ["matte black panel", "luminous ticks", "glass bezels"],
+      "viewport": "Two rows of three performance gauges; claim as placard; copper book CTA as master switch.",
+      "case": "Stronger product clarity for measured ops; slightly less boardroom-DG identification than Open Calibre.",
+      "risk": "Reads aviation cosplay if gauges are fake decoration without real score logic.",
+      "comp": ".impeccable/mocks/decision/challenger-sixpack.webp",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-night-flight-six-pack-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/signals-instruments-night-flight-six-pack.webp"
+    },
+    {
+      "id": "challenger-opart",
+      "label": "Seamless Wave",
+      "verdict": "competitive",
+      "lineage": "Op-art textile with disappearing repeat",
+      "thesis": "A hard copper-on-ink wave that never shows a seam; the CTA sits in a calm trough.",
+      "palette": ["#070A11", "#F2EFEA", "#B87333"],
+      "materials": ["matte ink field", "hard copper geometry", "no gray fills"],
+      "viewport": "Continuous optical wave full bleed; TWM claim locked in still zone; copper pill in trough.",
+      "case": "Wins modernity and seamlessness; loses on proving the operating mechanism.",
+      "risk": "Becomes pure decoration if the wave does not encode priority or progress.",
+      "comp": ".impeccable/mocks/decision/challenger-opart.webp",
+      "hero": "https://impeccable.style/worlds/cards/design-canon-op-art-textile-repeat-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/design-canon-op-art-textile-repeat.webp"
+    },
+    {
+      "id": "challenger-silk",
+      "label": "Color Chord Canopy",
+      "verdict": "declined",
+      "lineage": "Translucent courtyard silk banners",
+      "palette": ["#F7F4EE", "#3D2A7A", "#9B1D3A", "#C47A3A"],
+      "materials": ["translucent silk", "sun-white paving"],
+      "case": "DG does not identify with festival color chords for a performance mandate.",
+      "kept": "Committed color fields that own regions.",
+      "hero": "https://impeccable.style/worlds/cards/generative-art-computational-color-chord-counterpoint-hero.webp"
+    },
+    {
+      "id": "challenger-brine",
+      "label": "Brine Calendar",
+      "verdict": "declined",
+      "lineage": "Seasonal pickling jars",
+      "palette": ["#F3EFE6", "#C45C4A", "#2F5D3A"],
+      "materials": ["jar glass", "kraft labels"],
+      "case": "Culinary theater mismatches executive performance trust.",
+      "kept": "Visible staged maturation over time.",
+      "hero": "https://impeccable.style/worlds/cards/food-fermentation-culinary-theater-pickling-brine-calendar-hero.webp"
+    },
+    {
+      "id": "challenger-elbow",
+      "label": "Elbow Panel",
+      "verdict": "declined",
+      "lineage": "Pastel starship wall console",
+      "palette": ["#000000", "#C9A0DC", "#F5C6A0", "#E8C96A"],
+      "materials": ["flat pastel blocks", "black glass"],
+      "case": "Sci-fi pastels break DG trust and copper brand.",
+      "kept": "Frame-as-layout-grid structural honesty.",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-elbow-panel-console-hero.webp"
+    },
+    {
+      "id": "challenger-cracktro",
+      "label": "Cracktro Queue",
+      "verdict": "declined",
+      "lineage": "Demoscene cracktro title screen",
+      "palette": ["#000000", "#E8E0D0", "#D4A017"],
+      "materials": ["bitmap face", "dust fields"],
+      "case": "Underground demoscene ID fails for executive acquisition.",
+      "kept": "No boxes; hierarchy by depth and scale only.",
+      "hero": "https://impeccable.style/worlds/cards/operate-c-cracktro-scroller-queue-hero.webp"
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "buildPath": { "value": "comp", "toggle": true },
+  "canon": true,
+  "canonCard": {
+    "label": "Dark SaaS advisory standard",
+    "thesis": "What AI-advisory marketing usually ships: dark hero, Inter, accent CTA, card grid.",
+    "palette": ["#0A0A0B", "#FAFAFA", "#B87333"],
+    "materials": ["flat panels", "soft blur", "pill buttons"],
+    "viewport": "Centered headline, subcopy, dual CTAs, three feature cards below.",
+    "risk": "Indistinguishable from competitors by design.",
+    "comp": ".impeccable/mocks/decision/canon.webp"
+  },
+  "steer": true
+}

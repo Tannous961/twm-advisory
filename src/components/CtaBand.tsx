@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { track } from "@/lib/analytics";
 import { useI18n, useLocalePath, useT } from "@/lib/i18n";
@@ -17,38 +16,26 @@ export function CtaBand() {
         className="content-wrap section-pad pt-4"
         aria-labelledby="cta-band-title"
       >
-        <div className="relative overflow-hidden rounded-[2rem] border border-[color:var(--line)] px-6 py-16 text-center sm:px-10 sm:py-22">
-          <Image
-            src="/uploads/cta-boardroom-night.png"
-            alt=""
-            fill
-            sizes="(max-width: 1280px) 100vw, 1200px"
-            className="object-cover object-[70%_center]"
-            aria-hidden
-          />
+        <div className="mandate-blotter relative overflow-hidden rounded-[1.25rem] border border-[color:var(--line)] bg-[color:var(--paper)] px-6 py-14 text-center text-[color:var(--paper-ink)] sm:px-10 sm:py-20">
           <div
-            className="pointer-events-none absolute inset-0"
+            className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[color:var(--accent)]"
             aria-hidden
-            style={{
-              background:
-                "linear-gradient(90deg, color-mix(in srgb, var(--bg) 88%, transparent) 0%, color-mix(in srgb, var(--bg) 72%, transparent) 45%, color-mix(in srgb, var(--bg) 55%, transparent) 100%), radial-gradient(ellipse at 30% 0%, rgb(var(--accent-rgb) / 0.18), transparent 55%)",
-            }}
           />
           <div className="relative mx-auto max-w-2xl">
-            <p className="type-label mb-6 text-accent">
+            <p className="type-label mb-6 tracking-[0.16em] text-[color:var(--accent)]">
               {t(c.nav.cta)}
             </p>
             <h2
               id="cta-band-title"
-              className="type-h2 text-fg"
+              className="type-h2 text-[color:var(--paper-ink)]"
             >
               {t(c.home.ctaBandTitle)}
               <br />
-              <em className="text-accent not-italic italic">
+              <em className="not-italic text-[color:var(--accent)]">
                 {t(c.home.ctaBandTitleEm)}
               </em>
             </h2>
-            <p className="type-lead mx-auto mt-6 max-w-xl text-pretty text-muted">
+            <p className="type-lead mx-auto mt-6 max-w-xl text-pretty text-[color:var(--paper-muted)]">
               {t(c.home.ctaBandBody)}
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
@@ -61,13 +48,15 @@ export function CtaBand() {
               </Link>
               <Link
                 href={`${localePath("/")}#parcours`}
-                className="btn-secondary inline-block rounded-full border-[color:rgb(var(--accent-rgb)/0.35)] bg-[color-mix(in_srgb,var(--bg)_70%,transparent)] px-8 py-4 text-fg backdrop-blur-md sm:py-4.5"
-                onClick={() => track("cta_click", { location: "cta_band_journey" })}
+                className="type-label tracking-[0.14em] text-[color:var(--paper-muted)] underline-offset-4 transition hover:text-[color:var(--accent)] hover:underline"
+                onClick={() =>
+                  track("cta_click", { location: "cta_band_journey" })
+                }
               >
-                {t(c.hero.ctaSecondary)}
+                {t(c.hero.ctaSecondary)} →
               </Link>
             </div>
-            <p className="type-label mt-6 tracking-[0.1em] text-muted-3">
+            <p className="type-label mt-6 tracking-[0.1em] text-[color:var(--paper-muted)]">
               {t(c.home.ctaBandNote)}
             </p>
           </div>

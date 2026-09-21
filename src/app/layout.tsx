@@ -1,7 +1,7 @@
 import type { CSSProperties, ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import { cookies, headers } from "next/headers";
-import { Inter, JetBrains_Mono, Playfair_Display } from "next/font/google";
+import { JetBrains_Mono, Literata, Public_Sans } from "next/font/google";
 import { GoogleTagManagerNoscript } from "@/components/analytics/GoogleTagManager";
 import { Providers } from "@/components/Providers";
 import { SplashIntro } from "@/components/SplashIntro";
@@ -17,21 +17,24 @@ import "./globals.css";
 
 const SPLASH_COOKIE = "twm-splash-seen";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+/** Mandate display — institutional, not Playfair/Inter defaults. */
+const literata = Literata({
+  variable: "--font-literata",
   subsets: ["latin"],
   style: ["normal", "italic"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+/** Desk body copy. */
+const publicSans = Public_Sans({
+  variable: "--font-public",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
   display: "swap",
 });
 
+/** Ops floor labels / ticks. */
 const jetbrains = JetBrains_Mono({
   variable: "--font-jetbrains",
   subsets: ["latin"],
@@ -76,7 +79,7 @@ export default async function RootLayout({
       suppressHydrationWarning
       data-theme={themeId}
       data-twm-splash={splashDone ? "done" : "pending"}
-      className={`${playfair.variable} ${inter.variable} ${jetbrains.variable} h-full antialiased`}
+      className={`${literata.variable} ${publicSans.variable} ${jetbrains.variable} h-full antialiased`}
       style={theme.vars as CSSProperties}
     >
       <body className="min-h-dvh bg-bg font-sans text-fg">

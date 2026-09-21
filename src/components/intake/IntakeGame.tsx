@@ -291,11 +291,15 @@ export function IntakeGame() {
 
       {step === "boot" ? (
         <div className="animate-intake-in grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
-          <div className="intake-panel min-w-0">
-            <h1 className="mb-4 type-h1">
+          <div className="mandate-blotter min-w-0 overflow-hidden rounded-[1.25rem] border border-[color:var(--line)] bg-[color:var(--paper)] px-6 py-8 text-[color:var(--paper-ink)] sm:px-8 sm:py-10">
+            <div
+              className="mb-5 h-px w-16 bg-[color:var(--accent)]"
+              aria-hidden
+            />
+            <h1 className="mb-4 type-h1 text-[color:var(--paper-ink)]">
               {t(i.mission)}
             </h1>
-            <p className="mb-8 max-w-2xl type-lead text-muted">
+            <p className="mb-8 max-w-2xl type-lead text-[color:var(--paper-muted)]">
               {t(i.missionBody)}
             </p>
             <button

@@ -39,7 +39,7 @@ export function HomeEditorialSections() {
           aria-labelledby="founder-title"
         >
           <div className="grid items-center gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16">
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[2rem] border border-[color:var(--line)]">
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[1.25rem] border border-[color:var(--line)]">
               <Image
                 src="/uploads/WhatsApp Image 2026-07-29 at 15.14.56 (2).jpeg"
                 alt={t({
@@ -51,7 +51,7 @@ export function HomeEditorialSections() {
                 className="object-cover object-[50%_22%] saturate-[.9]"
               />
               <div
-                className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent"
+                className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[color:var(--bg)] to-transparent"
                 aria-hidden
               />
               <div className="absolute bottom-6 left-6 right-6">
@@ -72,7 +72,7 @@ export function HomeEditorialSections() {
               <p className="type-lead mt-6 max-w-2xl text-muted">
                 {t(founder.body)}
               </p>
-              <blockquote className="mt-8 border-l-2 border-accent pl-6 font-display text-2xl leading-snug text-fg sm:text-3xl">
+              <blockquote className="mt-8 border-l-2 border-accent bg-[color:var(--paper)] px-6 py-5 font-display text-2xl leading-snug text-[color:var(--paper-ink)] sm:text-3xl">
                 « {t(founder.quote)} »
               </blockquote>
               <p className="type-body mt-6 max-w-xl text-muted-2">
@@ -111,7 +111,7 @@ export function HomeEditorialSections() {
             </Link>
           </div>
 
-          <ol className="mt-12 grid overflow-hidden rounded-[2rem] border border-[color:var(--line)] md:grid-cols-5">
+          <ol className="mt-12 grid overflow-hidden rounded-[1.25rem] border border-[color:var(--line)] md:grid-cols-5">
             {journey.steps.map((step, index) => (
               <li
                 key={step.title.fr}
@@ -159,7 +159,7 @@ export function HomeEditorialSections() {
             {t(levers.title)}
           </h2>
           <p className="type-lead mt-4 text-muted">{t(levers.body)}</p>
-          <div className="mt-10 grid gap-px overflow-hidden rounded-[2rem] border border-[color:var(--line)] bg-[color:var(--line)] sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-px overflow-hidden rounded-[1.25rem] border border-[color:var(--line)] bg-[color:var(--line)] sm:grid-cols-2 lg:grid-cols-4">
             {leverCards?.map((card) => (
               <Link
                 key={card.id}
