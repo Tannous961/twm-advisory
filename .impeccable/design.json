@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-20T23:33:01Z",
+  "title": "Design System: TWM Advisory",
+  "extensions": {
+    "colorMeta": {
+      "night-ink": {
+        "role": "neutral",
+        "displayName": "Night Ink",
+        "canonical": "#070A11",
+        "tonalRamp": [
+          "#020308",
+          "#070A11",
+          "#0C1220",
+          "#141B2A",
+          "#1E2738",
+          "#2A3448",
+          "#3A455C",
+          "#98A1B3"
+        ]
+      },
+      "parchment-fg": {
+        "role": "neutral",
+        "displayName": "Parchment",
+        "canonical": "#F2EFEA",
+        "tonalRamp": [
+          "#8A8680",
+          "#B0ACA6",
+          "#D0CBC4",
+          "#E2DED8",
+          "#F2EFEA",
+          "#F7F5F1",
+          "#FBF9F6",
+          "#FFFCFA"
+        ]
+      },
+      "copper": {
+        "role": "primary",
+        "displayName": "Copper",
+        "canonical": "#B87333",
+        "tonalRamp": [
+          "#3A2410",
+          "#5C3A18",
+          "#7A4E22",
+          "#965F29",
+          "#B87333",
+          "#D08A45",
+          "#E3AC6C",
+          "#F0D0A0"
+        ]
+      },
+      "copper-soft": {
+        "role": "primary",
+        "displayName": "Copper Soft",
+        "canonical": "#E3AC6C",
+        "tonalRamp": [
+          "#5C3A18",
+          "#7A4E22",
+          "#965F29",
+          "#B87333",
+          "#D08A45",
+          "#E3AC6C",
+          "#EFC89A",
+          "#F7E2C4"
+        ]
+      },
+      "steel-muted": {
+        "role": "neutral",
+        "displayName": "Steel Muted",
+        "canonical": "#98A1B3",
+        "tonalRamp": [
+          "#5D6579",
+          "#778093",
+          "#98A1B3",
+          "#B0B7C4",
+          "#C5CAD4",
+          "#D8DCE3",
+          "#E8EAEF",
+          "#F4F5F7"
+        ]
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Panel",
+        "canonical": "#080C15",
+        "tonalRamp": [
+          "#05070D",
+          "#080C15",
+          "#0C1220",
+          "#121A2A",
+          "#1A2436",
+          "#243044",
+          "#334058",
+          "#4A5870"
+        ]
+      },
+      "panel-raised": {
+        "role": "neutral",
+        "displayName": "Panel Raised",
+        "canonical": "#0C1220",
+        "tonalRamp": [
+          "#070A11",
+          "#0C1220",
+          "#121A2A",
+          "#1A2436",
+          "#243044",
+          "#334058",
+          "#4A5870",
+          "#66758C"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgba(255, 255, 255, 0.08)",
+        "tonalRamp": [
+          "rgba(255,255,255,0.04)",
+          "rgba(255,255,255,0.06)",
+          "rgba(255,255,255,0.08)",
+          "rgba(255,255,255,0.12)",
+          "rgba(255,255,255,0.16)",
+          "rgba(255,255,255,0.22)",
+          "rgba(255,255,255,0.30)",
+          "rgba(255,255,255,0.40)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero-scale claims only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page heroes (H1)."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section titles (H2/H3)."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default reading copy."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Ops chrome: section marks, captions, skip link."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.22, 0.61, 0.36, 1)",
+        "purpose": "Default easing for reveals, splash, and state transitions."
+      },
+      {
+        "name": "dur-fast",
+        "value": "0.2s",
+        "purpose": "Button and focus state changes."
+      },
+      {
+        "name": "dur-med",
+        "value": "0.35s",
+        "purpose": "Theme and color transitions."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Copper pill CTA for the main conversion action.",
+      "html": "<button class=\"ds-btn-primary\" type=\"button\">Soumettre une priorité</button>",
+      "css": ".ds-btn-primary { display:inline-block; cursor:pointer; background:var(--accent,#B87333); color:var(--ink,#070A11); font-family:var(--font-inter),system-ui,sans-serif; font-size:1.0625rem; font-weight:600; border:1px solid var(--accent,#B87333); border-radius:999px; padding:1rem 2rem; transition:background .2s ease,border-color .2s ease,transform .2s ease; } .ds-btn-primary:hover { background:var(--accent-soft,#E3AC6C); border-color:var(--accent-soft,#E3AC6C); transform:translateY(-1px); } .ds-btn-primary:focus-visible { outline:2px solid var(--fg,#F2EFEA); outline-offset:3px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Ghost pill for secondary navigation or alternate CTA.",
+      "html": "<button class=\"ds-btn-secondary\" type=\"button\">Voir le parcours</button>",
+      "css": ".ds-btn-secondary { display:inline-block; cursor:pointer; background:transparent; color:var(--fg,#F2EFEA); font-family:var(--font-inter),system-ui,sans-serif; font-size:1.0625rem; font-weight:500; border:1px solid rgb(184 115 51 / 0.35); border-radius:999px; padding:1rem 2rem; transition:border-color .2s ease,color .2s ease,background .2s ease,transform .2s ease; } .ds-btn-secondary:hover { border-color:var(--accent-soft,#E3AC6C); color:var(--accent-soft,#E3AC6C); background:rgb(184 115 51 / 0.08); transform:translateY(-1px); } .ds-btn-secondary:focus-visible { outline:2px solid var(--fg,#F2EFEA); outline-offset:3px; }"
+    },
+    {
+      "name": "Glass Card",
+      "kind": "card",
+      "refersTo": "glass-card",
+      "description": "Frosted panel for offers, forms, and intake steps.",
+      "html": "<div class=\"ds-glass-card\"><h3 class=\"ds-glass-title\">Diagnostic</h3><p class=\"ds-glass-body\">Cartographier les processus et prioriser selon l'impact.</p></div>",
+      "css": ".ds-glass-card { background:color-mix(in srgb, var(--panel,#080C15) 88%, transparent); border:1px solid var(--line,rgba(255,255,255,0.08)); backdrop-filter:blur(12px); border-radius:1.5rem; padding:1.75rem; color:var(--fg,#F2EFEA); } .ds-glass-title { margin:0 0 .75rem; font-family:var(--font-playfair),Georgia,serif; font-size:clamp(1.5rem,3.5vw,2.125rem); font-weight:400; } .ds-glass-body { margin:0; font-family:var(--font-inter),system-ui,sans-serif; font-size:1.0625rem; line-height:1.72; color:var(--muted,#98A1B3); }"
+    },
+    {
+      "name": "Section Label",
+      "kind": "custom",
+      "refersTo": "section-label",
+      "description": "Ops index opener with copper mark, muted label, and hairline rule.",
+      "html": "<div class=\"ds-section-label\"><span class=\"ds-section-index\">§ 01</span><span class=\"ds-section-name\">Performance</span><span class=\"ds-section-rule\" aria-hidden=\"true\"></span></div>",
+      "css": ".ds-section-label { display:flex; align-items:center; gap:.875rem; margin-bottom:2rem; } .ds-section-index { font-family:var(--font-jetbrains),ui-monospace,monospace; font-size:.8125rem; letter-spacing:.2em; text-transform:uppercase; color:var(--accent,#B87333); } .ds-section-name { font-family:var(--font-jetbrains),ui-monospace,monospace; font-size:.8125rem; letter-spacing:.2em; text-transform:uppercase; color:var(--muted-2,#778093); } .ds-section-rule { flex:1; height:1px; background:rgba(255,255,255,0.10); }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Dark field with copper-soft focus ring for intake and partner forms.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Email</span><input class=\"ds-input\" type=\"email\" placeholder=\"vous@entreprise.com\" /></label>",
+      "css": ".ds-field { display:flex; flex-direction:column; gap:.5rem; } .ds-field-label { font-family:var(--font-jetbrains),ui-monospace,monospace; font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted-2,#778093); } .ds-input { width:100%; background:var(--panel,#080C15); color:var(--fg,#F2EFEA); border:1px solid var(--line,rgba(255,255,255,0.08)); border-radius:.75rem; padding:.85rem 1rem; font-family:var(--font-inter),system-ui,sans-serif; font-size:1.0625rem; } .ds-input:focus-visible { outline:2px solid var(--accent-soft,#E3AC6C); outline-offset:2px; }"
+    },
+    {
+      "name": "Surface Accent",
+      "kind": "custom",
+      "refersTo": "surface-accent",
+      "description": "Quiet copper signal bar for callouts without filling the panel.",
+      "html": "<aside class=\"ds-surface-accent\">Déployé chez vous. Écouter, diagnostiquer, décider, exécuter, mesurer.</aside>",
+      "css": ".ds-surface-accent { background:rgb(184 115 51 / 0.08); border-left:2px solid var(--accent,#B87333); padding:1rem 1.25rem; color:var(--fg,#F2EFEA); font-family:var(--font-inter),system-ui,sans-serif; font-size:.9375rem; line-height:1.72; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Forward Ops Desk",
+    "overview": "The interface reads as a forward-deployed command surface: dark night field, copper mandate accent, editorial display type for the claim, and mono labels for the operational layer. It should feel classy and premium without luxury theatrics — quiet authority for a DG deciding to book a briefing.\n\nDensity stays deliberate. Sections breathe, hero claims sit large in Playfair, supporting copy stays Inter, and section chrome / CTAs lean JetBrains Mono. Depth is tonal and glassy, not shadowed furniture.",
+    "keyCharacteristics": [
+      "Default theme Bronze (#B87333 on #070A11); alternate themes exist for A/B but Bronze is signature.",
+      "Pill CTAs, glass/hairline panels, uppercase mono section marks (§ 01).",
+      "Operational dryness: quasi-flat surfaces, minimal hover lift (-1px), no decorative shadow stacks.",
+      "Motion: short ease-out rises and reveals; honor prefers-reduced-motion."
+    ],
+    "rules": [
+      {
+        "name": "The Copper Rarity Rule",
+        "body": "Copper is the mandate color, not a wash. Prefer accent on CTAs, labels, and thin signals — not large filled backgrounds.",
+        "section": "colors"
+      },
+      {
+        "name": "The Theme Switch Rule",
+        "body": "Live theme swaps remap the same semantic tokens. New work must use semantic vars, never hard-code Bronze hex outside the theme table.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two-Voice Rule",
+        "body": "Serif owns the claim; sans owns the explanation; mono owns the instrument panel.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Surfaces stay flat at rest. Do not introduce multi-layer drop shadows or neon glows to fake premium.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Pill Mandate Rule",
+        "body": "Primary actions are pills. Do not square off CTAs or invent a second primary shape language.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do speak in semantic tokens (--bg, --fg, --accent, --panel, --line, --muted*) so theme switching stays valid.",
+      "Do keep copper rare and CTA-led; measure success against booked briefing clarity.",
+      "Do pair Playfair claims with Inter body and JetBrains labels.",
+      "Do use glass + hairline for panels, pills for actions.",
+      "Do respect prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't invent purple/indigo SaaS gradients, cream+terracotta brochure looks, or broadsheet dense columns as the default world.",
+      "Don't add multi-layer shadows, glow stacks, or bounce/elastic easing.",
+      "Don't wrap everything in nested cards; cards are for interaction or clear panel grouping only.",
+      "Don't hard-code Bronze hex in components when a semantic token exists.",
+      "Don't invent testimonials, logos, or pricing visuals the product does not have."
+    ]
+  }
+}

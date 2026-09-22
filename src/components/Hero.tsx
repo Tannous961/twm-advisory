@@ -29,7 +29,7 @@ export function Hero() {
         aria-hidden
         style={{
           background:
-            "linear-gradient(90deg, rgba(7,10,17,0.92) 0%, rgba(7,10,17,0.78) 38%, rgba(7,10,17,0.35) 62%, rgba(7,10,17,0.18) 100%), linear-gradient(180deg, rgba(7,10,17,0.35) 0%, transparent 28%, rgba(7,10,17,0.55) 100%)",
+            "linear-gradient(90deg, color-mix(in srgb, var(--bg) 92%, transparent) 0%, color-mix(in srgb, var(--bg) 78%, transparent) 38%, color-mix(in srgb, var(--bg) 35%, transparent) 62%, color-mix(in srgb, var(--bg) 18%, transparent) 100%), linear-gradient(180deg, color-mix(in srgb, var(--bg) 35%, transparent) 0%, transparent 28%, color-mix(in srgb, var(--bg) 55%, transparent) 100%)",
         }}
       />
       <div
@@ -44,7 +44,7 @@ export function Hero() {
       <div className="content-wrap relative w-full py-16 sm:py-20 lg:py-28">
         <div className="max-w-xl lg:max-w-2xl">
           <div
-            className="animate-rise mb-7 inline-flex items-center gap-2 rounded-full border border-white/12 bg-black/25 px-4 py-2 backdrop-blur-md"
+            className="animate-rise mb-7 inline-flex items-center gap-2 rounded-full border border-[color:var(--line)] bg-[color-mix(in_srgb,var(--bg)_75%,transparent)] px-4 py-2 backdrop-blur-md"
             style={{ animationDelay: "0s" }}
           >
             <span className="size-1.5 rounded-full bg-accent" />
@@ -64,7 +64,7 @@ export function Hero() {
           </h1>
 
           <p
-            className="animate-rise type-lead mb-10 max-w-xl text-pretty text-white/80"
+            className="animate-rise type-lead mb-10 max-w-xl text-pretty text-muted"
             style={{ animationDelay: "0.2s" }}
           >
             {t(c.hero.lead)}
@@ -82,15 +82,15 @@ export function Hero() {
               {t(c.hero.ctaPrimary)}
             </Link>
             <Link
-              href="/#parcours"
-              className="btn-secondary rounded-full border-white/20 bg-black/20 px-8 py-4 text-center text-fg backdrop-blur-md sm:py-4.5"
+              href={`${localePath("/")}#parcours`}
+              className="btn-secondary rounded-full border-[color:rgb(var(--accent-rgb)/0.35)] bg-[color-mix(in_srgb,var(--bg)_70%,transparent)] px-8 py-4 text-center text-fg backdrop-blur-md sm:py-4.5"
             >
               {t(c.hero.ctaSecondary)}
             </Link>
           </div>
 
           <p
-            className="animate-rise type-label mt-6 tracking-[0.1em] text-white/50"
+            className="animate-rise type-label mt-6 tracking-[0.1em] text-muted-3"
             style={{ animationDelay: "0.4s" }}
           >
             {t(c.hero.note)}
