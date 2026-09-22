@@ -15,6 +15,7 @@ import {
 } from "@/lib/intake";
 import { useI18n, useLocalePath, useT } from "@/lib/i18n";
 import { isProfessionalEmail } from "@/lib/security/professional-email";
+import { OperatorPortrait } from "../OperatorPortrait";
 import { Turnstile } from "../Turnstile";
 import { IntakeContextPanel } from "./IntakeContextPanel";
 import { IntakeStepProgress } from "./IntakeStepProgress";
@@ -276,70 +277,48 @@ export function IntakeGame() {
 
   return (
     <section
-      className={`intake-game ${
-        step === "boot" ? "intake-boot" : "content-wrap section-pad"
-      }`}
+      className="intake-game content-wrap section-pad"
       aria-label={t(i.brand)}
     >
+      <div className="mb-8">
+        <p className="mb-4 type-label tracking-[0.16em] text-accent">
+          {t(i.brand)}
+        </p>
+        {activeStep ? (
+          <IntakeStepProgress current={activeStep} labels={stepLabels} />
+        ) : null}
+      </div>
+
       {step === "boot" ? (
-        <div className="relative flex min-h-[calc(100dvh-4rem)] w-full items-center overflow-hidden">
-          <div
-            className="pointer-events-none absolute inset-0"
-            aria-hidden
-            style={{
-              backgroundImage: "url('/uploads/cta-boardroom-night.png')",
-              backgroundSize: "cover",
-              backgroundPosition: "68% center",
-            }}
-          />
-          <div
-            className="pointer-events-none absolute inset-0"
-            aria-hidden
-            style={{
-              background:
-                "linear-gradient(105deg, color-mix(in srgb, var(--bg) 82%, transparent) 0%, color-mix(in srgb, var(--bg) 45%, transparent) 55%, color-mix(in srgb, var(--bg) 20%, transparent) 100%)",
-            }}
-          />
-          <div className="content-wrap relative w-full py-16 sm:py-20">
-            <div className="mandate-slab max-w-lg">
-              <p className="type-label mb-5 tracking-[0.2em] text-accent">
-                {t(i.brand)}
-              </p>
-              <h1 className="mb-4 type-h1 text-fg">{t(i.mission)}</h1>
-              <p className="mb-8 max-w-md type-lead text-muted">
-                {t(i.missionBody)}
-              </p>
-              <button
-                type="button"
-                className="btn-slab px-10 py-4 text-base"
-                onClick={() => {
-                  track("intake_started", { lang });
-                  setStep("intent");
-                }}
-              >
-                {t(i.start)}
-              </button>
-            </div>
+        <div className="animate-intake-in grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+          <div className="intake-panel min-w-0">
+            <h1 className="mb-4 type-h1">
+              {t(i.mission)}
+            </h1>
+            <p className="mb-8 max-w-2xl type-lead text-muted">
+              {t(i.missionBody)}
+            </p>
+            <button
+              type="button"
+              className="btn-primary rounded-full px-8 py-4 text-base"
+              onClick={() => {
+                track("intake_started", { lang });
+                setStep("intent");
+              }}
+            >
+              {t(i.start)}
+            </button>
           </div>
+          <OperatorPortrait />
         </div>
       ) : (
       <>
-        <div className="mb-10 grid gap-8 lg:grid-cols-[12rem_minmax(0,1fr)] lg:gap-12">
-          <div className="min-w-0">
-            <p className="mb-6 type-label tracking-[0.2em] text-accent">
-              {t(i.brand)}
-            </p>
-            {activeStep ? (
-              <IntakeStepProgress current={activeStep} labels={stepLabels} />
-            ) : null}
-          </div>
-          <div className="min-w-0">
         {activeStep ? (
           <div className="mb-6 lg:hidden">
             <IntakeContextPanel {...contextPanelProps} compact />
           </div>
         ) : null}
-      <div className="grid gap-8 xl:grid-cols-[minmax(0,1fr)_minmax(16rem,20rem)] xl:items-start">
+      <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,20rem)] lg:items-start">
         <div className="min-w-0">
           {step === "intent" ? (
             <div className="animate-intake-in">
@@ -357,10 +336,8 @@ export function IntakeGame() {
                       setStep("probes");
                       setProbeIndex(0);
                     }}
-                    className={`cursor-pointer rounded-[0.85rem] border p-5 text-left transition duration-300 hover:border-accent/40 ${
-                      intent === id
-                        ? "border-accent/50 bg-accent/10"
-                        : "border-[color:var(--line)] bg-panel/80"
+                    className={`glass-card cursor-pointer rounded-3xl p-6 text-left transition duration-300 hover:-translate-y-0.5 hover:border-accent/35 ${
+                      intent === id ? "border-accent/40" : ""
                     }`}
                   >
                     <h3 className="type-h3 mb-2">
@@ -377,7 +354,7 @@ export function IntakeGame() {
 
           {step === "probes" && intent ? (
             <div className="animate-intake-in">
-              <div className="mb-6 rounded-[0.35rem] border border-accent/20 bg-accent/5 px-5 py-4">
+              <div className="mb-6 rounded-2xl border border-accent/20 bg-accent/5 px-5 py-4">
                 <p className="type-caption text-muted-3">{t(i.situationLabel)}</p>
                 <p className="type-body-sm font-medium text-fg">
                   {t(i.intents[intent].title)}
@@ -463,7 +440,7 @@ export function IntakeGame() {
               <p className="mb-4 text-muted">{t(i.mapBody)}</p>
               <p className="mb-8 type-body-sm text-muted-3">{t(i.mapLogic)}</p>
               {maturity.entryOffer ? (
-                <div className="mb-8 rounded-[0.85rem] border border-[color:var(--line)] bg-panel/80 p-6 sm:p-8 lg:hidden">
+                <div className="glass-card mb-8 rounded-3xl p-6 sm:p-8 lg:hidden">
                   <p className="mb-2 type-caption text-muted-3">
                     {t(i.entryLabel)}
                   </p>
@@ -480,14 +457,14 @@ export function IntakeGame() {
               <div className="flex flex-wrap gap-3">
                 <button
                   type="button"
-                  className="btn-slab px-7 py-3.5 text-sm"
+                  className="btn-primary rounded-full px-7 py-3.5 text-sm"
                   onClick={() => setStep("signal")}
                 >
                   {t(i.next)}
                 </button>
                 <button
                   type="button"
-                  className="btn-secondary rounded-[0.35rem] px-7 py-3.5 text-sm"
+                  className="btn-secondary rounded-full px-7 py-3.5 text-sm"
                   onClick={() => setStep("probes")}
                 >
                   {t(i.back)}
@@ -511,7 +488,7 @@ export function IntakeGame() {
                 <button
                   type="button"
                   aria-pressed={signalMode === "video"}
-                  className={`type-label cursor-pointer rounded-[0.35rem] px-4 py-2.5 tracking-[0.12em] ${
+                  className={`type-label cursor-pointer rounded-full px-4 py-2.5 tracking-[0.12em] ${
                     signalMode === "video"
                       ? "bg-accent text-ink"
                       : "border border-white/15 text-muted"
@@ -526,7 +503,7 @@ export function IntakeGame() {
                 <button
                   type="button"
                   aria-pressed={signalMode === "text"}
-                  className={`type-label cursor-pointer rounded-[0.35rem] px-4 py-2.5 tracking-[0.12em] ${
+                  className={`type-label cursor-pointer rounded-full px-4 py-2.5 tracking-[0.12em] ${
                     signalMode === "text"
                       ? "bg-accent text-ink"
                       : "border border-white/15 text-muted"
@@ -558,7 +535,7 @@ export function IntakeGame() {
                     onChange={(e) => setSignalText(e.target.value)}
                     placeholder={t(i.signalPlaceholder)}
                     rows={6}
-                    className="w-full resize-y rounded-[0.85rem] border border-[color:var(--line)] bg-panel px-5 py-4 type-body text-fg focus:border-accent/40"
+                    className="w-full resize-y rounded-3xl border border-white/10 bg-panel px-5 py-4 type-body text-fg focus:border-accent/40"
                   />
                 </label>
               )}
@@ -566,7 +543,7 @@ export function IntakeGame() {
               <div className="mt-8 flex flex-wrap gap-3">
                 <button
                   type="button"
-                  className="btn-slab px-7 py-3.5 text-sm"
+                  className="btn-primary rounded-full px-7 py-3.5 text-sm"
                   disabled={
                     signalMode === "video" ? !videoBlob : !signalText.trim()
                   }
@@ -576,7 +553,7 @@ export function IntakeGame() {
                 </button>
                 <button
                   type="button"
-                  className="btn-secondary rounded-[0.35rem] px-7 py-3.5 text-sm"
+                  className="btn-secondary rounded-full px-7 py-3.5 text-sm"
                   onClick={() => setStep("map")}
                 >
                   {t(i.back)}
@@ -653,7 +630,7 @@ export function IntakeGame() {
               <div className="flex flex-wrap gap-3">
                 <button
                   type="button"
-                  className="btn-slab px-7 py-3.5 text-sm disabled:opacity-50"
+                  className="btn-primary rounded-full px-7 py-3.5 text-sm disabled:opacity-50"
                   disabled={
                     submitting ||
                     !consent ||
@@ -667,7 +644,7 @@ export function IntakeGame() {
                 </button>
                 <button
                   type="button"
-                  className="btn-secondary rounded-[0.35rem] px-7 py-3.5 text-sm"
+                  className="btn-secondary rounded-full px-7 py-3.5 text-sm"
                   onClick={() => setStep("signal")}
                   disabled={submitting}
                 >
@@ -694,7 +671,7 @@ export function IntakeGame() {
                   })}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-slab inline-flex px-8 py-4 text-center text-base"
+                  className="btn-primary inline-flex rounded-full px-8 py-4 text-center text-base"
                   onClick={() =>
                     track("booking_click", { location: "intake_done" })
                   }
@@ -703,12 +680,12 @@ export function IntakeGame() {
                 </a>
                 <Link
                   href={localePath("/")}
-                  className="btn-secondary inline-flex rounded-[0.35rem] px-8 py-4 text-center text-base"
+                  className="btn-secondary inline-flex rounded-full px-8 py-4 text-center text-base"
                 >
                   {t(i.doneHome)}
                 </Link>
               </div>
-              <div className="mb-6 max-w-md rounded-[0.85rem] border border-[color:var(--line)] bg-panel/80 p-6">
+              <div className="glass-card mb-6 max-w-md rounded-3xl p-6">
                 <p className="type-label tracking-[0.1em] text-accent">
                   {t(i.entryLabel)} ·{" "}
                   {offerLabels[doneOffer as keyof typeof offerLabels] ??
@@ -724,12 +701,10 @@ export function IntakeGame() {
           ) : null}
         </div>
 
-        <aside className="hidden xl:block">
+        <aside className="hidden lg:block">
           {activeStep ? <IntakeContextPanel {...contextPanelProps} /> : null}
         </aside>
       </div>
-          </div>
-        </div>
       </>
       )}
     </section>
@@ -766,7 +741,7 @@ function ProbeCards({
             role="radio"
             aria-checked={selected === opt.key}
             onClick={() => onSelect(opt.key)}
-            className={`type-body cursor-pointer rounded-[0.35rem] border px-5 py-4 text-left transition hover:border-accent/40 ${
+            className={`type-body cursor-pointer rounded-2xl border px-5 py-4 text-left transition hover:border-accent/40 ${
               selected === opt.key
                 ? "border-accent/50 bg-accent/10 text-fg"
                 : "border-[color:var(--line)] bg-panel text-muted"
@@ -829,7 +804,7 @@ function Field({
         aria-invalid={error ? true : undefined}
         aria-describedby={[hintId, errorId].filter(Boolean).join(" ") || undefined}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-[0.35rem] border border-[color:var(--line)] bg-panel px-4 py-3 type-body text-fg focus:border-accent/40"
+        className="w-full rounded-2xl border border-white/10 bg-panel px-4 py-3 type-body text-fg focus:border-accent/40"
       />
       {hint ? (
         <p id={hintId} className="mt-2 type-caption text-muted-3">

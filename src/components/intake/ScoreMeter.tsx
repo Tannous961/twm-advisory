@@ -30,10 +30,10 @@ export function ScoreMeter({
           return (
             <li
               key={item}
-              className={`rounded-[0.35rem] border px-2 py-2 text-center type-caption leading-tight ${
+              className={`rounded-xl border px-2 py-2 text-center type-caption leading-tight ${
                 active
                   ? "border-accent/50 bg-accent/10 text-accent-soft"
-                  : "border-[color:var(--line)] text-muted-3"
+                  : "border-white/10 text-muted-3"
               }`}
               aria-current={active ? "true" : undefined}
             >

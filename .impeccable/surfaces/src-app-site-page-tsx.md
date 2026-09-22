@@ -15,15 +15,14 @@ Constraints: Keep copper brand; FR/EN; no invented pricing or logos
 
 ## Direction contract
 
-THESIS: The first viewport is a floating copper glass mandate slab over a full-bleed night city-office photograph — not a blotter, not a card grid.
+THESIS: Full-bleed night Paris photography with a dark copper overlay carries the brand claim and one primary CTA — the incumbent Forward Ops Desk conversion surface.
 
-OWN-WORLD: Near-black photographic ground; translucent copper-tinted glass slab; sharp geometric sans; rectangular copper CTA; rare copper; no eyebrow pills; no nested glass cards in the hero.
+OWN-WORLD: Night ink field, copper accent, Playfair Display for headlines, workhorse sans for body, pill copper CTAs. Photographic hero ground with left-weighted copy.
 
-STORY: Visitor understands TWM is an Operating Performance Partner and books or submits a performance priority within seconds.
+STORY: Visitor understands TWM is an Operating Performance Partner and books or submits a performance priority.
 
-FIRST VIEWPORT: Edge-to-edge night glass photography; asymmetric floating slab (content max ~28rem) with TWM mark, claim, lead, primary rectangular CTA, secondary text link; generous negative space.
+FIRST VIEWPORT: Edge-to-edge hero photo; brand eyebrow; claim; lead; primary pill CTA; secondary link.
 
-FORM: Extreme Modern Slab (user-pinned). Seed lineage: business extreme-modern slab; key 5b15169d superseded by user pin.
+FORM: Incumbent TWM base design (pre Mandate Desk / Extreme Modern Slab experiments). Restored on request.
 
-FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
-
+FINISH: Skills and PRODUCT/DESIGN docs remain; visual system matches production baseline.
